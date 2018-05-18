@@ -1,4 +1,4 @@
-#KW1C Group Project P8
+# KW1C Group Project P8
 
 The following repository will hold the code for the group project.
 
