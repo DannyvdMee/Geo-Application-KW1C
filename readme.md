@@ -8,5 +8,6 @@ The collaborators are:
 - Danny van der Mee
 - Ibo van Geffen
 - Onyi Lam
+- Rinaldo Boejé
 
 Copyright 2018
