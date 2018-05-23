@@ -7,7 +7,5 @@ As of today, the info about the project is unknown. This will be added when more
 The collaborators are:
 - Danny van der Mee
 - Ibo van Geffen
-- Onyi Lam
-- Rinaldo Boeje
 
 Copyright 2018
