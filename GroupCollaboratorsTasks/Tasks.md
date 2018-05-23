@@ -10,7 +10,11 @@ Ibo:
 - Watch GitKraken for any mistakes and overview branches
 
 Rinaldo:
-- TBA
+- Analyse
+- Functional Design
+- Technical Design
 
 Onyi:
-- TBA
+- Analyse
+- Functional Design
+- Technical Design
