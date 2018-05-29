@@ -8,11 +8,35 @@ Furthermore it also contains the documents required to make this project <br>
 - Installation
 - Usage
 - Structure project
-- Collaborators
-- Credits
+- Collaborators/Credits
 - Licence
 
-### Collaborators
+### Installation
+_Make sure to have GIT installed on your PC_
+
+1. Go to the ProjectGroupP8 repository
+2. Press button clone
+3. Choose to authenticate with HTTPS or SSH
+4. If chosen for SSH make sure that you have a valid SSH key available
+5. If chosen for HTTPS make sure to have enough space available on your PC
+6. Copy the link that is box. It must look something like: <br>
+https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
+7. Go to directory you would like to clone the code to
+8. Open GIT Bash
+9. Type: git clone [copied link] 
+10. Run the command
+11. Check if the project is created and make sure that it holds all of the code that is available at the moment.
+12. Open the project with any IDE and see if you can fetch
+13. If you have no errors when fetching you are ready to go.
+
+### Usage
+
+### Structure project
+- Document folder: <br>
+This folder will hold all the required documents like: Design's, analytics 
+
+
+### Collaborators/Credits
 
 The Collaborators of this project are:
 - Danny van der Mee
