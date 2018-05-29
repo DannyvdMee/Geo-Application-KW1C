@@ -30,10 +30,16 @@ https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
 13. If you have no errors when fetching you are ready to go.
 
 ### Usage
+Here will be mentioned how to install/use this project, we will provide you the basics on how to use the application.
+
 
 ### Structure project
-- Document folder: <br>
+- Documents: <br>
 This folder will hold all the required documents like: Design's, analytics 
+- Application: <br>
+This folder will hold all of the project's code.
+- License <br>
+This folder will hold the license provided for this project
 
 
 ### Collaborators/Credits
