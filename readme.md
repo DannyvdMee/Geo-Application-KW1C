@@ -5,11 +5,11 @@ This repository will hold the code for the group project made in P8. <br>
 Furthermore it also contains the documents required to make this project <br>
 
 ### Table of Contents
-- Installation
-- Usage
-- Structure project
-- Collaborators/Credits
-- Licence
+- [Installation](https://github.com/DannyvdMee/GroupProject/tree/master#installation)
+- [Usage](https://github.com/DannyvdMee/GroupProject/tree/master#usage)
+- [Structure project](https://github.com/DannyvdMee/GroupProject/tree/master#structure-project)
+- [Collaborators/Credits](https://github.com/DannyvdMee/GroupProject/tree/master#collaboratorscredits)
+- [Licence](https://github.com/DannyvdMee/GroupProject/tree/master#licence)
 
 ### Installation
 _Make sure to have GIT installed on your PC_
