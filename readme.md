@@ -32,7 +32,7 @@ https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
 ### Usage
 We will write a wiki on Github on how to use the new application. Here in detail will be written on how to set it up. <br>
 There will be 2 separate sections one for students and one for teachers <br>
-The link to the wiki is[here](https://github.com/DannyvdMee/GroupProject/wiki) <br>
+The link to the wiki is [here](https://github.com/DannyvdMee/GroupProject/wiki) <br> 
 When the project is ready for completion a new repo will be made that will hold the complete wiki for the project.
 
 ### Structure project
