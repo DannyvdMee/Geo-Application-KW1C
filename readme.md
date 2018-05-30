@@ -30,8 +30,8 @@ https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
 13. If you have no errors when fetching you are ready to go.
 
 ### Usage
-Here will be mentioned how to install/use this project, we will provide you the basics on how to use the application.
-
+We will write a wiki on how to use the new application. Here in detail will be written on how to set it up. <br>
+There will be 2 separate sections one for students and one for teachers <br>
 
 ### Structure project
 - Documents: <br>
