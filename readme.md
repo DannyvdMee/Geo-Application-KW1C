@@ -68,3 +68,5 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License (License/License.md) for the specific language governing permissions and
 limitations under the License.
+
+TweeKnopenLos Inc. does not accept any liability for up-to-date-ness, correctness, thoroughness or quality of information presented in this readme. 
