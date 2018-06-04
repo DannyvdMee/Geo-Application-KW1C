@@ -1,15 +1,18 @@
 # KW1C Group Project P8
 
 ### Description
-This repository will hold the code for the group project made in P8. <br>
-Furthermore it also contains the documents required to make this project <br>
+This repository will hold the code and documents that we made for KW1C <br>
+As far as we know it will be a updated application for the first schoolday. <br>
+Teachers will be able to create a route, the students can then add a route by searching for it by its route ID. <br>
+Our goal is to complete rewrite the existing code, so it will be more readable and more up-to-date. <br>
+Further information will be available later this week, I will update as soon as possible
 
 ### Table of Contents
 - [Installation](https://github.com/DannyvdMee/GroupProject/tree/master#installation)
 - [Usage](https://github.com/DannyvdMee/GroupProject/tree/master#usage)
 - [Structure project](https://github.com/DannyvdMee/GroupProject/tree/master#structure-project)
 - [Collaborators/Credits](https://github.com/DannyvdMee/GroupProject/tree/master#collaboratorscredits)
-- [Licence](https://github.com/DannyvdMee/GroupProject/tree/master#licence)
+- [License](https://github.com/DannyvdMee/GroupProject/tree/master#licence)
 
 ### Installation
 _Make sure to have GIT installed on your PC_
@@ -30,10 +33,11 @@ https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
 13. If you have no errors when fetching you are ready to go.
 
 ### Usage
-We will write a wiki on Github on how to use the new application. Here in detail will be written on how to set it up. <br>
-There will be 2 separate sections one for students and one for teachers <br>
-The link to the wiki is [here](https://github.com/DannyvdMee/GroupProject/wiki) <br> 
-When the project is ready for completion a new repo will be made that will hold the complete wiki for the project.
+For more information about the usage for this application we will direct you to our wiki. <br>
+[Usage Wiki Application](https://github.com/DannyvdMee/GroupProject/wiki) <br>
+We will continue to add more information about the usage of this application. <br>
+<br>
+We will also add a manual for first time usage of this application.
 
 ### Structure project
 - Documents: <br>
