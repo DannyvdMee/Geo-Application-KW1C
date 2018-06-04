@@ -55,7 +55,7 @@ The Collaborators of this project are:
 Hereinafter referred to as ProjectGroupP8
 
 ### License
-Copyright 2018 ProjectGroupP8
+Copyright 2018 TweeKnopenLos Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License")
 
