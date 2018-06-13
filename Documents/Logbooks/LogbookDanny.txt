@@ -33,3 +33,9 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Edited the Project Plan and Program of Requirements, they are now mostly done
 - Made sure that everyone else understands their tasks
 - Pushed the Technical Design
+
+13 June 2018:
+
+- Helped Onyi and Rinaldo to get their project up to date.
+- Sample functions and overview of the project written down on paper, so it can be helpfull at the analytics
+- Send the Program of Requirements to Abu

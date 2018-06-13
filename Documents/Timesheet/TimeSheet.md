@@ -28,3 +28,16 @@
 
 - Creating the document folders
 - Creating of the project documents, like: Project Plan, Program of Requirements
+
+12 June 2018:
+
+- Completion of the Program of Requirements
+- Completion of the Configuration Overview
+- Completion of the Project Plan
+
+13 June 2018:
+
+- Updating Program of Requirements
+- Pushing the designs, they are still WIP
+- Send the Program of Requirements to Abu
+- Paper written sample overview of functions and buttons in project
