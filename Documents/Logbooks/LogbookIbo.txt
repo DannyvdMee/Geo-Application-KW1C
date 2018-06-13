@@ -9,3 +9,6 @@ June 7
 
 June 11 - June 12
 - Created mobile front-end designs based on iPhone 6 designs
+
+June 13
+- Created mobile back-end designs based on iPhone 6 designs for index routes of tasks
