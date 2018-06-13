@@ -1,0 +1,11 @@
+Prior to June 10
+- Set-up everyone's working environment
+- Made sure Rinaldo & Onyi understand Git & Gitkraken
+- Created a fresh laravel install
+- Added Laravel Auth scaffolding
+
+June 7
+- Held initial meeting with clients
+
+June 11 - June 12
+- Created mobile front-end designs based on iPhone 6 designs
