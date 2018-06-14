@@ -1,0 +1,12 @@
+  html, body, #map {      
+      padding: 0;      
+      margin: 0;      
+      height: 100%;    
+  } 
+  
+  .form-group {
+      background: #fff;
+      padding:  0.5em;
+  }
+
+
