@@ -1,4 +1,4 @@
-# KW1C Group Project P8
+# Geo Ict Application KW1C
 
 ### Description
 This repository will hold the code and documents that we made for KW1C <br>

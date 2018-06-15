@@ -1,0 +1,22 @@
+<html >
+	<head >
+		<link rel="stylesheet" href="test.css">
+		<link rel="stylesheet" href="leaflet.css" />
+		<script src="leaflet.js"></script>
+	</head >
+	<body >
+		<div id="map"></div>
+		<script>
+			
+			var map = L.map("map",{id: "MapID"}).setView([51.685803,5.121367],13);
+			
+			L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", 
+			{
+				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+				maxZoom:18
+			}).addTo(map);
+			
+		</script>
+	</body >
+</html >
+

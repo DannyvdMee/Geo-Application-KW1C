@@ -1,0 +1,187 @@
+/*
+    Auteur:             R. Gijsbrechts & A. Saebu
+    Aanmaakdatum:       24 mei 2017
+    Project:            Introductie KW1C ICT-academie
+*/
+
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma;       
+}
+html, body, #map, #background, #spoiler {
+    height: 100vh;
+    width: 100vw;
+}
+
+@media only screen and (orientation:portrait) 
+{
+    #map, section
+    {
+        visibility: hidden !important;
+    }
+    #background
+    {
+        background-image: url(../images/portrait.png);
+        background-repeat:no-repeat;
+        background-size: contain;
+        background-color:#27a62a;
+        background-position: center;
+        z-index: 10;
+    }
+    
+}
+
+@media only screen and (orientation:landscape) 
+{ 
+    .leaflet-control-layers
+    {
+        width: 20vw;
+        height: 30vh;
+        min-height: 110px;
+        opacity: 0.95;    
+    }
+    .leaflet-control-layers-expanded
+    {
+        padding: 0px;
+    }
+    #afwijking
+    {
+        position: absolute;
+        height: 50px;
+        width: 200px;
+        bottom: 1px;
+        right: 0px;
+        background-color: #f00;
+        z-index: 100;
+    }
+    .locatieAanUit 
+    {
+        background-color: rgba(255, 0, 0, 0.70) !important;
+    }
+    #locatie
+    {
+        width: 6vw;
+        min-width: 30px;
+        height: auto;
+        position: fixed;
+        bottom: 25px;
+        right: 10px;
+        z-index: 2;
+        background-color: rgba(130, 183, 0, 0.70);
+        border-radius: 50%;
+    }
+    h1
+    {
+        font-size: 3em;
+        padding: 0px;
+        margin: 0px;
+    }
+    h3
+    {
+        font-size: 2em;
+        padding: 0px;
+        margin: 0px;
+    }
+    p
+    {
+        font-size: 1.5em;
+        padding: 0px;
+        margin: 0px;
+    }
+    #wpInformatie
+    {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 20vw;
+        min-width: fit-content;
+        background-color: rgba(255, 255, 255, 0.80);
+        z-index: 2;
+    }
+    #ondertitel
+    {
+        font-style: italic;
+        color: #808080;
+    }
+
+    button
+    {
+        background-color:rgb(130, 183, 0);
+        width: 100%;
+        height: 10vh;
+        border: none;
+        min-height: 60px;
+    }
+    button h2
+    {
+        font-size: 2em;
+        padding: 0px;
+        margin: 0px;
+    }
+    figure
+    {
+        margin: 0px;
+    }
+    figure img
+    {
+        width: 25%;
+    }
+    figcaption
+    {
+        text-align: center;
+        color: #808080;
+    }
+
+    .info-container {
+        height: 100vh;
+        width: 40vw;
+        min-width: fit-content;
+        background-color: white;
+        padding: 0px 10px;
+        overflow: auto;
+        overflow-style: panner;
+    }
+
+    .status-container 
+    {
+        background-color: white;
+        opacity: 0.8;
+        padding: 0em 0.2em 0em 0.2em;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        position: fixed;
+        right: 0px;
+        bottom: 1em;
+        font-size: 2em;
+    }
+    .leaflet-right img
+    {
+        position: fixed;
+        right: 10px;
+        bottom: 6em;
+    }
+    .codewoord
+    {
+        text-transform: uppercase;
+        color: red;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    .small
+    {
+        width: 25%; 
+        position: relative;
+    }
+    .big
+    {
+        position: absolute; 
+        width: 100%;
+        height:100%; 
+        top: 0px;
+        left:0px;
+    }
+}
+
