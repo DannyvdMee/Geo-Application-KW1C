@@ -18,3 +18,27 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+ * Below routes are for admin users
+ * - Uses Admin middleware
+ * - Uses controllers inside Admin folder
+ * - uses admin/ as part of URL
+ * - uses admin folder of views
+ */
+
+Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function() {
+
+});
+
+/*
+ * Below routes are for teacher users
+ * - Uses Teacher middleware
+ * - Uses controllers inside Teacher folder
+ * - uses teacher/ as part of URL
+ * - uses teacher folder of views
+ */
+
+Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function() {
+
+});
