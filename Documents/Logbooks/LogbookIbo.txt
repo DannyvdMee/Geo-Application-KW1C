@@ -12,3 +12,13 @@ June 11 - June 12
 
 June 13
 - Created mobile back-end designs based on iPhone 6 designs for index routes of tasks
+
+June 16
+- Added a shitload of code
+	- Added Teacher & Admin middlewares
+	- Added Controllers for teachers and admins
+	- Updated User model
+	- Updated User migration
+	- Implemented Google Material Design
+	- NPM installed everything
+	- Front-ended the footer and header
