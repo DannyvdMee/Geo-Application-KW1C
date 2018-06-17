@@ -10,7 +10,7 @@
                 @csrf
 
                 <div class="form-group row">
-                    <div class="col-12">
+                    <div class="col-10 offset-1">
                         <input id="email" type="email" placeholder="@lang('messages.email'):" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} border-gray" name="email" value="{{ old('email') }}" required autofocus>
 
                         @if ($errors->has('email'))
@@ -19,7 +19,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="col-12">
+                    <div class="col-10 offset-1">
                         <input id="password" type="password" placeholder="@lang('messages.password'):" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} border-gray" name="password" required>
 
                         @if ($errors->has('password'))
@@ -40,7 +40,7 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
-                    <div class="col-12">
+                    <div class="col-10 offset-1">
                         <button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
                         <a class="btn btn-gray float-right" href="{{ route('password.request') }}">@lang('messages.create-account')</a>
