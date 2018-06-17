@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Deze gegevens zijn niet bij ons bekend.',
+    'failed'   => 'Deze gegevens zijn niet bij ons bekend.',
     'throttle' => 'Teveel login pogingen. Probeer het alstublieft opnieuw over :seconds seconde.',
 
 ];

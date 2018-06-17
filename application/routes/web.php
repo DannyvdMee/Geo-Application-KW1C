@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',
+    function () {
+        return view('welcome');
+    });
 
 Auth::routes();
 
@@ -29,7 +30,7 @@ Route::get('/map', 'MapController@index')->name('map');
  * - uses admin folder of views
  */
 
-Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function() {
+Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
 });
 
@@ -41,6 +42,6 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
  * - uses teacher folder of views
  */
 
-Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function() {
+Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
 
 });
