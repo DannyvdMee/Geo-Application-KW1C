@@ -39,12 +39,16 @@
 	</main>
 	<footer>
 		<div class="float-left display-inline-block">
-			<i class="material-icons display-block">map</i>
-			<span class="display-block text-center">@lang('messages.map')</span>
+			<a href="{{ route('map') }}">
+				<i class="material-icons display-block">map</i>
+				<span class="display-block text-center">@lang('messages.map')</span>
+			</a>
 		</div>
 		<div class="float-right display-inline-block">
-			<i class="material-icons display-block">person</i>
-			<span class="display-block text-center">@lang('messages.login')</span>
+			<a href="{{ route('login') }}">
+				<i class="material-icons display-block">person</i>
+				<span class="display-block text-center">@lang('messages.login')</span>
+			</a>
 		</div>
 	</footer>
 </div>

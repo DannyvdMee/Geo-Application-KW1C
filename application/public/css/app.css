@@ -10429,6 +10429,14 @@ header p {
   color: #5D5D5D;
 }
 
+main form input {
+  height: 40px;
+  line-height: 1.2em;
+  width: 80%;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
 footer {
   color: #A4A4A4;
   height: 70px;
@@ -10441,6 +10449,7 @@ footer {
 footer i.material-icons {
   padding: 5px 20px 0 20px;
   font-size: 2em;
+  color: #A4A4A4;
 }
 
 footer i:first-child {
@@ -10454,6 +10463,16 @@ footer i:last-child {
 footer span {
   margin-top: -5px;
   font-size: .7em;
+  color: #A4A4A4;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 .full-height {
@@ -10480,7 +10499,32 @@ footer span {
   display: inline-block;
 }
 
+.text-gray {
+  color: #A4A4A4;
+}
+
 .text-center {
   text-align: center;
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+}
+
+.font-size-150 {
+  font-size: 1.5em;
+}
+
+.container .btn {
+  padding: 2px 10px;
+}
+
+.btn-gray {
+  background-color: #A4A4A4;
+  color: #FFFFFF;
+}
+
+.border-gray {
+  border: 1px solid #A4A4A4;
 }
 

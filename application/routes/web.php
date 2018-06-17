@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/map', 'MapController@index')->name('map');
+
 /*
  * Below routes are for admin users
  * - Uses Admin middleware
