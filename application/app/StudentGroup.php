@@ -10,4 +10,9 @@ class StudentGroup extends Model
 	{
 		$this->hasMany(Student::class);
 	}
+
+	public function scopeActive($query)
+	{
+		return $query->whereActive(true);
+	}
 }

@@ -10,4 +10,9 @@ class Route extends Model
 	{
 		$this->hasMany(Poi::class);
 	}
+
+	public function scopeActive($query)
+	{
+		return $query->whereActive(true);
+	}
 }

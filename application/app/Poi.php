@@ -10,4 +10,9 @@ class Poi extends Model
 	{
 		$this->belongsToMany(Route::class);
 	}
+
+	public function scopeActive($query)
+	{
+		return $query->whereActive(true);
+	}
 }
