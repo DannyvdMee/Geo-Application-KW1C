@@ -63,7 +63,7 @@ The Collaborators of this project are:
 Hereinafter referred to as ProjectGroupP8
 
 ### License
-Copyright 2018 TweeKnopenLos Inc.
+Copyright 2018 ProjectGroupP8
 
 Licensed under the Apache License, Version 2.0 (the "License")
 
@@ -73,4 +73,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License (License/License.md) for the specific language governing permissions and
 limitations under the License.
 
-TweeKnopenLos Inc. does not accept any liability for up-to-date-ness, correctness, thoroughness or quality of information presented in this readme. 
+ProjectGroupP8 does not accept any liability for up-to-date-ness, correctness, thoroughness or quality of information presented in this readme. 
