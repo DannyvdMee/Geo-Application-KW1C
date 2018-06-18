@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Teacher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Student;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all()->active()->get();
+
+        return view('teacher/student/index', ['students' => $students]);
     }
 
     /**
@@ -24,7 +27,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher/student/create');
     }
 
     /**
@@ -36,19 +39,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $student = new Student;
+        $student->studentnumber = $request->studentnummber;
+        $student->studentname = $request->studentname;
+        $student->active = $request->active;
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $student->save();
+
+        return view('teacher/student/index');
     }
 
     /**
@@ -60,7 +58,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+
+        return view('teacher/student/edit', ['student' => $student])
     }
 
     /**
@@ -73,7 +73,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+
+		$student->studentnumber = $request->studentnummber;
+		$student->studentname = $request->studentname;
+		$student->active = $request->active;
+
+		$student->save();
     }
 
     /**
@@ -85,6 +91,12 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+
+        $student->active = FALSE;
+
+        $student->save();
+
+        return view('teacher/student/index');
     }
 }
