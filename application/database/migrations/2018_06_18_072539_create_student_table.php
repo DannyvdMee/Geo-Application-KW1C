@@ -18,6 +18,7 @@ class CreateStudentTable extends Migration
 				$table->increments('id');
 				$table->integer('studentnumber');
 				$table->string('studentname');
+				$table->boolean('active')->default(false);
 				$table->timestamps();
 			}
 		);

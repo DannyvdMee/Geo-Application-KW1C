@@ -18,6 +18,7 @@ class CreateRouteTable extends Migration
             $table->string('url_id')->unique();
             $table->string('title');
             $table->integer('user_id')->unsigned();
+			$table->boolean('active')->default(false);
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
         });

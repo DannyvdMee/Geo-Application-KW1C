@@ -17,7 +17,8 @@ class CreateStudentGroupTable extends Migration
             $table->increments('id');
             $table->string('url_id')->unique();
             $table->string('groupname');
-            $table->timestamps();
+			$table->boolean('active')->default(false);
+			$table->timestamps();
         });
     }
 
