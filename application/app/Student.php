@@ -8,6 +8,6 @@ class Student extends Model
 {
     public function studentGroup()
 	{
-		$this->belongsTo(StudentGroup::class);
+		$this->belongsToMany(StudentGroup::class);
 	}
 }
