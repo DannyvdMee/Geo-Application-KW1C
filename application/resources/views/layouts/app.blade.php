@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'KW1C Running App') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,7 +30,7 @@
 
     <header>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <p class="full-width text-center">{{ config('app.name', 'KW1C Running App') }}</p>
+            <p class="full-width text-center">{{ config('app.name') }}</p>
         </nav>
     </header>
 

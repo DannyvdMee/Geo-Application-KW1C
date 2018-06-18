@@ -60,7 +60,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
 
-        return view('teacher/student/edit', ['student' => $student])
+        return view('teacher/student/edit', ['student' => $student]);
     }
 
     /**
