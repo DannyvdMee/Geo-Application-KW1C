@@ -15,7 +15,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-		'email', 'username', 'firstname', 'lastname', 'password', 'department', 'account_type', 'active'
+        'email',
+        'username',
+        'firstname',
+        'lastname',
+        'password',
+        'department',
+        'account_type',
+        'active',
     ];
 
     /**
@@ -24,50 +31,52 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
-	protected $appends = [
-		'isTeacher',
-		'isAdmin',
-	];
+    protected $appends = [
+        'isTeacher',
+        'isAdmin',
+    ];
 
-	/**
-	 * Scope for a query to get only the active users
-	 *
-	 * @param $query
-	 * @return mixed
-	 */
-	public function scopeActive($query)
-	{
-		return $query->whereActive(true);
-	}
+    /**
+     * Scope for a query to get only the active users
+     *
+     * @param $query
+     *
+     * @return mixed
+     */
+    public function scopeActive($query)
+    {
+        return $query->whereActive(true);
+    }
 
-	/**
-	 * Function which returns TRUE of FALSE whether user is a teacher or not
-	 *
-	 * @return bool
-	 */
-	public function getIsTeacherAttribute()
-	{
-		if ($this->account_type == 'teacher') {
-			return TRUE;
-		} else {
-			return FALSE;
-		}
-	}
+    /**
+     * Function which returns TRUE of FALSE whether user is a teacher or not
+     *
+     * @return bool
+     */
+    public function getIsTeacherAttribute()
+    {
+        if ($this->account_type == 'teacher') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	/**
-	 * Function which returns TRUE of FALSE whether user is an admin or not
-	 *
-	 * @return bool
-	 */
-	public function getIsAdminAttribute()
-	{
-		if ($this->account_type == 'admin') {
-			return TRUE;
-		} else {
-			return FALSE;
-		}
-	}
+    /**
+     * Function which returns TRUE of FALSE whether user is an admin or not
+     *
+     * @return bool
+     */
+    public function getIsAdminAttribute()
+    {
+        if ($this->account_type == 'admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
