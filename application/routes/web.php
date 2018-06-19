@@ -22,6 +22,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/map', 'MapController@index')->name('map');
 
+// TODO: These routes have to be placed under the teacher middleware when we are ready for it. For now let it be
+Route::get('/poi', 'Teacher\PoiController@index')->name('poi');
+
+Route::get('/routes', 'Teacher\RouteController@index')->name('routes');
+
+Route::get('/students', 'Teacher\StudentController@index')->name('students');
+
+Route::get('/groups', 'Teacher\GroupController@index')->name('groups');
+
+Route::get('/settings', 'Teacher\SettingsController@index')->name('settings');
+
+
 /*
  * Below routes are for admin users
  * - Uses Admin middleware
