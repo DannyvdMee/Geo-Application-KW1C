@@ -30,7 +30,9 @@ Route::get('/map', 'MapController@index')->name('map');
  * - uses admin folder of views
  */
 
-Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
+Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin')->group(function () {
+
+    Route::get('/users', 'UserController@index')->name('users');
 
 });
 
@@ -44,14 +46,14 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
 
 Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher')->group(function () {
 
-    Route::get('/poi', 'Teacher\PoiController@index')->name('poi');
+    Route::get('/poi', 'PoiController@index')->name('poi');
 
-    Route::get('/routes', 'Teacher\RouteController@index')->name('routes');
+    Route::get('/routes', 'RouteController@index')->name('routes');
 
-    Route::get('/students', 'Teacher\StudentController@index')->name('students');
+    Route::get('/students', 'StudentController@index')->name('students');
 
-    Route::get('/groups', 'Teacher\GroupController@index')->name('groups');
+    Route::get('/groups', 'GroupController@index')->name('groups');
 
-    Route::get('/settings', 'Teacher\SettingsController@index')->name('settings');
+    Route::get('/settings', 'SettingsController@index')->name('settings');
 
 });
