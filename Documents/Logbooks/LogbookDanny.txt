@@ -49,6 +49,7 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Requested API token for loading Google Maps
 - Research on how to add map
 - Helped Onyi and Rinaldo setup their computer to run the website locally
+- Had a conversation with Abu about how we are doing this project. It went not so good because Abu was hoping his idea went trough
 
 19 June 2018:
 - Added more tasks
