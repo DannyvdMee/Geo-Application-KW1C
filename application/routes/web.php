@@ -42,7 +42,7 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
  * - uses teacher folder of views
  */
 
-Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
+Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher')->group(function () {
 
     Route::get('/poi', 'Teacher\PoiController@index')->name('poi');
 
