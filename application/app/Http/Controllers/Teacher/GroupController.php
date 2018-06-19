@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Teacher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Student;
+use App\StudentGroup;
 
 class GroupController extends Controller
 {
@@ -14,7 +16,9 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+        $group = StudentGroup::all()->active()->get();
+
+        return view('teacher/group/index', ['group' => $group]);
     }
 
     /**
@@ -24,7 +28,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher/group/create');
     }
 
     /**
@@ -36,7 +40,15 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $group = new StudentGroup();
+
+        $group->url_id = bin2hex(random_bytes(40));
+        $group->groupname = $request->groupname;
+        $group->active = TRUE;
+
+		$group->save();
+
+        return view('teacher/group/index');
     }
 
     /**
@@ -48,7 +60,17 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        //
+		$group = StudentGroup::find($id);
+
+		if ($group->visibility == 1) {
+			$visibility = 0;
+		} else if ($group->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$group->visibility = $visibility;
+
+		$group->save();
     }
 
     /**
@@ -60,8 +82,10 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+		$group = StudentGroup::find($id);
+
+		return view('teacher/group/edit', ['group' => $group]);
+	}
 
     /**
      * Update the specified resource in storage.
@@ -73,7 +97,11 @@ class GroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+		$group = StudentGroup::find($id);
+
+		$group->groupname = $request->groupname;
+
+		$group->save();
     }
 
     /**
@@ -85,6 +113,12 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+		$group = StudentGroup::find($id);
+
+		$group->active = FALSE;
+
+		$group->save();
+
+		return view('teacher/group/index');
     }
 }
