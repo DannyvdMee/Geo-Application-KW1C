@@ -41,3 +41,28 @@
 - Pushing the designs, they are still WIP
 - Send the Program of Requirements to Abu
 - Paper written sample overview of functions and buttons in project
+
+14 June 2018:
+
+- Updating all the project requirements
+- Asking for access to the old project
+
+15 June 2018:
+
+- Setting up our envoirements
+- Seems that a we get a lot of problems with it
+
+16 June 2018
+
+- Ibo did a lot of back-end stuff
+
+18 June 2018
+
+- We had a conversation with Abu about the way we are workinn on our project.
+- Worked on version 0.1
+- Ibo was the hero of the day because he was almost successful in the fixing of the dev envoirement
+
+19 June 2018
+
+- Fixing the laptops again
+- More working on version 0.1
