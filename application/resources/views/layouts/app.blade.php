@@ -46,9 +46,39 @@
         </div>
         <div class="float-right display-inline-block">
             <a href="{{ route('login') }}">
-                <i class="material-icons display-block">person</i>
+                <i class="material-icons display-block">lock</i>
                 <span class="display-block text-center">@lang('messages.login')</span>
             </a>
+        </div>
+        <div class="float-left display-inline-block">
+{{--            <a href="{{ route('poi') }}">--}}
+                <i class="material-icons display-block">place</i>
+                <span class="display-block text-center">@lang('messages.poi')</span>
+            {{--</a>--}}
+        </div>
+        <div class="float-left display-inline-block">
+{{--            <a href="{{ route('routes') }}">--}}
+                <i class="material-icons display-block">create</i>
+                <span class="display-block text-center">@lang('messages.routes')</span>
+            {{--</a>--}}
+        </div>
+        <div class="float-left display-inline-block">
+{{--            <a href="{{ route('students') }}">--}}
+                <i class="material-icons display-block">person</i>
+                <span class="display-block text-center">@lang('messages.students')</span>
+            {{--</a>--}}
+        </div>
+        <div class="float-left display-inline-block">
+{{--            <a href="{{ route('groups') }}">--}}
+                <i class="material-icons display-block">group</i>
+                <span class="display-block text-center">@lang('messages.groups')</span>
+            {{--</a>--}}
+        </div>
+        <div class="float-right display-inline-block">
+{{--            <a href="{{ route('settings') }}">--}}
+                <i class="material-icons display-block">build</i>
+                <span class="display-block text-center">@lang('messages.settings')</span>
+            {{--</a>--}}
         </div>
     </footer>
 </div>
