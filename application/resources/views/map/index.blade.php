@@ -5,10 +5,6 @@
 		// Initialize and add the map
 		function initMap() {
 			// The location waypoints
-			var avans = {lat: 51.6886659, lng: 5.2869727};
-			var kw1c = {lat: 51.6904646, lng: 5.2867472};
-			var cs = {lat: 51.689968, lng: 5.295078};
-
 			var markers = [
 				['avans', 51.6886659, 5.2869727, 0],
 				['kw1c', 51.6904646, 5.2867472, 1],
@@ -16,10 +12,9 @@
 			];
 
 			// The map, centered at Avans waypoint
-			var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: avans});
+			var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: {lat: markers[0][1], lng: markers[0][2]}});
 
 			for (i = 0; i < markers.length; i++) {
-				console.log('Marker: ' + markers[i][i]);
 				var marker = new google.maps.Marker({position: {lat: markers[i][1], lng: markers[i][2]}, map: map})
 			}
 		}
