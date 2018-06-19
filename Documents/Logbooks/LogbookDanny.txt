@@ -39,3 +39,19 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Helped Onyi and Rinaldo to get their project up to date.
 - Sample functions and overview of the project written down on paper, so it can be helpfull at the analytics
 - Send the Program of Requirements to Abu
+
+15 June 2018:
+- Created a backlog for our project
+- Helped setup my own computer to run the server
+- Worked on code
+
+18 June 2018:
+- Requested API token for loading Google Maps
+- Research on how to add map
+- Helped Onyi and Rinaldo setup their computer to run the website locally
+
+19 June 2018:
+- Added more tasks
+- Provided a much more detailed Definition of Done at each task
+- Helped Rinaldo set up his computer to run the website locally
+- Argued about how to provide information at tasks.
