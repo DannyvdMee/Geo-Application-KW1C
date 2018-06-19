@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Teacher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Route;
 
 class RouteController extends Controller
 {
@@ -14,7 +16,9 @@ class RouteController extends Controller
      */
     public function index()
     {
-        //
+        $routes = Route::all()->active()->get();
+
+        return view('teacher/route/index', ['routes' => $routes]);
     }
 
     /**
@@ -24,7 +28,7 @@ class RouteController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher/route/create');
     }
 
     /**
@@ -36,7 +40,16 @@ class RouteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $route = new Route;
+
+        $route->url_id = bin2hex(random_bytes(40));
+        $route->title = $request->title;
+        $route->active = TRUE;
+        $route->user_id = Auth::user()->id;
+
+        $route->save();
+
+        return view('teacher/route/index');
     }
 
     /**
@@ -48,7 +61,17 @@ class RouteController extends Controller
      */
     public function show($id)
     {
-        //
+		$route = Route::find($id);
+
+		if ($route->visibility == 1) {
+			$visibility = 0;
+		} else if ($route->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$route->visibility = $visibility;
+
+		$route->save();
     }
 
     /**
@@ -60,7 +83,9 @@ class RouteController extends Controller
      */
     public function edit($id)
     {
-        //
+		$route = Route::find($id);
+
+		return view('teacher/route/edit');
     }
 
     /**
@@ -73,7 +98,12 @@ class RouteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $route = Route::find($id);
+
+		$route->title = $request->title;
+		$route->user_id = Auth::user()->id;
+
+		$route->save();
     }
 
     /**
@@ -85,6 +115,12 @@ class RouteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $route = Route::find($id);
+
+        $route->active = FALSE;
+
+        $route->save();
+
+        return view('teacher/route/index');
     }
 }
