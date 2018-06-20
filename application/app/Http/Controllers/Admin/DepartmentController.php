@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Danny
+ * Date: 20-Jun-18
+ * Time: 12:16
+ */
 
 namespace App\Http\Controllers\Admin;
 
@@ -7,29 +13,89 @@ use App\Http\Controllers\Controller;
 
 class DepartmentController extends Controller
 {
-	public function approveDepartment($department){
-
-		// Here a SQL search is done to search for the department and set it it's active state on true
-
-		$resultCreatePrefix = $this->creatingPrefix($department);
-
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		return view('deparment/index', ['departments' => $this->showAllDepartments()]);
 	}
 
-	public function overviewDepartment(){
-		$avalibleDepartments = [
-			'Kappersopleiding' => true,
-			'ICT-Academie' => false,
-			'TheaterOpleiding' => false
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request)
+	{
+		//
+	}
+
+	public function showAllDepartments(){
+		$allDepartments = [
+			'ICT-Academie' => true,
+			'TheaterOpleiding' => true,
+			'KappersOpleiding' => false
 		];
 
-		return $avalibleDepartments;
+		return $allDepartments;
 	}
 
-	public function editApprovementDepartment(){
-
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
+		//
 	}
 
-	public function creatingPrefix($department){
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		//
+	}
 
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id)
+	{
+		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
+		//
 	}
 }
