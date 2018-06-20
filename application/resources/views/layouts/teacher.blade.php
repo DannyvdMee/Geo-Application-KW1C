@@ -49,27 +49,27 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">@lang('messages.login')</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">@lang('messages.register')</a></li>
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        @lang('messages.logout')
                                     </a>
 
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            @lang('messages.logout')
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                              style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                                @endguest
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </div>
@@ -81,21 +81,36 @@
     </main>
     <footer>
         <div class="float-left display-inline-block">
-            <i class="material-icons display-block">map</i>
-            <span class="display-block text-center">@lang('messages.map')</span>
+            <a href="{{ route('teacher/routes') }}">
+                <i class="material-icons display-block">route-marker</i>
+                <span class="display-block text-center">@lang('messages.routes')</span>
+            </a>
+        </div>
+        <div class="float-left display-inline-block">
+            <a href="{{ route('teacher/poi') }}">
+                <i class="material-icons display-block">map-marker</i>
+                <span class="display-block text-center">@lang('messages.pois')</span>
+            </a>
+        </div>
+        <div class="float-left display-inline-block">
+            <a href="{{ route('teacher/students') }}">
+                <i class="material-icons display-block">user</i>
+                <span class="display-block text-center">@lang('messages.students')</span>
+            </a>
+        </div>
+        <div class="float-left display-inline-block">
+            <a href="{{ route('teacher/groups') }}">
+                <i class="material-icons display-block">users</i>
+                <span class="display-block text-center">@lang('messages.groups')</span>
+            </a>
         </div>
         <div class="float-right display-inline-block">
-            <i class="material-icons display-block">person</i>
-            <span class="display-block text-center">@lang('messages.login')</span>
+            <a href="{{ route('teacher/settings') }}">
+                <i class="material-icons display-block">cog</i>
+                <span class="display-block text-center">@lang('messages.settings')</span>
+            </a>
         </div>
     </footer>
 </div>
 </body>
 </html>
-<?php
-/**
- * Created by PhpStorm.
- * User: ibovangeffen
- * Date: 6/16/18
- * Time: 10:08 PM
- */

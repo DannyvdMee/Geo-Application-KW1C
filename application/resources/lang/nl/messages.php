@@ -7,4 +7,9 @@ return [
     'email'          => 'E-mailadres',
     'password'       => 'Wachtwoord',
     'create-account' => 'Maak account aan',
+	'routes' => 'Routes',
+	'pois' => 'POI\'s',
+	'students' => 'Studenten',
+	'groups' => 'Groepen',
+	'settings' => 'Instellingen',
 ];
