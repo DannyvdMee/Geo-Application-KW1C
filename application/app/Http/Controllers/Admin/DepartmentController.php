@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Department;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +21,9 @@ class DepartmentController extends Controller
 	 */
 	public function index()
 	{
-		return view('deparment/index', ['departments' => $this->showAllDepartments()]);
+		$departments = Department::all();
+
+		return view('teacher/poi/index', ['Departments' => $departments]);
 	}
 
 	/**
@@ -28,20 +31,14 @@ class DepartmentController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function storeNewDepartment($departmentTitle)
+	public function storeNewDepartment(Request $request)
 	{
-		// Insert SQL statement for new Department
-	}
+		$department = new Department;
+		$department->departmenttitle = $request->departmenttitle;
+		$department->departmentstate = $request->departmentstate;
 
+		$department->save();
 
-	public function showAllDepartments(){
-		$allDepartments = [
-			'ICT-Academie' => true,
-			'TheaterOpleiding' => true,
-			'KappersOpleiding' => false
-		];
-
-		return $allDepartments;
 	}
 
 	/**
@@ -52,9 +49,18 @@ class DepartmentController extends Controller
 	 */
 	public function showDepartment($id)
 	{
-		// Insert SQL statement on recieving the Department by it's ID
+		$department = Poi::find($id);
 
-		return view('deparment/edit', [$departmentTitle, $departmentActiveValue]);
+		if ($department->departmentstate == true) {
+			$departmentstate = 0;
+		} else if ($department->departmentstate == false) {
+			$departmentstate = 1;
+		}
+
+		$department->departmentstate = $departmentstate;
+
+		$department->save();
+
 	}
 
 	/**
@@ -63,8 +69,12 @@ class DepartmentController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id, $departmentTitle)
+	public function edit($id)
 	{
+		$department = Department::find($id);
+
+		return view('admin/department/edit', ['department' => $department]);
+
 		// SQL Insert to DB for editing the department
 	}
 
@@ -77,7 +87,12 @@ class DepartmentController extends Controller
 	 */
 	public function destroy($id)
 	{
-		// Insert SQL statement for deleting the Department by it's UUID
-		// Also first search of title is the same in SQL
+		$department = Department::find($id);
+
+		$department->departmentstate = FALSE;
+
+		$department->save();
+
+		return view('admin/department/index');
 	}
 }
