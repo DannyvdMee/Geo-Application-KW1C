@@ -34,6 +34,8 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
 
     Route::get('/users', 'UserController@index')->name('users');
 
+    Route::get('/departments', 'DepartmentController@index')->name('departments');
+
 });
 
 /*
