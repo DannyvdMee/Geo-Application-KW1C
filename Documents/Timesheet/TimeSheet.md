@@ -66,3 +66,8 @@
 
 - Fixing the laptops again
 - More working on version 0.1
+
+20 June 2018
+
+- Trying to make version 0.1 complete
+- Finishing the menu and map FE and BE
