@@ -56,9 +56,13 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
     Route::get('routes', 'RouteController@index')->name('routes');
 
-    Route::get('students', 'StudentController@index')->name('students');
+    Route::get('student', 'StudentController@index')->name('student');
+    Route::get('student/create', 'StudentController@create')->name('student/create');
+    Route::post('student/create', 'StudentController@store')->name('student/create');
 
-    Route::get('groups', 'GroupController@index')->name('groups');
+    Route::get('group', 'GroupController@index')->name('group');
+	Route::get('group/create', 'GroupController@create')->name('group/create');
+	Route::post('group/create', 'GroupController@store')->name('group/create');
 
     Route::get('settings', 'SettingsController@index')->name('settings');
 

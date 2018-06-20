@@ -15,7 +15,7 @@ class PoiController extends Controller
      */
     public function index()
     {
-        $pois = Poi::where('active', '=', TRUE)->get();
+		$pois = Poi::where('active', '=', TRUE)->get();
 
         return view('teacher/poi/index', ['pois' => $pois]);
     }
