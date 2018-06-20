@@ -28,21 +28,11 @@ class DepartmentController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function create()
+	public function storeNewDepartment($departmentTitle)
 	{
-		//
+		// Insert SQL statement for new Department
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store(Request $request)
-	{
-		//
-	}
 
 	public function showAllDepartments(){
 		$allDepartments = [
@@ -60,9 +50,11 @@ class DepartmentController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id)
+	public function showDepartment($id)
 	{
-		//
+		// Insert SQL statement on recieving the Department by it's ID
+
+		return view('deparment/edit', [$departmentTitle, $departmentActiveValue]);
 	}
 
 	/**
@@ -71,22 +63,11 @@ class DepartmentController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id)
+	public function edit($id, $departmentTitle)
 	{
-		//
+		// SQL Insert to DB for editing the department
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, $id)
-	{
-		//
-	}
 
 	/**
 	 * Remove the specified resource from storage.
@@ -96,6 +77,7 @@ class DepartmentController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		// Insert SQL statement for deleting the Department by it's UUID
+		// Also first search of title is the same in SQL
 	}
 }
