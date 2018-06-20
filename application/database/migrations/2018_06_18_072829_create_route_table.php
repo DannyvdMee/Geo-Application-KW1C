@@ -13,7 +13,7 @@ class CreateRouteTable extends Migration
      */
     public function up()
     {
-        Schema::create('route', function (Blueprint $table) {
+        Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
             $table->string('title');
