@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') . ' ' . Auth::user()->department }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -82,31 +82,31 @@
     <footer>
         <div class="float-left display-inline-block">
             <a href="{{ route('teacher/routes') }}">
-                <i class="material-icons display-block">route-marker</i>
+                <i class="material-icons display-block">explore</i>
                 <span class="display-block text-center">@lang('messages.routes')</span>
             </a>
         </div>
         <div class="float-left display-inline-block">
             <a href="{{ route('teacher/poi') }}">
-                <i class="material-icons display-block">map-marker</i>
-                <span class="display-block text-center">@lang('messages.pois')</span>
+                <i class="material-icons display-block">place</i>
+                <span class="display-block text-center">@lang('messages.poi')</span>
             </a>
         </div>
         <div class="float-left display-inline-block">
             <a href="{{ route('teacher/students') }}">
-                <i class="material-icons display-block">user</i>
+                <i class="material-icons display-block">person</i>
                 <span class="display-block text-center">@lang('messages.students')</span>
             </a>
         </div>
         <div class="float-left display-inline-block">
             <a href="{{ route('teacher/groups') }}">
-                <i class="material-icons display-block">users</i>
+                <i class="material-icons display-block">group</i>
                 <span class="display-block text-center">@lang('messages.groups')</span>
             </a>
         </div>
-        <div class="float-right display-inline-block">
+        <div class="float-left display-inline-block">
             <a href="{{ route('teacher/settings') }}">
-                <i class="material-icons display-block">cog</i>
+                <i class="material-icons display-block">settings</i>
                 <span class="display-block text-center">@lang('messages.settings')</span>
             </a>
         </div>
