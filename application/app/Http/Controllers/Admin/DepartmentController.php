@@ -23,7 +23,7 @@ class DepartmentController extends Controller
 	{
 		$departments = Department::all();
 
-		return view('teacher/poi/index', ['Departments' => $departments]);
+		return view('teacher/poi/index', ['departments' => $departments]);
 	}
 
 	/**
