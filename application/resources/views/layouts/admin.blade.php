@@ -40,14 +40,19 @@
 	<footer>
 		<div class="float-left display-inline-block">
 			<a href="{{ route('map') }}">
-				<i class="material-icons display-block">map</i>
-				<span class="display-block text-center">@lang('messages.map')</span>
+				<i class="material-icons display-block">domain</i>
+				<span class="display-block text-center">@lang('messages.departments')</span>
+			</a>
+		</div><div class="float-left display-inline-block">
+			<a href="{{ route('admin/users') }}">
+				<i class="material-icons display-block">person</i>
+				<span class="display-block text-center">@lang('messages.users')</span>
 			</a>
 		</div>
 		<div class="float-right display-inline-block">
-			<a href="{{ route('login') }}">
-				<i class="material-icons display-block">person</i>
-				<span class="display-block text-center">@lang('messages.login')</span>
+			<a href="{{ route('admin/settings') }}">
+				<i class="material-icons display-block">settings</i>
+				<span class="display-block text-center">@lang('messages.settings')</span>
 			</a>
 		</div>
 	</footer>

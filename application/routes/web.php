@@ -32,9 +32,11 @@ Route::get('/map', 'MapController@index')->name('map');
 
 Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
-    Route::get('/users', 'UserController@index')->name('users');
+    Route::get('users', 'UserController@index')->name('users');
 
     Route::get('departments', 'DepartmentController@index')->name('departments');
+
+    Route::get('settings', 'SettingsController@index')->name('settings');
 
 });
 
