@@ -21,6 +21,7 @@ class CreatePoiTable extends Migration
             $table->integer('longitute');
             $table->string('hint')->nullable();
             $table->string('photo')->nullable()->unique();
+            $table->boolean('visibility')->default(true);
 			$table->boolean('active')->default(false);
 			$table->timestamps();
         });

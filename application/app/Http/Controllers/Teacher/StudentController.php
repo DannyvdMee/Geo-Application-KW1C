@@ -49,6 +49,28 @@ class StudentController extends Controller
         return view('teacher/student/index');
     }
 
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
+		$student = Student::find($id);
+
+		if ($student->visibility == 1) {
+			$visibility = 0;
+		} else if ($student->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$student->visibility = $visibility;
+
+		$student->save();
+	}
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -60,7 +82,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
 
-        return view('teacher/student/edit', ['student' => $student])
+        return view('teacher/student/edit', ['student' => $student]);
     }
 
     /**
