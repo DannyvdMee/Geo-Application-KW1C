@@ -76,7 +76,7 @@
         </nav>
     </header>
 
-    <main class="py-4">
+    <main class="py-4 teacher-background">
         @yield('content')
     </main>
     <footer>

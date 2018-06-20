@@ -10429,12 +10429,34 @@ header p {
   color: #5D5D5D;
 }
 
-main form input {
-  height: 40px;
+main form input,
+main form textarea,
+main form select {
   line-height: 1.2em;
   width: 80%;
   display: block;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 10px auto;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #A4A4A4;
+  -webkit-appearance: none;
+}
+
+main form input {
+  height: 40px;
+}
+
+main form textarea {
+  height: 120px;
+  resize: none;
+}
+
+main form input[type=submit] {
+  border: 0;
+  background-color: #FFFFFF;
+  color: #484848;
+  width: 150px;
+  margin: 0 auto;
 }
 
 footer {
@@ -10499,6 +10521,14 @@ a:active {
   display: inline-block;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
 .text-gray {
   color: #A4A4A4;
 }
@@ -10526,5 +10556,9 @@ a:active {
 
 .border-gray {
   border: 1px solid #A4A4A4;
+}
+
+.teacher-background {
+  background-color: #F6F2F2;
 }
 

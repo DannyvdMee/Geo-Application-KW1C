@@ -48,16 +48,18 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
 
 Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
 
-	Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-    Route::get('/poi', 'PoiController@index')->name('poi');
+    Route::get('poi', 'PoiController@index')->name('poi');
+    Route::get('poi/create', 'PoiController@create')->name('poi/create');
+    Route::post('poi/create', 'PoiController@store')->name('poi/create');
 
-    Route::get('/routes', 'RouteController@index')->name('routes');
+    Route::get('routes', 'RouteController@index')->name('routes');
 
-    Route::get('/students', 'StudentController@index')->name('students');
+    Route::get('students', 'StudentController@index')->name('students');
 
-    Route::get('/groups', 'GroupController@index')->name('groups');
+    Route::get('groups', 'GroupController@index')->name('groups');
 
-    Route::get('/settings', 'SettingsController@index')->name('settings');
+    Route::get('settings', 'SettingsController@index')->name('settings');
 
 });

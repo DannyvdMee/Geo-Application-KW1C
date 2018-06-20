@@ -13,6 +13,6 @@ class Poi extends Model
 
 	public function scopeActive($query)
 	{
-		return $query->whereActive(true);
+		return $query->whereActive(TRUE);
 	}
 }
