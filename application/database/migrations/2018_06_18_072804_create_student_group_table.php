@@ -13,7 +13,7 @@ class CreateStudentGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('studentGroup', function (Blueprint $table) {
+        Schema::create('studentGroups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
             $table->string('groupname');
