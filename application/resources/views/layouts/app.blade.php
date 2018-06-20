@@ -46,7 +46,7 @@
         </div>
         <div class="float-right display-inline-block">
             <a href="{{ route('login') }}">
-                <i class="material-icons display-block">lock</i>
+                <i class="material-icons display-block">person_pin</i>
                 <span class="display-block text-center">@lang('messages.login')</span>
             </a>
         </div>

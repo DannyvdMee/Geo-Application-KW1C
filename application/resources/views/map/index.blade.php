@@ -5,11 +5,15 @@
 		// Initialize and add the map
 		function initMap() {
 			// The location waypoints
-			var markers = [
-				['avans', 51.6886659, 5.2869727, 0],
-				['kw1c', 51.6904646, 5.2867472, 1],
-				['cs', 51.689968, 5.295078, 2],
-			];
+			var markers = [];
+
+			<?php foreach ($pois as $poi) { ?>
+				var marker_item = <?php echo json_encode($poi) ?>;
+
+				markers += marker_item;
+			<?php } ?>
+
+			console.log(markers);
 
 			// The map, centered at Avans waypoint
 			var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: {lat: markers[0][1], lng: markers[0][2]}});
