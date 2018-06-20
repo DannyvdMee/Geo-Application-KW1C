@@ -20,7 +20,7 @@ class DepartmentController extends Controller
 	 */
 	public function index()
 	{
-		return view('deparment/index', ['departments' => $this->showAllDepartments()]);
+		return view('admin/department', ['departments' => $this->showAllDepartments()]);
 	}
 
 	/**

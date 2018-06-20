@@ -30,11 +30,11 @@ Route::get('/map', 'MapController@index')->name('map');
  * - uses admin folder of views
  */
 
-Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
+Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
     Route::get('/users', 'UserController@index')->name('users');
 
-    Route::get('/departments', 'DepartmentController@index')->name('departments');
+    Route::get('departments', 'DepartmentController@index')->name('departments');
 
 });
 
