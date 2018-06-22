@@ -49,7 +49,7 @@ class DepartmentController extends Controller
 	 */
 	public function showDepartment($id)
 	{
-		$department = Poi::find($id);
+		$department = Department::find($id);
 
 		if ($department->departmentstate == true) {
 			$departmentstate = 0;
