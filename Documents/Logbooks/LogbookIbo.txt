@@ -22,3 +22,11 @@ June 16
 	- Implemented Google Material Design
 	- NPM installed everything
 	- Front-ended the footer and header
+
+June 19
+- Controllers
+- Models
+- Migrations
+- Middleware,
+- Fixed everyones laptop
+- Fixed the map, Danny has created

@@ -1,3 +1,7 @@
+Pre-June 7 2018:
+Install Git Kraken
+Install PHPStorm
+
 June 7 2018:
 - First initial meeting
 - Noting down first requirements
@@ -5,4 +9,6 @@ June 7 2018:
 June 12 2018:
 - Created mobile wireframe designs, based from Ibo's designs
 
-
+June 18-19:
+Install Laravel Homestead to Laptop
+   The install of this program was met with a lot of problems. After re-installing multiple times, and changing install location, it finally works. 
