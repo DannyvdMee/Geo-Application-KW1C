@@ -30,11 +30,13 @@ Route::get('/map', 'MapController@index')->name('map');
  * - uses admin folder of views
  */
 
-Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
+Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
-    Route::get('/users', 'UserController@index')->name('users');
+    Route::get('users', 'UserController@index')->name('users');
 
-    Route::get('/departments', 'DepartmentController@index')->name('departments');
+    Route::get('departments', 'DepartmentController@index')->name('departments');
+
+    Route::get('settings', 'SettingsController@index')->name('settings');
 
 });
 
@@ -48,16 +50,22 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name(
 
 Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
 
-	Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-    Route::get('/poi', 'PoiController@index')->name('poi');
+    Route::get('poi', 'PoiController@index')->name('poi');
+    Route::get('poi/create', 'PoiController@create')->name('poi/create');
+    Route::post('poi/create', 'PoiController@store')->name('poi/create');
 
-    Route::get('/routes', 'RouteController@index')->name('routes');
+    Route::get('routes', 'RouteController@index')->name('routes');
 
-    Route::get('/students', 'StudentController@index')->name('students');
+    Route::get('student', 'StudentController@index')->name('student');
+    Route::get('student/create', 'StudentController@create')->name('student/create');
+    Route::post('student/create', 'StudentController@store')->name('student/create');
 
-    Route::get('/groups', 'GroupController@index')->name('groups');
+    Route::get('group', 'GroupController@index')->name('group');
+	Route::get('group/create', 'GroupController@create')->name('group/create');
+	Route::post('group/create', 'GroupController@store')->name('group/create');
 
-    Route::get('/settings', 'SettingsController@index')->name('settings');
+    Route::get('settings', 'SettingsController@index')->name('settings');
 
 });

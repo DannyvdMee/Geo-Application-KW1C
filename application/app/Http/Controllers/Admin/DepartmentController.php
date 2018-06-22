@@ -23,7 +23,7 @@ class DepartmentController extends Controller
 	{
 		$departments = Department::all();
 
-		return view('teacher/poi/index', ['Departments' => $departments]);
+		return view('admin/department/index', ['departments' => $departments]);
 	}
 
 	/**
@@ -34,8 +34,8 @@ class DepartmentController extends Controller
 	public function store(Request $request)
 	{
 		$department = new Department;
-		$department->departmenttitle = $request->departmenttitle;
-		$department->departmentstate = $request->departmentstate;
+		$department->title = $request->departmenttitle;
+		$department->state = $request->departmentstate;
 
 		$department->save();
 
