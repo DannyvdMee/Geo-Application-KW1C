@@ -16,9 +16,9 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $group = StudentGroup::all()->active()->get();
+        $groups = StudentGroup::where('active', '=', TRUE)->get();
 
-        return view('teacher/group/index', ['group' => $group]);
+        return view('teacher/group/index', ['groups' => $groups]);
     }
 
     /**

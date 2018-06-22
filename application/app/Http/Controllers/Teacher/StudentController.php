@@ -15,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all()->active()->get();
+        $students = Student::where('active', '=', TRUE)->get();
 
-        return view('teacher/student/index', ['students' => $students]);
+		return view('teacher/student/index', ['students' => $students]);
     }
 
     /**
@@ -40,13 +40,17 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $student = new Student;
-        $student->studentnumber = $request->studentnummber;
-        $student->studentname = $request->studentname;
+        $student->number = $request->number;
+        $student->name = $request->name;
         $student->active = $request->active;
+
+        if (!empty($request->information)) {
+        	$student->information = $request->information;
+		}
 
         $student->save();
 
-        return view('teacher/student/index');
+        return redirect('teacher/student');
     }
 
 	/**
@@ -69,6 +73,8 @@ class StudentController extends Controller
 		$student->visibility = $visibility;
 
 		$student->save();
+
+		return redirect('teacher/student/index');
 	}
 
     /**
@@ -102,7 +108,9 @@ class StudentController extends Controller
 		$student->active = $request->active;
 
 		$student->save();
-    }
+
+		return redirect('teacher/student/index');
+	}
 
     /**
      * Remove the specified resource from storage.
@@ -119,6 +127,6 @@ class StudentController extends Controller
 
         $student->save();
 
-        return view('teacher/student/index');
+		return view('teacher/student/index');
     }
 }
