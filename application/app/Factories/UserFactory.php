@@ -10,29 +10,37 @@ class UserFactory
 {
 
 	/**
-	 * @param string $email
-	 * @param string $userName
-	 * @param $password
-	 * @param $firstName
-	 * @param $lastName
-	 * @param $department
-	 * @param $accountType
-	 * @param $activeState
+	 * @param string  $email
+	 * @param string  $userName
+	 * @param string  $password
+	 * @param string  $firstName
+	 * @param string  $lastName
+	 * @param string  $department
+	 * @param string  $accountType
+	 * @param boolean $activeState
 	 *
 	 * @return User
 	 */
-	public static function create($email, $userName, $password, $firstName, $lastName, $department, $accountType, $activeState)
-	{
+	public static function create(
+		$email,
+		$userName,
+		$password,
+		$firstName,
+		$lastName,
+		$department,
+		$accountType,
+		$activeState
+	) {
 		$user = new User();
 
-		$user->email = $email;
-		$user->username = $userName;
-		$user->password = Hash::make($password);
-		$user->firstname = $firstName;
-		$user->lastname = $lastName;
-		$user->department = $department;
+		$user->email        = $email;
+		$user->username     = $userName;
+		$user->password     = Hash::make($password);
+		$user->firstname    = $firstName;
+		$user->lastname     = $lastName;
+		$user->department   = $department;
 		$user->account_type = $accountType;
-		$user->active = $activeState;
+		$user->active       = $activeState;
 
 		return $user;
 	}
