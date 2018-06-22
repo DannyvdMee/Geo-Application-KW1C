@@ -56,7 +56,7 @@ class PoiController extends Controller
 
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/poi/index');
     }
 
     /**
