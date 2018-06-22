@@ -82,4 +82,4 @@
 - Continue to work on the BE and FE
 - Fixed the broken SQL stuff
 - Fixed the mess Ibo is making with all his branches
-- Version 0.2 will be almost done today
+- Version 0.2 will be almost done today 
