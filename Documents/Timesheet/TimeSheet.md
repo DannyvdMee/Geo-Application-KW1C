@@ -71,3 +71,15 @@
 
 - Trying to make version 0.1 complete
 - Finishing the menu and map FE and BE
+
+21 June 2018
+
+- Haven't done anything today because of the work we had to do on our re-exam C#
+
+22 June 2018
+
+- Reassigning and relabeling all the tasks in GitKraken
+- Continue to work on the BE and FE
+- Fixed the broken SQL stuff
+- Fixed the mess Ibo is making with all his branches
+- Version 0.2 will be almost done today 
