@@ -8,7 +8,7 @@
 
 namespace App\User\Factory;
 
-use App\Http\Middleware\Teacher;
+use App\Student;
 
 class StudentFactory
 {
@@ -17,11 +17,11 @@ class StudentFactory
 	 * @param string $additionalInformation
 	 * @param boolean $activeState
 	 *
-	 * @return Teacher
+	 * @return Student
 	 */
 	public static function create($name, $additionalInformation, $activeState)
 	{
-		$student = new Teacher();
+		$student = new Student();
 
 		$student->name                  = $name;
 		$student->additionalInformation = $additionalInformation;
