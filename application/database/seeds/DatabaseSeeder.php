@@ -67,10 +67,10 @@ class DatabaseSeeder extends Seeder
 		// Poi Segment
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
-			'First POI',
+			'Preson Gravey',
 			'51.6903949',
 			'5.2866055',
-			'Look for the General',
+			'This is the first POI. But first, another settlement needs our help. I will mark it on your map. Find out what they need',
 			true,
 			1
 		);
