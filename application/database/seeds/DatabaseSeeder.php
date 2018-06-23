@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
 
 		// Route Segment
 		$route = RouteFactory::create(
-			bin2hex(random_bytes(6)),
+			bin2hex(random_bytes(4)),
 			'First Route',
 			1,
 			true,
