@@ -13,19 +13,21 @@ use App\Student;
 class StudentFactory
 {
 	/**
-	 * @param string $name
-	 * @param string $additionalInformation
-	 * @param boolean $activeState
+	 * @param $number
+	 * @param $name
+	 * @param $additionalInformation
+	 * @param $activeState
 	 *
 	 * @return Student
 	 */
-	public static function create($name, $additionalInformation, $activeState)
+	public static function create($number, $name, $additionalInformation, $activeState)
 	{
 		$student = new Student();
 
-		$student->name                  = $name;
-		$student->additionalInformation = $additionalInformation;
-		$student->active                = $activeState;
+		$student->number      = $number;
+		$student->name        = $name;
+		$student->information = $additionalInformation;
+		$student->active      = $activeState;
 
 		return $student;
 	}
