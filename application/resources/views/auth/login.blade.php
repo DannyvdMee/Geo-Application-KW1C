@@ -48,7 +48,7 @@
                             <button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
                             <a class="btn btn-gray float-right"
-                               href="{{ route('password.request') }}">@lang('messages.create-account')</a>
+                               href="{{ route('register') }}">@lang('messages.create-account')</a>
                         </div>
                     </div>
                 </form>
