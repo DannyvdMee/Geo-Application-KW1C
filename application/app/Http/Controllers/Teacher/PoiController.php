@@ -20,6 +20,12 @@ class PoiController extends Controller
         return view('teacher/poi/index', ['pois' => $pois]);
     }
 
+    public function getPoiForMap(){
+    	$pois = Poi::all();
+
+    	return $pois;
+	}
+
     /**
      * Show the form for creating a new resource.
      *
