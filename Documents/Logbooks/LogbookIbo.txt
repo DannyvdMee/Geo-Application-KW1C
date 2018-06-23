@@ -50,4 +50,5 @@ June 22:
 
 June 23: 
 - Told Rinaldo to update my logbook
-- 
+- Ibo used Jquery... It had no effect..
+- Made friends with Bachmann, Guy gave me so diagrams... 
