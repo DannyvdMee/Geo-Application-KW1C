@@ -12,8 +12,8 @@
 
 	<!-- Scripts -->
 	<script src="{{ asset('js/app.js') }}" defer></script>
-	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"
-			type="application/javascript"></script>
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js" type="application/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -23,8 +23,6 @@
 	<!-- Styles -->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-
-	@yield('injectable-js')
 </head>
 <body>
 <div id="app">
@@ -69,6 +67,7 @@
 		</div>
 	</footer>
 </div>
+@yield('injectable-js')
 @yield('js-eventlisteners')
 </body>
 </html>
