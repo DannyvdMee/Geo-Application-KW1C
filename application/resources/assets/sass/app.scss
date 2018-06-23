@@ -161,6 +161,11 @@ a:active {
 	border: 1px solid $gray;
 }
 
+.height-21
+{
+	height: 21px;
+}
+
 //Background color all pages
 .main-background {
 	background-color: $light-gray;
@@ -186,10 +191,14 @@ a:active {
 //'Add icon' multiple pages, positioning
 .dataAddIcon
 {
-	position: relative;
-	right: 41px;
-	top: 10px;
-	margin-bottom: 15px;
+	position: fixed;
+	right: 40px;
+	bottom: 70px;
+
+	#add-item i {
+		box-shadow: 1px 1px 2px 2px $gray;
+		border-radius: 50%;
+	}
 
 	//'Add icon' Size and border & colour
 	a i

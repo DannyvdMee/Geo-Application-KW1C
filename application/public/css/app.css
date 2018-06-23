@@ -10565,6 +10565,10 @@ a:active {
   border: 1px solid #A4A4A4;
 }
 
+.height-21 {
+  height: 21px;
+}
+
 .main-background {
   background-color: #F6F2F2;
 }
@@ -10584,10 +10588,15 @@ a:active {
 }
 
 .dataAddIcon {
-  position: relative;
-  right: 41px;
-  top: 10px;
-  margin-bottom: 15px;
+  position: fixed;
+  right: 40px;
+  bottom: 70px;
+}
+
+.dataAddIcon #add-item i {
+  -webkit-box-shadow: 1px 1px 2px 2px #A4A4A4;
+          box-shadow: 1px 1px 2px 2px #A4A4A4;
+  border-radius: 50%;
 }
 
 .dataAddIcon a i {
