@@ -12,3 +12,18 @@ June 12 2018:
 June 18-19:
 Install Laravel Homestead to Laptop
    The install of this program was met with a lot of problems. After re-installing multiple times, and changing install location, it finally works. 
+   
+June 20:
+Start Front end
+
+June 20-21: 
+Progess came to a halt after june 20th it became known that on june 22nd we had out c# test resit. All time was spend studying for this test
+
+June 22: 
+Test resit c#
+Continuation Front end
+department/index.blade.php
+
+June 23: 
+Continuation Front end
+department/index.blade.php
