@@ -26,4 +26,12 @@ department/index.blade.php
 
 June 23: 
 Continuation Front end
-department/index.blade.php
+department/index.blade.php Finish Front-end
+Lied down
+Poi/index.blade.php Finish front-end
+tried not to cry
+groups/index.blade.php finish front end
+Cried a lot
+Front end positioning
+whitespace on bottom of all paged fixed
+
