@@ -4,7 +4,6 @@ use App\User\Factory\DepartmentFactory;
 use App\User\Factory\PoiFactory;
 use App\User\Factory\RouteFactory;
 use App\User\Factory\StudentFactory;
-//use App\User\Factory\TeacherFactory;
 use App\User\Factory\UserFactory;
 use Illuminate\Database\Seeder;
 
