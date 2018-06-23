@@ -17,7 +17,7 @@ class UserFactory
 	 * @param string  $lastName
 	 * @param string  $department
 	 * @param string  $accountType
-	 * @param boolean $activeState
+	 * @param boolean $active
 	 *
 	 * @return User
 	 */
@@ -29,7 +29,7 @@ class UserFactory
 		$lastName,
 		$department,
 		$accountType,
-		$activeState
+		$active
 	) {
 		$user = new User();
 
@@ -40,7 +40,7 @@ class UserFactory
 		$user->lastname     = $lastName;
 		$user->department   = $department;
 		$user->account_type = $accountType;
-		$user->active       = $activeState;
+		$user->active       = $active;
 
 		return $user;
 	}

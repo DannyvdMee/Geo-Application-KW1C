@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 			'Root',
 			'root',
 			'admin',
-			'true'
+			true
 		);
 
 		$user->save();
@@ -39,13 +39,14 @@ class DatabaseSeeder extends Seeder
 			'Teacher',
 			'ictacademie',
 			'teacher',
-			'true'
+			true
 		);
 
 		$teacher->save();
 
 		// Student Segment
 		$student = StudentFactory::create(
+			111111,
 			'TestStudent',
 			'TestAdditional',
 			true
@@ -82,5 +83,7 @@ class DatabaseSeeder extends Seeder
 			'ictacademie',
 			true
 		);
+
+		$department->save();
 	}
 }
