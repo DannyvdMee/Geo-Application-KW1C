@@ -20,11 +20,11 @@ class RouteFactory
 	 *
 	 * @return Route
 	 */
-	public static function create($title, $user_id, $visibility, $active)
+	public static function create($url_id, $title, $user_id, $visibility, $active)
 	{
 		$route = new Route();
 
-		$route->url_id     = bin2hex(random_bytes(6));
+		$route->url_id     = $url_id;
 		$route->title      = $title;
 		$route->user_id    = $user_id;
 		$route->visibility = $visibility;
