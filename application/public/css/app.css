@@ -10430,7 +10430,7 @@ header p {
 }
 
 main {
-  min-height: calc(100vh - 69px - 69px);
+  min-height: calc(100vh - 70px - 45px);
   margin-bottom: 70px;
 }
 
