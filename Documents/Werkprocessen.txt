@@ -1,7 +1,7 @@
 1. B1-K1: Levert een bijdrage aan het ontwikkeltraject
 1.1 B1-K1-W1 Stelt de opdracht vast
 Opdracht A: Het Programma van Eisen
-- Word document documentatie
+- Word document documentatie 
 
 1.2 B1-K1-W2 Levert een bijdrage aan het projectplan
 Opdracht B: Projectplan
