@@ -1,3 +1,5 @@
+Logbook of: Дэнни ван дер Ми
+
 Mostly the first days my Logbook will be the same as the global Time Sheet, later on it's going to be different.
 
 22 May 2018 - 24 May 2018:
@@ -56,3 +58,25 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Provided a much more detailed Definition of Done at each task
 - Helped Rinaldo set up his computer to run the website locally
 - Argued about how to provide information at tasks.
+
+21 June 2018
+
+- Haven't done anything today because of the work we had to do on our re-exam C#
+
+22 June 2018
+
+- Reassigning and relabeling all the tasks in GitKraken
+- Continue to work on the BE and FE
+- Fixed the broken SQL stuff
+- Fixed the mess Ibo is making with all his branches
+- Version 0.2 will be almost done today
+
+23 June 2018
+
+- Getting more and more the idea that we will be in time shortage
+- Trying to get the jQuery working
+- Version 0.2 will not be done today. Too much got in our way to proper finish it
+- Added a database seeder so if we run it a first entry in the database will be made
+- Ibo and Onyi are working at the Project Documents
+- Fixing some jQurey
+- Frontending
