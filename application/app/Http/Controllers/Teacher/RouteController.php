@@ -42,7 +42,7 @@ class RouteController extends Controller
     {
         $route = new Route;
 
-        $route->url_id = bin2hex(random_bytes(6));
+        $route->url_id = bin2hex(random_bytes(4));
         $route->title = $request->title;
         $route->active = TRUE;
         $route->user_id = Auth::user()->id;

@@ -31,7 +31,7 @@ class DepartmentController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function storeNewDepartment(Request $request)
+	public function store(Request $request)
 	{
 		$department = new Department;
 		$department->title = $request->departmenttitle;
@@ -47,7 +47,7 @@ class DepartmentController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function showDepartment($id)
+	public function show($id)
 	{
 		$department = Department::find($id);
 
