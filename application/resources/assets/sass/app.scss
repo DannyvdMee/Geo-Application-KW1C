@@ -26,6 +26,9 @@ header {
 }
 
 main {
+	min-height: calc(100vh - 69px - 69px);
+	margin-bottom: 70px;
+
 	form {
 		input, textarea, select {
 			line-height: 1.2em;
@@ -64,6 +67,7 @@ footer {
 	position: fixed;
 	border-top: 1px solid $gray;
 	bottom: 0;
+	background-color: $white;
 
 	i.material-icons {
 		padding: 5px 20px 0 20px;
@@ -157,6 +161,23 @@ a:active {
 	border: 1px solid $gray;
 }
 
-.teacher-background {
-	background-color: $light-gray	;
+.main-background {
+	background-color: $light-gray;
 }
+
+.dataItem
+{
+	background-color: $white;
+	padding: 0px;
+	margin: 4px 25px;
+	border-radius: 4px;
+}
+
+.dataItem p, .dataItem div
+{
+	vertical-align: middle;
+	margin: 0px;
+	padding: 10px;
+}
+
+

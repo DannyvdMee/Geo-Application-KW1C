@@ -34,7 +34,7 @@
 		</nav>
 	</header>
 
-	<main>
+	<main class="main-background">
 		@yield('content')
 	</main>
 	<footer>

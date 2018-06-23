@@ -10429,6 +10429,11 @@ header p {
   color: #5D5D5D;
 }
 
+main {
+  min-height: calc(100vh - 69px - 69px);
+  margin-bottom: 70px;
+}
+
 main form input,
 main form textarea,
 main form select {
@@ -10466,6 +10471,7 @@ footer {
   position: fixed;
   border-top: 1px solid #A4A4A4;
   bottom: 0;
+  background-color: #FFFFFF;
 }
 
 footer i.material-icons {
@@ -10559,7 +10565,21 @@ a:active {
   border: 1px solid #A4A4A4;
 }
 
-.teacher-background {
+.main-background {
   background-color: #F6F2F2;
+}
+
+.dataItem {
+  background-color: #FFFFFF;
+  padding: 0px;
+  margin: 4px 25px;
+  border-radius: 4px;
+}
+
+.dataItem p,
+.dataItem div {
+  vertical-align: middle;
+  margin: 0px;
+  padding: 10px;
 }
 
