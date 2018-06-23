@@ -83,3 +83,13 @@
 - Fixed the broken SQL stuff
 - Fixed the mess Ibo is making with all his branches
 - Version 0.2 will be almost done today 
+
+23 June 2018
+
+- Getting more and more the idea that we will be in time shortage
+- Trying to get the jQuery working
+- Version 0.2 will not be done today. Too much got in our way to proper finish it
+- Added a database seeder so if we run it a first entry in the database will be made
+- Ibo and Onyi are working at the Project Documents
+- Fixing some jQurey
+- Frontending
