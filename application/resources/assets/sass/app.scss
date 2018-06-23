@@ -161,23 +161,46 @@ a:active {
 	border: 1px solid $gray;
 }
 
+//Background color all pages
 .main-background {
 	background-color: $light-gray;
 }
 
+//Data display menus across multiple pages.
 .dataItem
 {
 	background-color: $white;
-	padding: 0px;
+	padding: 0;
 	margin: 4px 25px;
 	border-radius: 4px;
+
+	//Data Display menus Text and icons
+	 p, div
+	{
+		vertical-align: middle;
+		margin: 0;
+		padding: 10px;
+	}
 }
 
-.dataItem p, .dataItem div
+//'Add icon' multiple pages, positioning
+.dataAddIcon
 {
-	vertical-align: middle;
-	margin: 0px;
-	padding: 10px;
+	position: relative;
+	right: 41px;
+	top: 10px;
+	margin-bottom: 15px;
+
+	//'Add icon' Size and border & colour
+	a i
+	{
+		border-radius: 21px;
+		font-size: 2em;
+		background-color: white;
+		color: gray;
+		font-weight: 900;
+	}
 }
+
 
 

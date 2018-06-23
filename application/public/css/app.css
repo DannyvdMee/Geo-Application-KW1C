@@ -10571,7 +10571,7 @@ a:active {
 
 .dataItem {
   background-color: #FFFFFF;
-  padding: 0px;
+  padding: 0;
   margin: 4px 25px;
   border-radius: 4px;
 }
@@ -10579,7 +10579,22 @@ a:active {
 .dataItem p,
 .dataItem div {
   vertical-align: middle;
-  margin: 0px;
+  margin: 0;
   padding: 10px;
+}
+
+.dataAddIcon {
+  position: relative;
+  right: 41px;
+  top: 10px;
+  margin-bottom: 15px;
+}
+
+.dataAddIcon a i {
+  border-radius: 21px;
+  font-size: 2em;
+  background-color: white;
+  color: gray;
+  font-weight: 900;
 }
 
