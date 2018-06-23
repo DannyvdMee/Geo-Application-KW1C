@@ -30,3 +30,24 @@ June 19
 - Middleware,
 - Fixed everyones laptop
 - Fixed the map, Danny has created
+
+June 20
+- PHP fixes
+- Table updates
+- POI's added (Teacher)
+- Create student index, create, view & functions
+- Create Group Teacher index, create, view & functions
+
+June 21
+- Study C#
+
+June 22: 
+- Added Student -> studentgroup link table
+- removed active scope, laravel doesn't support it
+- Helped the rest understand back-end and front end. 
+- Broke Onyi's Laptop, Bye Bye vagrant
+- Fixed Onyi's Laptop
+
+June 23: 
+- Told Rinaldo to update my logbook
+- 
