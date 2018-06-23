@@ -36,10 +36,12 @@ class MapController extends Controller
 	{
 		$allPois = Poi::where('active', '=', TRUE)->get();
 
+		$pois = [];
+
 		foreach ($allPois as $poi){
-			$pois[] = $poi;
+			$pois = $poi;
 		};
 
-		return $pois;
+		return ['poi' => $pois];
 	}
 }

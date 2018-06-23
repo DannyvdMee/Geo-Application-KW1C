@@ -10,7 +10,7 @@
 //				data: {'response': response}, // a JSON object to send back
 				success: function (response) { // What to do if we succeed
 					console.log(response);
-					return response;
+					return response.poi;
 				},
 				error: function (jqXHR, textStatus, errorThrown) { // What to do if we fail
 					console.log(JSON.stringify(jqXHR));
@@ -22,7 +22,7 @@
 		// Initialize and add the map
 		function initMap() {
 			// The location waypoints
-			var markers = [getPoiAjax()];
+			var markers = getPoiAjax();
 
 			// The map, centered at Avans waypoint
 			var map = new google.maps.Map(document.getElementById('map'), {
