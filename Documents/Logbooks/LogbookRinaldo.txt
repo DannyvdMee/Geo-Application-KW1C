@@ -34,4 +34,4 @@ groups/index.blade.php finish front end
 Cried a lot
 Front end positioning
 whitespace on bottom of all paged fixed
-
+Logbooks update for everyone... Why is everyone so lazy... im here writing logbooks... crying and drunk
