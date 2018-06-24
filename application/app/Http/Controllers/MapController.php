@@ -18,7 +18,9 @@ class MapController extends Controller
 
 	public function index()
 	{
-		return view('map/index');
+		$pois = Poi::where('active', '=', TRUE)->get();
+
+		return view('map/index', ['pois' => $pois]);
 	}
 
 	public function recievePOI()
@@ -34,14 +36,10 @@ class MapController extends Controller
 
 	public function getPOIS()
 	{
-		$allPois = Poi::where('active', '=', TRUE)->get();
+		$pois = Poi::where('active', '=', TRUE)->get();
 
-		$pois = [];
+		$json = json_encode($pois);
 
-		foreach ($allPois as $poi){
-			$pois = $poi;
-		};
-
-		return ['poi' => $pois];
+		return $json;
 	}
 }

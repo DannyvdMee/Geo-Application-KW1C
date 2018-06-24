@@ -3,35 +3,39 @@
 @section('injectable-js')
 	<script>
 
-		function getPoiAjax() {
-			$.ajax({
-				method: 'GET', // Type of response and matches what we said in the route
-				url: 'http://geo-ict.local/map/getPOIS', // This is the url we gave in the route
-//				data: {'response': response}, // a JSON object to send back
-				success: function (response) { // What to do if we succeed
-					console.log(response);
-					return response.poi;
-				},
-				error: function (jqXHR, textStatus, errorThrown) { // What to do if we fail
-					console.log(JSON.stringify(jqXHR));
-					console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-				}
-			})
-		}
-
 		// Initialize and add the map
 		function initMap() {
+			markers = <?php echo json_encode($pois) ?>;
 			// The location waypoints
-			var markers = getPoiAjax();
+			console.log('Markers');
+			console.log(markers);
 
-			// The map, centered at Avans waypoint
+			// The map, centered at the first waypoint
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 16,
-				center: {lat: markers[0][1], lng: markers[0][2]}
+				center: {
+					lat: markers[0]['latitude'],
+					lng: markers[0]['longitude'],
+				}
+			});
+
+			infowindow = new google.maps.InfoWindow({
+				content: 'Placeholder...'
 			});
 
 			for (i = 0; i < markers.length; i++) {
-				var marker = new google.maps.Marker({position: {lat: markers[i][1], lng: markers[i][2]}, map: map})
+				marker = new google.maps.Marker({position: {lat: markers[i]['latitude'], lng: markers[i]['longitude']}, map: map});
+
+				marker['html'] =
+					'<div class=\"infowindow\">' +
+						'<p class=\"font-bold\">' + markers[i]['title'] + '</p>' +
+						'<p>' + markers[i]['hint'] + '</p>' +
+					'</div>';
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(this.html);
+					infowindow.open(map, this);
+				});
 			}
 		}
 	</script>
@@ -49,6 +53,5 @@
 @endsection
 
 @section('js-eventlisteners')
-	<script async defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"></script>
 @endsection
