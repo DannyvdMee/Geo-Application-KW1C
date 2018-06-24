@@ -44,11 +44,12 @@
                         {{--</div>--}}
                         {{--</div>--}}
 
+                        <!-- Login + register btn -->
                         <div class="col-10 offset-1">
                             <button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
-                            <a class="btn btn-gray float-right"
-                               href="{{ route('password.request') }}">@lang('messages.create-account')</a>
+                            <button class="btn btn-gray float-right"
+                               href="{{ route('password.request') }}">@lang('messages.create-account')</button>
                         </div>
                     </div>
                 </form>
