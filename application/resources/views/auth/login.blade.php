@@ -48,8 +48,7 @@
 							<div class="col-10 offset-1">
 								<button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
-								<a class="btn btn-gray float-right"
-								   href="{{ route('register') }}">@lang('messages.create-account')</a>
+								<a class="btn btn-gray float-right" href="{{ route('register') }}">@lang('messages.create-account')</a>
 							</div>
 						</div>
 					</form>
