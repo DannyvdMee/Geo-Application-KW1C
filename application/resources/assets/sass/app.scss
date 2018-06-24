@@ -154,7 +154,7 @@ a:active, a:hover {
 
 .btn-gray {
 	background-color: $gray;
-	color: $white;
+	color: $white !important;
 }
 
 .border-gray {
