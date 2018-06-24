@@ -4,12 +4,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+
+                <!-- Login page form -->
                 <p class="text-center gray-text font-size-150 margin-top-100">@lang('messages.login')</p>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-
+                    
                     <div class="form-group row">
+
+                        <!-- Email naar username veranderen want je logt in met je USERNAME en niet je EMAIL -->
+                        <!-- Username form -->
                         <div class="col-10 offset-1">
                             <input id="email" type="email" placeholder="@lang('messages.email'):"
                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} border-gray"
@@ -21,6 +26,8 @@
                             </span>
                             @endif
                         </div>
+
+                        <!-- Password form -->
                         <div class="col-10 offset-1">
                             <input id="password" type="password" placeholder="@lang('messages.password'):"
                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} border-gray"
@@ -49,11 +56,12 @@
                             <button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
                             <!-- <Button> register doesn't work, fix it if u have spare time thx -->
+
                             <!-- <button onclick="{{ route('register') }}" 
                             class="btn btn-gray float-right">@lang('messages.create-account')</button> -->
 
                             <a class="btn btn-gray float-right"
-                               href="{{ route('password.request') }}">@lang('messages.create-account')</a>
+                               href="{{ route('register') }}">@lang('messages.create-account')</a>
                         </div>
                     </div>
                 </form>

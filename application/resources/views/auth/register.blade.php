@@ -5,12 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    
+                    <!-- Register page form -->
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
+                            <!-- Moet username worden ipv name hieronder  -->
+                            <!-- Username form -->
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -27,9 +31,10 @@
                                 </div>
                             </div>
 
+                            <!-- Email form -->
                             <div class="form-group row">
                                 <label for="email"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ __('E-mail Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -44,6 +49,7 @@
                                 </div>
                             </div>
 
+                            <!-- Password form -->
                             <div class="form-group row">
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -60,7 +66,8 @@
                                     @endif
                                 </div>
                             </div>
-
+                            
+                            <!-- Confirm password form -->
                             <div class="form-group row">
                                 <label for="password-confirm"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
@@ -71,6 +78,9 @@
                                 </div>
                             </div>
 
+                            <!-- Eventuele captcha/anti spam checkbox? -->
+
+                            <!-- Register button -->
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
