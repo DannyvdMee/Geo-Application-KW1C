@@ -19,12 +19,13 @@ class StudentFactory
 	 *
 	 * @return Student
 	 */
-	public static function create($name, $additionalInformation, $activeState)
+	public static function create($name, $number, $additionalInformation, $activeState)
 	{
 		$student = new Student();
 
 		$student->name                  = $name;
-		$student->additionalInformation = $additionalInformation;
+		$student->number				= $number;
+		$student->information			= $additionalInformation;
 		$student->active                = $activeState;
 
 		return $student;
