@@ -13,16 +13,15 @@
                     
                     <div class="form-group row">
 
-                        <!-- Email naar username veranderen want je logt in met je USERNAME en niet je EMAIL -->
                         <!-- Username form -->
                         <div class="col-10 offset-1">
-                            <input id="email" type="email" placeholder="@lang('messages.email'):"
-                                   class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} border-gray"
-                                   name="email" value="{{ old('email') }}" required autofocus>
+                            <input id="username" type="email" placeholder="@lang('messages.username'):"
+                                   class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }} border-gray"
+                                   name="username" value="{{ old('username') }}" required autofocus>
 
-                            @if ($errors->has('email'))
+                            @if ($errors->has('username'))
                                 <span class="invalid-feedback">
-                                <strong>{{ $errors->first('email') }}</strong>
+                                <strong>{{ $errors->first('username') }}</strong>
                             </span>
                             @endif
                         </div>

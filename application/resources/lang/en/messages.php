@@ -20,4 +20,5 @@ return [
 	'save'           => 'Save',
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
+	'username'		 =>	'Username',
 ];
