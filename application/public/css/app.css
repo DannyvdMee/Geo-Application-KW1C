@@ -10563,3 +10563,7 @@ a:active {
   background-color: #F6F2F2;
 }
 
+#map-bg {
+  height: 100%;
+}
+
