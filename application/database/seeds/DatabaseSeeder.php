@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 			'Root',
 			'root',
 			'admin',
-			'true'
+			0
 		);
 
 		$user->save();
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
 			'Teacher',
 			'ictacademie',
 			'teacher',
-			'true'
+			0
 		);
 
 		$teacher->save();
@@ -47,8 +47,9 @@ class DatabaseSeeder extends Seeder
 		// Student Segment
 		$student = StudentFactory::create(
 			'TestStudent',
+			'2115581',
 			'TestAdditional',
-			true
+			0
 		);
 
 		$student->save();
@@ -58,8 +59,8 @@ class DatabaseSeeder extends Seeder
 			bin2hex(random_bytes(6)),
 			'First Route',
 			1,
-			true,
-			true
+			0,
+			0
 		);
 
 		$route->save();
@@ -71,7 +72,31 @@ class DatabaseSeeder extends Seeder
 			'51.6903949',
 			'5.2866055',
 			'Look for the General',
-			true,
+			0,
+			1
+		);
+
+		$poi->save();
+
+		$poi = PoiFactory::create(
+			bin2hex(random_bytes(40)),
+			'Avans University',
+			'51.6886659',
+			'5.2869727',
+			'University',
+			0,
+			1
+		);
+
+		$poi->save();
+
+		$poi = PoiFactory::create(
+			bin2hex(random_bytes(40)),
+			'DB Central Station',
+			'51.689968',
+			'5.295078',
+			'Travel',
+			0,
 			1
 		);
 
@@ -80,7 +105,7 @@ class DatabaseSeeder extends Seeder
 		// Department Segment
 		$department = DepartmentFactory::create(
 			'ictacademie',
-			true
+			0
 		);
 	}
 }
