@@ -4,7 +4,7 @@ return [
 	'login'          => 'Login',
 	'logout'         => 'Logout',
 	'map'            => 'Map',
-	'email'          => 'Emailaddress',
+	'email'          => 'Email address',
 	'password'       => 'Password',
 	'create-account' => 'Create account',
 	'routes'         => 'Routes',
@@ -21,4 +21,5 @@ return [
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
+	'confirmpw'      => 'Confirm password'
 ];

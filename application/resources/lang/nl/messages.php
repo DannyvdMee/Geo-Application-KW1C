@@ -20,4 +20,6 @@ return [
 	'save'           => 'Opslaan',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',
+	'username'		 =>	'Gebruikersnaam',
+	'confirmpw'      => 'Bevestig wachtwoord'
 ];
