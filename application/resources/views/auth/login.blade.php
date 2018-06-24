@@ -48,8 +48,12 @@
                         <div class="col-10 offset-1">
                             <button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 
-                            <button class="btn btn-gray float-right"
-                               href="{{ route('password.request') }}">@lang('messages.create-account')</button>
+                            <!-- <Button> register doesn't work, fix it if u have spare time thx -->
+                            <!-- <button onclick="{{ route('register') }}" 
+                            class="btn btn-gray float-right">@lang('messages.create-account')</button> -->
+
+                            <a class="btn btn-gray float-right"
+                               href="{{ route('password.request') }}">@lang('messages.create-account')</a>
                         </div>
                     </div>
                 </form>
