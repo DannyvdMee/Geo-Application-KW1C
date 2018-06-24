@@ -12,14 +12,11 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
-                            <!-- Username form -->
+                            
                             <div class="form-group row">
-                                <label for="username" 
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="username" type="text"
+                                <!-- Username form -->
+                                <div class="col-10 offset-1">
+                                    <input id="username" type="text" placeholder="@lang('messages.username')"
                                            class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
                                            name="username" value="{{ old('username') }}" required autofocus>
 
@@ -29,17 +26,12 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
 
-                            <!-- Email form -->
-                            <div class="form-group row">
-                                <label for="email"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('E-mail Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" required>
+                                <!-- Email form -->
+                                <div class="col-10 offset-1">
+                                    <input id="email" type="email" placeholder="@lang('messages.email')"
+                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                            name="email" value="{{ old('email') }}" required>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
@@ -47,15 +39,10 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
 
-                            <!-- Password form -->
-                            <div class="form-group row">
-                                <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
+                                <!-- Password form -->
+                                <div class="col-10 offset-1">
+                                    <input id="password" type="password" placeholder="@lang('messages.password')"
                                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                            name="password" required>
 
@@ -65,29 +52,25 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
-                            
-                            <!-- Confirm password form -->
-                            <div class="form-group row">
-                                <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required>
+                                <!-- Confirm password form -->
+                                <div class="col-10 offset-1">
+                                    <input id="password-confirm" type="password" placeholder="@lang('messages.confirmpw')"
+                                    class="form-control" name="password_confirmation" required>
                                 </div>
-                            </div>
+                            </div>             
 
                             <!-- Eventuele captcha/anti spam checkbox? -->
 
                             <!-- Register button -->
                             <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="col-10 offset-1">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>
