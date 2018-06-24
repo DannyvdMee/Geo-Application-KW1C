@@ -5,16 +5,30 @@
 		function addStudent()
 		{
 			if ($(this).val() != '') {
-				console.log('In function');
-				el = $(this).children();
+				value = $(this).find(':selected').text();
+				curr_html = $('#added-students').html();
 
-				row = '<div class="student"><p>' + value + '</p><i class="material-icons float-right">remove</i></div>';
+				row = '<div class="student"><p>' + value + '<i class="material-icons float-right">remove</i></p></div>';
 
-				$('#added-students').html(row);
+				box_contents = $('#added-students').text();
+				if (box_contents == 'No students added yet') {
+					$('#added-students').empty();
+				}
+
+				$('#added-students').html(curr_html + row);
 			}
 		}
 
-		console.log('Ended initialising');
+		function removeStudent()
+		{
+			console.log('Hi');
+			$(this).hide();
+			console.log($(this));
+
+			if($('#added-students').empty()) {
+				$('#added-students').html('<p>No students added yet</p>');
+			}
+		}
 	</script>
 @endsection
 
@@ -40,7 +54,7 @@
 						@foreach ($added as $student)
 							<div class="student">
 								<p>{{ $student->name }}</p>
-								<i class="material-icons float-right">remove</i>
+								<i class="material-icons float-right remove-student">remove</i>
 							</div>
 						@endforeach
 					@else
@@ -61,7 +75,9 @@
 
 @section('js-eventlisteners')
 	<script type="application/javascript">
-		console.log('Started eventlisteners');
-		$('#student-box').on('change', addStudent);
+		$(document).ready(function() {
+			$('#student-box').on('change', addStudent);
+			$('.student p').on('click', removeStudent);
+		});
 	</script>
 @endsection

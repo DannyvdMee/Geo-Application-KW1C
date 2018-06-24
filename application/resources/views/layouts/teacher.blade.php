@@ -25,6 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 </head>
 <body>
+@yield('injectable-js')
 <div id="app">
 	<header>
 		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -67,7 +68,6 @@
 		</div>
 	</footer>
 </div>
-@yield('injectable-js')
 @yield('js-eventlisteners')
 </body>
 </html>
