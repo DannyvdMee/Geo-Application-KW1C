@@ -28,8 +28,27 @@
 
 				marker['html'] =
 					'<div class=\"infowindow\">' +
-						'<p class=\"font-bold\">' + markers[i]['title'] + '</p>' +
-						'<p>' + markers[i]['hint'] + '</p>' +
+						'<div class=\"row\">' +
+							'<div class=\"col\">' +
+								'<p class=\"font-bold\">' + markers[i]['title'] + '</p>' +
+							'</div>' +
+						'</div>' +
+						'<div class=\"row\">' +
+							'<div class=\"col\">' +
+								'<p>' + markers[i]['hint'] + '</p>' +
+							'</div>' +
+						'</div>' +
+						'<div class=\"row\">' +
+							'<div class=\"col-4 text-center\">' +
+								'<i class=\"material-icons\">info</i>' +
+							'</div>' +
+							'<div class=\"col-4 text-center\">' +
+								'<i class=\"material-icons\">zoom_in</i>' +
+							'</div>' +
+							'<div class=\"col-4 text-center\">' +
+								'<i class=\"material-icons\">edit</i>' +
+							'</div>' +
+						'</div>' +
 					'</div>';
 
 				google.maps.event.addListener(marker, 'click', function() {
@@ -50,6 +69,9 @@
 @section('content')
 	<!--The div element for the map -->
 	<div id="map" style="height: calc(100vh - 120px); width: 100%;"></div>
+	<div id="map-overlay">
+
+	</div>
 @endsection
 
 @section('js-eventlisteners')

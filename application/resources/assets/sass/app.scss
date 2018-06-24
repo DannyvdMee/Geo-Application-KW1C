@@ -164,3 +164,17 @@ a:active {
 #map-bg {
 	height: 100%;
 }
+
+#map-overlay {
+	position: absolute;
+	display: none;
+	top: 50px;
+	left: 0;
+	height: calc(100vh - 120px);
+	width: 100vw;
+	background-color: $red;
+}
+
+#map-overlay.open {
+	display: block;
+}
