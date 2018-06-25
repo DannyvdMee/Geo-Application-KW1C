@@ -1,0 +1,37 @@
+Pre-June 7 2018:
+Install Git Kraken
+Install PHPStorm
+
+June 7 2018:
+- First initial meeting
+- Noting down first requirements
+
+June 12 2018:
+- Created mobile wireframe designs, based from Ibo's designs
+
+June 18-19:
+Install Laravel Homestead to Laptop
+   The install of this program was met with a lot of problems. After re-installing multiple times, and changing install location, it finally works. 
+   
+June 20:
+Start Front end
+
+June 20-21: 
+Progess came to a halt after june 20th it became known that on june 22nd we had out c# test resit. All time was spend studying for this test
+
+June 22: 
+Test resit c#
+Continuation Front end
+department/index.blade.php
+
+June 23: 
+Continuation Front end
+department/index.blade.php Finish Front-end
+Lied down
+Poi/index.blade.php Finish front-end
+tried not to cry
+groups/index.blade.php finish front end
+Cried a lot
+Front end positioning
+whitespace on bottom of all paged fixed
+Logbooks update for everyone... Why is everyone so lazy... im here writing logbooks... crying and drunk
