@@ -69,10 +69,10 @@ class DatabaseSeeder extends Seeder
 		// Poi Segment
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
-			'Preson Gravey',
+			'Preson Gravey has a Quest for you!',
 			'51.6903949',
 			'5.2866055',
-			'This is the first POI. But first, another settlement needs our help. I will mark it on your map. Find out what they need',
+			'This is the first POI. But first, another POI needs our help. I will mark it on your map. Find out what they need',
 			0,
 			1
 		);
@@ -112,15 +112,14 @@ class DatabaseSeeder extends Seeder
 		$department->save();
 
 
-
 		// Exercise segment
 
 		$exercise = ExerciseFactory::create(
 			'',
-			'',
-			'',
-			'',
-			''
+			'Ghoul Problem at Avans College',
+			'Speak to the leader of the settlement.',
+			'application/resources/assets/images/Icons/Settlement.png',
+			'Preston, go fix your own shit. Im done with those quests'
 		);
 
 		$exercise->save();
