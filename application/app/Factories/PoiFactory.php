@@ -24,7 +24,7 @@ class PoiFactory
 	 *
 	 * @return Poi
 	 */
-	public static function create($url_id, $type, $title, $latitude, $longitude, $hint, $visibility, $active)
+	public static function create($url_id, $title, $type, $latitude, $longitude, $hint, $visibility, $active)
 	{
 		$poi = new Poi();
 
