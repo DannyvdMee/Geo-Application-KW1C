@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
 			'Avans University',
-			'individual',
+			'group',
 			'51.6886659',
 			'5.2869727',
 			'University',
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
 			'DB Central Station',
-			'individual',
+			'hidden',
 			'51.689968',
 			'5.295078',
 			'Travel',
