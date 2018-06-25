@@ -7,10 +7,10 @@
 				<h2 class="text-center">@lang('messages.students')</h2>
 
 				<div id="department-container">
-					@foreach($students as $student)
+					@foreach($students as $student) {{--TODO: Only shows first row, Not anything more! Check Databse for information! --}}
 						<div class="row">
 							<div class="col dataItem">
-								<p class="display-inline-block">{{ $student->title }}</p>
+								<p class="display-inline-block">{{ $student->name }}</p>
 								<div class="float-right">
 									@if ($student->state == true)
 										<a href="">{{--TODO: Href pages when files are made--}}
@@ -163,43 +163,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col dataItem">
-							<p class="display-inline-block">LULLO</p>
-							<div class="float-right">
-								<a href="">
-									<i class="material-icons">remove_red_eye</i>
-								</a>
-								<a href="">
-									<i class="material-icons">edit</i>
-								</a>
-								<a href="">
-									<i class="material-icons">delete_forever</i>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col dataItem">
-							<p class="display-inline-block">I WANNA DIE!</p>
-							<div class="float-right">
-								<a href="">
-									<i class="material-icons">remove_red_eye</i>
-								</a>
-								<a href="">
-									<i class="material-icons">edit</i>
-								</a>
-								<a href="">
-									<i class="material-icons">delete_forever</i>
-								</a>
-							</div>
-						</div>
-					</div>
+
+
 					<div class="whitespace height-21"></div>
 
 
 					<div class="dataAddIcon display-inline-block float-right">
-						<a href="{{ route('teacher/poi/create') }}" id="add-item">
+						<a href="{{ route('teacher/student/create') }}" id="add-item">
 							<i class="material-icons">add</i>
 						</a>
 					</div>

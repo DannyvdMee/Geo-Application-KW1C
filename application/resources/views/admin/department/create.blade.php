@@ -3,9 +3,10 @@
 @section('content')
 	<div class="row">
 		<div class="col">
-			<form method="POST" action="{{ route('teacher/student/create') }}">
-				<p class="text-center font-bold">@lang('messages.add-student')</p>
+			<form method="POST" action="{{ route('admin/department/create') }}">
+				<p class="text-center font-bold">@lang('messages.add-department')</p>
 				@csrf
+				{{--TODO Department data in list createn--}}
 				<input type="number" name="number" placeholder="Studentnumber" required autofocus>
 				<input type="text" name="name" placeholder="Student name" required>
 				<textarea name="information" placeholder="Extra information about student"></textarea>
@@ -16,7 +17,6 @@
 				</select>
 				<input type="submit" value="@lang('messages.save')">
 			</form>
-
 		</div>
 	</div>
 @endsection

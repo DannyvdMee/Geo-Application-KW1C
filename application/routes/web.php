@@ -34,7 +34,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
     Route::get('users', 'UserController@index')->name('users');
 
-    Route::get('departments', 'DepartmentController@index')->name('departments');
+	Route::get('departments', 'DepartmentController@index')->name('departments');
+	Route::get('departments/create', 'DepartmentController@create')->name('departments/create');
 
     Route::get('settings', 'SettingsController@index')->name('settings');
 

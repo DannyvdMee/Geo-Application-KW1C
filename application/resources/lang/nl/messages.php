@@ -17,6 +17,8 @@ return [
 	'yes'            => 'Ja',
 	'no'             => 'Nee',
 	'add-poi'        => 'POI toevoegen',
+	'add-student'    => 'Student toevoegen',
+	'add-department' => 'Afdeling toevoegen',
 	'save'           => 'Opslaan',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',

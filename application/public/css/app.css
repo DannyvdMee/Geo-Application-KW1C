@@ -10499,7 +10499,8 @@ a {
   color: inherit;
 }
 
-a:active {
+a:active,
+a:hover {
   text-decoration: none;
   color: inherit;
 }
@@ -10558,7 +10559,7 @@ a:active {
 
 .btn-gray {
   background-color: #A4A4A4;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .border-gray {

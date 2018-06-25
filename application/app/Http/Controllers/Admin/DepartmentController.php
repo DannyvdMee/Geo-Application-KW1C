@@ -26,6 +26,11 @@ class DepartmentController extends Controller
 		return view('admin/department/index', ['departments' => $departments]);
 	}
 
+	public function create()
+	{
+		return view('admin/department/create');
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -44,7 +49,7 @@ class DepartmentController extends Controller
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id)
@@ -66,7 +71,7 @@ class DepartmentController extends Controller
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id)
@@ -82,7 +87,7 @@ class DepartmentController extends Controller
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy($id)
