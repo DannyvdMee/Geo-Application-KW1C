@@ -48,5 +48,9 @@ Opdracht C: Realiseren van de applicatie
 - Word document documentatie
 - Word document coding conventions
 
+25 06 18
+Documentatie
+Frontend
+
 
 
