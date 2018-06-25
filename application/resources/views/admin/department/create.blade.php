@@ -3,7 +3,7 @@
 @section('content')
 	<div class="row">
 		<div class="col">
-			<form method="POST" action="{{ route('admin/department/create') }}">
+			<form method="POST" action="{{ route('admin/departments/create') }}">
 				<p class="text-center font-bold">@lang('messages.add-department')</p>
 				@csrf
 				{{--TODO Department data in list createn--}}
