@@ -1,0 +1,52 @@
+13 06 18
+Programma van eisen afgerond
+
+18 06 18
+Begonnen aan de analyse
+
+19 06 18
+Verder aan het afronden van de analyse
+
+22 06 18
+Project plan geupdate
+Analyse geupdate
+Verder gewerkt aan documentatie en installatie verdere werkomgeving
+
+23 06 18
+Aan documentatie gewerkt van het project:
+
+1. B1-K1: Levert een bijdrage aan het ontwikkeltraject
+1.1 B1-K1-W1 Stelt de opdracht vast
+Opdracht A: Het Programma van Eisen
+- Word document documentatie 
+
+1.2 B1-K1-W2 Levert een bijdrage aan het projectplan
+Opdracht B: Projectplan
+- Word document documentatie
+
+1.3 B1-K1-W3 Levert een bijdrage aan het ontwerp
+Opdracht C: Opstellen functioneel ontwerp
+Opdracht D: Opstellen technisch ontwerp
+- Word document documentatie
+
+Use cases, activity diagrams en bachmann diagrams gemaakt
+De rest van team geholpen met overige dingen
+Documentatie afwerken
+
+24 06 18
+Aan frontend gewerkt met Ibo
+Documentatie gedaan:
+1.4 B1-K1-W4 Bereidt de realisatie voor
+Opdracht E: Gereedmaken ontwikkelomgeving
+- Word document documentatie
+
+2. B1-K2: Realiseert en test (onderdelen van) een product
+2.1 B1-K1-W1: Realiseert een product
+Opdracht A: Maken van de planning
+Opdracht B: Realiseren van de database
+Opdracht C: Realiseren van de applicatie
+- Word document documentatie
+- Word document coding conventions
+
+
+
