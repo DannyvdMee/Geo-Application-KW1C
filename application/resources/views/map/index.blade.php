@@ -3,6 +3,20 @@
 @section('injectable-js')
 	<script>
 
+		// Copied this from a hackathon project
+		function getLocation() {
+			navigator.geolocation.getCurrentPosition(function(pos){
+				console.log(pos);
+			});
+		}
+
+		function centerMap(pos) {
+			map.setCenter(pos);
+		}
+
+		t = setInterval(getLocation, 10000);
+		getLocation();
+
 		// Initialize and add the map
 		function initMap() {
 			markers = <?php echo json_encode($pois) ?>;
@@ -27,7 +41,7 @@
 				marker = new google.maps.Marker({position: {lat: markers[i]['latitude'], lng: markers[i]['longitude']}, map: map});
 
 				marker['html'] =
-					'<div class=\"infowindow\">' +
+					'<div class=\"map-infowindow\">' +
 						'<div class=\"row\">' +
 							'<div class=\"col\">' +
 								'<p class=\"font-bold\">' + markers[i]['title'] + '</p>' +
@@ -35,12 +49,12 @@
 						'</div>' +
 						'<div class=\"row\">' +
 							'<div class=\"col\">' +
-								'<p>' + markers[i]['hint'] + '</p>' +
+								'<div>' + 'Hint: ' + markers[i]['hint'] + '</div>' +
 							'</div>' +
 						'</div>' +
 						'<div class=\"row\">' +
 							'<div class=\"col-4 text-center\">' +
-								'<i class=\"material-icons\">info</i>' +
+								'<i id=\"marker-' + markers[i]['url_id'] + '\" class=\"material-icons marker-open-dialog\">info</i>' +
 							'</div>' +
 							'<div class=\"col-4 text-center\">' +
 								'<i class=\"material-icons\">zoom_in</i>' +
@@ -56,6 +70,13 @@
 					infowindow.open(map, this);
 				});
 			}
+		}
+
+		function openDialogContext()
+		{
+			marker_id = this.id;
+
+			// AJAX request to /map/marker/{id}
 		}
 	</script>
 	<!--
@@ -75,5 +96,8 @@
 @endsection
 
 @section('js-eventlisteners')
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap" async defer></script>
+	<script type="application/javascript">
+		$('.marker-open-dialog').on('click', openDialogContext);
+	</script>
 @endsection

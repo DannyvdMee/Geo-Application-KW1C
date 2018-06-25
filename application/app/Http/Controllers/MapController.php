@@ -42,4 +42,11 @@ class MapController extends Controller
 
 		return $json;
 	}
+
+	public function retrieveMarkerInfo($id)
+	{
+		$info = Poi::where('url_id', '=', $id)->get();
+
+		return $info;
+	}
 }
