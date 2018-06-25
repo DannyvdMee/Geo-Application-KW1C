@@ -115,7 +115,6 @@ class DatabaseSeeder extends Seeder
 		$department->save();
 
 		// Exercise segment
-
 		$exercise = ExerciseFactory::create(
 			'placeholderID',
 			'Ghoul Problem at Avans College',
@@ -125,6 +124,5 @@ class DatabaseSeeder extends Seeder
 		);
 
 		$exercise->save();
-
 	}
 }
