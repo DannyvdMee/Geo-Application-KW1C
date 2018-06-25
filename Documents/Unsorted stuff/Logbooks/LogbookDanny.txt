@@ -91,3 +91,4 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Depending on which type it is, the marker is changed
 - Made database seeder, factory, modal and controller for exercise
 - Uploaded old markers
+- I have to do commit message in russian so yea, here it is!
