@@ -51,4 +51,13 @@ June 22:
 June 23: 
 - Told Rinaldo to update my logbook
 - Ibo used Jquery... It had no effect..
-- Made friends with Bachmann, Guy gave me so diagrams... 
+- Made friends with Bachmann, Guy gave me so diagrams...
+
+June 24:
+- Working for the map POI
+- HTTPS included on own site
+
+June 25:
+- Different back-end stuff
+- Bachmann finished
+- Running composer dump-autoload a lot. Its a nice command
