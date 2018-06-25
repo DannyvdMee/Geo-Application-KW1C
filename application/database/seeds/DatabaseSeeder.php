@@ -70,6 +70,7 @@ class DatabaseSeeder extends Seeder
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
 			'Preson Gravey has a Quest for you!',
+			'individual',
 			'51.6903949',
 			'5.2866055',
 			'This is the first POI. But first, another POI needs our help. I will mark it on your map. Find out what they need',
@@ -82,6 +83,7 @@ class DatabaseSeeder extends Seeder
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
 			'Avans University',
+			'individual',
 			'51.6886659',
 			'5.2869727',
 			'University',
@@ -94,6 +96,7 @@ class DatabaseSeeder extends Seeder
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
 			'DB Central Station',
+			'individual',
 			'51.689968',
 			'5.295078',
 			'Travel',
@@ -110,7 +113,6 @@ class DatabaseSeeder extends Seeder
 		);
 
 		$department->save();
-
 
 		// Exercise segment
 
