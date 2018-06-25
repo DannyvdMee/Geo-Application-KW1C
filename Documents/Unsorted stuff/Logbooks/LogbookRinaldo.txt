@@ -35,3 +35,12 @@ Cried a lot
 Front end positioning
 whitespace on bottom of all paged fixed
 Logbooks update for everyone... Why is everyone so lazy... im here writing logbooks... crying and drunk
+
+June 24:
+Work
+
+June 25: 
+Create page departments created
+Gives errors
+Tried to fix errors
+It was ineffective
