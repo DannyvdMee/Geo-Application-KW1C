@@ -107,5 +107,10 @@ class DatabaseSeeder extends Seeder
 			'ictacademie',
 			0
 		);
+
+
+
+		// Exercise segment
+
 	}
 }
