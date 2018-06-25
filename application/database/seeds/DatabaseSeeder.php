@@ -1,11 +1,11 @@
 <?php
 
-use App\User\Factory\DepartmentFactory;
-use App\User\Factory\ExerciseFactory;
-use App\User\Factory\PoiFactory;
-use App\User\Factory\RouteFactory;
-use App\User\Factory\StudentFactory;
-use App\User\Factory\UserFactory;
+use App\User\Factories\DepartmentFactory;
+use App\User\Factories\ExerciseFactory;
+use App\User\Factories\PoiFactory;
+use App\User\Factories\RouteFactory;
+use App\User\Factories\StudentFactory;
+use App\User\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
 		// Student Segment
 		$student = StudentFactory::create(
 			'TestStudent',
-			'2115581',
+			2115581,
 			'TestAdditional',
 			0
 		);
@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
 		// Exercise segment
 
 		$exercise = ExerciseFactory::create(
-			'',
+			'placeholderID',
 			'Ghoul Problem at Avans College',
 			'Speak to the leader of the settlement.',
 			'application/resources/assets/images/Icons/Settlement.png',

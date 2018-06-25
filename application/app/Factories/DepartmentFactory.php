@@ -6,7 +6,7 @@
  * Time: 13:45
  */
 
-namespace App\User\Factory;
+namespace App\User\Factories;
 
 use App\Department;
 
