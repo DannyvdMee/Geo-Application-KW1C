@@ -23,15 +23,6 @@ class MapController extends Controller
 		return view('map/index', ['pois' => $pois]);
 	}
 
-	public function getPOIS()
-	{
-		$pois = Poi::where('active', '=', TRUE)->get();
-
-		$json = json_encode($pois);
-
-		return $json;
-	}
-
 	public function retrieveMarkerInfo($id)
 	{
 		$info = Poi::where('url_id', '=', $id)->get();
