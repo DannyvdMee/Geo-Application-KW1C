@@ -10567,6 +10567,11 @@ a:active {
   height: 100%;
 }
 
+.map-infowindow {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #map-overlay {
   position: absolute;
   display: none;
