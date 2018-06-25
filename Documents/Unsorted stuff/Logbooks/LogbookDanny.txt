@@ -80,3 +80,14 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Ibo and Onyi are working at the Project Documents
 - Fixing some jQurey
 - Frontending
+
+24 June 2018
+
+- Free sunday hehe
+
+25 June 2018
+
+- POI are recieved from database and placed on the map
+- Depending on which type it is, the marker is changed
+- Made database seeder, factory, modal and controller for exercise
+- Uploaded old markers
