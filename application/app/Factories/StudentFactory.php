@@ -13,9 +13,10 @@ use App\Student;
 class StudentFactory
 {
 	/**
-	 * @param string $name
-	 * @param string $additionalInformation
-	 * @param boolean $activeState
+	 * @param $number
+	 * @param $name
+	 * @param $additionalInformation
+	 * @param $activeState
 	 *
 	 * @return Student
 	 */

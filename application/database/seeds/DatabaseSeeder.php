@@ -1,6 +1,7 @@
 <?php
 
 use App\User\Factory\DepartmentFactory;
+use App\User\Factory\ExerciseFactory;
 use App\User\Factory\PoiFactory;
 use App\User\Factory\RouteFactory;
 use App\User\Factory\StudentFactory;
@@ -113,6 +114,16 @@ class DatabaseSeeder extends Seeder
 
 
 		// Exercise segment
+
+		$exercise = ExerciseFactory::create(
+			'',
+			'',
+			'',
+			'',
+			''
+		);
+
+		$exercise->save();
 
 	}
 }
