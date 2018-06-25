@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
 
 		// Route Segment
 		$route = RouteFactory::create(
-			bin2hex(random_bytes(6)),
+			bin2hex(random_bytes(4)),
 			'First Route',
 			1,
 			0,
@@ -107,6 +107,8 @@ class DatabaseSeeder extends Seeder
 			'ictacademie',
 			0
 		);
+
+		$department->save();
 
 
 

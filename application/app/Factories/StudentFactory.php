@@ -19,7 +19,7 @@ class StudentFactory
 	 *
 	 * @return Student
 	 */
-	public static function create($name, $number, $additionalInformation, $activeState)
+	public static function create($number, $name, $additionalInformation, $activeState)
 	{
 		$student = new Student();
 
