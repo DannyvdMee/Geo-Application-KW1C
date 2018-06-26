@@ -11,6 +11,7 @@
 						@foreach($pois as $poi)
 							<option value="{{ $poi->id }}">{{ $poi->title }}</option>
 						@endforeach
+					{{--TODO: Only 1 exercise per poi--}}
 				</select>
 				<input type="text" name="title" placeholder="Vraag titel">
 				<textarea name="content" placeholder="Vraag" required></textarea>
