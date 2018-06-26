@@ -2,8 +2,7 @@
 
 @section('injectable-js')
 	<script type="application/javascript">
-		function addStudent()
-		{
+		function addStudent() {
 			if ($(this).val() != '') {
 				value = $(this).find(':selected').text();
 				curr_html = $('#added-students').html();
@@ -19,13 +18,12 @@
 			}
 		}
 
-		function removeStudent()
-		{
+		function removeStudent() {
 			console.log('Hi');
 			$(this).hide();
 			console.log($(this));
 
-			if($('#added-students').empty()) {
+			if ($('#added-students').empty()) {
 				$('#added-students').html('<p>No students added yet</p>');
 			}
 		}
@@ -52,7 +50,7 @@
 				<div id="added-students" class="input-box">
 					@if (!empty($added))
 						@foreach ($added as $student)
-							<div class="student">
+							<div class="{{ $student->number }}">
 								<p>{{ $student->name }}</p>
 								<i class="material-icons float-right remove-student">remove</i>
 							</div>
@@ -75,7 +73,7 @@
 
 @section('js-eventlisteners')
 	<script type="application/javascript">
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$('#student-box').on('change', addStudent);
 			$('.student p').on('click', removeStudent);
 		});

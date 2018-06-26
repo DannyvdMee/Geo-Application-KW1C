@@ -55,6 +55,15 @@ class DatabaseSeeder extends Seeder
 
 		$student->save();
 
+		$student = StudentFactory::create(
+			'TestStudent 2',
+			1243241,
+			'Placeholder',
+			1
+		);
+
+		$student->save();
+
 		// Route Segment
 		$route = RouteFactory::create(
 			bin2hex(random_bytes(4)),
