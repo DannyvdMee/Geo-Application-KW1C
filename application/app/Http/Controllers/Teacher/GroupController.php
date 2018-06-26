@@ -28,7 +28,9 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('teacher/group/create');
+    	$students = Student::where('active', '=', 1)->get();
+
+        return view('teacher/group/create', ['students' => $students]);
     }
 
     /**

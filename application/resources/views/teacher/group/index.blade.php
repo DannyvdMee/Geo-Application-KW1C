@@ -5,7 +5,7 @@
 		<div class="col">
 			<div class="row">
 				<div class="col">
-					<h1 class="text-center">@lang('messages.students')</h1>
+					<h1 class="text-center">@lang('messages.groups')</h1>
 				</div>
 			</div>
 			<div class="row" id="poi-container">

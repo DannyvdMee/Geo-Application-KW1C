@@ -62,7 +62,7 @@ class PoiController extends Controller
 
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/poi');
     }
 
     /**
@@ -84,7 +84,9 @@ class PoiController extends Controller
 
 		$poi->visibility = $visibility;
 
-		$poi->save();
+        $poi->save();
+        
+        return redirect('teacher/poi');
     }
 
     /**
@@ -113,7 +115,7 @@ class PoiController extends Controller
     {
         $poi = Poi::find($id);
 
-		$poi->title = $request->title;
+		$poi->title = $request->name;
 		$poi->latitude = $request->latitude;
 		$poi->longitude = $request->longitude;
 
@@ -123,11 +125,13 @@ class PoiController extends Controller
 
 		if (!empty($request->photo)) {
 			$poi->photo = $request->photo;
-		}
+        }
+        
+        $poi->active = $request->active;
 
 		$poi->save();
 
-		return view('teacher/poi/index');
+		return redirect('teacher/poi');
     }
 
     /**
