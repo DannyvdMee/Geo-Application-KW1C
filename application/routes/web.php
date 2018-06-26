@@ -71,6 +71,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
     //Routes
     Route::get('routes', 'RouteController@index')->name('routes');
+    Route::post('route/create' , 'RouteController@store')->name('route/create');
 
     //Students
     Route::get('student', 'StudentController@index')->name('student');

@@ -60,8 +60,8 @@ class DatabaseSeeder extends Seeder
 			bin2hex(random_bytes(4)),
 			'First Route',
 			1,
-			0,
-			0
+			1,
+			1
 		);
 
 		$route->save();
