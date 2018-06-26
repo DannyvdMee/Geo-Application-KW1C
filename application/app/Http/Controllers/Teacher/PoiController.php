@@ -56,7 +56,7 @@ class PoiController extends Controller
 
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/poi');
     }
 
     /**
@@ -78,7 +78,9 @@ class PoiController extends Controller
 
 		$poi->visibility = $visibility;
 
-		$poi->save();
+        $poi->save();
+        
+        return redirect('teacher/poi');
     }
 
     /**
@@ -121,7 +123,7 @@ class PoiController extends Controller
 
 		$poi->save();
 
-		return view('teacher/poi/index');
+		return redirect('teacher/poi/index');
     }
 
     /**

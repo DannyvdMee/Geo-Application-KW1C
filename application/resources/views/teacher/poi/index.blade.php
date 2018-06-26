@@ -7,31 +7,31 @@
 				<h2 class="text-center">@lang('messages.pois')</h2>
 
 				<!-- De POI's gelooped -->
-				<div id="department-container">
-					@foreach($pois as $poi)
-						<div class="row">
-							<div class="col dataItem">
-								<p class="display-inline-block">{{ $poi->title }}</p>
-								<div class="float-right">
-									@if ($poi->state == true)
-										<a href="">{{--TODO: Href pages when files are made--}}
-											<i class="material-icons">visibility</i>
+				<div id="poi-container">
+						@foreach($pois as $poi)
+							<div class="row">
+								<div class="col dataItem">
+									<p class="display-inline-block">{{ $poi->title }}</p>
+									<div class="float-right">
+										@if ($poi->state == false)
+											<a href="{{ route('teacher/poi/visibility', ['id' => $poi->id]) }}">
+												<i class="material-icons">visibility</i>
+											</a>
+										@else
+											<a href="{{ route('teacher/poi/visibility', ['id' => $poi->id]) }}">
+												<i class="material-icons">visibility_off</i>
+											</a>
+										@endif
+										<a href="{{ route('teacher/poi/edit', ['id' => $poi->id]) }}">
+											<i class="material-icons">edit</i>
 										</a>
-									@else
-										<a href="">{{--TODO: Href pages when files are made--}}
-											<i class="material-icons">visibility_off</i>
+										<a href="{{ route('teacher/poi/delete', ['id' => $poi->id]) }}">
+											<i class="material-icons">delete_forever</i>
 										</a>
-									@endif
-									<a href="">{{--TODO: Href pages when files are made--}}
-										<i class="material-icons">edit</i>
-									</a>
-									<a href="">{{--TODO: Href pages when files are made--}}
-										<i class="material-icons">delete_forever</i>
-									</a>
+									</div>
 								</div>
 							</div>
-						</div>
-					@endforeach
+						@endforeach
 					<div class="whitespace height-21"></div>
 
 					{{--Testfield, to check layout and shit--}}
