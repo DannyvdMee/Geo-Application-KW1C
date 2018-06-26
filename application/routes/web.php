@@ -70,6 +70,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     Route::get('routes', 'RouteController@index')->name('routes');
+    Route::post('route/create' , 'RouteController@store')->name('route/create');
 
     Route::get('student', 'StudentController@index')->name('student');
     Route::get('student/create', 'StudentController@create')->name('student/create');
