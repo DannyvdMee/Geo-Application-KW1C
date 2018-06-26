@@ -6,6 +6,7 @@
 			<section>
 				<h2 class="text-center">@lang('messages.pois')</h2>
 
+				<!-- De POI's gelooped -->
 				<div id="department-container">
 					@foreach($pois as $poi)
 						<div class="row">

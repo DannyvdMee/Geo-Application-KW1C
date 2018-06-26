@@ -6,6 +6,7 @@
 			<section>
 				<h2 class="text-center">@lang('messages.groups')</h2>
 
+				<!-- De groepen gelooped-->
 				<div id="department-container">
 					@foreach($groups as $group)
 						<div class="row">
