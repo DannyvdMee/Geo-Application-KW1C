@@ -17,7 +17,9 @@ return [
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'add-poi'        => 'Add POI',
+	'add-group' => 'Add group',
 	'save'           => 'Save',
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
+	'student-groups' => 'Student groups',
 ];
