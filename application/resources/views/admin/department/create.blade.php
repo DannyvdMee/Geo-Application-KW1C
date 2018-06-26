@@ -1,4 +1,4 @@
-@extends('layouts.teacher')
+@extends('layouts.admin')
 
 @section('content')
 	<div class="row">
@@ -6,11 +6,9 @@
 			<form method="POST" action="{{ route('admin/departments/create') }}">
 				<p class="text-center font-bold">@lang('messages.add-department')</p>
 				@csrf
-				{{--TODO Department data in list createn--}}
-				<input type="number" name="number" placeholder="Studentnumber" required autofocus>
-				<input type="text" name="name" placeholder="Student name" required>
-				<textarea name="information" placeholder="Extra information about student"></textarea>
-				<select name="active">
+
+				<input type="text" name="title" placeholder="Department Title" required autofocus>
+				<select name="state" >
 					<option value="">@lang('messages.active')?</option>
 					<option value="1">@lang('messages.yes')</option>
 					<option value="0">@lang('messages.no')</option>

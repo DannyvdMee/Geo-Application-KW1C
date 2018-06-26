@@ -39,11 +39,12 @@ class DepartmentController extends Controller
 	public function store(Request $request)
 	{
 		$department = new Department;
-		$department->title = $request->departmenttitle;
-		$department->state = $request->departmentstate;
+		$department->title = $request->title;
+		$department->state = $request->state;
 
 		$department->save();
 
+		return redirect('Admin/department');
 	}
 
 	/**
@@ -66,6 +67,8 @@ class DepartmentController extends Controller
 
 		$department->save();
 
+		return redirect('Admin/department');
+
 	}
 
 	/**
@@ -81,6 +84,7 @@ class DepartmentController extends Controller
 		return view('admin/department/edit', ['department' => $department]);
 
 		// SQL Insert to DB for editing the department
+
 	}
 
 
