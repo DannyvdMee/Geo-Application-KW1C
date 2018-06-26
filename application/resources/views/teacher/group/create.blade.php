@@ -19,21 +19,10 @@
 		}
 
 		function removeStudent() {
-			console.log('Hi');
-			$(this).hide();
-			console.log($(this));
-
 			if ($('#added-students').empty()) {
-				$('#added-students').html('<p>No students added yet</p>');
+				$('#added-students').html('');
 			}
 		}
-
-		function removeDisplayNoStudents() {
-			var parent = document.getElementById("#added-students");
-			var child = document.getElementById("#NoStudents");
-			parent.removeChild(child);
-		}
-
 	</script>
 @endsection
 
@@ -57,14 +46,13 @@
 				<div id="added-students" class="input-box">
 					@if (!empty($added))
 						@foreach ($added as $student)
-							<div id="student">
+							<div class="student">
 								<p>{{ $student->name }}</p>
-								<button class="material-icons float-right remove-student">remove</button>
+								<i class="material-icons float-right remove-student">remove</i>
 							</div>
 						@endforeach
-					@elseif(empty($added))
-						{{--<p id="NoStudents">No students added yet</p>--}}
-						{{--TODO Fix this mess, now it's a dirty fix--}}
+					@else
+
 					@endif
 				</div>
 
@@ -75,6 +63,11 @@
 				</select>
 				<input type="submit" value="@lang('messages.save')">
 			</form>
+			<div>
+				<button class="btn-gray" onclick="removeStudent()">
+					Delete all students
+				</button>
+			</div>
 		</div>
 	</div>
 @endsection
