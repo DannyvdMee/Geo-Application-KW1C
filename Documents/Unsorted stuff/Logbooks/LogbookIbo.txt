@@ -61,3 +61,8 @@ June 25:
 - Different back-end stuff
 - Bachmann finished
 - Running composer dump-autoload a lot. Its a nice command
+
+June 26:
+- Fixing everyones problems
+- Travelling too much
+- Helping onyi
