@@ -58,6 +58,8 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('poi', 'PoiController@index')->name('poi');
     Route::get('poi/create', 'PoiController@create')->name('poi/create');
     Route::post('poi/create', 'PoiController@store')->name('poi/create');
+    Route::get('poi/{id}/edit', 'PoiController@edit')->name('poi/edit');
+    Route::post('poi/{id}/update', 'PoiController@update')->name('poi/{id}/update');
 
     Route::get('routes', 'RouteController@index')->name('routes');
 

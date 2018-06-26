@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePoiRoute extends Migration
+class CreatePoiRouteTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -18,8 +18,8 @@ class CreatePoiRoute extends Migration
 				$table->increments('id');
 				$table->integer('poi_id')->unsigned()->unique();
 				$table->integer('route_id')->unsigned()->unique();
-				$table->foreign('poi_id')->references('id')->on('poi');
-				$table->foreign('route_id')->references('id')->on('route');
+				$table->foreign('poi_id')->references('id')->on('pois');
+				$table->foreign('route_id')->references('id')->on('routes');
 				$table->timestamps();
 			});
 	}
