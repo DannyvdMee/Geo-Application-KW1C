@@ -16,7 +16,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-		$routes = Route::where('active', '=', 1)->get();
+		$routes = Route::all();
 
         return view('teacher/route/index', ['routes' => $routes]);
     }
