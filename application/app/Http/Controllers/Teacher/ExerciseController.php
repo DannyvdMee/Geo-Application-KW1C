@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Teacher; //TODO: 'App\Http\Controllers\Teacher' After moving ExerciseController to Teacher
+namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
+use App\Poi;
 use Illuminate\Http\Request;
 use App\Exercise;
 
@@ -27,7 +28,8 @@ class ExerciseController extends Controller
 	 */
 	public function create()
 	{
-		return view('teacher/exercise/create');
+		$pois = Poi::all();
+		return view('teacher/exercise', ['pois' => $pois]);
 	}
 
 	/**
