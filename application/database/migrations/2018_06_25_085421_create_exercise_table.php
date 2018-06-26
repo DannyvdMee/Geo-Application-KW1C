@@ -13,7 +13,7 @@ class CreateExerciseTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('exercise',
+		Schema::create('exercises',
 			function (Blueprint $table) {
 				$table->increments('id');
 				$table->string('poi_id')->unique();
