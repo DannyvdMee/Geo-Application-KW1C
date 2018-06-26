@@ -17,6 +17,7 @@
 header {
 	border-bottom: 1px solid $gray;
 	height: 50px;
+	width: 100vw;
 	line-height: 30px;
 
 	p {
@@ -26,8 +27,13 @@ header {
 }
 
 main {
+	min-height: calc(100vh - 70px - 45px);
+	margin-bottom: 70px;
+
+	min-height: calc(100vh - 120px);
+
 	form {
-		input, textarea, select {
+		input, textarea, select, .input-box {
 			line-height: 1.2em;
 			width: 80%;
 			display: block;
@@ -38,8 +44,19 @@ main {
 			-webkit-appearance: none;
 		}
 
-		input {
+		input, select {
 			height: 40px;
+		}
+
+		.input-box {
+			min-height: 40px;
+			max-height: 120px;
+			overflow-y: scroll;
+			line-height: 40px;
+
+			p {
+				margin: 0;
+			}
 		}
 
 		textarea {
@@ -60,10 +77,11 @@ main {
 footer {
 	color: $gray;
 	height: 70px;
-	width: 100%;
+	width: 100vw;
 	position: fixed;
 	border-top: 1px solid $gray;
 	bottom: 0;
+	background-color: $white;
 
 	i.material-icons {
 		padding: 5px 20px 0 20px;
@@ -91,7 +109,7 @@ a {
 	color: inherit;
 }
 
-a:active {
+a:active, a:hover {
 	text-decoration: none;
 	color: inherit;
 }
@@ -150,7 +168,7 @@ a:active {
 
 .btn-gray {
 	background-color: $gray;
-	color: $white;
+	color: $white !important;
 }
 
 .border-gray {
@@ -159,10 +177,68 @@ a:active {
 
 .teacher-background {
 	background-color: $light-gray;
-}
 
-#map-bg {
-	height: 100%;
+	.height-21 {
+		height: 21px;
+	}
+
+	//Background color all pages
+	.main-background {
+		background-color: $light-gray;
+	}
+
+	#map-bg {
+		height: 100%;
+	}
+
+	#map-overlay {
+		position: absolute;
+		display: none;
+		top: 50px;
+		left: 0;
+		height: calc(100vh - 120px);
+		width: 100vw;
+		background-color: $red;
+	}
+
+	#map-overlay.open {
+		display: block;
+	}
+
+	//Data display menus across multiple pages.
+	.dataItem {
+		background-color: $white;
+		padding: 0;
+		margin: 4px 25px;
+		border-radius: 4px;
+
+		//Data Display menus Text and icons
+		p, div {
+			vertical-align: middle;
+			margin: 0;
+			padding: 10px;
+		}
+	}
+
+	//'Add icon' multiple pages, positioning
+	.dataAddIcon {
+		position: fixed;
+		right: 40px;
+		bottom: 70px;
+
+		#add-item i {
+			box-shadow: 1px 1px 2px 2px $gray;
+			border-radius: 50%;
+		}
+
+		//'Add icon' Size and border & colour
+		a i {
+			border-radius: 21px;
+			font-size: 2em;
+			background-color: white;
+			color: gray;
+		}
+	}
 }
 
 .map-infowindow {
@@ -180,6 +256,6 @@ a:active {
 	background-color: $red;
 }
 
-#map-overlay.open {
-	display: block;
-}
+
+
+

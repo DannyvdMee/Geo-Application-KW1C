@@ -10421,6 +10421,7 @@ a.text-dark:focus {
 header {
   border-bottom: 1px solid #A4A4A4;
   height: 50px;
+  width: 100vw;
   line-height: 30px;
 }
 
@@ -10429,9 +10430,16 @@ header p {
   color: #5D5D5D;
 }
 
+main {
+  min-height: calc(100vh - 70px - 45px);
+  margin-bottom: 70px;
+  min-height: calc(100vh - 120px);
+}
+
 main form input,
 main form textarea,
-main form select {
+main form select,
+main form .input-box {
   line-height: 1.2em;
   width: 80%;
   display: block;
@@ -10442,8 +10450,20 @@ main form select {
   -webkit-appearance: none;
 }
 
-main form input {
+main form input,
+main form select {
   height: 40px;
+}
+
+main form .input-box {
+  min-height: 40px;
+  max-height: 120px;
+  overflow-y: scroll;
+  line-height: 40px;
+}
+
+main form .input-box p {
+  margin: 0;
 }
 
 main form textarea {
@@ -10462,10 +10482,11 @@ main form input[type=submit] {
 footer {
   color: #A4A4A4;
   height: 70px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   border-top: 1px solid #A4A4A4;
   bottom: 0;
+  background-color: #FFFFFF;
 }
 
 footer i.material-icons {
@@ -10493,7 +10514,8 @@ a {
   color: inherit;
 }
 
-a:active {
+a:active,
+a:hover {
   text-decoration: none;
   color: inherit;
 }
@@ -10552,7 +10574,7 @@ a:active {
 
 .btn-gray {
   background-color: #A4A4A4;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .border-gray {
@@ -10563,8 +10585,63 @@ a:active {
   background-color: #F6F2F2;
 }
 
-#map-bg {
+.teacher-background .height-21 {
+  height: 21px;
+}
+
+.teacher-background .main-background {
+  background-color: #F6F2F2;
+}
+
+.teacher-background #map-bg {
   height: 100%;
+}
+
+.teacher-background #map-overlay {
+  position: absolute;
+  display: none;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 120px);
+  width: 100vw;
+  background-color: #ED2525;
+}
+
+.teacher-background #map-overlay.open {
+  display: block;
+}
+
+.teacher-background .dataItem {
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 4px 25px;
+  border-radius: 4px;
+}
+
+.teacher-background .dataItem p,
+.teacher-background .dataItem div {
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px;
+}
+
+.teacher-background .dataAddIcon {
+  position: fixed;
+  right: 40px;
+  bottom: 70px;
+}
+
+.teacher-background .dataAddIcon #add-item i {
+  -webkit-box-shadow: 1px 1px 2px 2px #A4A4A4;
+          box-shadow: 1px 1px 2px 2px #A4A4A4;
+  border-radius: 50%;
+}
+
+.teacher-background .dataAddIcon a i {
+  border-radius: 21px;
+  font-size: 2em;
+  background-color: white;
+  color: gray;
 }
 
 .map-infowindow {
@@ -10580,9 +10657,5 @@ a:active {
   height: calc(100vh - 120px);
   width: 100vw;
   background-color: #ED2525;
-}
-
-#map-overlay.open {
-  display: block;
 }
 

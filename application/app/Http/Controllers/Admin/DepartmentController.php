@@ -26,6 +26,11 @@ class DepartmentController extends Controller
 		return view('admin/department/index', ['departments' => $departments]);
 	}
 
+	public function create()
+	{
+		return view('admin/department/create');
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -34,17 +39,18 @@ class DepartmentController extends Controller
 	public function store(Request $request)
 	{
 		$department = new Department;
-		$department->title = $request->departmenttitle;
-		$department->state = $request->departmentstate;
+		$department->title = $request->title;
+		$department->state = $request->state;
 
 		$department->save();
 
+		return redirect('Admin/department');
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id)
@@ -61,12 +67,14 @@ class DepartmentController extends Controller
 
 		$department->save();
 
+		return redirect('Admin/department');
+
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id)
@@ -76,13 +84,14 @@ class DepartmentController extends Controller
 		return view('admin/department/edit', ['department' => $department]);
 
 		// SQL Insert to DB for editing the department
+
 	}
 
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy($id)

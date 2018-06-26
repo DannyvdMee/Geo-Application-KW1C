@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
     Route::get('users', 'UserController@index')->name('users');
 
-    Route::get('departments', 'DepartmentController@index')->name('departments');
+	Route::get('departments', 'DepartmentController@index')->name('departments');
+	Route::get('departments/create', 'DepartmentController@create')->name('departments/create');
 
     Route::get('settings', 'SettingsController@index')->name('settings');
 
@@ -54,9 +55,19 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+	Route::get('exercise', 'ExerciseController@index')->name('exercise');
+	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
+
     Route::get('poi', 'PoiController@index')->name('poi');
     Route::get('poi/create', 'PoiController@create')->name('poi/create');
     Route::post('poi/create', 'PoiController@store')->name('poi/create');
+    Route::get('poi/{id}/edit', 'PoiController@edit')->name('poi/edit');
+    Route::post('poi/{id}/update', 'PoiController@update')->name('poi/{id}/update');
+
+    //Edit pagina voor POI pagina
+    Route::get('poi/edit', 'PoiController@edit')->name('poi/edit');
+    Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
+    Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     Route::get('routes', 'RouteController@index')->name('routes');
 

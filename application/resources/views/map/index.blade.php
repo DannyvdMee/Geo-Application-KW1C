@@ -38,9 +38,18 @@
 			});
 
 			for (i = 0; i < markers.length; i++) {
+				if (markers[i]['type'] === 'individual') {
+					icon = '<?php echo asset('storage/img/markers/ict.png') ?>';
+				} else if (markers[i]['type'] === 'group') {
+					icon = '<?php echo asset('storage/img/markers/group.png') ?>';
+				} else if (markers[i]['type'] === 'hidden') {
+					icon = '<?php echo asset('storage/img/markers/mystery.png') ?>';
+				}
+
 				marker = new google.maps.Marker({
 					position: {lat: markers[i]['latitude'], lng: markers[i]['longitude']},
-					map: map
+					map: map,
+					icon: icon,
 				});
 
 				marker['html'] =
@@ -78,6 +87,8 @@
 		function openDialogContext() {
 			marker_id = this.id;
 
+			$('#map-overlay').show();
+
 			// AJAX request to /map/marker/{id}
 		}
 	</script>
@@ -93,7 +104,12 @@
 	<!--The div element for the map -->
 	<div id="map" style="height: calc(100vh - 120px); width: 100%;"></div>
 	<div id="map-overlay">
-
+		<p class="font-bold">Title placeholder</p>
+		<div class="text-center">Text placeholder</div>
+		<img src="">
+		<textarea id="answer"></textarea>
+		<input type="hidden" id="question" readonly required>
+		<button id="submit-button" class="btn">@lang('messages.submit')</button>
 	</div>
 @endsection
 
@@ -102,6 +118,8 @@
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"
 			async defer></script>
 	<script type="application/javascript">
-		$('.marker-open-dialog').on('click', openDialogContext);
+		$(document).ready(function() {
+			$('.marker-open-dialog').on('click', openDialogContext);
+		});
 	</script>
 @endsection
