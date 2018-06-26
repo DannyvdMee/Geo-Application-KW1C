@@ -6,7 +6,7 @@
  * Time: 13:44
  */
 
-namespace App\User\Factory;
+namespace App\User\Factories;
 
 use App\Poi;
 
@@ -14,6 +14,7 @@ class PoiFactory
 {
 	/**
 	 * @param $url_id
+	 * @param $type
 	 * @param $title
 	 * @param $latitude
 	 * @param $longitude
@@ -23,11 +24,12 @@ class PoiFactory
 	 *
 	 * @return Poi
 	 */
-	public static function create($url_id, $title, $latitude, $longitude, $hint, $visibility, $active)
+	public static function create($url_id, $title, $type, $latitude, $longitude, $hint, $visibility, $active)
 	{
 		$poi = new Poi();
 
 		$poi->url_id     = $url_id;
+		$poi->type       = $type;
 		$poi->title      = $title;
 		$poi->latitude   = $latitude;
 		$poi->longitude  = $longitude;

@@ -16,9 +16,10 @@ class CreatePoiTable extends Migration
         Schema::create('pois', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
+            $table->string('type')->default('individual');
             $table->string('title');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->float('latitude', 8, 6);
+            $table->float('longitude',8, 6);
             $table->string('hint')->nullable();
             $table->boolean('visibility')->default(true);
 			$table->boolean('active')->default(0);

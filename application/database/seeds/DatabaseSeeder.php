@@ -1,10 +1,11 @@
 <?php
 
-use App\User\Factory\DepartmentFactory;
-use App\User\Factory\PoiFactory;
-use App\User\Factory\RouteFactory;
-use App\User\Factory\StudentFactory;
-use App\User\Factory\UserFactory;
+use App\User\Factories\DepartmentFactory;
+use App\User\Factories\ExerciseFactory;
+use App\User\Factories\PoiFactory;
+use App\User\Factories\RouteFactory;
+use App\User\Factories\StudentFactory;
+use App\User\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
 			'Root',
 			'root',
 			'admin',
-			true
+			0
 		);
 
 		$user->save();
@@ -39,17 +40,17 @@ class DatabaseSeeder extends Seeder
 			'Teacher',
 			'ictacademie',
 			'teacher',
-			true
+			0
 		);
 
 		$teacher->save();
 
 		// Student Segment
 		$student = StudentFactory::create(
-			111111,
 			'TestStudent',
+			2115581,
 			'TestAdditional',
-			true
+			0
 		);
 
 		$student->save();
@@ -59,8 +60,8 @@ class DatabaseSeeder extends Seeder
 			bin2hex(random_bytes(4)),
 			'First Route',
 			1,
-			true,
-			true
+			0,
+			0
 		);
 
 		$route->save();
@@ -68,11 +69,38 @@ class DatabaseSeeder extends Seeder
 		// Poi Segment
 		$poi = PoiFactory::create(
 			bin2hex(random_bytes(40)),
-			'Preson Gravey',
+			'Preson Gravey has a Quest for you!',
+			'individual',
 			'51.6903949',
 			'5.2866055',
-			'This is the first POI. But first, another settlement needs our help. I will mark it on your map. Find out what they need',
-			true,
+			'This is the first POI. But first, another POI needs our help. I will mark it on your map. Find out what they need',
+			0,
+			1
+		);
+
+		$poi->save();
+
+		$poi = PoiFactory::create(
+			bin2hex(random_bytes(40)),
+			'Avans University',
+			'group',
+			'51.6886659',
+			'5.2869727',
+			'University',
+			0,
+			1
+		);
+
+		$poi->save();
+
+		$poi = PoiFactory::create(
+			bin2hex(random_bytes(40)),
+			'DB Central Station',
+			'hidden',
+			'51.689968',
+			'5.295078',
+			'Travel',
+			0,
 			1
 		);
 
@@ -81,9 +109,20 @@ class DatabaseSeeder extends Seeder
 		// Department Segment
 		$department = DepartmentFactory::create(
 			'ictacademie',
-			true
+			0
 		);
 
 		$department->save();
+
+		// Exercise segment
+		$exercise = ExerciseFactory::create(
+			'placeholderID',
+			'Ghoul Problem at Avans College',
+			'Speak to the leader of the settlement.',
+			'application/resources/assets/images/Icons/Settlement.png',
+			'Preston, go fix your own shit. Im done with those quests'
+		);
+
+		$exercise->save();
 	}
 }
