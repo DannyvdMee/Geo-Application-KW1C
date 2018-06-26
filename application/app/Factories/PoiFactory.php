@@ -14,8 +14,9 @@ class PoiFactory
 {
 	/**
 	 * @param $url_id
-	 * @param $type
 	 * @param $title
+	 * @param $description
+	 * @param $type
 	 * @param $latitude
 	 * @param $longitude
 	 * @param $hint
@@ -24,18 +25,28 @@ class PoiFactory
 	 *
 	 * @return Poi
 	 */
-	public static function create($url_id, $title, $type, $latitude, $longitude, $hint, $visibility, $active)
-	{
+	public static function create(
+		$url_id,
+		$title,
+		$description,
+		$type,
+		$latitude,
+		$longitude,
+		$hint,
+		$visibility,
+		$active
+	) {
 		$poi = new Poi();
 
-		$poi->url_id     = $url_id;
-		$poi->type       = $type;
-		$poi->title      = $title;
-		$poi->latitude   = $latitude;
-		$poi->longitude  = $longitude;
-		$poi->hint       = $hint;
-		$poi->visibility = $visibility;
-		$poi->active     = $active;
+		$poi->url_id      = $url_id;
+		$poi->type        = $type;
+		$poi->title       = $title;
+		$poi->description = $description;
+		$poi->latitude    = $latitude;
+		$poi->longitude   = $longitude;
+		$poi->hint        = $hint;
+		$poi->visibility  = $visibility;
+		$poi->active      = $active;
 
 		return $poi;
 	}

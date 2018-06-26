@@ -38,11 +38,11 @@
 			});
 
 			for (i = 0; i < markers.length; i++) {
-				if (markers[i]['type'] == 'individual') {
+				if (markers[i]['type'] === 'individual') {
 					icon = '<?php echo asset('storage/img/markers/ict.png') ?>';
-				} else if (markers[i]['type'] == 'group') {
+				} else if (markers[i]['type'] === 'group') {
 					icon = '<?php echo asset('storage/img/markers/group.png') ?>';
-				} else if (markers[i]['type'] == 'hidden') {
+				} else if (markers[i]['type'] === 'hidden') {
 					icon = '<?php echo asset('storage/img/markers/mystery.png') ?>';
 				}
 
