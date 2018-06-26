@@ -24,6 +24,6 @@ return [
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
-	'confirmpw'      => 'Confirm password'
+	'confirmpw'      => 'Confirm password',
 	'student-groups' => 'Student groups',
 ];

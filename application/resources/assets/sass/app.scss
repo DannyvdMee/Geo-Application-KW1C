@@ -177,6 +177,7 @@ a:active, a:hover {
 
 .teacher-background {
 	background-color: $light-gray;
+
 	.height-21 {
 		height: 21px;
 	}
@@ -238,6 +239,8 @@ a:active, a:hover {
 			color: gray;
 		}
 	}
+}
+
 .map-infowindow {
 	overflow-x: hidden;
 	overflow-y: scroll;
