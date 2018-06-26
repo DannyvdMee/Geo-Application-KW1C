@@ -28,6 +28,7 @@ return [
 	'username'		 =>	'Gebruikersnaam',
 	'confirmpw'      => 'Bevestig wachtwoord',
 	'edit-poi'		 => 'POI bewerken',
+    
 	//POI
 	'poi-title'		 => 'Titel',
 	'poi-long'		 => 'Lengtegraad',
