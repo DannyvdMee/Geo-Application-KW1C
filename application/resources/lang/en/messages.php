@@ -12,6 +12,7 @@ return [
 	'pois'           => 'POI\'s',
 	'students'       => 'Students',
 	'groups'         => 'Groups',
+	'exercise'		 => 'Exercise',
 	'settings'       => 'Settings',
 	'active'         => 'Active',
 	'yes'            => 'Yes',

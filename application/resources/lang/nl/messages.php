@@ -12,6 +12,7 @@ return [
 	'pois'           => 'POI\'s',
 	'students'       => 'Studenten',
 	'groups'         => 'Groepen',
+	'exercise'		 => 'Oefening',
 	'settings'       => 'Instellingen',
 	'active'         => 'Actief',
 	'yes'            => 'Ja',
