@@ -1,7 +1,7 @@
 @extends('layouts.teacher')
 
 @section('content')
-	<div class="row">
+	<div class="row justify-content-center">
 		<div class="col">
 			<form method="POST" action="{{ route('teacher/poi/create') }}">
 				<p class="text-center font-bold">@lang('messages.add-poi')</p>
