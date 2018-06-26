@@ -8,9 +8,9 @@
 				@csrf
 				<select name="poi_id">
 						<option value="">Selecteer POI</option>
-					@foreach($pois as $poi)
-						<option value="{{$poi->poi_id}}">{{$poi->title}}</option>
-					@endforeach
+						@foreach($pois as $poi)
+							<option value="{{ $poi->poi_id }}">{{ $poi->title }}</option>
+						@endforeach
 				</select>
 				<input type="text" name="title" placeholder="Vraag titel">
 				<textarea name="content" placeholder="Vraag" required></textarea>

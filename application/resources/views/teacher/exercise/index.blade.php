@@ -7,7 +7,7 @@
 				<h2 class="text-center">@lang('messages.exercise')</h2>
 
 				<div id="department-container">
-					@foreach($exercises as $exercise)
+						@foreach($exercises as $exercise)
 						<div class="row">
 							<div class="col dataItem">
 								<p class="display-inline-block">{{ $exercise->title }}</p>
