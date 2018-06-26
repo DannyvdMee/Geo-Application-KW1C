@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Teacher; //TODO: 'App\Http\Controllers\Teacher' After moving ExerciseController to Teacher
+namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
