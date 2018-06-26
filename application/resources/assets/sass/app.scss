@@ -161,6 +161,8 @@ a:active, a:hover {
 	border: 1px solid $gray;
 }
 
+.teacher-background {
+	background-color: $light-gray;
 .height-21
 {
 	height: 21px;
@@ -169,6 +171,24 @@ a:active, a:hover {
 //Background color all pages
 .main-background {
 	background-color: $light-gray;
+}
+
+#map-bg {
+	height: 100%;
+}
+
+#map-overlay {
+	position: absolute;
+	display: none;
+	top: 50px;
+	left: 0;
+	height: calc(100vh - 120px);
+	width: 100vw;
+	background-color: $red;
+}
+
+#map-overlay.open {
+	display: block;
 }
 
 //Data display menus across multiple pages.

@@ -10574,6 +10574,24 @@ a:hover {
   background-color: #F6F2F2;
 }
 
+#map-bg {
+  height: 100%;
+}
+
+#map-overlay {
+  position: absolute;
+  display: none;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 120px);
+  width: 100vw;
+  background-color: #ED2525;
+}
+
+#map-overlay.open {
+  display: block;
+}
+
 .dataItem {
   background-color: #FFFFFF;
   padding: 0;

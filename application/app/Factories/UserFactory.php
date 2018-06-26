@@ -1,10 +1,9 @@
 <?php
 
-namespace App\User\Factory;
+namespace App\User\Factories;
 
 use App\User;
 use Illuminate\Support\Facades\Hash;
-
 
 class UserFactory
 {

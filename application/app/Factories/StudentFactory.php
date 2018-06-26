@@ -6,7 +6,7 @@
  * Time: 20:30
  */
 
-namespace App\User\Factory;
+namespace App\User\Factories;
 
 use App\Student;
 
@@ -20,14 +20,14 @@ class StudentFactory
 	 *
 	 * @return Student
 	 */
-	public static function create($number, $name, $additionalInformation, $activeState)
+	public static function create($name, $number, $additionalInformation, $activeState)
 	{
 		$student = new Student();
 
-		$student->number      = $number;
-		$student->name        = $name;
-		$student->information = $additionalInformation;
-		$student->active      = $activeState;
+		$student->name                  = $name;
+		$student->number				= $number;
+		$student->information			= $additionalInformation;
+		$student->active                = $activeState;
 
 		return $student;
 	}
