@@ -31,7 +31,7 @@
 				<option value="0">@lang('messages.no')</option>
 			</select>
 
-			<!-- Submit btn als een INPUT????????? -->
+			<!-- Submit button-->
 			<input type="submit" value="@lang('messages.save')">
 		</form>
 	</div>
