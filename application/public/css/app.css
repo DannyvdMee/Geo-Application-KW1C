@@ -10421,6 +10421,7 @@ a.text-dark:focus {
 header {
   border-bottom: 1px solid #A4A4A4;
   height: 50px;
+  width: 100vw;
   line-height: 30px;
 }
 
@@ -10429,9 +10430,14 @@ header p {
   color: #5D5D5D;
 }
 
+main {
+  min-height: calc(100vh - 120px);
+}
+
 main form input,
 main form textarea,
-main form select {
+main form select,
+main form .input-box {
   line-height: 1.2em;
   width: 80%;
   display: block;
@@ -10442,8 +10448,20 @@ main form select {
   -webkit-appearance: none;
 }
 
-main form input {
+main form input,
+main form select {
   height: 40px;
+}
+
+main form .input-box {
+  min-height: 40px;
+  max-height: 120px;
+  overflow-y: scroll;
+  line-height: 40px;
+}
+
+main form .input-box p {
+  margin: 0;
 }
 
 main form textarea {
@@ -10462,7 +10480,7 @@ main form input[type=submit] {
 footer {
   color: #A4A4A4;
   height: 70px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   border-top: 1px solid #A4A4A4;
   bottom: 0;

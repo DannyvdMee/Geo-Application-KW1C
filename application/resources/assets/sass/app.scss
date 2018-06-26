@@ -17,6 +17,7 @@
 header {
 	border-bottom: 1px solid $gray;
 	height: 50px;
+	width: 100vw;
 	line-height: 30px;
 
 	p {
@@ -26,8 +27,10 @@ header {
 }
 
 main {
+	min-height: calc(100vh - 120px);
+
 	form {
-		input, textarea, select {
+		input, textarea, select, .input-box {
 			line-height: 1.2em;
 			width: 80%;
 			display: block;
@@ -38,8 +41,19 @@ main {
 			-webkit-appearance: none;
 		}
 
-		input {
+		input, select {
 			height: 40px;
+		}
+
+		.input-box {
+			min-height: 40px;
+			max-height: 120px;
+			overflow-y: scroll;
+			line-height: 40px;
+
+			p {
+				margin: 0;
+			}
 		}
 
 		textarea {
@@ -60,7 +74,7 @@ main {
 footer {
 	color: $gray;
 	height: 70px;
-	width: 100%;
+	width: 100vw;
 	position: fixed;
 	border-top: 1px solid $gray;
 	bottom: 0;
