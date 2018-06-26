@@ -91,3 +91,10 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Depending on which type it is, the marker is changed
 - Made database seeder, factory, modal and controller for exercise
 - Uploaded old markers
+
+26 June 2018
+
+- Creating the view of routes
+- Fixed multiple errors and shit
+- Bitching about the jQuery stuff
+- Learning about CSS
