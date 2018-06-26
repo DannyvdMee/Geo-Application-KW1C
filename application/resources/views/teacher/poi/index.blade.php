@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col">
 			<section>
-				<h2 class="text-center">@lang('messages.pois')</h2>
+				<h5 class="text-center font-bold">@lang('messages.pois')</h5>
 
 				<!-- De POI's gelooped -->
 				<div id="poi-container">
