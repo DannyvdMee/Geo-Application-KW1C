@@ -22,7 +22,7 @@
 												<i class="material-icons">visibility_off</i>
 											</a>
 										@endif
-										<a href="{{ route('teacher/poi/edit', ['id' => $poi->id]) }}">
+										<a href="{{ route('teacher/poi/edit/', ['id' => $poi->id]) }}">
 											<i class="material-icons">edit</i>
 										</a>
 										<a href="{{ route('teacher/poi/delete', ['id' => $poi->id]) }}">

@@ -6,7 +6,7 @@
 		<p class="text-center font-bold">@lang('messages.add-poi')</p>
 
 		<!-- POI edit form -->
-		<form method="POST" action="{{ route('teacher/poi/{id}/update', ['id' => $poi->id]) }}">
+		<form method="POST" action="{{ route('teacher/poi/edit/', ['id' => $poi->id]) }}">
 			@csrf
 			
 			<!-- POI title -->
