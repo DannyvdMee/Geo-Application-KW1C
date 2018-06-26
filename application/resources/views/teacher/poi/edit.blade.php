@@ -10,23 +10,23 @@
 			@csrf
 			
 			<!-- POI title -->
-			<input type="text" name="name" placeholder="POI title" 
+			<input type="text" name="name" placeholder="@lang('messages.poi-title')" 
 				value="{{ $poi->title }}" required autofocus>
 			
 			<!-- POI hint -->
-			<input type="text" name="hint" placeholder="POI hint" 
+			<input type="text" name="hint" placeholder="Hint" 
 				value="{{ $poi->hint }}">
-
-			<!-- POI latitute -->
-			<input type="text" name="latitude" placeholder="POI latitude" 
-				value='{{ $poi->latitude }}' required>
 			
 			<!-- POI longtitute -->
-			<input type="text" name="longitude" placeholder="POI longitude" 
+			<input type="text" name="longitude" placeholder="@lang('messages.poi-long')" 
 				value="{{ $poi->longitude }}" required>
+				
+			<!-- POI latitute -->
+			<input type="text" name="latitude" placeholder="@lang('messages.poi-lat')" 
+				value='{{ $poi->latitude }}' required>
 			
 			<!-- POI description -->
-			<textarea name="description" placeholder="POI description" required>{{ $poi->description }}</textarea>
+			<textarea name="description" placeholder="@lang('messages.poi-desc')" required>{{ $poi->description }}</textarea>
 
 			<!-- POI dropdown -->
 			<select name="active">
