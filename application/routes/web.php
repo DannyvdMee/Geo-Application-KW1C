@@ -56,23 +56,23 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 	Route::get('exercise', 'ExerciseController@index')->name('exercise');
-	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
+	Route::post('exercise/create', 'ExerciseController@create')->name('exercise/create');
 
     Route::get('poi', 'PoiController@index')->name('poi');
     Route::get('poi/create', 'PoiController@create')->name('poi/create');
     Route::post('poi/create', 'PoiController@store')->name('poi/create');
     Route::get('poi/{id}/edit', 'PoiController@edit')->name('poi/edit');
-    Route::post('poi/{id}/update', 'PoiController@update')->name('poi/{id}/update');
+    Route::patch('poi/{id}/update', 'PoiController@update')->name('poi/{id}/update');
 
     //Edit pagina voor POI pagina
-    Route::get('poi/edit', 'PoiController@edit')->name('poi/edit');
+    Route::patch('poi/edit', 'PoiController@edit')->name('poi/edit');
     Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
-    Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
+    Route::delete('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     Route::get('routes', 'RouteController@index')->name('routes');
 
     Route::get('student', 'StudentController@index')->name('student');
-    Route::get('student/create', 'StudentController@create')->name('student/create');
+    Route::post('student/create', 'StudentController@create')->name('student/create');
     Route::post('student/create', 'StudentController@store')->name('student/create');
 
     Route::get('group', 'GroupController@index')->name('group');
