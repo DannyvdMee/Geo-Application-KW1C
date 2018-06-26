@@ -55,6 +55,9 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+	Route::get('exercise', 'ExerciseController@index')->name('exercise');
+	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
+
     Route::get('poi', 'PoiController@index')->name('poi');
     Route::get('poi/create', 'PoiController@create')->name('poi/create');
     Route::post('poi/create', 'PoiController@store')->name('poi/create');
