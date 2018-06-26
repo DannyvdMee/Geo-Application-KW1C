@@ -26,5 +26,6 @@ return [
 	'users'          => 'Gebruikers',
 	'student-groups' => 'Student groepen',
 	'username'		 =>	'Gebruikersnaam',
-	'confirmpw'      => 'Bevestig wachtwoord'
+	'confirmpw'      => 'Bevestig wachtwoord',
+	'edit-poi'		 => 'POI bewerken'
 ];
