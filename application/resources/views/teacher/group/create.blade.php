@@ -27,6 +27,13 @@
 				$('#added-students').html('<p>No students added yet</p>');
 			}
 		}
+
+		function removeDisplayNoStudents() {
+			var parent = document.getElementById("#added-students");
+			var child = document.getElementById("#NoStudents");
+			parent.removeChild(child);
+		}
+
 	</script>
 @endsection
 
@@ -50,13 +57,14 @@
 				<div id="added-students" class="input-box">
 					@if (!empty($added))
 						@foreach ($added as $student)
-							<div class="{{ $student->number }}">
+							<div id="student">
 								<p>{{ $student->name }}</p>
-								<i class="material-icons float-right remove-student">remove</i>
+								<button class="material-icons float-right remove-student">remove</button>
 							</div>
 						@endforeach
-					@else
-						<p>No students added yet</p>
+					@elseif(empty($added))
+						{{--<p id="NoStudents">No students added yet</p>--}}
+						{{--TODO Fix this mess, now it's a dirty fix--}}
 					@endif
 				</div>
 
