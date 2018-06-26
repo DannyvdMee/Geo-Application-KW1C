@@ -18,6 +18,7 @@ class CreatePoiTable extends Migration
             $table->string('url_id')->unique();
             $table->string('type')->default('individual');
             $table->string('title');
+            $table->text('description');
             $table->float('latitude', 8, 6);
             $table->float('longitude',8, 6);
             $table->string('hint')->nullable();
