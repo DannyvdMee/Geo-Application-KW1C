@@ -31,8 +31,8 @@
 			<!-- POI dropdown -->
 			<select name="active">
 				<option value="">@lang('messages.active')?</option>
-				<option value="1" {{ ($poi->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
-				<option value="0" {{ ($poi->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
+				<option value="1" {{ ($poi->visibility == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
+				<option value="0" {{ ($poi->visibility == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 			</select>
 
 			<!-- Submit btn -->

@@ -15,7 +15,7 @@ class PoiController extends Controller
      */
     public function index()
     {
-		$pois = Poi::where('active', '=', TRUE)->get();
+		$pois = Poi::all();
 
         return view('teacher/poi/index', ['pois' => $pois]);
     }
@@ -117,15 +117,12 @@ class PoiController extends Controller
 
 		$poi->title = $request->name;
 		$poi->latitude = $request->latitude;
-		$poi->longitude = $request->longitude;
+        $poi->longitude = $request->longitude;
+        $poi->description = $request->description;
 
 		if (!empty($request->hint)) {
 			$poi->hint = $request->hint;
 		}
-
-		if (!empty($request->photo)) {
-			$poi->photo = $request->photo;
-        }
         
         $poi->active = $request->active;
 

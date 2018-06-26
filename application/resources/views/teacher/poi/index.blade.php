@@ -13,7 +13,7 @@
 								<div class="col dataItem">
 									<p class="display-inline-block">{{ $poi->title }}</p>
 									<div class="float-right">
-										@if ($poi->state == false)
+										@if ($poi->visibility == true)
 											<a href="{{ route('teacher/poi/visibility', ['id' => $poi->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
