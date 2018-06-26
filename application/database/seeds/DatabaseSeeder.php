@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 			'Root',
 			'root',
 			'admin',
-			0
+			1
 		);
 
 		$user->save();
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
 			'Teacher',
 			'ictacademie',
 			'teacher',
-			0
+			1
 		);
 
 		$teacher->save();
@@ -50,7 +50,16 @@ class DatabaseSeeder extends Seeder
 			'TestStudent',
 			2115581,
 			'TestAdditional',
-			0
+			1
+		);
+
+		$student->save();
+
+		$student = StudentFactory::create(
+			'TestStudent 2',
+			1243241,
+			'Placeholder',
+			1
 		);
 
 		$student->save();
@@ -75,7 +84,7 @@ class DatabaseSeeder extends Seeder
 			'51.6903949',
 			'5.2866055',
 			'Look for a new POI',
-			0,
+			1,
 			1
 		);
 
@@ -89,7 +98,7 @@ class DatabaseSeeder extends Seeder
 			'51.6886659',
 			'5.2869727',
 			'University',
-			0,
+			1,
 			1
 		);
 
@@ -103,7 +112,7 @@ class DatabaseSeeder extends Seeder
 			'51.689968',
 			'5.295078',
 			'Travel',
-			0,
+			1,
 			1
 		);
 
@@ -112,7 +121,7 @@ class DatabaseSeeder extends Seeder
 		// Department Segment
 		$department = DepartmentFactory::create(
 			'ictacademie',
-			0
+			1
 		);
 
 		$department->save();
