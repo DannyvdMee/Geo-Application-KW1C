@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
 
 		// Exercise segment
 		$exercise = ExerciseFactory::create(
-			'placeholderID',
+			1,
 			'Ghoul Problem at Avans College',
 			'Speak to the leader of the settlement.',
 			'application/resources/assets/images/Icons/Settlement.png',
