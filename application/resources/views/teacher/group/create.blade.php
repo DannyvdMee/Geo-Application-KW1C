@@ -63,8 +63,8 @@
 				</select>
 				<input type="submit" value="@lang('messages.save')">
 			</form>
-			<div>
-				<button class="btn-gray" onclick="removeStudent()">
+			<div class="display-inline-block text-center box-center">
+				<button class="btn-white" onclick="removeStudent()">
 					Delete all students
 				</button>
 			</div>
