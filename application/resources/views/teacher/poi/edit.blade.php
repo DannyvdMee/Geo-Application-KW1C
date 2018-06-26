@@ -3,10 +3,10 @@
 @section('content')
 <div class="row justify-content-center">
 	<div class="col">
-		<p class="text-center font-bold">@lang('messages.add-poi')</p>
+		<p class="text-center font-bold">@lang('messages.edit-poi')</p>
 
 		<!-- POI edit form -->
-		<form method="POST" action="{{ route('teacher/poi/edit/', ['id' => $poi->id]) }}">
+		<form method="POST" action="{{ route('teacher/poi/edit', ['id' => $poi->id]) }}">
 			@csrf
 			
 			<!-- POI title -->
@@ -26,9 +26,7 @@
 				value="{{ $poi->longitude }}" required>
 			
 			<!-- POI description -->
-			<textarea name="description" placeholder="POI description" required>
-				{{ $poi->description }}
-			</textarea>
+			<textarea name="description" placeholder="POI description" required>{{ $poi->description }}</textarea>
 
 			<!-- POI dropdown -->
 			<select name="active">
