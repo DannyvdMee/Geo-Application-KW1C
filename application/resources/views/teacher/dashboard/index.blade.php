@@ -4,6 +4,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="row">
+				<!-- De route marker -->
 				<div class="col-6">
 					<div class="float-center display-block">
 						<a href="{{ route('teacher/routes') }}">
@@ -12,6 +13,7 @@
 						</a>
 					</div>
 				</div>
+				<!-- De map marker -->
 				<div class="col-6">
 					<div class="float-center display-block">
 						<a href="{{ route('teacher/poi') }}">
@@ -20,6 +22,7 @@
 						</a>
 					</div>
 				</div>
+				<!-- De map marker -->
 				<div class="col-6">
 					<div class="float-center display-block">
 						<a href="{{ route('teacher/groups') }}">
@@ -28,6 +31,7 @@
 						</a>
 					</div>
 				</div>
+				<!-- De settings marker -->
 				<div class="col-6">
 					<div class="float-center display-block">
 						<a href="{{ route('teacher/settings') }}">

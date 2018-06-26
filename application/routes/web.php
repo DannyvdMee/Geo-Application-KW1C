@@ -61,6 +61,11 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('poi/{id}/edit', 'PoiController@edit')->name('poi/edit');
     Route::post('poi/{id}/update', 'PoiController@update')->name('poi/{id}/update');
 
+    //Edit pagina voor POI pagina
+    Route::get('poi/edit', 'PoiController@edit')->name('poi/edit');
+    Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
+    Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
+
     Route::get('routes', 'RouteController@index')->name('routes');
 
     Route::get('student', 'StudentController@index')->name('student');
