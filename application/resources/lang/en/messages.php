@@ -4,7 +4,7 @@ return [
 	'login'          => 'Login',
 	'logout'         => 'Logout',
 	'map'            => 'Map',
-	'email'          => 'Emailaddress',
+	'email'          => 'Email address',
 	'password'       => 'Password',
 	'create-account' => 'Create account',
 	'routes'         => 'Routes',
@@ -17,9 +17,13 @@ return [
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'add-poi'        => 'Add POI',
+	'add-student'    => 'Add Student',
+	'add-department' => 'Add Department',
 	'add-group' => 'Add group',
 	'save'           => 'Save',
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
+	'username'		 =>	'Username',
+	'confirmpw'      => 'Confirm password'
 	'student-groups' => 'Student groups',
 ];

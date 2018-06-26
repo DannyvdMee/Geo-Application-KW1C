@@ -18,8 +18,12 @@ return [
 	'no'             => 'Nee',
 	'add-poi'        => 'POI toevoegen',
 	'add-group' => 'Groep toevoegen',
+	'add-student'    => 'Student toevoegen',
+	'add-department' => 'Afdeling toevoegen',
 	'save'           => 'Opslaan',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',
 	'student-groups' => 'Student groepen',
+	'username'		 =>	'Gebruikersnaam',
+	'confirmpw'      => 'Bevestig wachtwoord'
 ];

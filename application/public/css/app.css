@@ -10484,6 +10484,7 @@ footer {
   position: fixed;
   border-top: 1px solid #A4A4A4;
   bottom: 0;
+  background-color: #FFFFFF;
 }
 
 footer i.material-icons {
@@ -10511,7 +10512,8 @@ a {
   color: inherit;
 }
 
-a:active {
+a:active,
+a:hover {
   text-decoration: none;
   color: inherit;
 }
@@ -10570,14 +10572,18 @@ a:active {
 
 .btn-gray {
   background-color: #A4A4A4;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .border-gray {
   border: 1px solid #A4A4A4;
 }
 
-.teacher-background {
+.height-21 {
+  height: 21px;
+}
+
+.main-background {
   background-color: #F6F2F2;
 }
 
@@ -10602,5 +10608,39 @@ a:active {
 
 #map-overlay.open {
   display: block;
+}
+
+.dataItem {
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 4px 25px;
+  border-radius: 4px;
+}
+
+.dataItem p,
+.dataItem div {
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px;
+}
+
+.dataAddIcon {
+  position: fixed;
+  right: 40px;
+  bottom: 70px;
+}
+
+.dataAddIcon #add-item i {
+  -webkit-box-shadow: 1px 1px 2px 2px #A4A4A4;
+          box-shadow: 1px 1px 2px 2px #A4A4A4;
+  border-radius: 50%;
+}
+
+.dataAddIcon a i {
+  border-radius: 21px;
+  font-size: 2em;
+  background-color: white;
+  color: gray;
+  font-weight: 900;
 }
 

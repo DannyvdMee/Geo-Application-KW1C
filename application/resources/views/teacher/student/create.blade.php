@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col">
 			<form method="POST" action="{{ route('teacher/student/create') }}">
-				<p class="text-center font-bold">@lang('messages.add-poi')</p>
+				<p class="text-center font-bold">@lang('messages.add-student')</p>
 				@csrf
 				<input type="number" name="number" placeholder="Studentnumber" required autofocus>
 				<input type="text" name="name" placeholder="Student name" required>
@@ -16,6 +16,7 @@
 				</select>
 				<input type="submit" value="@lang('messages.save')">
 			</form>
+
 		</div>
 	</div>
 @endsection
