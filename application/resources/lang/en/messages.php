@@ -1,5 +1,6 @@
 <?php
 return [
+	//General
 	'register'       => 'Register',
 	'login'          => 'Login',
 	'logout'         => 'Logout',
@@ -17,21 +18,32 @@ return [
 	'active'         => 'Active',
 	'yes'            => 'Yes',
 	'no'             => 'No',
-	'add-poi'        => 'Add POI',
-	'add-student'    => 'Add Student',
-	'add-department' => 'Add Department',
-	'add-group' => 'Add group',
 	'save'           => 'Save',
 	'departments'    => 'Deparment',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
-	'student-groups' => 'Student groups',
-	'edit-poi'		 => 'Edit POI',
+
+	'title' 		 => 'Title',
+	'long'		 	 => 'Longitude',
+	'lat'			 => 'Latitude',
+	'desc'			 => 'Description',
     
 	//POI
-	'poi-title'		 => 'Title',
-	'poi-long'		 => 'Longitude',
-	'poi-lat'		 => 'Latitude',
-	'poi-desc'		 => 'Description'
+	'poi-add'        => 'Add POI',
+	'poi-edit'		 => 'Edit POI',
+
+	//Routes
+	'route-add' 	 => 'Add Route',
+	'route-edit'	 => 'Edit route',
+
+	//Students
+	'student-add'    => 'Add Student',
+	'student-groups' => 'Student groups',
+
+	//Department
+	'department-add' => 'Add Department',
+
+	//Group
+	'group-add' 	 => 'Add group'
 ];
