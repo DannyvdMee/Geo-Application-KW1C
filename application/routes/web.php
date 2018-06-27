@@ -37,7 +37,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
     Route::get('users', 'UserController@index')->name('users');
 
 	Route::get('departments', 'DepartmentController@index')->name('departments');
-	Route::get('departments/create', 'DepartmentController@create')->name('departments/create');
+	Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
 
     Route::get('settings', 'SettingsController@index')->name('settings');
 
@@ -59,6 +59,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     //Exercise
     Route::get('exercise', 'ExerciseController@index')->name('exercise');
 	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
+	Route::post('exercise/create', 'ExerciseController@store')->name('exercise/create');
 
     //POI -- Correct en werkend -- kan als template gebruikt worden
     Route::get('poi', 'PoiController@index')->name('poi');
@@ -67,7 +68,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('poi/edit/{id}', 'PoiController@edit')->name('poi/edit');
     Route::post('poi/edit/{id}', 'PoiController@update')->name('poi/edit');
     Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
-    Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
+    Route::delete('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     //Routes
     Route::get('route', 'RouteController@index')->name('route');
@@ -80,7 +81,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
     //Students
     Route::get('student', 'StudentController@index')->name('student');
-    Route::get('student/create', 'StudentController@create')->name('student/create');
+    Route::post('student/create', 'StudentController@create')->name('student/create');
     Route::post('student/create', 'StudentController@store')->name('student/create');
 
     //Groups
