@@ -46,11 +46,13 @@
 
 				map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
 
-				marker = new google.maps.Marker({
+				posmarker = new google.maps.Marker({
 					position: {lat: pos.coords.latitude, lng: pos.coords.longitude},
 					map: map,
 					icon: '<?php echo asset('storage/img/markers/position.png') ?>',
 				});
+
+				posmarker.metadata = {id: 'posmarker'}
 			});
 
 			infowindow = new google.maps.InfoWindow({
