@@ -60,7 +60,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('exercise', 'ExerciseController@index')->name('exercise');
 	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
 
-    //POI
+    //POI -- Correct en werkend -- kan als template gebruikt worden
     Route::get('poi', 'PoiController@index')->name('poi');
     Route::get('poi/create', 'PoiController@create')->name('poi/create');
     Route::post('poi/create', 'PoiController@store')->name('poi/create');
@@ -70,8 +70,13 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     //Routes
-    Route::get('routes', 'RouteController@index')->name('routes');
-    Route::post('route/create' , 'RouteController@store')->name('route/create');
+    Route::get('route', 'RouteController@index')->name('route');
+    Route::get('route/create', 'RouteController@create')->name('route/create');
+    Route::post('route/create', 'RouteController@store')->name('route/create');
+    Route::get('route/edit/{id}', 'RouteController@edit')->name('route/edit');
+    Route::post('route/edit/{id}', 'RouteController@update')->name('route/edit');
+    Route::get('route/visibility/{id}', 'RouteController@show')->name('route/visibility');
+    Route::get('route/delete/{id}', 'PoiControRouteControllerller@destroy')->name('route/delete');
 
     //Students
     Route::get('student', 'StudentController@index')->name('student');
