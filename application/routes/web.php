@@ -64,7 +64,11 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	//Exercise
 	Route::get('exercise', 'ExerciseController@index')->name('exercise');
 	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
-	Route::post('exercise/create', 'ExerciseController@store')->name('exercise/create');
+    Route::post('exercise/create', 'ExerciseController@store')->name('exercise/create');
+    Route::get('exercise/edit/{id}', 'ExerciseController@edit')->name('exercise/edit');
+	Route::post('exercise/edit/{id}', 'ExerciseController@update')->name('exercise/edit');
+	Route::get('exercise/visibility/{id}', 'ExerciseController@show')->name('exercise/visibility');
+	Route::get('exercise/delete/{id}', 'ExerciseController@destroy')->name('exercise/delete');
 	
 	//POI -- Correct en werkend -- kan als template gebruikt worden
 	Route::get('poi', 'PoiController@index')->name('poi');
