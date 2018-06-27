@@ -18,8 +18,8 @@ class CreateRouteTable extends Migration
             $table->string('url_id')->unique();
             $table->string('title');
             $table->integer('user_id')->unsigned();
-			$table->boolean('visibility')->default(true);
-			$table->boolean('active')->default(false);
+			$table->integer('visibility')->default(1);
+			$table->integer('active')->default(0);
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
         });

@@ -27,5 +27,12 @@ return [
 	'users'          => 'Gebruikers',
 	'student-groups' => 'Student groepen',
 	'username'		 =>	'Gebruikersnaam',
-	'confirmpw'      => 'Bevestig wachtwoord'
+	'confirmpw'      => 'Bevestig wachtwoord',
+	'edit-poi'		 => 'POI bewerken',
+    
+	//POI
+	'poi-title'		 => 'Titel',
+	'poi-long'		 => 'Lengtegraad',
+	'poi-lat'		 => 'Breedtegraad',
+	'poi-desc'		 => 'Omschrijving'
 ];

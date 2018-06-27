@@ -16,7 +16,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        $routes = Route::all()->active()->get();
+		$routes = Route::all();
 
         return view('teacher/route/index', ['routes' => $routes]);
     }
@@ -49,7 +49,7 @@ class RouteController extends Controller
 
         $route->save();
 
-        return view('teacher/route/index');
+        return redirect('teacher/route');
     }
 
     /**
@@ -71,7 +71,9 @@ class RouteController extends Controller
 
 		$route->visibility = $visibility;
 
-		$route->save();
+        $route->save();
+        
+        return redirect('teacher/route');
     }
 
     /**
@@ -103,7 +105,9 @@ class RouteController extends Controller
 		$route->title = $request->title;
 		$route->user_id = Auth::user()->id;
 
-		$route->save();
+        $route->save();
+        
+        return redirect('teacher/route');
     }
 
     /**
@@ -121,6 +125,6 @@ class RouteController extends Controller
 
         $route->save();
 
-        return view('teacher/route/index');
+        return redirect('teacher/route');
     }
 }

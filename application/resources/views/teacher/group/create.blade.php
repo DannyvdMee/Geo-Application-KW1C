@@ -2,8 +2,7 @@
 
 @section('injectable-js')
 	<script type="application/javascript">
-		function addStudent()
-		{
+		function addStudent() {
 			if ($(this).val() != '') {
 				value = $(this).find(':selected').text();
 				curr_html = $('#added-students').html();
@@ -19,14 +18,9 @@
 			}
 		}
 
-		function removeStudent()
-		{
-			console.log('Hi');
-			$(this).hide();
-			console.log($(this));
-
-			if($('#added-students').empty()) {
-				$('#added-students').html('<p>No students added yet</p>');
+		function removeStudent() {
+			if ($('#added-students').empty()) {
+				$('#added-students').html('');
 			}
 		}
 	</script>
@@ -58,7 +52,7 @@
 							</div>
 						@endforeach
 					@else
-						<p>No students added yet</p>
+
 					@endif
 				</div>
 
@@ -69,13 +63,18 @@
 				</select>
 				<input type="submit" value="@lang('messages.save')">
 			</form>
+			<div class="display-inline-block text-center box-center">
+				<button class="btn-white" onclick="removeStudent()">
+					Delete all students
+				</button>
+			</div>
 		</div>
 	</div>
 @endsection
 
 @section('js-eventlisteners')
 	<script type="application/javascript">
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$('#student-box').on('change', addStudent);
 			$('.student p').on('click', removeStudent);
 		});

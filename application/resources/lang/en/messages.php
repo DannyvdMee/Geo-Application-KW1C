@@ -28,4 +28,11 @@ return [
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
 	'student-groups' => 'Student groups',
+	'edit-poi'		 => 'Edit POI',
+    
+	//POI
+	'poi-title'		 => 'Title',
+	'poi-long'		 => 'Longitude',
+	'poi-lat'		 => 'Latitude',
+	'poi-desc'		 => 'Description'
 ];
