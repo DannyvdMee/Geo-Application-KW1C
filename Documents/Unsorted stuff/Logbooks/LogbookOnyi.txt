@@ -52,5 +52,12 @@ Opdracht C: Realiseren van de applicatie
 Documentatie
 Frontend
 
+26 06 18
+Documentatie
+Frontend
+Backend
+
+
+
 
 

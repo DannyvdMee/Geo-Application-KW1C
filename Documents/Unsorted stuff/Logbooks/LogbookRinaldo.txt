@@ -46,13 +46,16 @@ Tried to fix errors
 It was ineffective
 
 June 26:
-SUCC
-LOTS OF SUCC
+finish Departments Front end
+Create exercise page created
+Index exercise page created
+Front-end exercise create
+front-end exercise index
+back-end exercise create
+back-end exercise index
+Database Exercise edited
+Mutiple other front end pages, small fixes and updates
+Helping danny with his shitty CSS skills
 
-HELLO RINALDO
 
-SUCC
-
-OR
-
-SASS
+June 27:
