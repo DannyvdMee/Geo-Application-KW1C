@@ -15,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::where('active', '=', TRUE)->get();
+        $students = Student::where('active', '=', 1)->get();
 
 		return view('teacher/student/index', ['students' => $students]);
     }
@@ -74,7 +74,7 @@ class StudentController extends Controller
 
 		$student->save();
 
-		return redirect('teacher/student/index');
+		return redirect('teacher/student');
 	}
 
     /**
@@ -103,13 +103,13 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
 
-		$student->studentnumber = $request->studentnummber;
-		$student->studentname = $request->studentname;
+		$student->number = $request->number;
+		$student->name = $request->name;
 		$student->active = $request->active;
 
 		$student->save();
 
-		return redirect('teacher/student/index');
+		return redirect('teacher/student');
 	}
 
     /**
@@ -123,10 +123,10 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
 
-        $student->active = FALSE;
+        $student->active = 0;
 
         $student->save();
 
-		return view('teacher/student/index');
+		return redirect('teacher/student');
     }
 }
