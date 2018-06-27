@@ -24,16 +24,19 @@ Beschrijving:   Create Exercise Pagina
 					<form method="POST" action="{{ route('teacher/exercise/create') }}">
 						@csrf
 						
-						<!-- POI ID -->
+						<!-- POI ID = hidden -->
 						<input type="hidden" name="poi_id" value="{{ $poi[0]->id }}" required readonly>
-						<!-- Exercise Title -->
+
+						<!-- Exercise title -->
 						<input type="text" name="title" placeholder="@lang('messages.title')">
-						<!-- Exercise question -->
-						<textarea name="content" placeholder="@lang('messages.exercise-question')" required></textarea>
+						<!-- Exercise content -->
+						<textarea name="content" placeholder="@lang('messages.exercise-content')" required></textarea>
 						<!-- Exercise answer input area -->
-						<input type="text" name="answer" placeholder="juiste antwoord" required>
+						<input type="text" name="answer" placeholder="@lang('messages.exercise-answer')" required>
 						<!-- Exercise picture -->
-						<input type="text" name="picture" placeholder="Afbeelding URL" required>
+						<input style="border-style: none; padding-left: 0;" type="file" name="picture" 
+						placeholder="@lang('messages.exercise-question')">
+
 						<!-- Exercise dropdown -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
