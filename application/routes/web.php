@@ -46,10 +46,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 	Route::get('users', 'UserController@index')->name('users');
 
 	//department
-	Route::get('department', 'DepartmentController@index')->name('department');
-	Route::post('department/create', 'DepartmentController@create')->name('department/create');
+	Route::get('departments', 'DepartmentController@index')->name('departments');
+	Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
 
-	//settings
+	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
 
 });

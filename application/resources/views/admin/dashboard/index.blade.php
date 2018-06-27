@@ -9,7 +9,7 @@
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
-							<a href="{{ route('admin/department') }}">
+							<a href="{{ route('admin/departments') }}">
 								<i class="material-icons display-block dashboard-icon-pos">directions</i>
 								<span class="display-block text-center dashboard-text-pos">@lang('messages.routes')</span>
 							</a>
