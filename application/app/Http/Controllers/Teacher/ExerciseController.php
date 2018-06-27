@@ -16,7 +16,7 @@ class ExerciseController extends Controller
 	 */
 	public function index()
 	{
-		$exercises = Exercise::all();
+		$exercises = Exercise::where('active', '=', TRUE)->get();
 
 		return view('teacher/exercise/index', ['exercises' => $exercises]);
 	}
