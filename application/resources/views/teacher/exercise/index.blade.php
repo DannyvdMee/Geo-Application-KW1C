@@ -33,11 +33,14 @@
 					@endforeach
 					<div class="whitespace height-21"></div>
 
+					{{-- No option to add exercise required. Exercises are linked to a POI
+
 					<div class="dataAddIcon display-inline-block float-right">
 						<a href="{{ route('teacher/exercise/create') }}" id="add-item">
 							<i class="material-icons">add</i>
 						</a>
 					</div>
+					--}}
 				</div>
 			</section>
 
