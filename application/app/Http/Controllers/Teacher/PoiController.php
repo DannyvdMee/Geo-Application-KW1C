@@ -55,10 +55,7 @@ class PoiController extends Controller
         $poi->longitude = $request->longitude;
         $poi->description = $request->description;
 		$poi->active = $request->active;
-
-        if (!empty($request->hint)) {
-			$poi->hint = $request->hint;
-        }
+		$poi->hint = $request->hint;
         
 		$poi->save();
 
@@ -120,10 +117,8 @@ class PoiController extends Controller
         $poi->longitude = $request->longitude;
         $poi->active = $request->active;
         $poi->description = $request->description;
+		$poi->hint = $request->hint;
 
-		if (!empty($request->hint)) {
-			$poi->hint = $request->hint;
-		}
 
 		$poi->save();
 
