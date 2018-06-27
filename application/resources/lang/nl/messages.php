@@ -30,9 +30,10 @@ return [
 	'desc'			 => 'Beschrijving',
 	
 	//Exercise
-	'exercise-add' 	 => 'Opdracht toevoegen',
-	'exercise-content' => 'Beschrijving',
-	'exercise-answer' => 'Antwoord',
+	'exercise-add' 	 	=> 'Opdracht toevoegen',
+	'exercise-content' 	=> 'Beschrijving',
+	'exercise-answer' 	=> 'Antwoord',
+	'exercise-edit' 	=> 'Opdracht bewerken',
 
 	//POI
 	'poi-add'        => 'POI toevoegen',
@@ -43,8 +44,12 @@ return [
 	'route-edit'	 => 'Route bewerken',
 
 	//Students
-	'student-add'    => 'Student toevoegen',
-	'student-groups' => 'Student groepen',
+	'student-add'    => 'Studenten toevoegen',
+	'student-groups' => 'Studenten groepen',
+	'student-edit'	 => 'Studenten bewerken',
+	'student-number' => 'Studentnummer',
+	'student-name'	 => 'Student naam',
+	'student-info'	 => 'Studenten info',
 
 	//Department
 	'department-add' => 'Afdeling toevoegen',
