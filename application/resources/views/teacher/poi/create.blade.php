@@ -8,6 +8,13 @@
 	CAN BE USED AS TEMPLATE...
 -->
 
+<!--
+Opdracht:       Multidisciplinair Project v.2
+Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
+Aanmaakdatum:   27-06-18
+Beschrijving:   Create POI Pagina
+-->
+
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -26,7 +33,7 @@
 						@csrf
 
 						<!-- POI title -->
-						<input type="text" name="name" placeholder="@lang('messages.poi-title')" required autofocus>
+						<input type="text" name="title" placeholder="@lang('messages.poi-title')" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint">
 						<!-- POI longtitute -->
