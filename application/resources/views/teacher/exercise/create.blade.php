@@ -6,13 +6,8 @@
 			<form method="POST" action="{{ route('teacher/exercise/create') }}">
 				<p class="text-center font-bold">@lang('messages.add-exercise')</p>
 				@csrf
-				<select name="poi_id">
-						<option value="0" disabled selected>Selecteer POI</option>
-						@foreach($pois as $poi)
-							<option value="{{ $poi->id }}">{{ $poi->title }}</option>
-						@endforeach
-					{{--TODO: Only 1 exercise per poi--}}
-				</select>
+                
+                <input type="hidden" name="poi_id" value="{{ $poi[0]->id }}" required readonly>
 				<input type="text" name="title" placeholder="Vraag titel">
 				<textarea name="content" placeholder="Vraag" required></textarea>
 				<input type="text" name="picture" placeholder="Afbeelding URL" required>
