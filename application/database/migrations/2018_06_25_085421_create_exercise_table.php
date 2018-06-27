@@ -21,6 +21,8 @@ class CreateExerciseTable extends Migration
 				$table->string('content');
 				$table->string('picture');
 				$table->string('answer');
+				$table->boolean('visibility')->default(1);
+				$table->boolean('active')->default(0);
 				$table->foreign('poi_id')->references('id')->on('pois');
 				$table->timestamps();
 			});

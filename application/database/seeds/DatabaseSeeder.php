@@ -132,7 +132,9 @@ class DatabaseSeeder extends Seeder
 			'Ghoul Problem at Avans College',
 			'Speak to the leader of the settlement.',
 			'application/resources/assets/images/Icons/Settlement.png',
-			'Preston, go fix your own shit. Im done with those quests'
+			'Preston, go fix your own shit. Im done with those quests',
+			1,
+			1
 		);
 
 		$exercise->save();
