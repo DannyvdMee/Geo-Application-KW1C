@@ -35,7 +35,7 @@
 				<option value="0" {{ ($poi->visibility == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 			</select>
 
-			<!-- Submit btn -->
+			<!-- Submit button -->
 			<input type="submit" value="@lang('messages.save')">
 		</form>
 	</div>
