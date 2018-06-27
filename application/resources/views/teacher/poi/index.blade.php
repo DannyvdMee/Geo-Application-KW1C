@@ -37,7 +37,7 @@ Beschrijving:   Index POI Pagina
 									<p class="display-inline-block">{{ $poi->title }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($poi->visibility == true)
+										@if ($poi->visibility == 1)
 											<a href="{{ route('teacher/poi/visibility', ['id' => $poi->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
