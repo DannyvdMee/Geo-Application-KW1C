@@ -52,12 +52,30 @@ class LoginController extends Controller
 		$password = $request->password;
 
 		if (Auth::attempt(['email' => $email, 'password' => $password])) {
-			$user = Auth::user();
 
-			$this->checkUser($request, $user);
+			$id = Auth::user()->getAuthIdentifier();
+
+			$user = User::find($id);
+
+			if ($user->active == 0) {
+				$message = 'This account is not active or does not exist';
+
+				// Log the user out.
+				Auth::logout($request);
+				Session::flash('error', $message);
+
+				return view('auth/login');
+			}
+
+			if ($user->isAdmin) {
+				return redirect('admin/projects');
+			}
+
+			return redirect('teacher/dashboard');
+
+			//return response()->json(['message' => $user]);
+
 		}
-
-		$errorMessage = TRUE;
 
 		return view('login', ['error' => $errorMessage]);
 	}
@@ -68,24 +86,6 @@ class LoginController extends Controller
 
 		Session::flush();
 
-		return response()
-			->json(['message' => 'You have logged out'], 200);
+		return redirect('/login');
 	}
-
-	protected function checkUser(Request $request, $user){
-		if ($user->active == 0) {
-			$message = 'This account is not active or does not exist';
-
-			// Log the user out.
-			Auth::logout($request);
-			Session::flash('error', $message);
-
-			return view('/login');
-		}
-
-		if ($user->isAdmin) {
-			return redirect('admin/dashboard');
-		}
-
-		return redirect('teacher/dashboard');}
 }

@@ -36,13 +36,11 @@
 							@endif
 						</div>
 
-					{{--@if ($errorMessage)--}}
-						{{--<div>--}}
-							{{--<p>--}}
-								{{--You're login credentials are incorrect!--}}
-							{{--</p>--}}
-						{{--</div>--}}
-					{{--@endif--}}
+						@if (!empty(session('error')))
+							<div id="session-error">
+								<p>{{ session('error') }}</p>
+							</div>
+						@endif
 
 
 					{{--<div class="form-group row">--}}
