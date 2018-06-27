@@ -16,7 +16,7 @@ class ExerciseController extends Controller
 	 */
 	public function index()
 	{
-		$exercises = Exercise::where('active', '=', TRUE)->get();
+		$exercises = Exercise::where('active', '=', 1)->get();
 
 		return view('teacher/exercise/index', ['exercises' => $exercises]);
 	}
@@ -49,6 +49,8 @@ class ExerciseController extends Controller
 		$exercise->picture = $request->picture;
 		$exercise->answer = $request->answer;
 
+		$exercise->active = $request->active;
+
 		$exercise->save();
 
 		return redirect('teacher/exercise');
@@ -75,7 +77,7 @@ class ExerciseController extends Controller
 
 		$exercise->save();
 
-		return redirect('teacher/exercise/index');
+		return redirect('teacher/exercise');
 	}
 
 	/**
@@ -107,10 +109,11 @@ class ExerciseController extends Controller
 		$exercise->exercisenumber = $request->exercisenummber;
 		$exercise->exercisename = $request->exercisename;
 		$exercise->active = $request->active;
+        $poi->active = $request->active;
 
 		$exercise->save();
 
-		return redirect('teacher/exercise/index');
+		return redirect('teacher/exercise');
 	}
 
 	/**
@@ -124,10 +127,10 @@ class ExerciseController extends Controller
 	{
 		$exercise = Exercise::find($id);
 
-		$exercise->active = FALSE;
+		$exercise->active = 0;
 
 		$exercise->save();
 
-		return view('teacher/exercise/index');
+		return view('teacher/exercise');
 	}
 }
