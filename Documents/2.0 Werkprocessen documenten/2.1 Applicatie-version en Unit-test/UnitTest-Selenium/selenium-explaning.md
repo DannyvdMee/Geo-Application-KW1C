@@ -8,4 +8,5 @@ This program is behaving like a human to test your application over and over aga
 Currently we want Selenium to do the following:
 - Running the create pages to create a new object for the database
 - Check if every link is working
-- 
+
+**NOTE:** _The Selenium Test Cases can only be opened by the Selenium IDE Plug-In for FireFox or Chrome_
