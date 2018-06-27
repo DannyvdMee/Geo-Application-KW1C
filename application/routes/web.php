@@ -96,7 +96,11 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	//Groups
 	Route::get('group', 'GroupController@index')->name('group');
 	Route::get('group/create', 'GroupController@create')->name('group/create');
-	Route::post('group/create', 'GroupController@store')->name('group/create');
+    Route::post('group/create', 'GroupController@store')->name('group/create');
+    Route::get('group/edit/{id}', 'GroupController@edit')->name('group/edit');
+	Route::post('group/edit/{id}', 'GroupController@update')->name('group/edit');
+	Route::get('group/visibility/{id}', 'GroupController@show')->name('group/visibility');
+	Route::get('group/delete/{id}', 'GroupController@destroy')->name('group/delete');
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
