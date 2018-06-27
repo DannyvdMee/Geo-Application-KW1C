@@ -106,6 +106,7 @@ class RouteController extends Controller
         $route = Route::find($id);
 
         $route->title = $request->title;
+        $route->active = $request->active;
         
         // Remove this and below line if app has login
         $route->user_id = 1;
