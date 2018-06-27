@@ -10677,3 +10677,20 @@ a:hover {
   background-color: #ED2525;
 }
 
+.dashboard-item-background {
+  background-color: #FFFFFF;
+}
+
+.dashboard-item {
+  border-radius: 6px;
+  min-height: 100px;
+  text-align: center;
+  font-size: 2em;
+  margin: 0px;
+}
+
+.dashboard-item span,
+.dashboard-item i {
+  vertical-align: center;
+}
+

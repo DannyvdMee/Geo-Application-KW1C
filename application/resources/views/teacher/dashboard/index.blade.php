@@ -4,42 +4,47 @@
 	<div class="row">
 		<div class="col">
 			<div class="row">
+
 				<!-- De route marker -->
-				<div class="col-6">
+				<div class="col-6 col-md-3 dashboard-item-background dashboard-item">
 					<div class="float-center display-block">
-						<a href="{{ route('teacher/routes') }}">
-							<i class="material-icons display-block">route-marker</i>
+						<a href="{{ route('teacher/route') }}">
+							<i class="material-icons display-block">directions</i>
 							<span class="display-block text-center">@lang('messages.routes')</span>
 						</a>
 					</div>
 				</div>
+
 				<!-- De map marker -->
-				<div class="col-6">
+				<div class="col-6 col-md-3 dashboard-item-background dashboard-item">
 					<div class="float-center display-block">
-						<a href="{{ route('teacher/poi') }}">
-							<i class="material-icons display-block">map-marker</i>
-							<span class="display-block text-center">@lang('messages.pois')</span>
+						<a href="{{ route('teacher/route') }}">
+							<i class="material-icons display-block">map</i>
+							<span class="display-block text-center">@lang('messages.routes')</span>
 						</a>
 					</div>
 				</div>
-				<!-- De map marker -->
-				<div class="col-6">
+
+				<!-- De groep marker -->
+				<div class="col-6 col-md-3 dashboard-item-background dashboard-item">
 					<div class="float-center display-block">
-						<a href="{{ route('teacher/groups') }}">
-							<i class="material-icons display-block">users</i>
-							<span class="display-block text-center">@lang('messages.groups')</span>
+						<a href="{{ route('teacher/route') }}">
+							<i class="material-icons display-block">group</i>
+							<span class="display-block text-center">@lang('messages.routes')</span>
 						</a>
 					</div>
 				</div>
+
 				<!-- De settings marker -->
-				<div class="col-6">
+				<div class="col-6 col-md-3 dashboard-item-background dashboard-item">
 					<div class="float-center display-block">
-						<a href="{{ route('teacher/settings') }}">
-							<i class="material-icons display-block">cog</i>
-							<span class="display-block text-center">@lang('messages.settings')</span>
+						<a href="{{ route('teacher/route') }}">
+							<i class="material-icons display-block">settings</i>
+							<span class="display-block text-center">@lang('messages.routes')</span>
 						</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
