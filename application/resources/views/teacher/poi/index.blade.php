@@ -1,24 +1,27 @@
 @extends('layouts.teacher')
 
 <!--
-27 06 18
-Onyi:
-!IMPORTANT
-CORRECT INDEX PAGE
-CAN BE USED AS TEMPLATE...
+	27 06 18
+	Onyi:
+	!IMPORTANT
+	CORRECT INDEX PAGE
+	CAN BE USED AS TEMPLATE...
 -->
 
 @section('content')
+<div class="container-fluid">
 	<div class="row">
 		<div class="col">
+			<!-- Page title -->
 			<div class="row">
 				<div class="col">
 					<h5 class="text-center font-bold">@lang('messages.pois')</h5>
 				</div>
 			</div>
+			<!-- End page title -->
+			<!-- POI container -->
 			<div class="row">
 				<div class="col">
-					<!-- POI container -->
 					<div id="poi-container">
 						@foreach($pois as $poi)
 							<div class="row">
@@ -58,9 +61,10 @@ CAN BE USED AS TEMPLATE...
 							</a>
 						</div>
 					</div>
-					<!-- End POI container -->	
 				</div>
 			</div>
+			<!-- End POI container -->	
 		</div>
 	</div>
+</div>
 @endsection
