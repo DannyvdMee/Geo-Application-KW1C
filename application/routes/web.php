@@ -82,12 +82,16 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	Route::get('route/edit/{id}', 'RouteController@edit')->name('route/edit');
 	Route::post('route/edit/{id}', 'RouteController@update')->name('route/edit');
 	Route::get('route/visibility/{id}', 'RouteController@show')->name('route/visibility');
-	Route::get('route/delete/{id}', 'PoiControRouteControllerller@destroy')->name('route/delete');
+	Route::get('route/delete/{id}', 'RouteController@destroy')->name('route/delete');
 
 	//Students
 	Route::get('student', 'StudentController@index')->name('student');
 	Route::get('student/create', 'StudentController@create')->name('student/create');
-	Route::post('student/create', 'StudentController@store')->name('student/create');
+    Route::post('student/create', 'StudentController@store')->name('student/create');
+    Route::get('student/edit/{id}', 'StudentController@edit')->name('student/edit');
+	Route::post('student/edit/{id}', 'StudentController@update')->name('student/edit');
+	Route::get('student/visibility/{id}', 'StudentController@show')->name('student/visibility');
+	Route::get('student/delete/{id}', 'StudentController@destroy')->name('student/delete');
 
 	//Groups
 	Route::get('group', 'GroupController@index')->name('group');

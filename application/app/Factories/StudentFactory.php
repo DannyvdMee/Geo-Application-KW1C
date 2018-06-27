@@ -15,19 +15,19 @@ class StudentFactory
 	/**
 	 * @param $number
 	 * @param $name
-	 * @param $additionalInformation
-	 * @param $activeState
+	 * @param $information
+	 * @param $active
 	 *
 	 * @return Student
 	 */
-	public static function create($name, $number, $additionalInformation, $activeState)
+	public static function create($name, $number, $information, $active)
 	{
 		$student = new Student();
 
 		$student->name                  = $name;
 		$student->number				= $number;
-		$student->information			= $additionalInformation;
-		$student->active                = $activeState;
+		$student->information			= $information;
+		$student->active                = $active;
 
 		return $student;
 	}
