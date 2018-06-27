@@ -60,18 +60,23 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
     Route::get('exercise', 'ExerciseController@index')->name('exercise');
 	Route::get('exercise/create', 'ExerciseController@create')->name('exercise/create');
 
-    //POI
-    Route::get('poi', 'PoiController@index')->name('poi');
-    Route::get('poi/create', 'PoiController@create')->name('poi/create');
-    Route::post('poi/create', 'PoiController@store')->name('poi/create');
-    Route::get('poi/edit/{id}', 'PoiController@edit')->name('poi/edit');
-    Route::post('poi/edit/{id}', 'PoiController@update')->name('poi/edit');
-    Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
-    Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
+    //POI -- Correct en werkend -- kan als template gebruikt worden
+    /* 1 */ Route::get('poi', 'PoiController@index')->name('poi');
+    /* 2 */ Route::get('poi/create', 'PoiController@create')->name('poi/create');
+    /* 3 */ Route::post('poi/create', 'PoiController@store')->name('poi/create');
+    /* 4 */ Route::get('poi/edit/{id}', 'PoiController@edit')->name('poi/edit');
+    /* 5 */ Route::post('poi/edit/{id}', 'PoiController@update')->name('poi/edit');
+    /* 6 */ Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
+    /* 7 */ Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 
     //Routes
-    Route::get('routes', 'RouteController@index')->name('routes');
-    Route::post('route/create' , 'RouteController@store')->name('route/create');
+    /* 1 */ Route::get('route', 'RouteController@index')->name('route');
+    /* 2 */ Route::get('route/create', 'RouteController@create')->name('route/create');
+    /* 3 */ Route::post('route/create', 'RouteController@store')->name('route/create');
+    /* 4 */ Route::get('route/edit/{id}', 'RouteController@edit')->name('route/edit');
+    /* 5 */ Route::post('route/edit/{id}', 'RouteController@update')->name('route/edit');
+    /* 6 */ Route::get('route/visibility/{id}', 'RouteController@show')->name('route/visibility');
+    /* 7 */ Route::get('route/delete/{id}', 'PoiControRouteControllerller@destroy')->name('route/delete');
 
     //Students
     Route::get('student', 'StudentController@index')->name('student');
