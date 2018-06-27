@@ -45,7 +45,10 @@ class RouteController extends Controller
         $route->url_id = bin2hex(random_bytes(4));
         $route->title = $request->title;
         $route->active = TRUE;
-        $route->user_id = Auth::user()->id;
+        
+        // Remove this and below line if app has login
+        $route->user_id = 1;
+        // $route->user_id = Auth::user()->id;
 
         $route->save();
 
@@ -87,7 +90,7 @@ class RouteController extends Controller
     {
 		$route = Route::find($id);
 
-		return view('teacher/route/edit');
+        return view('teacher/route/edit', ['route' => $route]);
     }
 
     /**
@@ -102,8 +105,11 @@ class RouteController extends Controller
     {
         $route = Route::find($id);
 
-		$route->title = $request->title;
-		$route->user_id = Auth::user()->id;
+        $route->title = $request->title;
+        
+        // Remove this and below line if app has login
+        $route->user_id = 1;
+		// $route->user_id = Auth::user()->id;
 
         $route->save();
         
