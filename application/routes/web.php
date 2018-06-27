@@ -39,11 +39,17 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
+	//Dashboard
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+	//users
 	Route::get('users', 'UserController@index')->name('users');
 
+	//department
 	Route::get('departments', 'DepartmentController@index')->name('departments');
 	Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
 
+	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
 
 });
