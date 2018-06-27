@@ -28,6 +28,7 @@ class ExerciseController extends Controller
 	 */
 	public function create()
 	{
+		//Uncomment dit als de POI's werken....
 		$pois = Poi::where('active', '=', 1)->get();
 
 		return view('teacher/exercise/create', ['pois' => $pois]);
