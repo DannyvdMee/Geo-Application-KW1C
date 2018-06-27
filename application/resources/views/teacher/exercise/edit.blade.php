@@ -25,20 +25,20 @@ Beschrijving:   Edit Exercise Pagina
 						@csrf
 						
 						<!-- Exercise title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')" 
-							value="{{ $exercise->title }}" required autofocus>
-						<!-- POI hint -->
-						<input type="text" name="hint" placeholder="Hint" 
-							value="{{ $exercise->hint }}">			
-						<!-- POI longtitute -->
-						<input type="text" name="longitude" placeholder="@lang('messages.long')" 
-							value="{{ $exercise->longitude }}" required>							
-						<!-- POI latitute -->
-						<input type="text" name="latitude" placeholder="@lang('messages.lat')" 
-							value='{{ $exercise->latitude }}' required>						
-						<!-- POI description -->
-						<textarea name="description" placeholder="@lang('messages.desc')" required>{{ $poi->description }}</textarea>
-						<!-- POI dropdown -->
+                        <input type="text" name="title" placeholder="@lang('messages.title')" 
+                            value="{{ $exercise->title }}">
+						<!-- Exercise content -->
+                        <textarea name="content" placeholder="@lang('messages.exercise-content')" 
+                         required>{{ $exercise->content }}</textarea>
+						<!-- Exercise answer input area -->
+                        <input type="text" name="answer" placeholder="@lang('messages.exercise-answer')" 
+                            value="{{ $exercise->answer }}" required>
+						<!-- Exercise picture -->
+						<input style="border-style: none; padding-left: 0;" type="file" name="picture" 
+                            placeholder="@lang('messages.exercise-question')" 
+                            value="{{ $exercise->picture }}">
+
+                        <!-- Exercise dropdown -->   
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($exercise->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
