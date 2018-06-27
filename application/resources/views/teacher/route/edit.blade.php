@@ -4,7 +4,7 @@
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
 Aanmaakdatum:   27-06-18
-Beschrijving:   Create Route Pagina
+Beschrijving:   Edit Route Pagina
 -->
 
 @section('content')
@@ -14,31 +14,32 @@ Beschrijving:   Create Route Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-						<h5 class="text-center font-bold">@lang('messages.route-add')</h5>
+					<h5 class="text-center font-bold">@lang('messages.route-edit')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
-			<!-- Route create form -->
+			<!-- Route edit form -->
 			<div class="row">
-				<div class="col">			
-					<form method="POST" action="{{ route('teacher/route/create') }}">
+				<div class="col">					
+					<form method="POST" action="{{ route('teacher/route/edit', ['id' => $route->id]) }}">
 						@csrf
-
+						
 						<!-- Route title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')" required autofocus>
+						<input type="text" name="title" placeholder="@lang('messages.title')" 
+							value="{{ $route->title }}" required autofocus>
 						<!-- Route dropdown -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
-							<option value="1">@lang('messages.yes')</option>
-							<option value="0">@lang('messages.no')</option>
+							<option value="1" {{ ($route->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
+							<option value="0" {{ ($route->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>
 			</div>
-			<!-- End route create form -->
+			<!-- End Route edit form -->
 		</div>
 	</div>
 </div>
