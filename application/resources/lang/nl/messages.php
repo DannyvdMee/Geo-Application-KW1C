@@ -1,5 +1,6 @@
 <?php
 return [
+	//General
 	'register'       => 'Registreren',
 	'login'          => 'Inloggen',
 	'logout'         => 'Uitloggen',
@@ -17,22 +18,33 @@ return [
 	'active'         => 'Actief',
 	'yes'            => 'Ja',
 	'no'             => 'Nee',
-	'add-poi'        => 'POI toevoegen',
-	'add-group' 	 => 'Groep toevoegen',
-	'add-student'    => 'Student toevoegen',
-	'add-department' => 'Afdeling toevoegen',
-	'add-exercise' 	 => 'Oefening toevoegen',
 	'save'           => 'Opslaan',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',
-	'student-groups' => 'Student groepen',
 	'username'		 =>	'Gebruikersnaam',
 	'confirmpw'      => 'Bevestig wachtwoord',
-	'edit-poi'		 => 'POI bewerken',
+
+	'title' 		 => 'Titel',
+	'long'		 	 => 'Lengtegraad',
+	'lat'			 => 'Breedtegraad',
+	'desc'			 => 'Beschrijving',
     
 	//POI
-	'poi-title'		 => 'Titel',
-	'poi-long'		 => 'Lengtegraad',
-	'poi-lat'		 => 'Breedtegraad',
-	'poi-desc'		 => 'Omschrijving'
+	'poi-add'        => 'POI toevoegen',
+	'poi-edit'		 => 'POI bewerken',
+
+	//Routes
+	'route-add' 	 => 'Route toevoegen',
+	'route-edit'	 => 'Route bewerken',
+
+	//Students
+	'student-add'    => 'Student toevoegen',
+	'student-groups' => 'Student groepen',
+
+	//Department
+	'department-add' => 'Afdeling toevoegen',
+
+	//Group
+	'group-add'	 	 => 'Groep toevoegen',
+
 ];

@@ -15,7 +15,7 @@ class PoiController extends Controller
      */
     public function index()
     {
-		$pois = Poi::all();
+        $pois = Poi::where('active', '=', 1)->get();
 
         return view('teacher/poi/index', ['pois' => $pois]);
     }
@@ -50,16 +50,16 @@ class PoiController extends Controller
         $uid = bin2hex(random_bytes(40));
 
         $poi->url_id = $uid;
-        $poi->title = $request->name;
+        $poi->title = $request->title;
         $poi->latitude = $request->latitude;
         $poi->longitude = $request->longitude;
+        $poi->description = $request->description;
+		$poi->active = $request->active;
 
         if (!empty($request->hint)) {
 			$poi->hint = $request->hint;
-		}
-
-		$poi->active = $request->active;
-
+        }
+        
 		$poi->save();
 
         return redirect('teacher/poi');
@@ -80,7 +80,7 @@ class PoiController extends Controller
 			$visibility = 0;
 		} else if ($poi->visibility == 0) {
 			$visibility = 1;
-		}
+        }
 
 		$poi->visibility = $visibility;
 
@@ -115,16 +115,15 @@ class PoiController extends Controller
     {
         $poi = Poi::find($id);
 
-		$poi->title = $request->name;
+		$poi->title = $request->title;
 		$poi->latitude = $request->latitude;
         $poi->longitude = $request->longitude;
+        $poi->active = $request->active;
         $poi->description = $request->description;
 
 		if (!empty($request->hint)) {
 			$poi->hint = $request->hint;
 		}
-        
-        $poi->active = $request->active;
 
 		$poi->save();
 
@@ -142,10 +141,10 @@ class PoiController extends Controller
     {
 		$poi = Poi::find($id);
 
-		$poi->active = FALSE;
+		$poi->active = 0;
 
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/poi');
     }
 }
