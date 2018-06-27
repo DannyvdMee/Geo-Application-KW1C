@@ -21,7 +21,7 @@
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
-							<a href="{{ route('admin') }}">
+							<a href="{{ route('admin/users') }}">
 								<i class="material-icons display-block dashboard-icon-pos">map</i>
 								<span class="display-block text-center dashboard-text-pos">@lang('messages.map')</span>
 							</a>
