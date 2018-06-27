@@ -282,22 +282,31 @@ a:active, a:hover {
 .dashboard-item-background
 {
 	background-color: $white;
+	border-radius: 6px;
+	min-height: 100px;
 }
 
 //Dashboard item shape/size
 .dashboard-item
 {
-	border-radius: 6px;
 	min-height: 100px;
-
 	text-align: center;
+	vertical-align: center;
+}
 
-	font-size: 2em;
+.dashboard-icon-pos
+{
+	padding-top: 25px;
+	font-size: 4em;
+}
 
-	margin: 0px;
+.dashboard-text-pos
+{
+	padding-bottom: 25px;
+	font-size: 1em;
+}
 
-	span, i
-	{
-		vertical-align: center;
-	}
+.margin-10-0
+{
+	margin: 10px 0;
 }
