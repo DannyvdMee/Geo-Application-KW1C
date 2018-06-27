@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,9 +52,9 @@ class LoginController extends Controller
 		$password = $request->password;
 
 		if (Auth::attempt(['email' => $email, 'password' => $password])) {
-			// TODO Build if statement to check if user is admin or teacher and redirect it to the current page.
+			$user = Auth::user();
 
-			return view('home', ['loggedinUser' => $email]);
+			$this->checkUser($request, $user);
 		}
 
 		$errorMessage = TRUE;
@@ -70,4 +71,21 @@ class LoginController extends Controller
 		return response()
 			->json(['message' => 'You have logged out'], 200);
 	}
+
+	protected function checkUser(Request $request, $user){
+		if ($user->active == 0) {
+			$message = 'This account is not active or does not exist';
+
+			// Log the user out.
+			Auth::logout($request);
+			Session::flash('error', $message);
+
+			return view('/login');
+		}
+
+		if ($user->isAdmin) {
+			return redirect('admin/dashboard');
+		}
+
+		return redirect('teacher/dashboard');}
 }
