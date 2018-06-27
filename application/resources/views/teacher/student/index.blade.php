@@ -29,7 +29,7 @@ Beschrijving:   Index Student Pagina
 									<p class="display-inline-block">{{ $student->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($student->visibility == true)
+										@if ($student->visibility == 1)
 											<a href="{{ route('teacher/student/visibility', ['id' => $student->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
