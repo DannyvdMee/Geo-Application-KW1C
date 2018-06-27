@@ -30,21 +30,21 @@ Beschrijving:   Index Exercise Pagina
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($exercise->visibility == true)
-											<a href="">{{--TODO: Href pages when files are made--}}
+											<a href="{{ route('teacher/exercise/visibility', ['id' => $exercise->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
 										<!-- Visibility(eye) button toggle false -->
 										@else
-											<a href="">{{--TODO: Href pages when files are made--}}
+											<a href="{{ route('teacher/exercise/visibility', ['id' => $exercise->id]) }}">
 												<i class="material-icons">visibility_off</i>
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="">{{--TODO: Href pages when files are made--}}
+										<a href="{{ route('teacher/exercise/edit', ['id' => $exercise->id]) }}">
 											<i class="material-icons">edit</i>
 										</a>
 										<!-- Delete button -->
-										<a href="">{{--TODO: Href pages when files are made--}}
+										<a href="{{ route('teacher/exercise/delete', ['id' => $exercise->id]) }}">
 											<i class="material-icons">delete_forever</i>
 										</a>
 									</div>
@@ -53,13 +53,13 @@ Beschrijving:   Index Exercise Pagina
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- No option to add exercise required. Exercises are linked to a POI
+						<!-- No option to add exercise required. Exercises are linked to a POI -->
+						<!-- POI add button-->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/exercise/create') }}" id="add-item">
 								<i class="material-icons">add</i>
 							</a>
 						</div>
-						-->
 						
 					</div>
 				</div>
