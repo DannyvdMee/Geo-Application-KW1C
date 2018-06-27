@@ -16,7 +16,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-		$routes = Route::all();
+		$routes = Route::where('active', '=', 1)->get();
 
         return view('teacher/route/index', ['routes' => $routes]);
     }
@@ -44,7 +44,7 @@ class RouteController extends Controller
 
         $route->url_id = bin2hex(random_bytes(4));
         $route->title = $request->title;
-        $route->active = TRUE;
+        $route->active = $request->active;
         
         // Remove this and below line if app has login
         $route->user_id = 1;
@@ -128,7 +128,7 @@ class RouteController extends Controller
     {
         $route = Route::find($id);
 
-        $route->active = FALSE;
+        $route->active = 0;
 
         $route->save();
 
