@@ -276,6 +276,37 @@ a:active, a:hover {
 	background-color: $red;
 }
 
+//////Dashboard//////
 
+//Dashboard item background
+.dashboard-item-background
+{
+	background-color: $white;
+	border-radius: 6px;
+	min-height: 100px;
+}
 
+//Dashboard item shape/size
+.dashboard-item
+{
+	min-height: 100px;
+	text-align: center;
+	vertical-align: center;
+}
 
+.dashboard-icon-pos
+{
+	padding-top: 25px;
+	font-size: 4em;
+}
+
+.dashboard-text-pos
+{
+	padding-bottom: 25px;
+	font-size: 1em;
+}
+
+.margin-10-0
+{
+	margin: 10px 0;
+}

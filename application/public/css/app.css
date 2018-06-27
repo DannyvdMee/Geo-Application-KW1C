@@ -10677,3 +10677,29 @@ a:hover {
   background-color: #ED2525;
 }
 
+.dashboard-item-background {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  min-height: 100px;
+}
+
+.dashboard-item {
+  min-height: 100px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.dashboard-icon-pos {
+  padding-top: 25px;
+  font-size: 4em;
+}
+
+.dashboard-text-pos {
+  padding-bottom: 25px;
+  font-size: 1em;
+}
+
+.margin-10-0 {
+  margin: 10px 0;
+}
+
