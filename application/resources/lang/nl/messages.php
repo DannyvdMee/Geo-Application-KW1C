@@ -28,7 +28,12 @@ return [
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
-    
+	
+	//Exercise
+	'exercise-add' 	 => 'Opdracht toevoegen',
+	'exercise-content' => 'Beschrijving',
+	'exercise-answer' => 'Antwoord',
+
 	//POI
 	'poi-add'        => 'POI toevoegen',
 	'poi-edit'		 => 'POI bewerken',

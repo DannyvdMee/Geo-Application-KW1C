@@ -28,6 +28,11 @@ return [
 	'long'		 	 => 'Longitude',
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
+
+	//Exercise
+	'exercise-add' 	 => 'Add exercise',
+	'exercise-content' => 'Description',
+	'exercise-answer' => 'Answer',
     
 	//POI
 	'poi-add'        => 'Add POI',

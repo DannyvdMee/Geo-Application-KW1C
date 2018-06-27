@@ -22,7 +22,7 @@ class CreatePoiTable extends Migration
             $table->float('latitude', 8, 6);
             $table->float('longitude',8, 6);
             $table->string('hint')->nullable();
-            $table->boolean('visibility')->default(true);
+            $table->boolean('visibility')->default(1);
 			$table->boolean('active')->default(0);
 			$table->timestamps();
         });

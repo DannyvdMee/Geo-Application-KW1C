@@ -11,4 +11,9 @@ class Poi extends Model
 	{
 		$this->belongsToMany(Route::class);
 	}
+
+	public function exercise()
+	{
+		$this->hasOne(Exercise::class);
+	}
 }
