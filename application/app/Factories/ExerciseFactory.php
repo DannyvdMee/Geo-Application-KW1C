@@ -30,7 +30,7 @@ class ExerciseFactory
 		$exercise->title      = $title;
 		$exercise->content    = $content;
 		$exercise->picture    = $picture;
-		$exercise->goodanswer = $goodAnswer;
+		$exercise->answer = $goodAnswer;
 
 		return $exercise;
 	}

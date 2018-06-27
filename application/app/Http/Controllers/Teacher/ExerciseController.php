@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
+use App\Poi;
 use Illuminate\Http\Request;
 use App\Exercise;
 
@@ -27,7 +28,9 @@ class ExerciseController extends Controller
 	 */
 	public function create()
 	{
-		return view('teacher/exercise/create');
+		$pois = Poi::where('active', '=', 1)->get();
+
+		return view('teacher/exercise/create', ['pois' => $pois]);
 	}
 
 	/**
@@ -40,10 +43,11 @@ class ExerciseController extends Controller
 	public function store(Request $request)
 	{
 		$exercise = new Exercise;
+		$exercise->poi_id = $request->poi_id;
 		$exercise->title = $request->title;
-		//$exercise->content = $request->content;
+		$exercise->content = $request->content;
 		$exercise->picture = $request->picture;
-		$exercise->goodanswer = $request->goodanswer;
+		$exercise->answer = $request->answer;
 
 		$exercise->save();
 
