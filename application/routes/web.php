@@ -70,7 +70,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	Route::get('exercise/visibility/{id}', 'ExerciseController@show')->name('exercise/visibility');
 	Route::get('exercise/delete/{id}', 'ExerciseController@destroy')->name('exercise/delete');
 	
-	//POI -- Correct en werkend -- kan als template gebruikt worden
+	//POI
 	Route::get('poi', 'PoiController@index')->name('poi');
 	Route::get('poi/create', 'PoiController@create')->name('poi/create');
 	Route::post('poi/create', 'PoiController@store')->name('poi/create');
