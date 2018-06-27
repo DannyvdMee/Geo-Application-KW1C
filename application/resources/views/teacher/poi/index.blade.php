@@ -1,14 +1,6 @@
 @extends('layouts.teacher')
 
 <!--
-	27 06 18
-	Onyi:
-	!IMPORTANT
-	CORRECT INDEX PAGE
-	CAN BE USED AS TEMPLATE...
--->
-
-<!--
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
 Aanmaakdatum:   27-06-18

@@ -32,9 +32,9 @@ class ExerciseFactory
 		$exercise->title      = $title;
 		$exercise->content    = $content;
 		$exercise->picture    = $picture;
-		$exercise->answer = $goodAnswer;
+		$exercise->answer 	  = $goodAnswer;
 		$exercise->visibility = $visibility;
-		$exercise->active = $active;
+		$exercise->active     = $active;
 
 		return $exercise;
 	}

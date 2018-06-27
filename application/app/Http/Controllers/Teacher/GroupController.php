@@ -16,7 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = StudentGroup::where('active', '=', TRUE)->get();
+        $groups = StudentGroup::where('active', '=', 1)->get();
 
         return view('teacher/group/index', ['groups' => $groups]);
     }
@@ -46,11 +46,11 @@ class GroupController extends Controller
 
         $group->url_id = bin2hex(random_bytes(40));
         $group->groupname = $request->groupname;
-        $group->active = TRUE;
+        $group->active = 1;
 
 		$group->save();
 
-        return view('teacher/group/index');
+        return redirect('teacher/group');
     }
 
     /**
@@ -103,7 +103,9 @@ class GroupController extends Controller
 
 		$group->groupname = $request->groupname;
 
-		$group->save();
+        $group->save();
+        
+        return redirect('teacher/group');
     }
 
     /**
@@ -117,10 +119,10 @@ class GroupController extends Controller
     {
 		$group = StudentGroup::find($id);
 
-		$group->active = FALSE;
+		$group->active = 0;
 
 		$group->save();
 
-		return view('teacher/group/index');
+		return redirect('teacher/group');
     }
 }
