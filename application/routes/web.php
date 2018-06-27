@@ -39,6 +39,8 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
 	Route::get('users', 'UserController@index')->name('users');
 
 	Route::get('departments', 'DepartmentController@index')->name('departments');
