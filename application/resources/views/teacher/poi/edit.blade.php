@@ -22,7 +22,7 @@ Beschrijving:   Edit POI Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-					<h5 class="text-center font-bold">@lang('messages.edit-poi')</h5>
+					<h5 class="text-center font-bold">@lang('messages.poi-edit')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
@@ -33,24 +33,24 @@ Beschrijving:   Edit POI Pagina
 						@csrf
 						
 						<!-- POI title -->
-						<input type="text" name="title" placeholder="@lang('messages.poi-title')" 
+						<input type="text" name="title" placeholder="@lang('messages.title')" 
 							value="{{ $poi->title }}" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint" 
 							value="{{ $poi->hint }}">			
 						<!-- POI longtitute -->
-						<input type="text" name="longitude" placeholder="@lang('messages.poi-long')" 
+						<input type="text" name="longitude" placeholder="@lang('messages.long')" 
 							value="{{ $poi->longitude }}" required>							
 						<!-- POI latitute -->
-						<input type="text" name="latitude" placeholder="@lang('messages.poi-lat')" 
+						<input type="text" name="latitude" placeholder="@lang('messages.lat')" 
 							value='{{ $poi->latitude }}' required>						
 						<!-- POI description -->
-						<textarea name="description" placeholder="@lang('messages.poi-desc')" required>{{ $poi->description }}</textarea>
+						<textarea name="description" placeholder="@lang('messages.desc')" required>{{ $poi->description }}</textarea>
 						<!-- POI dropdown -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
-							<option value="1" {{ ($poi->visibility == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
-							<option value="0" {{ ($poi->visibility == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
+							<option value="1" {{ ($poi->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
+							<option value="0" {{ ($poi->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 						</select>
 
 						<!-- Submit button -->

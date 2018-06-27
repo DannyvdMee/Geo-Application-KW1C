@@ -33,15 +33,15 @@ Beschrijving:   Create POI Pagina
 						@csrf
 
 						<!-- POI title -->
-						<input type="text" name="title" placeholder="@lang('messages.poi-title')" required autofocus>
+						<input type="text" name="title" placeholder="@lang('messages.title')" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint">
 						<!-- POI longtitute -->
-						<input type="text" name="longitude" placeholder="@lang('messages.poi-long')" required>	
+						<input type="text" name="longitude" placeholder="@lang('messages.long')" required>	
 						<!-- POI latitute -->
-						<input type="text" name="latitude" placeholder="@lang('messages.poi-lat')" required>
+						<input type="text" name="latitude" placeholder="@lang('messages.lat')" required>
 						<!-- POI description -->
-						<textarea name="description" placeholder="@lang('messages.poi-desc')" required></textarea>
+						<textarea name="description" placeholder="@lang('messages.desc')" required></textarea>
 						<!-- POI dropdown -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
