@@ -29,7 +29,7 @@ Beschrijving:   Index Route Pagina
 									<p class="display-inline-block">{{ $route->title }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($route->visibility == true)
+										@if ($route->visibility == 1)
 											<a href="{{ route('teacher/route/visibility', ['id' => $route->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>

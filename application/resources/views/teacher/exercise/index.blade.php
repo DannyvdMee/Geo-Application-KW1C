@@ -29,7 +29,7 @@ Beschrijving:   Index Exercise Pagina
 									<p class="display-inline-block">{{ $exercise->title }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($exercise->visibility == true)
+										@if ($exercise->visibility == 1)
 											<a href="{{ route('teacher/exercise/visibility', ['id' => $exercise->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
