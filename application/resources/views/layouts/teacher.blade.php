@@ -37,7 +37,7 @@
 	</main>
 	<footer>
 		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/routes') }}">
+			<a href="{{ route('teacher/route') }}">
 				<i class="material-icons display-block">explore</i>
 				<span class="display-block text-center">@lang('messages.routes')</span>
 			</a>
