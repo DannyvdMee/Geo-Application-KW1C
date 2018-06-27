@@ -4,18 +4,29 @@
 	<script>
 
 		// Copied this from a hackathon project
-		function getLocation() {
-			navigator.geolocation.getCurrentPosition(function (pos) {
-				console.log(pos);
-			});
-		}
-
-		function centerMap(pos) {
-			map.setCenter(pos);
-		}
+		// function getLocation() {
+		//
+		// 	navigator.geolocation.getCurrentPosition(function (pos) {
+		// 		console.log(pos);
+		// 	});
+		// }
+		//
+		// function centerMap()
+		// {
+		// 	navigator.geolocation.getCurrentPosition(function (pos) {
+		// 		// console.log(pos);
+		// 		map = new google.maps.Map(document.getElementById('map'), {
+		// 			center: {
+		// 				lat: pos.coords.latitude,
+		// 				lng: pos.coords.longitude,
+		// 			}
+		// 		});
+		// 	});
+		// }
 
 		t = setInterval(getLocation, 10000);
-		getLocation();
+
+		centerMap();
 
 		// Initialize and add the map
 		function initMap() {
@@ -27,10 +38,19 @@
 			// The map, centered at the first waypoint
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 16,
-				center: {
-					lat: markers[0]['latitude'],
-					lng: markers[0]['longitude'],
-				}
+			});
+
+			navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log(pos);
+				console.log('Fired event!');
+
+				map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+
+				marker = new google.maps.Marker({
+					position: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+					map: map,
+					icon: '<?php echo asset('storage/img/markers/position.png') ?>',
+				});
 			});
 
 			infowindow = new google.maps.InfoWindow({
@@ -86,6 +106,20 @@
 
 		function openDialogContext() {
 			marker_id = this.id;
+
+			$.ajax({
+				method: 'GET', // Type of response and matches what we said in the route
+				url: 'https://project.test/map/marker', // This is the url we gave in the route
+		        data: {'response': response}, // a JSON object to send back
+				success: function (response) { // What to do if we succeed
+					console.log(response);
+					return response.poi;
+				},
+				error: function (jqXHR, textStatus, errorThrown) { // What to do if we fail
+					console.log(JSON.stringify(jqXHR));
+					console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+				}
+			})
 
 			$('#map-overlay').show();
 

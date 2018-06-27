@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/map', 'MapController@index')->name('map');
 //Route::get('/map/getPOIS', 'MapController@getPOIS')->name('map/getPOIS');
-Route::get('/map/marker/{id}', 'MapController@retrieveMarkerInfo')->name('map/,arler');
+Route::get('/map/marker/{id}', 'MapController@retrieveMarkerInfo')->name('map/marker');
 
 /*
  * Below routes are for admin users
