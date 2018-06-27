@@ -1,6 +1,7 @@
 @extends('layouts.teacher')
 
 @section('content')
+<div class="container-fluid">
 	<div class="row">
 		<div class="col">
 			<div id="dashboard-container" class="row">
@@ -57,4 +58,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 @endsection
