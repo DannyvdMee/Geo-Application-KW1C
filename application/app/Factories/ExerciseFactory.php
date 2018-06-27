@@ -19,10 +19,12 @@ class ExerciseFactory
 	 * @param $content
 	 * @param $picture
 	 * @param $goodAnswer
+	 * @param $visibility
+	 * @param $active
 	 *
 	 * @return Exercise
 	 */
-	public static function create($poi_id, $title, $content, $picture, $goodAnswer)
+	public static function create($poi_id, $title, $content, $picture, $goodAnswer, $visibility, $active)
 	{
 		$exercise = new Exercise();
 
@@ -31,6 +33,8 @@ class ExerciseFactory
 		$exercise->content    = $content;
 		$exercise->picture    = $picture;
 		$exercise->answer = $goodAnswer;
+		$exercise->visibility = $visibility;
+		$exercise->active = $active;
 
 		return $exercise;
 	}
