@@ -28,7 +28,6 @@ class ExerciseController extends Controller
 	 */
 	public function create()
 	{
-		//Uncomment dit als de POI's werken....
 		$poi = Poi::where('active', '=', 1)->orderBy('created_at', 'desc')->limit(1)->get();
 
 		return view('teacher/exercise/create', ['poi' => $poi]);
@@ -106,11 +105,14 @@ class ExerciseController extends Controller
 	public function update(Request $request, $id)
 	{
 		$exercise = Exercise::find($id);
+		
+		$exercise->title = $request->title;
+		$exercise->content = $request->content;
+		$exercise->picture = $request->picture;
+		$exercise->answer = $request->answer;
 
-		$exercise->exercisenumber = $request->exercisenummber;
-		$exercise->exercisename = $request->exercisename;
 		$exercise->active = $request->active;
-        $poi->active = $request->active;
+        //$poi->active = $request->active;
 
 		$exercise->save();
 
