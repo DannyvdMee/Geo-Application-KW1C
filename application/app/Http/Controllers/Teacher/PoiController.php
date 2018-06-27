@@ -59,7 +59,7 @@ class PoiController extends Controller
         
 		$poi->save();
 
-        return redirect('teacher/poi');
+        return redirect('teacher/exercise/create');
     }
 
     /**

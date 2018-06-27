@@ -29,9 +29,9 @@ class ExerciseController extends Controller
 	public function create()
 	{
 		//Uncomment dit als de POI's werken....
-		$pois = Poi::where('active', '=', 1)->get();
+		$poi = Poi::where('active', '=', 1)->orderBy('created_at', 'desc')->limit(1)->get();
 
-		return view('teacher/exercise/create', ['pois' => $pois]);
+		return view('teacher/exercise/create', ['poi' => $poi]);
 	}
 
 	/**
