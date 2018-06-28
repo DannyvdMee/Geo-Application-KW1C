@@ -57,6 +57,8 @@ return [
 
 	//Group
 	'group-add'	 	 => 'Groep toevoegen',
-	'group-edit' 	 => 'Groep bewerken'
+	'group-edit' 	 => 'Groep bewerken',
+	'group-name' 	 => 'Groepsnaam',
+	'group-removeStudents' 	 => 'Verwijder all studenten'
 
 ];

@@ -57,5 +57,7 @@ return [
 
 	//Group
 	'group-add' 	 => 'Add group',
-	'group-edit' 	 => 'Edit group'
+	'group-edit' 	 => 'Edit group',
+	'group-name' 	 => 'Group name',
+	'group-removeStudents' 	 => 'Remove all students'
 ];
