@@ -40,28 +40,18 @@ Beschrijving:   Index Exercise Pagina
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="{{ route('teacher/exercise/edit', ['id' => $exercise->id]) }}">
-											<i class="material-icons">edit</i>
-										</a>
+											<a href="{{ route('teacher/exercise/edit', ['id' => $exercise->id]) }}">
+												<i class="material-icons">edit</i>
+											</a>
 										<!-- Delete button -->
-										<a href="{{ route('teacher/exercise/delete', ['id' => $exercise->id]) }}">
-											<i class="material-icons">delete_forever</i>
-										</a>
+											<a href="{{ route('teacher/exercise/delete', ['id' => $exercise->id]) }}">
+												<i class="material-icons">delete_forever</i>
+											</a>
 									</div>
 								</div>
 							</div>
 						@endforeach
 						<div class="whitespace height-21"></div>
-
-						<!-- No option to add exercise required. Exercises are linked to a POI -->
-						<!-- POI add button
-						<div class="dataAddIcon display-inline-block float-right">
-							<a href="{{ route('teacher/exercise/create') }}" id="add-item">
-								<i class="material-icons">add</i>
-							</a>
-						</div>
-						-->
-						
 					</div>
 				</div>
 			</div>

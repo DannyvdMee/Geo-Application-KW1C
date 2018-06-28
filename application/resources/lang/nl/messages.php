@@ -13,7 +13,7 @@ return [
 	'pois'           => 'POI\'s',
 	'students'       => 'Studenten',
 	'groups'         => 'Groepen',
-	'exercise'		 => 'Oefening',
+	'exercise'		 => 'Opdrachten',
 	'settings'       => 'Instellingen',
 	'active'         => 'Actief',
 	'yes'            => 'Ja',
@@ -31,9 +31,9 @@ return [
 	
 	//Exercise
 	'exercise-add' 	 	=> 'Opdracht toevoegen',
+	'exercise-edit' 	=> 'Opdracht bewerken',
 	'exercise-content' 	=> 'Beschrijving',
 	'exercise-answer' 	=> 'Antwoord',
-	'exercise-edit' 	=> 'Opdracht bewerken',
 
 	//POI
 	'poi-add'        => 'POI toevoegen',
@@ -45,16 +45,18 @@ return [
 
 	//Students
 	'student-add'    => 'Studenten toevoegen',
-	'student-groups' => 'Studenten groepen',
 	'student-edit'	 => 'Studenten bewerken',
+	'student-groups' => 'Studenten groepen',
 	'student-number' => 'Studentnummer',
-	'student-name'	 => 'Student naam',
-	'student-info'	 => 'Studenten info',
+	'student-name'	 => 'Studentnaam',
+	'student-info'	 => 'Studentinfo',
 
 	//Department
 	'department-add' => 'Afdeling toevoegen',
+	'department-edit' => 'Afdeling bewerken',
 
 	//Group
 	'group-add'	 	 => 'Groep toevoegen',
+	'group-edit' 	 => 'Groep bewerken'
 
 ];

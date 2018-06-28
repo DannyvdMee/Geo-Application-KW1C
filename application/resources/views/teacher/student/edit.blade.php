@@ -32,14 +32,14 @@ Beschrijving:   Edit Student Pagina
                             value="{{ $student->name }}" required>
 						<!-- Student info -->
 						<textarea name="information" placeholder="@lang('messages.student-info')">{{ $student->information }}</textarea>
-						<!-- Student dropdown -->
+						<!-- Student active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($student->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($student->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 					    <input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>

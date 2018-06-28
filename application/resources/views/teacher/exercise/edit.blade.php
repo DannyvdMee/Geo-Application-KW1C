@@ -37,7 +37,7 @@ Beschrijving:   Edit Exercise Pagina
 						<input style="border-style: none; padding-left: 0;" type="file" name="picture"  
                             value="{{ $exercise->picture }}">
 
-                        <!-- Exercise dropdown -->   
+                        <!-- Exercise active? -->   
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($exercise->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>

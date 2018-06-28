@@ -26,14 +26,14 @@ Beschrijving:   Create Route Pagina
 
 						<!-- Route title -->
 						<input type="text" name="title" placeholder="@lang('messages.title')" required autofocus>
-						<!-- Route dropdown -->
+						<!-- Route active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>

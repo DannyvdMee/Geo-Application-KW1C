@@ -37,8 +37,9 @@ Beschrijving:   Edit POI Pagina
 						<input type="text" name="latitude" placeholder="@lang('messages.lat')" 
 							value='{{ $poi->latitude }}' required>						
 						<!-- POI description -->
-						<textarea name="description" placeholder="@lang('messages.desc')" required>{{ $poi->description }}</textarea>
-						<!-- POI dropdown -->
+						<textarea name="description" placeholder="@lang('messages.desc')" 
+							required>{{ $poi->description }}</textarea>
+						<!-- POI active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($poi->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>

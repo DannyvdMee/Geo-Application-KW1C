@@ -25,25 +25,26 @@ Beschrijving:   Index Department Pagina
 						@foreach($departments as $department)
 							<div class="row">
 								<div class="col dataItem">
+									<!-- Title -->
 									<p class="display-inline-block">{{ $department->title }}</p>
 									<div class="float-right">
 									<!-- Visibility(eye) button toggle true -->
 									@if ($department->visibility == 1)
-										<a href="">
+										<a href="{{ route('admin/department/visibility', ['id' => $department->id]) }}">
 											<i class="material-icons">visibility</i>
 										</a>
 									<!-- Visibility(eye) button toggle false -->
 									@else
-										<a href="">
+										<a href="{{ route('admin/department/visibility', ['id' => $department->id]) }}">
 											<i class="material-icons">visibility_off</i>
 										</a>
 									<!-- Edit button -->
 									@endif
-										<a href="">
+										<a href="{{ route('admin/department/edit', ['id' => $department->id]) }}">
 											<i class="material-icons">edit</i>
 										</a>
 									<!-- Delete button -->
-										<a href="">
+										<a href="{{ route('admin/department/delete', ['id' => $department->id]) }}">
 											<i class="material-icons">delete_forever</i>
 										</a>
 									</div>
