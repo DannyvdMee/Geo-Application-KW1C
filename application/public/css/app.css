@@ -10430,6 +10430,18 @@ header p {
   color: #5D5D5D;
 }
 
+header #back-button {
+  top: 5px;
+  left: 10px;
+}
+
+header #back-button span {
+  margin-top: -5px;
+  font-size: .7em;
+  line-height: .8em;
+  color: #A4A4A4;
+}
+
 header #power-button {
   top: 5px;
   right: 10px;
