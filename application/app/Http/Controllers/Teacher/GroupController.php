@@ -45,16 +45,20 @@ class GroupController extends Controller
         $group = new StudentGroup();
 
         $group->url_id = bin2hex(random_bytes(40));
-        $group->groupname = $request->groupname;
+        $group->name = $request->name;
         $group->active = 1;
 
 		$group->save();
 
 		$student_id_array = [];
 
-		foreach ($request->users as $user) {
-			$id = Student::where('');
+		foreach ($request->students as $user) {
+			$student_id_array[] = $user;
 		}
+
+		$students = Student::find($student_id_array);
+
+		$group->student()->attach($students);
 
         return redirect('teacher/group');
 
