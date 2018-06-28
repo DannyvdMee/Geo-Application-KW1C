@@ -24,6 +24,18 @@ header {
 		font-size: 1.2em;
 		color: $darker-gray;
 	}
+
+	#power-button {
+		top: 5px;
+		right: 10px;
+
+		span {
+			margin-top: -5px;
+			font-size: .7em;
+			line-height: .8em;
+			color: $gray;
+		}
+	}
 }
 
 main {
@@ -83,8 +95,15 @@ footer {
 	bottom: 0;
 	background-color: $white;
 
+	.footer-icon-container
+	{
+		position: relative;
+		transform: translate(-50%);
+		left: 50%;
+	}
+
 	i.material-icons {
-		padding: 5px 20px 0 20px;
+		padding: 5px 10px 2px 10px;
 		font-size: 2em;
 		color: $gray;
 	}
@@ -314,3 +333,4 @@ a:active, a:hover {
 {
 	margin: 10px 0;
 }
+

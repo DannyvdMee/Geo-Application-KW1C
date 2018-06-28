@@ -14,7 +14,7 @@ Beschrijving:   Create POI Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-						<h5 class="text-center font-bold">@lang('messages.poi-add')</h5>
+					<h5 class="text-center font-bold">@lang('messages.poi-add')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
@@ -34,14 +34,14 @@ Beschrijving:   Create POI Pagina
 						<input type="text" name="latitude" placeholder="@lang('messages.lat')" required>
 						<!-- POI description -->
 						<textarea name="description" placeholder="@lang('messages.desc')" required></textarea>
-						<!-- POI dropdown -->
+						<!-- POI active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>

@@ -37,14 +37,14 @@ Beschrijving:   Create Exercise Pagina
 						<input style="border-style: none; padding-left: 0;" type="file" name="picture" 
 						placeholder="@lang('messages.exercise-question')">
 
-						<!-- Exercise dropdown -->
+						<!-- Exercise active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->						
+						<!-- Submit button -->						
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>

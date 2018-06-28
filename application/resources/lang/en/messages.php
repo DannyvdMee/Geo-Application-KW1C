@@ -19,7 +19,7 @@ return [
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'save'           => 'Save',
-	'departments'    => 'Deparment',
+	'departments'    => 'Deparments',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
@@ -29,12 +29,17 @@ return [
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
 
+	//Footer
+	'student'		 => 'Student',
+	'group'		 	 =>	'Group',
+	'options'      	 => 'Options',
+
 	//Exercise
 	'exercise-add' 	 	=> 'Add exercise',
+	'exercise-edit' 	=> 'Edit exercise',
 	'exercise-content' 	=> 'Description',
 	'exercise-answer' 	=> 'Answer',
-	'exercise-edit' 	=> 'Edit exercise',
-    
+	
 	//POI
 	'poi-add'        => 'Add POI',
 	'poi-edit'		 => 'Edit POI',
@@ -45,15 +50,19 @@ return [
 
 	//Students
 	'student-add'    => 'Add student',
-	'student-groups' => 'Student groups',
 	'student-edit'	 => 'Edit students',
+	'student-groups' => 'Student groups',
 	'student-number' => 'Student number',
 	'student-name'	 => 'Student name',
 	'student-info'	 => 'Student info',
 
 	//Department
 	'department-add' => 'Add department',
+	'department-edit' => 'Edit department',
 
 	//Group
-	'group-add' 	 => 'Add group'
+	'group-add' 	 => 'Add group',
+	'group-edit' 	 => 'Edit group',
+	'group-name' 	 => 'Group name',
+	'group-removeStudents' 	 => 'Remove all students'
 ];

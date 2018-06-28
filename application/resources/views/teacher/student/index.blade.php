@@ -40,20 +40,20 @@ Beschrijving:   Index Student Pagina
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="{{ route('teacher/student/edit', ['id' => $student->id]) }}">
-											<i class="material-icons">edit</i>
-										</a>
+											<a href="{{ route('teacher/student/edit', ['id' => $student->id]) }}">
+												<i class="material-icons">edit</i>
+											</a>
 										<!-- Delete button -->
-										<a href="{{ route('teacher/student/delete', ['id' => $student->id]) }}">
-											<i class="material-icons">delete_forever</i>
-										</a>
+											<a href="{{ route('teacher/student/delete', ['id' => $student->id]) }}">
+												<i class="material-icons">delete_forever</i>
+											</a>
 									</div>
 								</div>
 							</div>
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/student/create') }}" id="add-item">
 								<i class="material-icons">add</i>

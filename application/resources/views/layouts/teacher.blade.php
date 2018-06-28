@@ -29,42 +29,26 @@
 <div id="app">
 	<header>
 		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-			<p class="full-width text-center">{{ config('app.name') }}</p>
+			<p class="full-width display-inline-block text-center">{{ config('app.name') }}</p>
+			<div id="power-button" class="position-absolute text-center">
+				<a href="{{ route('logout') }}">
+					<i class="material-icons">power_settings_new</i>
+					<span class="display-block">@lang('messages.logout')</span>
+				</a>
+			</div>
 		</nav>
 	</header>
 	<main class="py-4 teacher-background">
 		@yield('content')
 	</main>
 	<footer>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/route') }}">
-				<i class="material-icons display-block">explore</i>
-				<span class="display-block text-center">@lang('messages.routes')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/poi') }}">
-				<i class="material-icons display-block">place</i>
-				<span class="display-block text-center">@lang('messages.poi')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/student') }}">
-				<i class="material-icons display-block">person</i>
-				<span class="display-block text-center">@lang('messages.students')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/group') }}">
-				<i class="material-icons display-block">group</i>
-				<span class="display-block text-center">@lang('messages.groups')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/settings') }}">
-				<i class="material-icons display-block">settings</i>
-				<span class="display-block text-center">@lang('messages.settings')</span>
-			</a>
+		<div class="footer-icon-container display-inline-block">
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/dashboard') }}">
+					<i class="material-icons display-block text-center">home</i>
+					<span class="display-block text-center"> <!-- @lang('messages.dashboard') --> Dashboard</span>
+				</a>
+			</div>
 		</div>
 	</footer>
 </div>

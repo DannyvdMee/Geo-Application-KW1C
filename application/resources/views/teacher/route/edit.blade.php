@@ -27,7 +27,7 @@ Beschrijving:   Edit Route Pagina
 						<!-- Route title -->
 						<input type="text" name="title" placeholder="@lang('messages.title')" 
 							value="{{ $route->title }}" required autofocus>
-						<!-- Route dropdown -->
+						<!-- Route active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($route->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>

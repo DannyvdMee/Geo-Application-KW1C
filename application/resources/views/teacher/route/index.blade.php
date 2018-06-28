@@ -40,13 +40,13 @@ Beschrijving:   Index Route Pagina
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="{{ route('teacher/route/edit', ['id' => $route->id]) }}">
-											<i class="material-icons">edit</i>
-										</a>
+											<a href="{{ route('teacher/route/edit', ['id' => $route->id]) }}">
+												<i class="material-icons">edit</i>
+											</a>
 										<!-- Delete button -->
-										<a href="{{ route('teacher/route/delete', ['id' => $route->id]) }}">
-											<i class="material-icons">delete_forever</i>
-										</a>
+											<a href="{{ route('teacher/route/delete', ['id' => $route->id]) }}">
+												<i class="material-icons">delete_forever</i>
+											</a>
 									</div>
 								</div>
 							</div>

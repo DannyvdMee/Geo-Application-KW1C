@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
                 $table->string('lastname', 30);
                 $table->string('department', 40);
                 $table->string('account_type')->default('user');
-                $table->boolean('active')->default(false);
+                $table->boolean('active')->default(0);
                 $table->rememberToken();
                 $table->timestamps();
                 $table->softDeletes();
