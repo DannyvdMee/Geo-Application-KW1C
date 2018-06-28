@@ -15,10 +15,10 @@ class CreateStudentStudentGroupsTable extends Migration
     {
         Schema::create('student_student_group', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id')->unsigned()->unique();
-            $table->integer('group_id')->unsigned()->unique();
+            $table->integer('student_id')->unsigned();
+            $table->integer('student_group_id')->unsigned();
 			$table->foreign('student_id')->references('id')->on('students');
-			$table->foreign('group_id')->references('id')->on('student_groups');
+			$table->foreign('student_group_id')->references('id')->on('student_groups');
 			$table->timestamps();
         });
     }
