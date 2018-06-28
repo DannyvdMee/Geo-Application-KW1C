@@ -29,6 +29,11 @@ return [
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
 
+	//Footer
+	'student'		 => 'Student',
+	'group'		 	 =>	'Group',
+	'options'      	 => 'Options',
+
 	//Exercise
 	'exercise-add' 	 	=> 'Add exercise',
 	'exercise-edit' 	=> 'Edit exercise',

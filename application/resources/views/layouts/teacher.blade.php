@@ -42,35 +42,37 @@
 		@yield('content')
 	</main>
 	<footer>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/route') }}">
-				<i class="material-icons display-block">explore</i>
-				<span class="display-block text-center">@lang('messages.routes')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/poi') }}">
-				<i class="material-icons display-block">place</i>
-				<span class="display-block text-center">@lang('messages.poi')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/student') }}">
-				<i class="material-icons display-block">person</i>
-				<span class="display-block text-center">@lang('messages.students')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/group') }}">
-				<i class="material-icons display-block">group</i>
-				<span class="display-block text-center">@lang('messages.groups')</span>
-			</a>
-		</div>
-		<div class="float-left display-inline-block">
-			<a href="{{ route('teacher/settings') }}">
-				<i class="material-icons display-block">settings</i>
-				<span class="display-block text-center">@lang('messages.settings')</span>
-			</a>
+		<div class="footer-icon-container display-inline-block">
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/route') }}">
+					<i class="material-icons display-block">explore</i>
+					<span class="display-block text-center">@lang('messages.routes')</span>
+				</a>
+			</div>
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/poi') }}">
+					<i class="material-icons display-block">place</i>
+					<span class="display-block text-center">@lang('messages.poi')</span>
+				</a>
+			</div>
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/student') }}">
+					<i class="material-icons display-block">person</i>
+					<span class="display-block text-center">@lang('messages.student')</span>
+				</a>
+			</div>
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/group') }}">
+					<i class="material-icons display-block">group</i>
+					<span class="display-block text-center">@lang('messages.group')</span>
+				</a>
+			</div>
+			<div class="float-left display-inline-block">
+				<a href="{{ route('teacher/settings') }}">
+					<i class="material-icons display-block">settings</i>
+					<span class="display-block text-center">@lang('messages.options')</span>
+				</a>
+			</div>
 		</div>
 	</footer>
 </div>
