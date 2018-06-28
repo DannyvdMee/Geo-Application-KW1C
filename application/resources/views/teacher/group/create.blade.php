@@ -8,6 +8,7 @@
 				curr_html = $('#added-students').html();
 
 				row = '<div class="student"><p>' + value + '<i class="material-icons float-right">remove</i></p></div>';
+				input = '<input type=\"hidden\" name=\"students[]\" readonly hidden value=\"' + value + '\">';
 
 				box_contents = $('#added-students').text();
 				if (box_contents == 'No students added yet') {
@@ -21,6 +22,7 @@
 		function removeStudent() {
 			if ($('#added-students').empty()) {
 				$('#added-students').html('');
+				$('#student-inputs').html('');
 			}
 		}
 	</script>
@@ -54,6 +56,10 @@
 					@else
 
 					@endif
+				</div>
+
+				<div id="student-inputs">
+
 				</div>
 
 				<select name="active">
