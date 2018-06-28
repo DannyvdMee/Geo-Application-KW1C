@@ -15,7 +15,7 @@ class PoiController extends Controller
      */
     public function index()
     {
-        $pois = Poi::all()->active();
+        $pois = Poi::where('active', '=', 1)->get();
 
         return view('teacher/poi/index', ['pois' => $pois]);
     }
@@ -47,18 +47,13 @@ class PoiController extends Controller
         $poi->title = $request->title;
         $poi->latitude = $request->latitude;
         $poi->longitude = $request->longitude;
-
-        if (!empty($request->hint)) {
-			$poi->hint = $request->hint;
-		}
-
-		if (!empty($request->photo)) {
-			$poi->photo = $request->photo;
-		}
-
+        $poi->description = $request->description;
+		$poi->active = $request->active;
+		$poi->hint = $request->hint;
+        
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/exercise/create');
     }
 
     /**
@@ -76,11 +71,13 @@ class PoiController extends Controller
 			$visibility = 0;
 		} else if ($poi->visibility == 0) {
 			$visibility = 1;
-		}
+        }
 
 		$poi->visibility = $visibility;
 
-		$poi->save();
+        $poi->save();
+        
+        return redirect('teacher/poi');
     }
 
     /**
@@ -111,19 +108,15 @@ class PoiController extends Controller
 
 		$poi->title = $request->title;
 		$poi->latitude = $request->latitude;
-		$poi->longitude = $request->longitude;
+        $poi->longitude = $request->longitude;
+        $poi->active = $request->active;
+        $poi->description = $request->description;
+		$poi->hint = $request->hint;
 
-		if (!empty($request->hint)) {
-			$poi->hint = $request->hint;
-		}
-
-		if (!empty($request->photo)) {
-			$poi->photo = $request->photo;
-		}
 
 		$poi->save();
 
-		return view('teacher/poi/index');
+		return redirect('teacher/poi');
     }
 
     /**
@@ -137,10 +130,10 @@ class PoiController extends Controller
     {
 		$poi = Poi::find($id);
 
-		$poi->active = FALSE;
+		$poi->active = 0;
 
 		$poi->save();
 
-        return view('teacher/poi/index');
+        return redirect('teacher/poi');
     }
 }

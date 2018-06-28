@@ -13,16 +13,17 @@ class CreatePoiTable extends Migration
      */
     public function up()
     {
-        Schema::create('poi', function (Blueprint $table) {
+        Schema::create('pois', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
+            $table->string('type')->default('individual');
             $table->string('title');
-            $table->integer('latitude');
-            $table->integer('longitute');
+            $table->text('description');
+            $table->float('latitude', 8, 6);
+            $table->float('longitude',8, 6);
             $table->string('hint')->nullable();
-            $table->string('photo')->nullable()->unique();
-            $table->boolean('visibility')->default(true);
-			$table->boolean('active')->default(false);
+            $table->boolean('visibility')->default(1);
+			$table->boolean('active')->default(0);
 			$table->timestamps();
         });
     }

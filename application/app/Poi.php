@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Poi extends Model
 {
+	//Constructor
     public function route()
 	{
 		$this->belongsToMany(Route::class);
 	}
 
-	public function scopeActive($query)
+	public function exercise()
 	{
-		return $query->whereActive(true);
+		$this->hasOne(Exercise::class);
 	}
 }

@@ -6,124 +6,311 @@
 @import '~bootstrap/scss/bootstrap';
 
 * {
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
+	font-family: "Open Sans", sans-serif;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
 }
 
 // Future font-sizes will be in em for easy scalability
 
 header {
-  border-bottom: 1px solid $gray;
-  height: 50px;
-  line-height: 30px;
+	border-bottom: 1px solid $gray;
+	height: 50px;
+	width: 100vw;
+	line-height: 30px;
 
-  p {
-    font-size: 1.2em;
-    color: $darker-gray;
-  }
+	p {
+		font-size: 1.2em;
+		color: $darker-gray;
+	}
 }
 
 main {
-  form {
-    input {
-      height: 40px;
-      line-height: 1.2em;
-      width: 80%;
-      display: block;
-      margin: 0 auto 5px auto;
-    }
-  }
+	min-height: calc(100vh - 70px - 45px);
+	margin-bottom: 70px;
+
+	min-height: calc(100vh - 120px);
+
+	form {
+		input, textarea, select, .input-box {
+			line-height: 1.2em;
+			width: 80%;
+			display: block;
+			margin: 0 auto 10px auto;
+			padding-left: 5px;
+			border-radius: 5px;
+			border: 1px solid $gray;
+			-webkit-appearance: none;
+		}
+
+		input, select {
+			height: 40px;
+		}
+
+		.input-box {
+			min-height: 40px;
+			max-height: 120px;
+			overflow-y: scroll;
+			line-height: 40px;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		textarea {
+			height: 120px;
+			resize: none;
+		}
+
+		input[type=submit] {
+			border: 0;
+			background-color: $white;
+			color: $darkest-gray;
+			width: 150px;
+			margin: 0 auto;
+		}
+	}
 }
 
 footer {
-  color: $gray;
-  height: 70px;
-  width: 100%;
-  position: fixed;
-  border-top: 1px solid $gray;
-  bottom: 0;
+	color: $gray;
+	height: 70px;
+	width: 100vw;
+	position: fixed;
+	border-top: 1px solid $gray;
+	bottom: 0;
+	background-color: $white;
 
-  i.material-icons {
-    padding: 5px 20px 0 20px;
-    font-size: 2em;
-    color: $gray;
-  }
+	i.material-icons {
+		padding: 5px 20px 0 20px;
+		font-size: 2em;
+		color: $gray;
+	}
 
-  i:first-child {
-    text-align: left;
-  }
+	i:first-child {
+		text-align: left;
+	}
 
-  i:last-child {
-    text-align: right;
-  }
+	i:last-child {
+		text-align: right;
+	}
 
-  span {
-    margin-top: -5px;
-    font-size: .7em;
-    color: $gray;
-  }
+	span {
+		margin-top: -5px;
+		font-size: .7em;
+		color: $gray;
+	}
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+	color: inherit;
 }
 
-a:active {
-  text-decoration: none;
-  color: inherit;
+a:active, a:hover {
+	text-decoration: none;
+	color: inherit;
 }
 
 .full-height {
-  height: 100%;
+	height: 100%;
 }
 
 .full-width {
-  width: 100%;
+	width: 100%;
 }
 
 .float-left {
-  float: left;
+	float: left;
 }
 
 .float-right {
-  float: right;
+	float: right;
 }
 
 .display-block {
-  display: block;
+	display: block;
 }
 
 .display-inline-block {
-  display: inline-block;
+	display: inline-block;
+}
+
+.font-light {
+	font-weight: 300;
+}
+
+.font-bold {
+	font-weight: 700;
 }
 
 .text-gray {
-  color: $gray;
+	color: $gray;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .margin-top-100 {
-  margin-top: 100px;
+	margin-top: 100px;
 }
 
 .font-size-150 {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .container .btn {
-  padding: 2px 10px;
+	padding: 2px 10px;
 }
 
-.btn-gray {
-  background-color: $gray;
-  color: $white;
+.btn-gray, .btn-gray:hover, .btn-gray:active {
+	background-color: $gray;
+	color: $white;
+}
+
+.btn-white {
+	border: 0 solid $red;
+	border-radius: 4px;
+	background-color: $white;
+	color: #484848;
+	width: 200px;
+	margin: 10px 0;
+	height: 40px
+}
+
+.btn-white:hover
+{
+	background-color: $darkest-gray;
+	color: $white;
+	cursor: pointer;
 }
 
 .border-gray {
-  border: 1px solid $gray;
+	border: 1px solid $gray;
+}
+
+.box-center
+{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.teacher-background {
+	background-color: $light-gray;
+
+	.height-21 {
+		height: 21px;
+	}
+
+	//Background color all pages
+	.main-background {
+		background-color: $light-gray;
+	}
+
+	#map-bg {
+		height: 100%;
+	}
+
+	#map-overlay {
+		position: absolute;
+		display: none;
+		top: 50px;
+		left: 0;
+		height: calc(100vh - 120px);
+		width: 100vw;
+		background-color: $red;
+	}
+
+	#map-overlay.open {
+		display: block;
+	}
+
+	//Data display menus across multiple pages.
+	.dataItem {
+		background-color: $white;
+		padding: 0;
+		margin: 4px 25px;
+		border-radius: 4px;
+
+		//Data Display menus Text and icons
+		p, div {
+			vertical-align: middle;
+			margin: 0;
+			padding: 10px;
+		}
+	}
+
+	//'Add icon' multiple pages, positioning
+	.dataAddIcon {
+		position: fixed;
+		right: 40px;
+		bottom: 70px;
+
+		#add-item i {
+			box-shadow: 1px 1px 2px 2px $gray;
+			border-radius: 50%;
+		}
+
+		//'Add icon' Size and border & colour
+		a i {
+			border-radius: 21px;
+			font-size: 2em;
+			background-color: white;
+			color: gray;
+		}
+	}
+}
+
+.map-infowindow {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#map-overlay {
+	position: absolute;
+	display: none;
+	top: 50px;
+	left: 0;
+	height: calc(100vh - 120px);
+	width: 100vw;
+	background-color: $red;
+}
+
+//////Dashboard//////
+
+//Dashboard item background
+.dashboard-item-background
+{
+	background-color: $white;
+	border-radius: 6px;
+	min-height: 100px;
+}
+
+//Dashboard item shape/size
+.dashboard-item
+{
+	min-height: 100px;
+	text-align: center;
+	vertical-align: center;
+}
+
+.dashboard-icon-pos
+{
+	padding-top: 25px;
+	font-size: 4em;
+}
+
+.dashboard-text-pos
+{
+	padding-bottom: 25px;
+	font-size: 1em;
+}
+
+.margin-10-0
+{
+	margin: 10px 0;
 }

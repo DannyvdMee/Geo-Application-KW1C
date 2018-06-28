@@ -13,13 +13,13 @@ class CreateRouteTable extends Migration
      */
     public function up()
     {
-        Schema::create('route', function (Blueprint $table) {
+        Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
             $table->string('title');
             $table->integer('user_id')->unsigned();
-			$table->boolean('visibility')->default(true);
-			$table->boolean('active')->default(false);
+			$table->integer('visibility')->default(1);
+			$table->integer('active')->default(0);
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
         });
