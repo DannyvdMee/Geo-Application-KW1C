@@ -98,3 +98,19 @@ Mostly the first days my Logbook will be the same as the global Time Sheet, late
 - Fixed multiple errors and shit
 - Bitching about the jQuery stuff
 - Learning about CSS
+
+27 June 2018:
+
+- Build the login controller so we can login now
+- Documentation
+- Bitching about PR and merge issues
+- Trying to understand something about the location marker and getting location, but it's really shit
+- Showed our Bachmann and SQL to Van Meer, he was very enthusiastic about it
+
+28 June 2018:
+Trying to:
+- Student Login and Recieving Route ID
+- Load POI's by route ID
+- Fixed everyones logbooks
+- Project Deadline, it's really a dead.. line
+- Filling in the missing stuff in our documents
