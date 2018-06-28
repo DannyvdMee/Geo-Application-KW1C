@@ -28,6 +28,11 @@ return [
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
+
+	//footer
+	'student'		 => 'Student',
+	'group'		 	 =>	'Groep',
+	'options'      	 => 'Opties',
 	
 	//Exercise
 	'exercise-add' 	 	=> 'Opdracht toevoegen',
