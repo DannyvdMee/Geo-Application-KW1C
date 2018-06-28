@@ -1,0 +1,45 @@
+1. B1-K1: Levert een bijdrage aan het ontwikkeltraject
+1.1 B1-K1-W1 Stelt de opdracht vast
+Opdracht A: Het Programma van Eisen
+- Word document documentatie 
+
+1.2 B1-K1-W2 Levert een bijdrage aan het projectplan
+Opdracht B: Projectplan
+- Word document documentatie
+
+1.3 B1-K1-W3 Levert een bijdrage aan het ontwerp
+Opdracht C: Opstellen functioneel ontwerp
+Opdracht D: Opstellen technisch ontwerp
+- Word document documentatie
+
+1.4 B1-K1-W4 Bereidt de realisatie voor
+Opdracht E: Gereedmaken ontwikkelomgeving
+- Word document documentatie
+
+2. B1-K2: Realiseert en test (onderdelen van) een product
+2.1 B1-K1-W1: Realiseert een product
+Opdracht A: Maken van de planning
+Opdracht B: Realiseren van de database
+Opdracht C: Realiseren van de applicatie
+- Word document documentatie
+- Word document coding conventions
+
+2.2 B1-K1-W2: Test het ontwikkelde product
+Opdracht D: Opstellen testplan en testscenario's
+Opdracht E: Uitvoeren van de tests en invullen van de testlog
+Opdracht F: Wijzigen van de applicatie en het document versiebeheer
+- Word document documentatie
+- Word document testrapport
+- Word document coding conventions
+
+3. B1-K3: Levert een product op
+3.1 B1-K3-W1: Optimaliseert het product
+Opdracht A: Optimaliseren
+- Word document acceptatietest
+
+3.2 B1-K3-W2: Levert het product op
+Opdracht B: Opleveren
+- Word document testrapport met aanpassingen
+
+3.3 B1-K3-W3: Evalueert het opgeleverde product
+- 23-06-2018 staat nog geen opdracht bij

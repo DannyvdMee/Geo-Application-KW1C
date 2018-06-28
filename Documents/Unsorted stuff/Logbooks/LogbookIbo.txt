@@ -1,0 +1,79 @@
+Prior to June 10
+- Set-up everyone's working environment
+- Made sure Rinaldo & Onyi understand Git & Gitkraken
+- Created a fresh laravel install
+- Added Laravel Auth scaffolding
+
+June 7
+- Held initial meeting with clients
+
+June 11 - June 12
+- Created mobile front-end designs based on iPhone 6 designs
+
+June 13
+- Created mobile back-end designs based on iPhone 6 designs for index routes of tasks
+
+June 16
+- Added a shitload of code
+	- Added Teacher & Admin middlewares
+	- Added Controllers for teachers and admins
+	- Updated User model
+	- Updated User migration
+	- Implemented Google Material Design
+	- NPM installed everything
+	- Front-ended the footer and header
+
+June 19
+- Controllers
+- Models
+- Migrations
+- Middleware,
+- Fixed everyones laptop
+- Fixed the map, Danny has created
+
+June 20
+- PHP fixes
+- Table updates
+- POI's added (Teacher)
+- Create student index, create, view & functions
+- Create Group Teacher index, create, view & functions
+
+June 21
+- Study C#
+
+June 22: 
+- Added Student -> studentgroup link table
+- removed active scope, laravel doesn't support it
+- Helped the rest understand back-end and front end. 
+- Broke Onyi's Laptop, Bye Bye vagrant
+- Fixed Onyi's Laptop
+
+June 23: 
+- Told Rinaldo to update my logbook
+- Ibo used Jquery... It had no effect..
+- Made friends with Bachmann, Guy gave me so diagrams...
+
+June 24:
+- Working for the map POI
+- HTTPS included on own site
+
+June 25:
+- Different back-end stuff
+- Bachmann finished
+- Running composer dump-autoload a lot. Its a nice command
+
+June 26:
+- Fixing everyones problems
+- Travelling too much
+- Helping onyi
+
+June 27:
+- Blade files
+- Backend
+- Trying to fix maker
+- Many to Many
+
+June 28:
+- Final day for the finishing for project
+- Trying to fix maker
+- Many to Many

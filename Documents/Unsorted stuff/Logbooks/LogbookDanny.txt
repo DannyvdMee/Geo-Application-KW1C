@@ -1,0 +1,116 @@
+Logbook of: Дэнни ван дер Ми
+
+Mostly the first days my Logbook will be the same as the global Time Sheet, later on it's going to be different.
+
+22 May 2018 - 24 May 2018:
+
+- Setting up each person envoirement
+- Successfully completed issues #1 #2
+- Explaining about GIT
+- Explaining about PR, branches and GITKraken
+- Added logbook files for each team member
+- Added this timesheet file to act as a main logbook
+- Added document folder to hold any kind of important documents that are needed in the project.
+- Added member roles file, here is described what the role of each team member is going to be.
+
+6 June 2018
+
+- Everthing will be setup so we can start ASAP
+- Git and Gitkraken is fully running
+- Everyones IDE is running smooth
+- Created some more tasks
+
+7 June 2018:
+
+- Have the first initial meeting
+
+11 June 2018:
+
+- Creating the document folders
+- Creating of the project documents, like: Project Plan, Program of Requirements
+
+12 June 2018:
+
+- Creating Configuration Overview
+- Edited the Project Plan and Program of Requirements, they are now mostly done
+- Made sure that everyone else understands their tasks
+- Pushed the Technical Design
+
+13 June 2018:
+
+- Helped Onyi and Rinaldo to get their project up to date.
+- Sample functions and overview of the project written down on paper, so it can be helpfull at the analytics
+- Send the Program of Requirements to Abu
+
+15 June 2018:
+- Created a backlog for our project
+- Helped setup my own computer to run the server
+- Worked on code
+
+18 June 2018:
+- Requested API token for loading Google Maps
+- Research on how to add map
+- Helped Onyi and Rinaldo setup their computer to run the website locally
+- Had a conversation with Abu about how we are doing this project. It went not so good because Abu was hoping his idea went trough
+
+19 June 2018:
+- Added more tasks
+- Provided a much more detailed Definition of Done at each task
+- Helped Rinaldo set up his computer to run the website locally
+- Argued about how to provide information at tasks.
+
+21 June 2018
+
+- Haven't done anything today because of the work we had to do on our re-exam C#
+
+22 June 2018
+
+- Reassigning and relabeling all the tasks in GitKraken
+- Continue to work on the BE and FE
+- Fixed the broken SQL stuff
+- Fixed the mess Ibo is making with all his branches
+- Version 0.2 will be almost done today
+
+23 June 2018
+
+- Getting more and more the idea that we will be in time shortage
+- Trying to get the jQuery working
+- Version 0.2 will not be done today. Too much got in our way to proper finish it
+- Added a database seeder so if we run it a first entry in the database will be made
+- Ibo and Onyi are working at the Project Documents
+- Fixing some jQurey
+- Frontending
+
+24 June 2018
+
+- Free sunday hehe
+
+25 June 2018
+
+- POI are recieved from database and placed on the map
+- Depending on which type it is, the marker is changed
+- Made database seeder, factory, modal and controller for exercise
+- Uploaded old markers
+
+26 June 2018
+
+- Creating the view of routes
+- Fixed multiple errors and shit
+- Bitching about the jQuery stuff
+- Learning about CSS
+
+27 June 2018:
+
+- Build the login controller so we can login now
+- Documentation
+- Bitching about PR and merge issues
+- Trying to understand something about the location marker and getting location, but it's really shit
+- Showed our Bachmann and SQL to Van Meer, he was very enthusiastic about it
+
+28 June 2018:
+Trying to:
+- Student Login and Recieving Route ID
+- Load POI's by route ID
+- Fixed everyones logbooks
+- Project Deadline, it's really a dead.. line
+- Filling in the missing stuff in our documents
