@@ -10572,6 +10572,13 @@ a:hover {
   padding: 2px 10px;
 }
 
+.btn-gray,
+.btn-gray:hover,
+.btn-gray:active {
+  background-color: #A4A4A4;
+  color: #FFFFFF;
+}
+
 .btn-white {
   border: 0 solid #ED2525;
   border-radius: 4px;

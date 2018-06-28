@@ -53,7 +53,7 @@ Beschrijving:   Index Student Pagina
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- Route add button-->
+						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/student/create') }}" id="add-item">
 								<i class="material-icons">add</i>
