@@ -50,7 +50,14 @@ class GroupController extends Controller
 
 		$group->save();
 
+		$student_id_array = [];
+
+		foreach ($request->users as $user) {
+			$id = Student::where('');
+		}
+
         return redirect('teacher/group');
+
     }
 
     /**
