@@ -1,14 +1,6 @@
 @extends('layouts.teacher')
 
 <!--
-	27 06 18
-	Onyi:
-	!IMPORTANT
-	CORRECT INDEX PAGE
-	CAN BE USED AS TEMPLATE...
--->
-
-<!--
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
 Aanmaakdatum:   27-06-18
@@ -37,7 +29,7 @@ Beschrijving:   Index POI Pagina
 									<p class="display-inline-block">{{ $poi->title }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($poi->visibility == true)
+										@if ($poi->visibility == 1)
 											<a href="{{ route('teacher/poi/visibility', ['id' => $poi->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
@@ -61,7 +53,7 @@ Beschrijving:   Index POI Pagina
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- POI add button-->
+						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/poi/create') }}" id="add-item">
 								<i class="material-icons">add</i>

@@ -29,7 +29,7 @@ Beschrijving:   Index Route Pagina
 									<p class="display-inline-block">{{ $route->title }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($route->visibility == true)
+										@if ($route->visibility == 1)
 											<a href="{{ route('teacher/route/visibility', ['id' => $route->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
@@ -53,7 +53,7 @@ Beschrijving:   Index Route Pagina
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- Route add button-->
+						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/route/create') }}" id="add-item">
 								<i class="material-icons">add</i>

@@ -34,8 +34,7 @@ Beschrijving:   Edit Exercise Pagina
                         <input type="text" name="answer" placeholder="@lang('messages.exercise-answer')" 
                             value="{{ $exercise->answer }}" required>
 						<!-- Exercise picture -->
-						<input style="border-style: none; padding-left: 0;" type="file" name="picture" 
-                            placeholder="@lang('messages.exercise-question')" 
+						<input style="border-style: none; padding-left: 0;" type="file" name="picture"  
                             value="{{ $exercise->picture }}">
 
                         <!-- Exercise dropdown -->   
