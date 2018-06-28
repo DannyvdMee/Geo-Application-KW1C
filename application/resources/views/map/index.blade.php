@@ -4,13 +4,13 @@
 	<script>
 
 		// Copied this from a hackathon project
-		// function getLocation() {
-		//
-		// 	navigator.geolocation.getCurrentPosition(function (pos) {
-		// 		console.log(pos);
-		// 	});
-		// }
-		//
+		 function getLocation() {
+
+		 	navigator.geolocation.getCurrentPosition(function (pos) {
+		 		console.log(pos);
+		 	});
+		 }
+
 		// function centerMap()
 		// {
 		// 	navigator.geolocation.getCurrentPosition(function (pos) {
@@ -25,8 +25,6 @@
 		// }
 
 		t = setInterval(getLocation, 10000);
-
-		centerMap();
 
 		// Initialize and add the map
 		function initMap() {
