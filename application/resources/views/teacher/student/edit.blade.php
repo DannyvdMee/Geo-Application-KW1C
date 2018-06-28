@@ -18,7 +18,7 @@ Beschrijving:   Edit Student Pagina
 				</div>
 			</div>
 			<!-- End page title -->
-			<!-- Route edit form -->
+			<!-- Student edit form -->
 			<div class="row">
 				<div class="col">					
                     <form method="POST" action="{{ route('teacher/student/edit', ['id' => $student->id]) }}">
@@ -44,7 +44,7 @@ Beschrijving:   Edit Student Pagina
 					</form>
 				</div>
 			</div>
-			<!-- End Route edit form -->
+			<!-- End student edit form -->
 		</div>
 	</div>
 </div>

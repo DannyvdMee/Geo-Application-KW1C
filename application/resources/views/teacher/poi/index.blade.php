@@ -53,7 +53,7 @@ Beschrijving:   Index POI Pagina
 						@endforeach
 						<div class="whitespace height-21"></div>
 
-						<!-- POI add button-->
+						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
 							<a href="{{ route('teacher/poi/create') }}" id="add-item">
 								<i class="material-icons">add</i>
