@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
 	//Constructor
-    public function studentGroup()
+    public function studentGroups()
 	{
-		$this->belongsToMany(StudentGroup::class);
+		return $this->belongsToMany(StudentGroup::class);
 	}
 }

@@ -58,7 +58,7 @@ class GroupController extends Controller
 
 		$students = Student::find($student_id_array);
 
-		$group->student()->attach($students);
+		$group->students()->attach($students);
 
         return redirect('teacher/group');
 

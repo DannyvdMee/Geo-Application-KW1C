@@ -18,12 +18,12 @@ class DepartmentFactory
 	 *
 	 * @return Department
 	 */
-	public static function create($title, $state)
+	public static function create($title, $active)
 	{
 		$department = new Department();
 
 		$department->title = $title;
-		$department->state = $state;
+		$department->active = $active;
 
 		return $department;
 	}

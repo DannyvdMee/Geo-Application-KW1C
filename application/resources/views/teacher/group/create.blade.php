@@ -5,10 +5,12 @@
 		function addStudent() {
 			if ($(this).val() != '') {
 				value = $(this).find(':selected').text();
+				id = $(this).find(':selected').val();
 				curr_html = $('#added-students').html();
+				curr_inputs = $('#student-inputs').html();
 
 				row = '<div class="student"><p>' + value + '<i class="material-icons float-right">remove</i></p></div>';
-				input = '<input type=\"hidden\" name=\"students[]\" readonly hidden value=\"' + value + '\">';
+				input = '<input type=\"hidden\" name=\"students[]\" readonly hidden value=\"' + id + '\">';
 
 				box_contents = $('#added-students').text();
 				if (box_contents == 'No students added yet') {
@@ -16,6 +18,7 @@
 				}
 
 				$('#added-students').html(curr_html + row);
+				$('#student-inputs').html(curr_inputs + input);
 			}
 		}
 
