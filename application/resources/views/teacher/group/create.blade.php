@@ -97,12 +97,14 @@ Beschrijving:   Create Group Pagina
 						<!-- Submit button-->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
+					
+					<div class="whitespace height-21"></div>
 
 					<!-- Delete button-->
 					<div class="display-inline-block text-center box-center">
-						<button class="btn-white" onclick="removeStudent()">
+						<button class="btn btn-gray" onclick="removeStudent()">
 							<!-- Delete all students -->
-							{{ @lang('messages.group-removeStudents' )}}
+							@lang('messages.group-removeStudents')
 						</button>
 					</div>
 				</div>
