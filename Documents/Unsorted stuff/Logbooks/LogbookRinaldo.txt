@@ -59,3 +59,14 @@ Helping danny with his shitty CSS skills
 
 
 June 27:
+Backups
+Front end
+Blade files
+Dashboard
+Fixing a lot of inconsistency
+Index
+CSS Fixed
+Looking at documents
+
+June 28:
+CSS fixes
