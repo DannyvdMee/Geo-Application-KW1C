@@ -57,7 +57,13 @@ Documentatie
 Frontend
 Backend
 
+27 06 18
+Veel gedaan op front-end
+Foutjes gefixt
+Vertalingen
+Overige kleine dingentjes
 
-
-
-
+28 06 18
+Documentatie checken
+Oplevering
+Frontend
