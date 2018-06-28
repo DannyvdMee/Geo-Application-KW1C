@@ -1,11 +1,16 @@
-# KW1C Group Project P8
+# Geo Ict Application KW1C
 
 ### Description
 This repository will hold the code and documents that we made for KW1C <br>
-As far as we know it will be a updated application for the first schoolday. <br>
-Teachers will be able to create a route, the students can then add a route by searching for it by its route ID. <br>
-Our goal is to complete rewrite the existing code, so it will be more readable and more up-to-date. <br>
-Further information will be available later this week, I will update as soon as possible
+The application will be about a geo walk route for the students to walk on the first school day. <br>
+POI will be created with exercises combined to them. Some POI are only visible within 50m <br>
+A department of the school get it's own URL ([departmentname].geowalk.nl) <br>
+Teachers will be able to create a route by adding POI to an empty map <br>
+After saving a route UUID will be created, students can then walk the route by searching for the UUID given by the teacher <br>
+Also can students be added to groups. <br>
+All of the anwsers the students are giving at each exersise are pushed to a overview table in which the teacher can see the answers divided by group and question. <br>
+
+The old project code will be completely rewritten by the end of the project.
 
 ### Table of Contents
 - [Installation](https://github.com/DannyvdMee/GroupProject/tree/master#installation)
@@ -33,17 +38,16 @@ https://github.com/[repositorylocation] or git@github.com:[repositorylocation]
 13. If you have no errors when fetching you are ready to go.
 
 ### Usage
-For more information about the usage for this application we will direct you to our wiki. <br>
-[Usage Wiki Application](https://github.com/DannyvdMee/GroupProject/wiki) <br>
-We will continue to add more information about the usage of this application. <br>
-<br>
-We will also add a manual for first time usage of this application.
+For more information about the project, and a manual for first time use go to: <br>
+[Application Information WiKi](https://github.com/DannyvdMee/GroupProject/wiki) 
 
 ### Structure project
 - Documents: <br>
-This folder will hold all the required documents like: Design's, analytics 
+This folder will hold all the required documents like: Design's, analytics, basic documents 
 - Application: <br>
 This folder will hold all of the project's code.
+- Old project <br>
+This folder
 - License <br>
 This folder will hold the license provided for this project
 
@@ -59,7 +63,7 @@ The Collaborators of this project are:
 Hereinafter referred to as ProjectGroupP8
 
 ### License
-Copyright 2018 TweeKnopenLos Inc.
+Copyright 2018 ProjectGroupP8
 
 Licensed under the Apache License, Version 2.0 (the "License")
 
@@ -69,4 +73,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License (License/License.md) for the specific language governing permissions and
 limitations under the License.
 
-TweeKnopenLos Inc. does not accept any liability for up-to-date-ness, correctness, thoroughness or quality of information presented in this readme. 
+ProjectGroupP8 does not accept any liability for up-to-date-ness, correctness, thoroughness or quality of information presented in this readme. 
