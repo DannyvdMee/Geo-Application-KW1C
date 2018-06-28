@@ -15,7 +15,7 @@
 							<div class="col dataItem">
 								<p class="display-inline-block">{{ $group->title }}</p>
 								<div class="float-right">
-									@if ($group->state == true)
+									@if ($group->visibility == 1)
 										<a href="">{{--TODO: Href pages when files are made--}}
 											<i class="material-icons">visibility</i>
 										</a>

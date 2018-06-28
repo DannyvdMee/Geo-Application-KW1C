@@ -46,9 +46,15 @@ class GroupController extends Controller
 
         $group->url_id = bin2hex(random_bytes(40));
         $group->groupname = $request->groupname;
-        $group->active = TRUE;
+        $group->active = 1;
 
 		$group->save();
+
+		$student_id_array = [];
+
+		foreach ($request->users as $user) {
+			$id = Student::where('');
+		}
 
         return view('teacher/group/index');
     }
