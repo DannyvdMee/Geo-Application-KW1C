@@ -10501,8 +10501,15 @@ footer {
   background-color: #FFFFFF;
 }
 
+footer .footer-icon-container {
+  position: relative;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  left: 50%;
+}
+
 footer i.material-icons {
-  padding: 5px 20px 0 20px;
+  padding: 5px 10px 2px 10px;
   font-size: 2em;
   color: #A4A4A4;
 }

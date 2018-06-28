@@ -28,6 +28,11 @@ return [
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
+
+	//footer
+	'student'		 => 'Student',
+	'group'		 	 =>	'Groep',
+	'options'      	 => 'Opties',
 	
 	//Exercise
 	'exercise-add' 	 	=> 'Opdracht toevoegen',
@@ -57,6 +62,8 @@ return [
 
 	//Group
 	'group-add'	 	 => 'Groep toevoegen',
-	'group-edit' 	 => 'Groep bewerken'
+	'group-edit' 	 => 'Groep bewerken',
+	'group-name' 	 => 'Groepsnaam',
+	'group-removeStudents' 	 => 'Verwijder all studenten'
 
 ];

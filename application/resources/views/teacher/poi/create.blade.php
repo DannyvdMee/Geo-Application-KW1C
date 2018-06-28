@@ -14,7 +14,7 @@ Beschrijving:   Create POI Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-						<h5 class="text-center font-bold">@lang('messages.poi-add')</h5>
+					<h5 class="text-center font-bold">@lang('messages.poi-add')</h5>
 				</div>
 			</div>
 			<!-- End page title -->

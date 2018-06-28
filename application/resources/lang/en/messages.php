@@ -29,6 +29,11 @@ return [
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
 
+	//Footer
+	'student'		 => 'Student',
+	'group'		 	 =>	'Group',
+	'options'      	 => 'Options',
+
 	//Exercise
 	'exercise-add' 	 	=> 'Add exercise',
 	'exercise-edit' 	=> 'Edit exercise',
@@ -57,5 +62,7 @@ return [
 
 	//Group
 	'group-add' 	 => 'Add group',
-	'group-edit' 	 => 'Edit group'
+	'group-edit' 	 => 'Edit group',
+	'group-name' 	 => 'Group name',
+	'group-removeStudents' 	 => 'Remove all students'
 ];
