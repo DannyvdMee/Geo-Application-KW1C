@@ -10430,6 +10430,18 @@ header p {
   color: #5D5D5D;
 }
 
+header #power-button {
+  top: 5px;
+  right: 10px;
+}
+
+header #power-button span {
+  margin-top: -5px;
+  font-size: .7em;
+  line-height: .8em;
+  color: #A4A4A4;
+}
+
 main {
   min-height: calc(100vh - 70px - 45px);
   margin-bottom: 70px;

@@ -29,7 +29,13 @@
 <div id="app">
 	<header>
 		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-			<p class="full-width text-center">{{ config('app.name') }}</p>
+			<p class="full-width display-inline-block text-center">{{ config('app.name') }}</p>
+			<div id="power-button" class="position-absolute text-center">
+				<a href="{{ route('logout') }}">
+					<i class="material-icons">power_settings_new</i>
+					<span class="display-block">@lang('messages.logout')</span>
+				</a>
+			</div>
 		</nav>
 	</header>
 	<main class="py-4 teacher-background">
