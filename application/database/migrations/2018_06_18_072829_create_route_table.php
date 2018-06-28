@@ -16,7 +16,7 @@ class CreateRouteTable extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url_id')->unique();
-            $table->string('title');
+            $table->string('name');
             $table->integer('user_id')->unsigned();
 			$table->integer('visibility')->default(1);
 			$table->integer('active')->default(0);
