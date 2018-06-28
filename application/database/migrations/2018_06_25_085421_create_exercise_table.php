@@ -17,7 +17,7 @@ class CreateExerciseTable extends Migration
 			function (Blueprint $table) {
 				$table->increments('id');
 				$table->integer('poi_id')->unique()->unsigned();
-				$table->string('title');
+				$table->string('name');
 				$table->string('content');
 				$table->string('picture')->nullable();
 				$table->string('answer');
