@@ -66,3 +66,14 @@ June 26:
 - Fixing everyones problems
 - Travelling too much
 - Helping onyi
+
+June 27:
+- Blade files
+- Backend
+- Trying to fix maker
+- Many to Many
+
+June 28:
+- Final day for the finishing for project
+- Trying to fix maker
+- Many to Many
