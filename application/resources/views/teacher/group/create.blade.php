@@ -1,5 +1,12 @@
 @extends('layouts.teacher')
 
+<!--
+Opdracht:       Multidisciplinair Project v.2
+Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
+Aanmaakdatum:   27-06-18
+Beschrijving:   Create Group Pagina
+-->
+
 @section('injectable-js')
 	<script type="application/javascript">
 		function addStudent() {
@@ -35,7 +42,7 @@
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-					<h5 class="text-center font-bold">@lang('messages.add-group')</h5>
+					<h5 class="text-center font-bold">@lang('messages.group-add')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
@@ -46,7 +53,7 @@
 						@csrf
 
 						<!-- Group name -->
-						<input type="text" name="name" placeholder="Group name" required autofocus>
+						<input type="text" name="name" placeholder="@lang('messages.group-name')" required autofocus>
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
@@ -91,7 +98,8 @@
 					<!-- Delete button-->
 					<div class="display-inline-block text-center box-center">
 						<button class="btn-white" onclick="removeStudent()">
-							Delete all students
+							<!-- Delete all students -->
+							{{ @lang('messages.group-removeStudents' )}}
 						</button>
 					</div>
 				</div>
