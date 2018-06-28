@@ -18,14 +18,15 @@ Beschrijving:   Edit Group Pagina
 				</div>
 			</div>
 			<!-- End page title -->
-			<!-- Group create form -->
+			<!-- Group edit form -->
 			<div class="row">
 				<div class="col">			
-					<form method="POST" action="{{ route('teacher/group/create') }}">
+					<form method="POST" action="{{ route('teacher/group/create', ['id' => $group->id]) }}">
 						@csrf
 
 						<!-- Group name -->
-						<input type="text" name="name" placeholder="@lang('messages.group-name')" required autofocus>
+                        <input type="text" name="name" placeholder="@lang('messages.group-name')" 
+                            value="{{ $group->name }}" required autofocus>
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
@@ -59,8 +60,8 @@ Beschrijving:   Edit Group Pagina
 						<!-- Group active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>
-							<option value="1">@lang('messages.yes')</option>
-							<option value="0">@lang('messages.no')</option>
+							<option value="1" {{ ($group->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
+							<option value="0" {{ ($group->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>
 						</select>
 
 						<!-- Submit button-->
@@ -76,7 +77,7 @@ Beschrijving:   Edit Group Pagina
 					</div>
 				</div>
 			</div>
-			<!-- End group create form -->
+			<!-- End group edit form -->
 		</div>
 	</div>
 </div>
