@@ -21,22 +21,35 @@ Beschrijving:   Index Settings Pagina
 			<!-- Name form -->
 			<div class="row">
 				<div class="col">					
-					<form method="POST" action="{{ route('teacher/settings/index', ['id' => $settings->id]) }}">
+					<form method="POST" action="{{ route('teacher/settings', ['id' => $user->id]) }}">
 						@csrf
 						
-						<!-- Naam -->
-                        <input type="text" name="name" placeholder="@lang('messages.name')" 
-                            value="{{ $settings->name }}">
+						<!-- Firstname -->
+                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" 
+							value="{{ $user->name }}">
+						<!-- Lastname -->
+						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" 
+							value="{{ $user->name }}">
+							
 						<!-- Department -->
-                        <textarea name="department" placeholder="@lang('messages.department')" 
-                         required>{{ $settings->department }}</textarea>
+						<select name="departments">
+							<option value="">Select department</option>
+							@if (!empty($departments))
+								@foreach ($departments as $department)
+									<option value="{{ $department->id }}">{{ $department->name }}</option>
+								@endforeach
+							@endif
+						</select>
 
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>
 			</div>
-            <!-- End name form -->
+			<!-- End name form -->
+
+			<div class="whitespace height-21"></div>
+
 			<!-- Password title -->
 			<div class="row">
 				<div class="col">
@@ -47,15 +60,13 @@ Beschrijving:   Index Settings Pagina
 			<!-- Password form -->
 			<div class="row">
 				<div class="col">					
-					<form method="POST" action="{{ route('teacher/settings/index', ['id' => $settings->id]) }}">
+					<form method="POST" action="{{ route('teacher/settings', ['id' => $user->id]) }}">
 						@csrf
 						
 						<!-- Password -->
-                        <input type="password" name="password" placeholder="@lang('messages.password')" 
-                            value="{{ $settings->password }}">
+                        <input type="password" name="password" placeholder="@lang('messages.password')" >
 						<!-- Repeat password -->
-                        <input type="password" name="confirmpw" placeholder="@lang('messages.confirmpw')" 
-                            value="{{ $settings->password }}">
+                        <input type="password" name="confirmpw" placeholder="@lang('messages.confirmpw')">
 
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
