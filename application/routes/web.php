@@ -42,12 +42,18 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 	//Dashboard
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-	//users
+	//Users
 	Route::get('users', 'UserController@index')->name('users');
 
-	//department
-	Route::get('departments', 'DepartmentController@index')->name('departments');
-	Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
+	//Department
+    Route::get('departments', 'DepartmentController@index')->name('departments');
+    Route::get('departments/create', 'DepartmentController@create')->name('departments/create');
+    Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
+    Route::post('departments/create', 'DepartmentController@store')->name('departments/create');
+    Route::get('departments/edit/{id}', 'DepartmentController@edit')->name('departments/edit');
+	Route::post('departments/edit/{id}', 'DepartmentController@update')->name('departments/edit');
+	Route::get('departments/visibility/{id}', 'DepartmentController@show')->name('departments/visibility');
+	Route::get('departments/delete/{id}', 'DepartmentController@destroy')->name('departments/delete');
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
