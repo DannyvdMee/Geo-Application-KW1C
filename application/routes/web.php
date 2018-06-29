@@ -46,9 +46,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 	Route::get('users', 'UserController@index')->name('users');
 
 	//Department
-    Route::get('department', 'DepartmentController@index')->name('departments');
+    Route::get('department', 'DepartmentController@index')->name('department');
     Route::get('department/create', 'DepartmentController@create')->name('department/create');
-    Route::post('department/create', 'DepartmentController@create')->name('department/create');
     Route::post('department/create', 'DepartmentController@store')->name('department/create');
     Route::get('department/edit/{id}', 'DepartmentController@edit')->name('department/edit');
 	Route::post('department/edit/{id}', 'DepartmentController@update')->name('department/edit');
