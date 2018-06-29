@@ -30,7 +30,7 @@ Beschrijving:   Edit Group Pagina
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
-							<option value="">Select a student</option>
+							<option value="">@lang('messages.selectStudent')</option>
 							@if (!empty($students))
 								@foreach ($students as $student)
 									<option value="{{ $student->id }}">{{ $student->name }}</option>

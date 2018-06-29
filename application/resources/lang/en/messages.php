@@ -15,7 +15,7 @@ return [
 	'groups'         => 'Groups',
 	'exercise'		 => 'Exercise',
 	'settings'       => 'Settings',
-	'active'         => 'Active',
+	'active'         => 'Is it active',
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'save'           => 'Save',
@@ -24,10 +24,12 @@ return [
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
 
-	'title' 		 => 'Title',
+	'name' 		 	 => 'Name',
 	'long'		 	 => 'Longitude',
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
+
+	'selectStudent'  => 'Select a student',
 
 	//Footer
 	'student'		 => 'Student',

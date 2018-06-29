@@ -15,7 +15,7 @@ return [
 	'groups'         => 'Groepen',
 	'exercise'		 => 'Opdrachten',
 	'settings'       => 'Instellingen',
-	'active'         => 'Actief',
+	'active'         => 'Is het actief',
 	'yes'            => 'Ja',
 	'no'             => 'Nee',
 	'save'           => 'Opslaan',
@@ -24,10 +24,12 @@ return [
 	'username'		 =>	'Gebruikersnaam',
 	'confirmpw'      => 'Bevestig wachtwoord',
 
-	'title' 		 => 'Titel',
+	'name' 		 	 => 'Naam',
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
+
+	'selectStudent'  => 'Selecteer een student',
 
 	//footer
 	'student'		 => 'Student',
