@@ -25,10 +25,10 @@ Beschrijving:   Index Settings Pagina
 						@csrf
 						
 						<!-- Firstname -->
-                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" 
+                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" required
 							value="{{ $user->name }}">
 						<!-- Lastname -->
-						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" 
+						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" required
 							value="{{ $user->name }}">
 							
 						<!-- Department -->
@@ -41,8 +41,6 @@ Beschrijving:   Index Settings Pagina
 							@endif
 						</select>
 
-						<div class="whitespace height-21"></div>
-						
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
@@ -51,6 +49,8 @@ Beschrijving:   Index Settings Pagina
 			<!-- End name form -->
 
 			<div class="whitespace height-21"></div>
+			<div class="whitespace height-21"></div>
+
 
 			<!-- Password title -->
 			<div class="row">
@@ -66,12 +66,10 @@ Beschrijving:   Index Settings Pagina
 						@csrf
 						
 						<!-- Password -->
-                        <input type="password" name="password" placeholder="@lang('messages.password')" >
+                        <input type="password" name="password" placeholder="@lang('messages.password')"  >
 						<!-- Repeat password -->
                         <input type="password" name="confirmpw" placeholder="@lang('messages.confirmpw')">
 
-						<div class="whitespace height-21"></div>
-						
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>

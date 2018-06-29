@@ -30,6 +30,7 @@ return [
 	'desc'			 => 'Beschrijving',
 
 	'selectStudent'  => 'Selecteer een student',
+	'selectDepartment'  => 'Selecteer een afdeling	',
 
 	//footer
 	'student'		 => 'Student',
@@ -66,6 +67,10 @@ return [
 	'group-add'	 	 => 'Groep toevoegen',
 	'group-edit' 	 => 'Groep bewerken',
 	'group-name' 	 => 'Groepsnaam',
-	'group-removeStudents' 	 => 'Verwijder all studenten'
+	'group-removeStudents' 	 => 'Verwijder all studenten',
+
+	//Settings
+	'firstname' 	=> 'Voornaam',
+	'lastname' 		=> 'Achternaam'
 
 ];

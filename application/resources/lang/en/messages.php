@@ -30,6 +30,7 @@ return [
 	'desc'			 => 'Description',
 
 	'selectStudent'  => 'Select a student',
+	'selectDepartment'  => 'Select a department',
 
 	//Footer
 	'student'		 => 'Student',
@@ -66,5 +67,9 @@ return [
 	'group-add' 	 => 'Add group',
 	'group-edit' 	 => 'Edit group',
 	'group-name' 	 => 'Group name',
-	'group-removeStudents' 	 => 'Remove all students'
+	'group-removeStudents' 	 => 'Remove all students',
+
+	//Settings
+	'firstname' 	=> 'Firstname',
+	'lastname' 		=> 'Lastname'
 ];

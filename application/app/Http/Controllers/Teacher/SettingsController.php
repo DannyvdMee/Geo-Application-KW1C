@@ -17,13 +17,10 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        //IS DEZE BITCH INGELOGD
         $user = Auth::user();
 
         $departments = Department::where('active', '=', 1)->get();
 
-        //ALS DIE BITCH IS INGELOGD:
-        //DAN DIE USER, ZET DAAR DE USER ACHTER
         return view('teacher/settings/index', ['user' => $user, 'departments' => $departments]);
     }
 }
