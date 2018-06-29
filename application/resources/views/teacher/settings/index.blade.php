@@ -1,10 +1,13 @@
+
+
+
 @extends('layouts.teacher')
 
 <!--
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
-Aanmaakdatum:   27-06-18
-Beschrijving:   Index Settings Pagina
+Aanmaakdatum:   29-06-18
+Beschrijving:   Edit Settings Pagina
 -->
 
 @section('content')
@@ -26,14 +29,14 @@ Beschrijving:   Index Settings Pagina
 						
 						<!-- Firstname -->
                         <input type="text" name="firstname" placeholder="@lang('messages.firstname')" required
-							value="{{ $user->name }}">
+							value="{{ $user->firstname }}">
 						<!-- Lastname -->
 						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" required
-							value="{{ $user->name }}">
+							value="{{ $user->lastname }}">
 							
 						<!-- Department -->
 						<select name="departments">
-							<option value="">@lang('messages.selectDepartment')</option>
+							<!-- <option value="">@lang('messages.selectDepartment')</option> -->
 							@if (!empty($departments))
 								@foreach ($departments as $department)
 									<option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -74,7 +77,7 @@ Beschrijving:   Index Settings Pagina
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>
-			</div>
+			</div> 
 			<!-- End password form -->
 		</div>
 	</div>

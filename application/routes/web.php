@@ -120,5 +120,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
+	Route::post('settings/{id}', 'SettingsController@update')->name('settings');
+
 
 });
