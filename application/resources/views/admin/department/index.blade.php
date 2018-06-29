@@ -26,7 +26,7 @@ Beschrijving:   Index Department Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $department->title }}</p>
+									<p class="display-inline-block">{{ $department->name }}</p>
 									<div class="float-right">
 									<!-- Visibility(eye) button toggle true -->
 									@if ($department->visibility == 1)

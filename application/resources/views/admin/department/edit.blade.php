@@ -21,12 +21,12 @@ Beschrijving:   Edit Department Pagina
 			<!-- Department edit form -->
 			<div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('admin/department/create') }}">
+					<form method="POST" action="{{ route('admin/department/edit', ['id' => $department->id]) }}">
 						@csrf
 
-						<!-- Department name/title -->
-                        <input type="text" name="title" placeholder="@lang('messages.title')" 
-                            value="{{ $department->title }}" required autofocus>
+						<!-- Department name -->
+                        <input type="text" name="name" placeholder="@lang('messages.title')" 
+                            value="{{ $department->name }}" required autofocus>
                         <!-- Department active? -->
 						<select name="active">
 							<option value="">@lang('messages.active')?</option>

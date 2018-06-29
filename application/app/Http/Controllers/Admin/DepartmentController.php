@@ -21,7 +21,8 @@ class DepartmentController extends Controller
 	 */
 	public function index()
 	{
-		$departments = Department::all();
+		//$departments = Department::all();
+		$departments = Department::where('active', '=', 1)->get();
 
 		return view('admin/department/index', ['departments' => $departments]);
 	}
@@ -40,11 +41,11 @@ class DepartmentController extends Controller
 	{
 		$department = new Department;
 		$department->name = $request->name;
-		$department->state = $request->state;
+		$department->active = $request->active;
 
 		$department->save();
 
-		return redirect('Admin/department');
+		return redirect('admin/department');
 	}
 
 	/**
@@ -57,17 +58,17 @@ class DepartmentController extends Controller
 	{
 		$department = Department::find($id);
 
-		if ($department->departmentstate == true) {
-			$departmentstate = 0;
-		} else if ($department->departmentstate == false) {
-			$departmentstate = 1;
+		if ($department->visibility == 1) {
+			$visibility = 0;
+		} else if ($department->visibility == 0) {
+			$visibility = 1;
 		}
 
-		$department->departmentstate = $departmentstate;
+		$department->visibility = $visibility;
 
 		$department->save();
 
-		return redirect('Admin/department');
+		return redirect('admin/department');
 
 	}
 
@@ -82,12 +83,27 @@ class DepartmentController extends Controller
 		$department = Department::find($id);
 
 		return view('admin/department/edit', ['department' => $department]);
-
-		// SQL Insert to DB for editing the department
-
 	}
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+		$department = Department::find($id);
 
+		$department->name = $request->name;
+
+        $department->save();
+        
+        return redirect('admin/department');
+	}
+	
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -98,10 +114,10 @@ class DepartmentController extends Controller
 	{
 		$department = Department::find($id);
 
-		$department->departmentstate = FALSE;
+		$department->active = 0;
 
 		$department->save();
 
-		return view('admin/department/index');
+		return redirect('admin/department');
 	}
 }
