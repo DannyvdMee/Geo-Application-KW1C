@@ -13,7 +13,7 @@ use App\Route;
 class RouteFactory
 {
 	/**
-	 * @param string  $title
+	 * @param string  $name
 	 * @param string  $user_id
 	 * @param boolean $visibility
 	 * @param boolean $active

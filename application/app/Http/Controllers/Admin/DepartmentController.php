@@ -39,7 +39,7 @@ class DepartmentController extends Controller
 	public function store(Request $request)
 	{
 		$department = new Department;
-		$department->title = $request->title;
+		$department->name = $request->name;
 		$department->state = $request->state;
 
 		$department->save();

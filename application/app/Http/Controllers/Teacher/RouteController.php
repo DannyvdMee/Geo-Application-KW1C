@@ -43,7 +43,7 @@ class RouteController extends Controller
         $route = new Route;
 
         $route->url_id = bin2hex(random_bytes(4));
-        $route->title = $request->title;
+        $route->name = $request->name;
         $route->active = $request->active;
         
         // Remove this and below line if app has login
@@ -105,7 +105,7 @@ class RouteController extends Controller
     {
         $route = Route::find($id);
 
-        $route->title = $request->title;
+        $route->name = $request->name;
         $route->active = $request->active;
         
         // Remove this and below line if app has login
