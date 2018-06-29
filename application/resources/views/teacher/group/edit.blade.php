@@ -14,14 +14,14 @@ Beschrijving:   Edit Group Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-					<h5 class="text-center font-bold">@lang('messages.group-add')</h5>
+					<h5 class="text-center font-bold">@lang('messages.group-edit')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
 			<!-- Group edit form -->
 			<div class="row">
 				<div class="col">			
-					<form method="POST" action="{{ route('teacher/group/create', ['id' => $group->id]) }}">
+					<form method="POST" action="{{ route('teacher/group/edit', ['id' => $group->id]) }}">
 						@csrf
 
 						<!-- Group name -->

@@ -25,7 +25,7 @@ Beschrijving:   Create POI Pagina
 						@csrf
 
 						<!-- POI title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')" required autofocus>
+						<input type="text" name="name" placeholder="@lang('messages.name')" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint">
 						<!-- POI longtitute -->

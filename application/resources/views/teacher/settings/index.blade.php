@@ -33,7 +33,7 @@ Beschrijving:   Index Settings Pagina
 							
 						<!-- Department -->
 						<select name="departments">
-							<option value="">Select department</option>
+							<option value="">@lang('messages.selectDepartment')</option>
 							@if (!empty($departments))
 								@foreach ($departments as $department)
 									<option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -41,6 +41,8 @@ Beschrijving:   Index Settings Pagina
 							@endif
 						</select>
 
+						<div class="whitespace height-21"></div>
+						
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
@@ -68,6 +70,8 @@ Beschrijving:   Index Settings Pagina
 						<!-- Repeat password -->
                         <input type="password" name="confirmpw" placeholder="@lang('messages.confirmpw')">
 
+						<div class="whitespace height-21"></div>
+						
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
