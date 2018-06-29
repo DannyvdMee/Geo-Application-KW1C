@@ -25,7 +25,7 @@ Beschrijving:   Edit Route Pagina
 						@csrf
 						
 						<!-- Route title -->
-						<input type="text" name="title" placeholder="@lang('messages.name')" 
+						<input type="text" name="name" placeholder="@lang('messages.name')" 
 							value="{{ $route->name }}" required autofocus>
 						<!-- Route active? -->
 						<select name="active">
