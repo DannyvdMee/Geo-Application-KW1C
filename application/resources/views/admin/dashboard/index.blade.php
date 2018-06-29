@@ -1,4 +1,4 @@
-@extends('layouts.teacher')
+@extends('layouts.admin')
 
 <!--
 Opdracht:       Multidisciplinair Project v.2
@@ -17,7 +17,7 @@ Beschrijving:   Index Dashboard Pagina
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
-							<a href="{{ route('admin/departments') }}">
+							<a href="{{ route('admin/department') }}">
 								<i class="material-icons display-block dashboard-icon-pos">business</i>
 								<span class="display-block text-center dashboard-text-pos">@lang('messages.departments')</span>
 							</a>
@@ -60,8 +60,6 @@ Beschrijving:   Index Dashboard Pagina
 						</div>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>

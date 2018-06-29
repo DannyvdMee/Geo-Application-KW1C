@@ -1,9 +1,12 @@
+
+
+
 @extends('layouts.teacher')
 
 <!--
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
-Aanmaakdatum:   27-06-18
+Aanmaakdatum:   29-06-18
 Beschrijving:   Index Settings Pagina
 -->
 
@@ -21,48 +24,48 @@ Beschrijving:   Index Settings Pagina
 			<!-- Name form -->
 			<div class="row">
 				<div class="col">					
-					<form method="POST" action="{{ route('teacher/settings/index', ['id' => $settings->id]) }}">
+					<form method="POST" action="{{ route('teacher/settings', ['id' => $user->id]) }}">
 						@csrf
-						
-						<!-- Naam -->
-                        <input type="text" name="name" placeholder="@lang('messages.name')" 
-                            value="{{ $settings->name }}">
-						<!-- Department -->
-                        <textarea name="department" placeholder="@lang('messages.department')" 
-                         required>{{ $settings->department }}</textarea>
 
-						<!-- Submit button -->
-						<input type="submit" value="@lang('messages.save')">
-					</form>
-				</div>
-			</div>
-            <!-- End name form -->
-			<!-- Password title -->
-			<div class="row">
-				<div class="col">
-					<h5 class="text-center font-bold">@lang('messages.password')</h5>
-				</div>
-			</div>
-			<!-- End password title -->
-			<!-- Password form -->
-			<div class="row">
-				<div class="col">					
-					<form method="POST" action="{{ route('teacher/settings/index', ['id' => $settings->id]) }}">
-						@csrf
-						
+						<!-- Name -->
+						<h6 class="text-center font-bold">@lang('messages.name')</h6>
+						<!-- Firstname -->
+                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" required
+							value="{{ $user->firstname }}">
+						<!-- Lastname -->
+						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" required
+							value="{{ $user->lastname }}">	
+						<div class="whitespace height-21"></div>
+
+						<!-- Department -->	
+						<h6 class="text-center font-bold">@lang('messages.department')</h6>
+						<select name="departments">
+							<!-- <option value="">@lang('messages.selectDepartment')</option> -->
+							@if (!empty($departments))
+								@foreach ($departments as $department)
+									<option value="{{ $department->id }}">{{ $department->name }}</option>
+								@endforeach
+							@endif
+							<option value="">--- @lang('messages.selectDepartment') ---</option>
+						</select>
+						<div class="whitespace height-21"></div>
+
 						<!-- Password -->
-                        <input type="password" name="password" placeholder="@lang('messages.password')" 
-                            value="{{ $settings->password }}">
-						<!-- Repeat password -->
-                        <input type="password" name="confirmpw" placeholder="@lang('messages.confirmpw')" 
-                            value="{{ $settings->password }}">
+						<h6 class="text-center font-bold">@lang('messages.password')</h6>
+						<!-- Old pass -->
+						<input type="oldpassword" name="oldpassword" placeholder="@lang('messages.oldpassword')">
+						<!-- New pass -->
+                        <input type="newpassword" name="newpassword" placeholder="@lang('messages.newpassword')" >
+						<!-- Repeat pass -->
+                        <input type="confirmpassword" name="confirmpassword" placeholder="@lang('messages.confirmpassword')">
+						<div class="whitespace height-21"></div>
 
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
 				</div>
-			</div>
-			<!-- End password form -->
+			</div> 
+			<!-- End form -->
 		</div>
 	</div>
 </div>

@@ -25,6 +25,18 @@ header {
 		color: $darker-gray;
 	}
 
+	#back-button{	
+		top: 5px;
+		left: 10px;
+		
+		span {
+			margin-top: -5px;
+			font-size: .7em;
+			line-height: .8em;
+			color: $gray;
+		}
+	}
+
 	#power-button {
 		top: 5px;
 		right: 10px;
