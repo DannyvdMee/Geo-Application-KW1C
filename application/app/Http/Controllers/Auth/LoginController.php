@@ -68,7 +68,7 @@ class LoginController extends Controller
 			}
 
 			if ($user->isAdmin) {
-				return redirect('admin/projects');
+				return redirect('admin/dashboard');
 			}
 
 			return redirect('teacher/dashboard');

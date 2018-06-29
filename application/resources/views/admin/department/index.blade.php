@@ -55,7 +55,7 @@ Beschrijving:   Index Department Pagina
 
 						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
-							<a href="{{ route('admin/departments/create') }}" id="add-item">
+							<a href="{{ route('admin/department/create') }}" id="add-item">
 								<i class="material-icons">add</i>
 							</a>
 						</div>

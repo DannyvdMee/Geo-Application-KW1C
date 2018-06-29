@@ -22,15 +22,34 @@
 	<!-- Styles -->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-
-	@yield('injectable-js')
 </head>
 <body>
+@yield('injectable-js')
 <div id="app">
-
 	<header>
 		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-			<div class="container">
+
+			<!-- Back button -->
+			<div id="back-button" class="position-absolute text-center">
+				<a href="">
+					<i class="material-icons" onclick="window.history.back()">arrow_back_ios</i>
+					<span class="display-block">Back</span>
+				</a>		
+			</div>
+
+			<!-- Title -->
+			<p class="full-width display-inline-block text-center">{{ config('app.name') }}</p>
+			
+			<!-- Logout button -->
+			<div id="power-button" class="position-absolute text-center">
+				<a href="{{ route('logout') }}">
+					<i class="material-icons">power_settings_new</i>
+					<span class="display-block">@lang('messages.logout')</span>
+				</a>
+			</div>
+
+			<!-- WTF is dit? -->
+			<!-- <div class="container">
 				<a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name') }}</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -39,14 +58,14 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<!-- Left Side Of Navbar -->
+					Left Side Of Navbar
 					<ul class="navbar-nav mr-auto">
 
 					</ul>
 
-					<!-- Right Side Of Navbar -->
+					Right Side Of Navbar
 					<ul class="navbar-nav ml-auto">
-						<!-- Authentication Links -->
+						Authentication Links
 						@guest
 							<li><a class="nav-link" href="{{ route('login') }}">@lang('messages.login')</a></li>
 							<li><a class="nav-link" href="{{ route('register') }}">@lang('messages.register')</a></li>
@@ -70,14 +89,27 @@
 						@endguest
 					</ul>
 				</div>
-			</div>
+			</div> -->
+			
 		</nav>
 	</header>
 
-	<main class="main-background">
+	<main class="py-4 teacher-background">
 		@yield('content')
 	</main>
+
 	<footer>
+		<div class="footer-icon-container display-inline-block">
+			<div class="float-left display-inline-block">
+				<a href="{{ route('admin/dashboard') }}">
+					<i class="material-icons display-block text-center">home</i>
+					<span class="display-block text-center"> <!-- @lang('messages.dashboard') --> Dashboard</span>
+				</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- <footer>
 		<div class="float-left display-inline-block">
 			<a href="{{ route('map') }}">
 				<i class="material-icons display-block">domain</i>
@@ -95,7 +127,7 @@
 				<span class="display-block text-center">@lang('messages.settings')</span>
 			</a>
 		</div>
-	</footer>
+	</footer> -->
 </div>
 @yield('js-eventlisteners')
 </body>
