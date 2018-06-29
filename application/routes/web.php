@@ -44,6 +44,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
 	//Users
 	Route::get('users', 'UserController@index')->name('users');
+	Route::get('users/create', 'UserController@create')->name('users/create');
+	Route::post('users/create', 'UserController@store')->name('users/create');
+	Route::get('users/edit/{id}', 'UserController@edit')->name('users/edit');
+	Route::post('users/edit/{id}', 'UserController@update')->name('users/edit');
+	Route::get('users/visibility/{id}', 'UserController@show')->name('users/visibility');
+	Route::get('users/delete/{id}', 'UserController@destroy')->name('users/delete');
 
 	//Department
     Route::get('department', 'DepartmentController@index')->name('department');
