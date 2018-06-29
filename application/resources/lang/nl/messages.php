@@ -19,6 +19,7 @@ return [
 	'yes'            => 'Ja',
 	'no'             => 'Nee',
 	'save'           => 'Opslaan',
+	'department'     => 'Afdeling',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',
 	'username'		 =>	'Gebruikersnaam',
@@ -71,6 +72,9 @@ return [
 
 	//Settings
 	'firstname' 	=> 'Voornaam',
-	'lastname' 		=> 'Achternaam'
+	'lastname' 		=> 'Achternaam',
+	'newpassword' 	=> 'Nieuw wachtwoord',
+	'oldpassword' 	=> 'Oud wachtwoord',
+	'confirmpassword' 	=> 'Bevestig wachtwoord'
 
 ];

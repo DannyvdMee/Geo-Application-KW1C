@@ -35,16 +35,20 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request/*, $id */)
     {
-        $user = User::find($id);
+        // $user = User::find($id);
+
+        $user = Auth::user();
 
 		$user->firstname = $request->firstname;
 		$user->lastname = $request->lastname;
 
 		$user->save();
 
-		return redirect('teacher/settings');
+        return redirect('teacher/settings');
+        
+        return $success = "het is gelukt aap";
     }
 
 }

@@ -19,6 +19,7 @@ return [
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'save'           => 'Save',
+	'department'     => 'Deparment',
 	'departments'    => 'Deparments',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
@@ -71,5 +72,8 @@ return [
 
 	//Settings
 	'firstname' 	=> 'Firstname',
-	'lastname' 		=> 'Lastname'
+	'lastname' 		=> 'Lastname',
+	'newpassword' 	=> 'New password',
+	'oldpassword' 	=> 'Old password',
+	'confirmpassword' 	=> 'Confirm password'
 ];
