@@ -57,6 +57,7 @@
 						</div>
 					</div>
 
+					<!-- Login + register button -->
 					<div class="form-group row mb-0">
 						<div class="col-10 offset-1">
 							<button type="submit" class="btn btn-primary">@lang('messages.register')</button>

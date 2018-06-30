@@ -28,7 +28,7 @@ Beschrijving:   Create Exercise Pagina
 						<input type="hidden" name="poi_id" value="{{ $poi[0]->id }}" required readonly>
 
 						<!-- Exercise title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')">
+						<input type="text" name="name" placeholder="@lang('messages.name')">
 						<!-- Exercise content -->
 						<textarea name="content" placeholder="@lang('messages.exercise-content')" required></textarea>
 						<!-- Exercise answer input area -->

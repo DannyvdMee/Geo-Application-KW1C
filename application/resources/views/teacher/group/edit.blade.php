@@ -14,14 +14,14 @@ Beschrijving:   Edit Group Pagina
 			<!-- Page title -->
 			<div class="row">
 				<div class="col">
-					<h5 class="text-center font-bold">@lang('messages.group-add')</h5>
+					<h5 class="text-center font-bold">@lang('messages.group-edit')</h5>
 				</div>
 			</div>
 			<!-- End page title -->
 			<!-- Group edit form -->
 			<div class="row">
 				<div class="col">			
-					<form method="POST" action="{{ route('teacher/group/create', ['id' => $group->id]) }}">
+					<form method="POST" action="{{ route('teacher/group/edit', ['id' => $group->id]) }}">
 						@csrf
 
 						<!-- Group name -->
@@ -30,7 +30,7 @@ Beschrijving:   Edit Group Pagina
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
-							<option value="">Select a student</option>
+							<option value="">@lang('messages.selectStudent')</option>
 							@if (!empty($students))
 								@foreach ($students as $student)
 									<option value="{{ $student->id }}">{{ $student->name }}</option>
@@ -72,7 +72,7 @@ Beschrijving:   Edit Group Pagina
 					<div class="display-inline-block text-center box-center">
 						<button class="btn-white" onclick="removeStudent()">
 							<!-- Delete all students -->
-							{{ @lang('messages.group-removeStudents' )}}
+								@lang('messages.group-removeStudents')
 						</button>
 					</div>
 				</div>

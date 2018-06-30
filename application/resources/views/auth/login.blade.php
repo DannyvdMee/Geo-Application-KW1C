@@ -42,18 +42,7 @@
 							</div>
 						@endif
 
-
-					{{--<div class="form-group row">--}}
-					{{--<div class="col-md-6 offset-md-4">--}}
-					{{--<div class="checkbox">--}}
-					{{--<label>--}}
-					{{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}--}}
-					{{--</label>--}}
-					{{--</div>--}}
-					{{--</div>--}}
-					{{--</div>--}}
-
-					<!-- Login + register btn -->
+						<!-- Login + register button -->
 						<div class="col-10 offset-1">
 							<button type="submit" class="btn btn-gray">@lang('messages.login')</button>
 

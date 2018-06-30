@@ -25,8 +25,8 @@ Beschrijving:   Edit Exercise Pagina
 						@csrf
 						
 						<!-- Exercise title -->
-                        <input type="text" name="title" placeholder="@lang('messages.title')" 
-                            value="{{ $exercise->title }}">
+                        <input type="text" name="name" placeholder="@lang('messages.name')" 
+                            value="{{ $exercise->name }}">
 						<!-- Exercise content -->
                         <textarea name="content" placeholder="@lang('messages.exercise-content')" 
                          required>{{ $exercise->content }}</textarea>

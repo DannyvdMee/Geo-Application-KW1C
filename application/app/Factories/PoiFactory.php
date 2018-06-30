@@ -14,7 +14,7 @@ class PoiFactory
 {
 	/**
 	 * @param $url_id
-	 * @param $title
+	 * @param $name
 	 * @param $description
 	 * @param $type
 	 * @param $latitude
@@ -27,7 +27,7 @@ class PoiFactory
 	 */
 	public static function create(
 		$url_id,
-		$title,
+		$name,
 		$description,
 		$type,
 		$latitude,
@@ -40,7 +40,7 @@ class PoiFactory
 
 		$poi->url_id      = $url_id;
 		$poi->type        = $type;
-		$poi->title       = $title;
+		$poi->name        = $name;
 		$poi->description = $description;
 		$poi->latitude    = $latitude;
 		$poi->longitude   = $longitude;
