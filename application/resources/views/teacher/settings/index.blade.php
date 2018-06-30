@@ -1,6 +1,3 @@
-
-
-
 @extends('layouts.teacher')
 
 <!--
@@ -39,14 +36,13 @@ Beschrijving:   Index Settings Pagina
 
 						<!-- Department -->	
 						<h6 class="text-center font-bold">@lang('messages.department')</h6>
-						<select name="departments">
+						<select name="department">
 							<!-- <option value="">@lang('messages.selectDepartment')</option> -->
 							@if (!empty($departments))
 								@foreach ($departments as $department)
-									<option value="{{ $department->id }}">{{ $department->name }}</option>
+									<option value="{{ $department->name }}" {{ ($department->name == Auth::user()->department ? 'selected' : '') }}>{{ $department->name }}</option>
 								@endforeach
 							@endif
-							<option value="">--- @lang('messages.selectDepartment') ---</option>
 						</select>
 						<div class="whitespace height-21"></div>
 

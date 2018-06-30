@@ -42,13 +42,14 @@ class SettingsController extends Controller
         $user = Auth::user();
 
 		$user->firstname = $request->firstname;
-		$user->lastname = $request->lastname;
+        $user->lastname = $request->lastname;
+        
+        $user->department = $request->department;
 
 		$user->save();
 
         return redirect('teacher/settings');
         
-        return $success = "het is gelukt aap";
     }
 
 }
