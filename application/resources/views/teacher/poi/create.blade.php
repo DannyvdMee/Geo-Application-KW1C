@@ -26,14 +26,19 @@ Beschrijving:   Create POI Pagina
 
 						<!-- POI title -->
 						<input type="text" name="name" placeholder="@lang('messages.name')" required autofocus>
+
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint">
+
 						<!-- POI longtitute -->
-						<input type="text" name="longitude" placeholder="@lang('messages.long')" required>	
+						<input type="text" name="longitude" placeholder="@lang('messages.long')" required>
+
 						<!-- POI latitute -->
 						<input type="text" name="latitude" placeholder="@lang('messages.lat')" required>
+
 						<!-- POI description -->
 						<textarea name="description" placeholder="@lang('messages.desc')" required></textarea>
+
 						<!-- POI active? -->
 						<select name="active">		
 							<option value="">@lang('messages.active')?</option>
@@ -43,6 +48,11 @@ Beschrijving:   Create POI Pagina
 
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
+					</form>
+					<form method="POST" action="{{ route('teacher/poi/import') }}" enctype="multipart/form-data">
+						@csrf
+						<input type="file" name="csv" required>
+						<input type="submit" value="@lang('messages.Upload')">
 					</form>
 				</div>
 			</div>

@@ -119,6 +119,16 @@ class PoiController extends Controller
 		return redirect('teacher/poi');
     }
 
+    public function massImport(Request $request)
+	{
+		$csv = $request->csv;
+
+		$tmp_file = $csv->
+
+		print_r($csv);
+		die();
+	}
+
     /**
      * Remove the specified resource from storage.
      *
