@@ -37,7 +37,7 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
  * - uses admin folder of views
  */
 
-Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
+Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
 	//Dashboard
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -73,7 +73,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
  * - uses teacher folder of views
  */
 
-Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
+Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
 
 	//Dashboard
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
