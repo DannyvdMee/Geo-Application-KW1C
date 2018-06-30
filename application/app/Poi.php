@@ -9,11 +9,11 @@ class Poi extends Model
 	//Constructor
     public function route()
 	{
-		$this->belongsToMany(Route::class);
+		return $this->belongsToMany(Route::class);
 	}
 
 	public function exercise()
 	{
-		$this->hasOne(Exercise::class);
+		return $this->hasOne(Exercise::class);
 	}
 }

@@ -26,7 +26,7 @@ Beschrijving:   Index Department Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $department->title }}</p>
+									<p class="display-inline-block">{{ $department->name }}</p>
 									<div class="float-right">
 									<!-- Visibility(eye) button toggle true -->
 									@if ($department->visibility == 1)
@@ -55,7 +55,7 @@ Beschrijving:   Index Department Pagina
 
 						<!-- Submit button-->
 						<div class="dataAddIcon display-inline-block float-right">
-							<a href="{{ route('admin/departments/create') }}" id="add-item">
+							<a href="{{ route('admin/department/create') }}" id="add-item">
 								<i class="material-icons">add</i>
 							</a>
 						</div>

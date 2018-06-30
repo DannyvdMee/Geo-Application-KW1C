@@ -15,19 +15,28 @@ return [
 	'groups'         => 'Groups',
 	'exercise'		 => 'Exercise',
 	'settings'       => 'Settings',
-	'active'         => 'Active',
+	'active'         => 'Is it active',
 	'yes'            => 'Yes',
 	'no'             => 'No',
 	'save'           => 'Save',
+	'department'     => 'Deparment',
 	'departments'    => 'Deparments',
 	'users'          => 'Users',
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
+	'admin' 		 => 'Admin',
+	'teacher' 		 => 'Docent',
 
-	'title' 		 => 'Title',
+	'name' 		 	 => 'Name',
 	'long'		 	 => 'Longitude',
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
+	'account' 		 => 'Account',
+
+	'selectStudent'  => 'Select a student',
+	'selectDepartment'  => 'Select a department',
+
+	'dashboard'  => 'Dashboard',
 
 	//Footer
 	'student'		 => 'Student',
@@ -64,5 +73,18 @@ return [
 	'group-add' 	 => 'Add group',
 	'group-edit' 	 => 'Edit group',
 	'group-name' 	 => 'Group name',
-	'group-removeStudents' 	 => 'Remove all students'
+	'group-removeStudents' 	 => 'Remove all students',
+
+	//Settings
+	'firstname' 	=> 'Firstname',
+	'lastname' 		=> 'Lastname',
+	'newpassword' 	=> 'New password',
+	'oldpassword' 	=> 'Old password',
+	'confirmpassword' 	=> 'Confirm password',
+	
+	//Users
+	'users-add' 	=> 'Add user',
+	'users-edit' 	=> 'Edit user',
+	'account_type' 	=> 'Account type',
+	'selectAccountType' => 'Select a type'
 ];

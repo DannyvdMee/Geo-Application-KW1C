@@ -8,6 +8,6 @@ class Exercise extends Model
 {
     public function exercise()
     {
-        $this->belongsTo(Poi::class);
+    	return $this->belongsTo(Poi::class);
     }
 }

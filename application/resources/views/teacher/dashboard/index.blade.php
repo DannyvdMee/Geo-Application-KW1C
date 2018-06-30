@@ -1,7 +1,14 @@
 @extends('layouts.teacher')
 
+<!--
+Opdracht:       Multidisciplinair Project v.2
+Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
+Aanmaakdatum:   27-06-18
+Beschrijving:   Index Dashboard Pagina
+-->
+
 @section('content')
-<div class="container-fluid" style="margin-top: -1.5rem;; margin-bottom:-70px;">
+<div class="container-fluid" style="margin-top: -1.5rem; margin-bottom:-70px;">
 	<div class="row">
 		<div class="col">
 			<div id="dashboard-container" class="row">
@@ -22,7 +29,7 @@
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
-							<a href="{{ route('map') }}">
+							<a href="{{ route('teacher/poi') }}">
 								<i class="material-icons display-block dashboard-icon-pos">place</i>
 								<span class="display-block text-center dashboard-text-pos">@lang('messages.poi')</span>
 							</a>
@@ -66,8 +73,6 @@
 					</div>
 				</div>
 
-
-
 				<!-- De settings marker -->
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
@@ -79,8 +84,6 @@
 						</div>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>

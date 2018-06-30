@@ -60,7 +60,7 @@ Beschrijving:   Create Group Pagina
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
-							<option value="">Select a student</option>
+							<option value="" required>@lang('messages.selectStudent')</option>
 							@if (!empty($students))
 								@foreach ($students as $student)
 									<option value="{{ $student->id }}">{{ $student->name }}</option>
@@ -88,7 +88,7 @@ Beschrijving:   Create Group Pagina
 						</div>
 
 						<!-- Group active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
@@ -97,12 +97,14 @@ Beschrijving:   Create Group Pagina
 						<!-- Submit button-->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
+					
+					<div class="whitespace height-21"></div>
 
 					<!-- Delete button-->
 					<div class="display-inline-block text-center box-center">
-						<button class="btn-white" onclick="removeStudent()">
+						<button class="btn btn-gray" onclick="removeStudent()">
 							<!-- Delete all students -->
-							{{ @lang('messages.group-removeStudents' )}}
+							@lang('messages.group-removeStudents')
 						</button>
 					</div>
 				</div>

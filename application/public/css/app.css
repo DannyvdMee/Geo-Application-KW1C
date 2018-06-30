@@ -10430,6 +10430,18 @@ header p {
   color: #5D5D5D;
 }
 
+header #back-button {
+  top: 5px;
+  left: 10px;
+}
+
+header #back-button span {
+  margin-top: -5px;
+  font-size: .7em;
+  line-height: .8em;
+  color: #A4A4A4;
+}
+
 header #power-button {
   top: 5px;
   right: 10px;
@@ -10727,5 +10739,19 @@ a:hover {
 
 .margin-10-0 {
   margin: 10px 0;
+}
+
+#session-error {
+  background: #ED2525;
+  opacity: 0.8;
+  color: #FFFFFF;
+  border: solid #ED2525;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#session-error p {
+  margin: 0;
+  font-size: 0.7em;
 }
 
