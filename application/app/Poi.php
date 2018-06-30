@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Poi extends Model
 {
 	//Constructor
-    public function route()
+    public function routes()
 	{
 		return $this->belongsToMany(Route::class);
 	}
