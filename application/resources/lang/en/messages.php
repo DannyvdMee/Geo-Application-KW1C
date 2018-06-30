@@ -36,6 +36,8 @@ return [
 	'selectStudent'  => 'Select a student',
 	'selectDepartment'  => 'Select a department',
 
+	'dashboard'  => 'Dashboard',
+
 	//Footer
 	'student'		 => 'Student',
 	'group'		 	 =>	'Group',

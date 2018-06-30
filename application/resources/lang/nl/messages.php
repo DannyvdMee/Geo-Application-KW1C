@@ -32,7 +32,9 @@ return [
 	'account' 		 => 'Account',
 
 	'selectStudent'  => 'Selecteer een student',
-	'selectDepartment'  => 'Selecteer een afdeling	',
+	'selectDepartment'  => 'Selecteer een afdeling',
+
+	'dashboard'  => 'Dashboard',
 
 	//footer
 	'student'		 => 'Student',
