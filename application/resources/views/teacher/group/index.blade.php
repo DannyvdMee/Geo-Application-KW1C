@@ -26,7 +26,7 @@ Beschrijving:   Index Group Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $group->title }}</p>
+									<p class="display-inline-block">{{ $group->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($group->visibility == 1)

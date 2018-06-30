@@ -44,7 +44,7 @@ class ExerciseController extends Controller
 	{
 		$exercise = new Exercise;
 		$exercise->poi_id = $request->poi_id;
-		$exercise->title = $request->title;
+		$exercise->name = $request->name;
 		$exercise->content = $request->content;
 		$exercise->picture = $request->picture;
 		$exercise->answer = $request->answer;
@@ -106,7 +106,7 @@ class ExerciseController extends Controller
 	{
 		$exercise = Exercise::find($id);
 		
-		$exercise->title = $request->title;
+		$exercise->name = $request->name;
 		$exercise->content = $request->content;
 		$exercise->picture = $request->picture;
 		$exercise->answer = $request->answer;

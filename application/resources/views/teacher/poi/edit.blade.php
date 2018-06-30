@@ -25,8 +25,8 @@ Beschrijving:   Edit POI Pagina
 						@csrf
 						
 						<!-- POI title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')" 
-							value="{{ $poi->title }}" required autofocus>
+						<input type="text" name="name" placeholder="@lang('messages.name')" 
+							value="{{ $poi->name }}" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint" 
 							value="{{ $poi->hint }}">			
@@ -40,7 +40,7 @@ Beschrijving:   Edit POI Pagina
 						<textarea name="description" placeholder="@lang('messages.desc')" 
 							required>{{ $poi->description }}</textarea>
 						<!-- POI active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($poi->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($poi->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

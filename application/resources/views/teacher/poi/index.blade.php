@@ -26,7 +26,7 @@ Beschrijving:   Index POI Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $poi->title }}</p>
+									<p class="display-inline-block">{{ $poi->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($poi->visibility == 1)

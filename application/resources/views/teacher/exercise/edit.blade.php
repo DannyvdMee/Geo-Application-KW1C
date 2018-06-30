@@ -25,8 +25,8 @@ Beschrijving:   Edit Exercise Pagina
 						@csrf
 						
 						<!-- Exercise title -->
-                        <input type="text" name="title" placeholder="@lang('messages.title')" 
-                            value="{{ $exercise->title }}">
+                        <input type="text" name="name" placeholder="@lang('messages.name')" 
+                            value="{{ $exercise->name }}">
 						<!-- Exercise content -->
                         <textarea name="content" placeholder="@lang('messages.exercise-content')" 
                          required>{{ $exercise->content }}</textarea>
@@ -38,7 +38,7 @@ Beschrijving:   Edit Exercise Pagina
                             value="{{ $exercise->picture }}">
 
                         <!-- Exercise active? -->   
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($exercise->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($exercise->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

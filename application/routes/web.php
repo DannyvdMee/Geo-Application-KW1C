@@ -43,21 +43,27 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 	//Users
-	Route::get('users', 'UserController@index')->name('users');
+	Route::get('user', 'UserController@index')->name('user');
+	Route::get('user/create', 'UserController@create')->name('user/create');
+	Route::post('user/create', 'UserController@store')->name('user/create');
+	Route::get('user/edit/{id}', 'UserController@edit')->name('user/edit');
+	Route::post('user/edit/{id}', 'UserController@update')->name('user/edit');
+	Route::get('user/visibility/{id}', 'UserController@show')->name('user/visibility');
+	Route::get('user/delete/{id}', 'UserController@destroy')->name('user/delete');
 
 	//Department
-    Route::get('departments', 'DepartmentController@index')->name('departments');
-    Route::get('departments/create', 'DepartmentController@create')->name('departments/create');
-    Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
-    Route::post('departments/create', 'DepartmentController@store')->name('departments/create');
-    Route::get('departments/edit/{id}', 'DepartmentController@edit')->name('departments/edit');
-	Route::post('departments/edit/{id}', 'DepartmentController@update')->name('departments/edit');
-	Route::get('departments/visibility/{id}', 'DepartmentController@show')->name('departments/visibility');
-	Route::get('departments/delete/{id}', 'DepartmentController@destroy')->name('departments/delete');
+    Route::get('department', 'DepartmentController@index')->name('department');
+    Route::get('department/create', 'DepartmentController@create')->name('department/create');
+    Route::post('department/create', 'DepartmentController@store')->name('department/create');
+    Route::get('department/edit/{id}', 'DepartmentController@edit')->name('department/edit');
+	Route::post('department/edit/{id}', 'DepartmentController@update')->name('department/edit');
+	Route::get('department/visibility/{id}', 'DepartmentController@show')->name('department/visibility');
+	Route::get('department/delete/{id}', 'DepartmentController@destroy')->name('department/delete');
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
-
+	Route::post('settings', 'SettingsController@update')->name('settings');
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });
 
 /*
@@ -120,5 +126,6 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
-
+	Route::post('settings', 'SettingsController@update')->name('settings');
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });

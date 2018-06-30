@@ -37,26 +37,18 @@
 						</div>
 
 						@if (!empty(session('error')))
+						<div class="col-10 offset-1">
 							<div id="session-error">
 								<p>{{ session('error') }}</p>
 							</div>
+						</div>
 						@endif
 
-
-					{{--<div class="form-group row">--}}
-					{{--<div class="col-md-6 offset-md-4">--}}
-					{{--<div class="checkbox">--}}
-					{{--<label>--}}
-					{{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}--}}
-					{{--</label>--}}
-					{{--</div>--}}
-					{{--</div>--}}
-					{{--</div>--}}
-
-					<!-- Login + register btn -->
-						<div class="col-10 offset-1">
+						<!-- Login + register button -->
+						<div class="col-5 offset-1">
 							<button type="submit" class="btn btn-gray">@lang('messages.login')</button>
-
+						</div>
+						<div class="col-5">
 							<a class="btn btn-gray float-right"
 							   href="{{ route('register') }}">@lang('messages.create-account')</a>
 						</div>

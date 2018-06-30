@@ -44,7 +44,7 @@ class PoiController extends Controller
         $uid = bin2hex(random_bytes(40));
 
         $poi->url_id = $uid;
-        $poi->title = $request->title;
+        $poi->name = $request->name;
         $poi->latitude = $request->latitude;
         $poi->longitude = $request->longitude;
         $poi->description = $request->description;
@@ -106,7 +106,7 @@ class PoiController extends Controller
     {
         $poi = Poi::find($id);
 
-		$poi->title = $request->title;
+		$poi->name = $request->name;
 		$poi->latitude = $request->latitude;
         $poi->longitude = $request->longitude;
         $poi->active = $request->active;

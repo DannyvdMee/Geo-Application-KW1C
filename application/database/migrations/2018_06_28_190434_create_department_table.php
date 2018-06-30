@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartmentMigration extends Migration
+class CreateDepartmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateDepartmentMigration extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('name');
             $table->string('url_prefix')->nullable();
             $table->boolean('visibility')->default(1);
             $table->boolean('active')->default(0);
@@ -30,6 +30,6 @@ class CreateDepartmentMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department');
+        Schema::dropIfExists('departments');
     }
 }

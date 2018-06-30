@@ -1,9 +1,9 @@
-@extends('layouts.teacher')
+@extends('layouts.admin')
 
 <!--
 Opdracht:       Multidisciplinair Project v.2
 Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
-Aanmaakdatum:   29-06-18
+Aanmaakdatum:   30-06-18
 Beschrijving:   Index Settings Pagina
 -->
 
@@ -21,7 +21,7 @@ Beschrijving:   Index Settings Pagina
 			<!-- Name form -->
 			<div class="row">
 				<div class="col">					
-					<form method="POST" action="{{ route('teacher/settings', ['id' => $user->id]) }}">
+					<form method="POST" action="{{ route('admin/settings', ['id' => $user->id]) }}">
 						@csrf
 
 						<!-- Name -->
@@ -44,8 +44,6 @@ Beschrijving:   Index Settings Pagina
 								@endforeach
 							@endif
 						</select>
-						<div class="whitespace height-21"></div>
-
 						<input type="submit" value="@lang('messages.save')">
 						<div class="whitespace height-21"></div>
                     </form>
