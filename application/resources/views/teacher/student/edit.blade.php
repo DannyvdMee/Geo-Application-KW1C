@@ -33,7 +33,7 @@ Beschrijving:   Edit Student Pagina
 						<!-- Student info -->
 						<textarea name="information" placeholder="@lang('messages.student-info')">{{ $student->information }}</textarea>
 						<!-- Student active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($student->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($student->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

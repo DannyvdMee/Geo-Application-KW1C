@@ -40,7 +40,7 @@ Beschrijving:   Edit POI Pagina
 						<textarea name="description" placeholder="@lang('messages.desc')" 
 							required>{{ $poi->description }}</textarea>
 						<!-- POI active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($poi->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($poi->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

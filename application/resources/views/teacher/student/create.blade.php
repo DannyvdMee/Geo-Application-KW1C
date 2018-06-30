@@ -31,7 +31,7 @@ Beschrijving:   Create Route Pagina
 						<!-- Student info -->
 						<textarea name="information" placeholder="@lang('messages.student-info')"></textarea>
 						<!-- Student active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>

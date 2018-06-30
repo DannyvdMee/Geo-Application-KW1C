@@ -38,7 +38,7 @@ Beschrijving:   Create User Pagina
 
 						<!-- Department -->	
 						<h6 class="text-center font-bold">@lang('messages.department')</h6>
-						<select name="department">
+						<select name="department" required>
 							<!-- <option value="">@lang('messages.selectDepartment')</option> -->
 							@if (!empty($departments))
 								@foreach ($departments as $department)
@@ -49,7 +49,7 @@ Beschrijving:   Create User Pagina
 						<div class="whitespace height-21"></div>
 
 						<!-- Is it active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>

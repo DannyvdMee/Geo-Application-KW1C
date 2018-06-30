@@ -60,7 +60,7 @@ Beschrijving:   Create Group Pagina
 
 						<!-- Students to a group -->
 						<select id="student-box" name="students">
-							<option value="">@lang('messages.selectStudent')</option>
+							<option value="" required>@lang('messages.selectStudent')</option>
 							@if (!empty($students))
 								@foreach ($students as $student)
 									<option value="{{ $student->id }}">{{ $student->name }}</option>
@@ -88,7 +88,7 @@ Beschrijving:   Create Group Pagina
 						</div>
 
 						<!-- Group active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>

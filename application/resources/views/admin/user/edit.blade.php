@@ -40,7 +40,7 @@ Beschrijving:   Edit User Pagina
 
 						<!-- Department -->	
 						<h6 class="text-center font-bold">@lang('messages.department')</h6>
-						<select name="department">
+						<select name="department" required>
 							<!-- <option value="">@lang('messages.selectDepartment')</option> -->
 							@if (!empty($departments))
 								@foreach ($departments as $department)
@@ -51,7 +51,7 @@ Beschrijving:   Edit User Pagina
 						<div class="whitespace height-21"></div>
 
 						<!-- Is it active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($user->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($user->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

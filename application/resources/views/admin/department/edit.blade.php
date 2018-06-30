@@ -28,7 +28,7 @@ Beschrijving:   Edit Department Pagina
                         <input type="text" name="name" placeholder="@lang('messages.title')" 
                             value="{{ $department->name }}" required autofocus>
                         <!-- Department active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($department->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($department->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

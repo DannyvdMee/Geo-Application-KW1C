@@ -38,7 +38,7 @@ Beschrijving:   Create Exercise Pagina
 						placeholder="@lang('messages.exercise-question')">
 
 						<!-- Exercise active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
