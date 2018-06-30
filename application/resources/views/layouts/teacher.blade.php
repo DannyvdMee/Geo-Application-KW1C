@@ -31,7 +31,7 @@
 		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 			<!-- Back button -->
 			<div id="back-button" class="position-absolute text-center">
-				<a href="">
+				<a style="cursor: pointer;">
 					<i class="material-icons" onclick="window.history.back()">arrow_back_ios</i>
 					<span class="display-block">Back</span>
 				</a>		

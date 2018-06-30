@@ -10741,3 +10741,17 @@ a:hover {
   margin: 10px 0;
 }
 
+#session-error {
+  background: #ED2525;
+  opacity: 0.8;
+  color: #FFFFFF;
+  border: solid #ED2525;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#session-error p {
+  margin: 0;
+  font-size: 0.7em;
+}
+

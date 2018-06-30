@@ -31,7 +31,7 @@
 
 			<!-- Back button -->
 			<div id="back-button" class="position-absolute text-center">
-				<a href="">
+				<a style="cursor: pointer;">
 					<i class="material-icons" onclick="window.history.back()">arrow_back_ios</i>
 					<span class="display-block">Back</span>
 				</a>		
@@ -116,7 +116,7 @@
 				<span class="display-block text-center">@lang('messages.departments')</span>
 			</a>
 		</div><div class="float-left display-inline-block">
-			<a href="{{ route('admin/users') }}">
+			<a href="{{ route('admin/user') }}">
 				<i class="material-icons display-block">person</i>
 				<span class="display-block text-center">@lang('messages.users')</span>
 			</a>

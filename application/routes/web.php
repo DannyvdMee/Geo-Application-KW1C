@@ -43,13 +43,13 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 	//Users
-	Route::get('users', 'UserController@index')->name('users');
-	Route::get('users/create', 'UserController@create')->name('users/create');
-	Route::post('users/create', 'UserController@store')->name('users/create');
-	Route::get('users/edit/{id}', 'UserController@edit')->name('users/edit');
-	Route::post('users/edit/{id}', 'UserController@update')->name('users/edit');
-	Route::get('users/visibility/{id}', 'UserController@show')->name('users/visibility');
-	Route::get('users/delete/{id}', 'UserController@destroy')->name('users/delete');
+	Route::get('user', 'UserController@index')->name('user');
+	Route::get('user/create', 'UserController@create')->name('user/create');
+	Route::post('user/create', 'UserController@store')->name('user/create');
+	Route::get('user/edit/{id}', 'UserController@edit')->name('user/edit');
+	Route::post('user/edit/{id}', 'UserController@update')->name('user/edit');
+	Route::get('user/visibility/{id}', 'UserController@show')->name('user/visibility');
+	Route::get('user/delete/{id}', 'UserController@destroy')->name('user/delete');
 
 	//Department
     Route::get('department', 'DepartmentController@index')->name('department');
