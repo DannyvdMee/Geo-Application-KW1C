@@ -31,6 +31,7 @@ return [
 	'desc'			 => 'Beschrijving',
 
 	'selectStudent'  => 'Selecteer een student',
+	'selectPoi' => 'Selecteer een POI',
 	'selectDepartment'  => 'Selecteer een afdeling	',
 
 	//footer

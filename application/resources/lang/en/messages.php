@@ -31,6 +31,7 @@ return [
 	'desc'			 => 'Description',
 
 	'selectStudent'  => 'Select a student',
+	'selectPoi' => 'Select a POI',
 	'selectDepartment'  => 'Select a department',
 
 	//Footer
