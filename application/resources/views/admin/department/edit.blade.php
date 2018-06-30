@@ -25,7 +25,7 @@ Beschrijving:   Edit Department Pagina
 						@csrf
 
 						<!-- Department name -->
-                        <input type="text" name="name" placeholder="@lang('messages.title')" 
+                        <input type="text" name="name" placeholder="@lang('messages.name')" 
                             value="{{ $department->name }}" required autofocus>
                         <!-- Department active? -->
 						<select name="active" required>

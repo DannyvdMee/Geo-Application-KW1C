@@ -29,6 +29,7 @@ return [
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
+	'account' 		 => 'Account',
 
 	'selectStudent'  => 'Selecteer een student',
 	'selectDepartment'  => 'Selecteer een afdeling	',
@@ -75,6 +76,11 @@ return [
 	'lastname' 		=> 'Achternaam',
 	'newpassword' 	=> 'Nieuw wachtwoord',
 	'oldpassword' 	=> 'Oud wachtwoord',
-	'confirmpassword' 	=> 'Bevestig wachtwoord'
+	'confirmpassword' 	=> 'Bevestig wachtwoord',
 
+	//Users
+	'users-add' 	=> 'Gebruiker toevoegen',
+	'users-edit' 	=> 'Gebruiker bewerken',
+	'account_type' 	=> 'Account type',
+	'selectAccountType' => 'Selecteer een type'
 ];

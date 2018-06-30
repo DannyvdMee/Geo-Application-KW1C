@@ -46,10 +46,24 @@
             </a>
         </div>
         <div class="float-right display-inline-block">
-            <a href="{{ route('login') }}">
-                <i class="material-icons display-block">person_pin</i>
-                <span class="display-block text-center">@lang('messages.login')</span>
-            </a>
+            @guest
+                <a href="{{ route('login') }}">
+                    <i class="material-icons display-block">person_pin</i>
+                    <span class="display-block text-center">@lang('messages.login')</span>
+                </a>
+            @else
+                @if (Auth::user()->account_type == 'admin')
+                    <a href="{{ route('admin/dashboard') }}">
+                        <i class="material-icons display-block">person_pin</i>
+                        <span class="display-block text-center">@lang('messages.dashboard')</span>
+                    </a>
+                @elseif (Auth::user()->account_type == 'teacher')
+                    <a href="{{ route('teacher/dashboard') }}">
+                        <i class="material-icons display-block">person_pin</i>
+                        <span class="display-block text-center">@lang('messages.dashboard')</span>
+                    </a>
+                @endif
+            @endguest
         </div>
     </footer>
 </div>

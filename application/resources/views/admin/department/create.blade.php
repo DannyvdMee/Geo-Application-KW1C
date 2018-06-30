@@ -25,7 +25,7 @@ Beschrijving:   Create Department Pagina
 						@csrf
 
 						<!-- Department name/title -->
-						<input type="text" name="name" placeholder="@lang('messages.title')" required autofocus>
+						<input type="text" name="name" placeholder="@lang('messages.name')" required autofocus>
 						<!-- Department active? -->
 						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>

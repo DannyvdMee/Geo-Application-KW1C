@@ -57,6 +57,8 @@ class UserController extends Controller
 
 		$user->department = $request->department;
 		$user->active = $request->active;
+		
+		$user->account_type = $request->account_type;
 
 		$user->save();
 
@@ -121,6 +123,8 @@ class UserController extends Controller
 		$user->firstname = $request->firstname;
 		$user->lastname = $request->lastname;
 		$user->department = $request->department;
+
+		$user->account_type = $request->account_type;
 
 		$user->active = $request->active;
 
