@@ -9,6 +9,6 @@ class Route extends Model
 	//Constructor
     public function poi()
 	{
-		$this->hasMany(Poi::class);
+		return $this->hasMany(Poi::class);
 	}
 }
