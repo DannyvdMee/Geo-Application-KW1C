@@ -37,8 +37,6 @@ class SettingsController extends Controller
      */
     public function update(Request $request/*, $id */)
     {
-        // $user = User::find($id);
-
         $user = Auth::user();
 
 		$user->firstname = $request->firstname;
@@ -49,7 +47,22 @@ class SettingsController extends Controller
 		$user->save();
 
         return redirect('teacher/settings');
-        
+    }
+
+    public function changePassword(Request $request) {
+        $user = Auth::user();
+
+        if (Hash::check($request->oldpassword, $user->password)) {
+            echo 'Passwords are the same';
+            if ($request->password == $request->password_confirmation) {
+                $user->password = Hash::make($request->password);
+                echo 'changed password';
+
+                $user->save();
+
+                return redirect('teacher/settings');
+            }
+        }
     }
 
 }

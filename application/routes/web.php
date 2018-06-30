@@ -62,7 +62,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
-
+	Route::post('settings', 'SettingsController@update')->name('settings');
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });
 
 /*
@@ -126,5 +127,5 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
 	Route::post('settings', 'SettingsController@update')->name('settings');
-
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });
