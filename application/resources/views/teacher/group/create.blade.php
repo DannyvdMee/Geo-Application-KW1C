@@ -102,7 +102,7 @@ Beschrijving:   Create Group Pagina
 					<div class="display-inline-block text-center box-center">
 						<button class="btn-white" onclick="removeStudent()">
 							<!-- Delete all students -->
-							{{ @lang('messages.group-removeStudents' )}}
+							@lang('messages.group-removeStudents' )
 						</button>
 					</div>
 				</div>
