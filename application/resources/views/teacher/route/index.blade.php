@@ -26,7 +26,7 @@ Beschrijving:   Index Route Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $route->title }}</p>
+									<p class="display-inline-block">{{ $route->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($route->visibility == 1)

@@ -15,19 +15,23 @@ return [
 	'groups'         => 'Groepen',
 	'exercise'		 => 'Opdrachten',
 	'settings'       => 'Instellingen',
-	'active'         => 'Actief',
+	'active'         => 'Is het actief',
 	'yes'            => 'Ja',
 	'no'             => 'Nee',
 	'save'           => 'Opslaan',
+	'department'     => 'Afdeling',
 	'departments'    => 'Afdelingen',
 	'users'          => 'Gebruikers',
 	'username'		 =>	'Gebruikersnaam',
 	'confirmpw'      => 'Bevestig wachtwoord',
 
-	'title' 		 => 'Titel',
+	'name' 		 	 => 'Naam',
 	'long'		 	 => 'Lengtegraad',
 	'lat'			 => 'Breedtegraad',
 	'desc'			 => 'Beschrijving',
+
+	'selectStudent'  => 'Selecteer een student',
+	'selectDepartment'  => 'Selecteer een afdeling	',
 
 	//footer
 	'student'		 => 'Student',
@@ -64,6 +68,13 @@ return [
 	'group-add'	 	 => 'Groep toevoegen',
 	'group-edit' 	 => 'Groep bewerken',
 	'group-name' 	 => 'Groepsnaam',
-	'group-removeStudents' 	 => 'Verwijder all studenten'
+	'group-removeStudents' 	 => 'Verwijder all studenten',
+
+	//Settings
+	'firstname' 	=> 'Voornaam',
+	'lastname' 		=> 'Achternaam',
+	'newpassword' 	=> 'Nieuw wachtwoord',
+	'oldpassword' 	=> 'Oud wachtwoord',
+	'confirmpassword' 	=> 'Bevestig wachtwoord'
 
 ];

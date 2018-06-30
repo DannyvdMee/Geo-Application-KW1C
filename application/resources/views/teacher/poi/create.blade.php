@@ -25,7 +25,7 @@ Beschrijving:   Create POI Pagina
 						@csrf
 
 						<!-- POI title -->
-						<input type="text" name="title" placeholder="@lang('messages.title')" required autofocus>
+						<input type="text" name="name" placeholder="@lang('messages.name')" required autofocus>
 						<!-- POI hint -->
 						<input type="text" name="hint" placeholder="Hint">
 						<!-- POI longtitute -->
@@ -35,7 +35,7 @@ Beschrijving:   Create POI Pagina
 						<!-- POI description -->
 						<textarea name="description" placeholder="@lang('messages.desc')" required></textarea>
 						<!-- POI active? -->
-						<select name="active">
+						<select name="active">		
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>

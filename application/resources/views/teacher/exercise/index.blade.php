@@ -26,7 +26,7 @@ Beschrijving:   Index Exercise Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $exercise->title }}</p>
+									<p class="display-inline-block">{{ $exercise->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($exercise->visibility == 1)
