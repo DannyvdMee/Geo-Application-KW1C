@@ -96,7 +96,8 @@ Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')-
 	Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
 	Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
 	Route::post('poi/import', 'PoiController@massImport')->name('poi/import');
-
+	Route::get('poi/import/link', 'PoiController@link')->name('poi/import/link');
+	Route::post('poi/import/link', 'PoiController@processLink')->name('poi/import/link');
 	//Routes
 	Route::get('route', 'RouteController@index')->name('route');
 	Route::get('route/create', 'RouteController@create')->name('route/create');
