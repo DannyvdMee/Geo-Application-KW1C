@@ -71,13 +71,17 @@ class LoginController extends Controller
 				return redirect('admin/dashboard');
 			}
 
-			return redirect('teacher/dashboard');
+			else if ($user->isTeacher) {
+				return redirect('teacher/dashboard');
+			}
+
+			return redirect('login');
 
 			//return response()->json(['message' => $user]);
 
 		}
 
-		return view('login', ['error' => $errorMessage]);
+		return view('login', ['error' => $message]);
 	}
 
 	public function logout()
