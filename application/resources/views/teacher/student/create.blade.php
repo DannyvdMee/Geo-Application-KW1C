@@ -40,6 +40,11 @@ Beschrijving:   Create Route Pagina
 						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
 					</form>
+					<form method="POST" action="{{ route('teacher/student/import') }}" enctype="multipart/form-data">
+						@csrf
+						<input type="file" name="csv" required>
+						<input type="submit" value="@lang('messages.Upload')">
+					</form>
 				</div>
 			</div>
 			<!-- End student create form -->

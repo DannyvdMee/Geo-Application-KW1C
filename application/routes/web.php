@@ -98,6 +98,7 @@ Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')-
 	Route::post('poi/import', 'PoiController@massImport')->name('poi/import');
 	Route::get('poi/import/link', 'PoiController@link')->name('poi/import/link');
 	Route::post('poi/import/link', 'PoiController@processLink')->name('poi/import/link');
+
 	//Routes
 	Route::get('route', 'RouteController@index')->name('route');
 	Route::get('route/create', 'RouteController@create')->name('route/create');
@@ -115,6 +116,9 @@ Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')-
 	Route::post('student/edit/{id}', 'StudentController@update')->name('student/edit');
 	Route::get('student/visibility/{id}', 'StudentController@show')->name('student/visibility');
 	Route::get('student/delete/{id}', 'StudentController@destroy')->name('student/delete');
+	Route::post('student/import', 'StudentController@massImport')->name('student/import');
+	Route::get('student/import/link', 'StudentController@link')->name('student/import/link');
+	Route::post('student/import/link', 'StudentController@processLink')->name('student/import/link');
 
 	//Groups
 	Route::get('group', 'GroupController@index')->name('group');
