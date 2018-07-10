@@ -46,14 +46,23 @@ Beschrijving:   Index Settings Pagina
 						</select>
 						<div class="whitespace height-21"></div>
 
-						<!-- Password -->
-						<h6 class="text-center font-bold">@lang('messages.password')</h6>
+						<input type="submit" value="@lang('messages.save')">
+						<div class="whitespace height-21"></div>
+                    </form>
+                    <form method="POST" action="{{ route('admin/settings/change-password') }}">
+                        @csrf
+
+                        <!-- Password -->
+                        <h6 class="text-center font-bold">@lang('messages.password')</h6>
+                        
 						<!-- Old pass -->
-						<input type="oldpassword" name="oldpassword" placeholder="@lang('messages.oldpassword')">
+                        <input type="text" name="oldpassword" placeholder="@lang('messages.oldpassword')">
+                        
 						<!-- New pass -->
-                        <input type="newpassword" name="newpassword" placeholder="@lang('messages.newpassword')" >
+                        <input type="text" name="password" placeholder="@lang('messages.newpassword')">
+
 						<!-- Repeat pass -->
-                        <input type="confirmpassword" name="confirmpassword" placeholder="@lang('messages.confirmpassword')">
+                        <input type="text" name="password_confirmation" placeholder="@lang('messages.confirmpassword')">
 						<div class="whitespace height-21"></div>
 
 						<!-- Submit button -->

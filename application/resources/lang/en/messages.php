@@ -24,15 +24,20 @@ return [
 	'users'          => 'Users',
 	'username'		 =>	'Username',
 	'confirmpw'      => 'Confirm password',
+	'admin' 		 => 'Admin',
+	'teacher' 		 => 'Docent',
 
 	'name' 		 	 => 'Name',
 	'long'		 	 => 'Longitude',
 	'lat'			 => 'Latitude',
 	'desc'			 => 'Description',
+	'account' 		 => 'Account',
 
 	'selectStudent'  => 'Select a student',
 	'selectPoi' => 'Select a POI',
 	'selectDepartment'  => 'Select a department',
+
+	'dashboard'  => 'Dashboard',
 
 	//Footer
 	'student'		 => 'Student',
@@ -76,5 +81,11 @@ return [
 	'lastname' 		=> 'Lastname',
 	'newpassword' 	=> 'New password',
 	'oldpassword' 	=> 'Old password',
-	'confirmpassword' 	=> 'Confirm password'
+	'confirmpassword' 	=> 'Confirm password',
+	
+	//Users
+	'users-add' 	=> 'Add user',
+	'users-edit' 	=> 'Edit user',
+	'account_type' 	=> 'Account type',
+	'selectAccountType' => 'Select a type'
 ];

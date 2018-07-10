@@ -29,7 +29,7 @@ Beschrijving:   Edit Group Pagina
                             value="{{ $group->name }}" required autofocus>
 
 						<!-- Students to a group -->
-						<select id="student-box" name="students">
+						<select id="student-box" name="students" required>
 							<option value="">@lang('messages.selectStudent')</option>
 							@if (!empty($students))
 								@foreach ($students as $student)
@@ -58,7 +58,7 @@ Beschrijving:   Edit Group Pagina
 						</div>
 
 						<!-- Group active? -->
-						<select name="active">
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1" {{ ($group->active == 1 ? 'selected' : '') }}>@lang('messages.yes')</option>
 							<option value="0" {{ ($group->active == 0 ? 'selected' : '') }}>@lang('messages.no')</option>

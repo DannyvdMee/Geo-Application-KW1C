@@ -1,4 +1,4 @@
-@extends('layouts.teacher')
+@extends('layouts.admin')
 
 <!--
 Opdracht:       Multidisciplinair Project v.2
@@ -26,25 +26,25 @@ Beschrijving:   Index User Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $user->name }}</p>
+									<p class="display-inline-block">{{ $user->lastname }}, {{ $user->firstname }} </p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
-										@if ($group->visibility == 1)
-											<a href="{{ route('admin/user/visibility', ['id' => $group->id]) }}">
+										@if ($user->visibility == 1)
+											<a href="{{ route('admin/user/visibility', ['id' => $user->id]) }}">
 												<i class="material-icons">visibility</i>
 											</a>
 										<!-- Visibility(eye) button toggle false -->
 										@else
-											<a href="{{ route('admin/user/visibility', ['id' => $group->id]) }}">
+											<a href="{{ route('admin/user/visibility', ['id' => $user->id]) }}">
 												<i class="material-icons">visibility_off</i>
 											</a>
 										<!-- Edit button -->
 										@endif
-											<a href="{{ route('admin/user/edit', ['id' => $group->id]) }}">
+											<a href="{{ route('admin/user/edit', ['id' => $user->id]) }}">
 												<i class="material-icons">edit</i>
 											</a>
 										<!-- Delete button -->
-											<a href="{{ route('admin/user/delete', ['id' => $group->id]) }}">
+											<a href="{{ route('admin/user/delete', ['id' => $user->id]) }}">
 												<i class="material-icons">delete_forever</i>
 											</a>
 									</div>

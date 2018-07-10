@@ -69,13 +69,17 @@ class LoginController extends Controller
 
 			if ($user->isAdmin) {
 				return redirect('admin/dashboard');
-			}
-
-			else if ($user->isTeacher) {
+			} else if ($user->isTeacher) {
 				return redirect('teacher/dashboard');
 			}
 
-			return redirect('login');
+			$message = 'This account does not have a valid role. Please contact your system administrator';
+
+			Auth::logout($request);
+			Session::flash('error', $message);
+
+			return view('auth/login');
+
 
 			//return response()->json(['message' => $user]);
 
