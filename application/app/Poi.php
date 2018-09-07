@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Poi extends Model
 {
 	//Constructor
-    public function route()
+    public function routes()
 	{
-		$this->belongsToMany(Route::class);
+		return $this->belongsToMany(Route::class);
 	}
 
 	public function exercise()
 	{
-		$this->hasOne(Exercise::class);
+		return $this->hasOne(Exercise::class);
 	}
 }

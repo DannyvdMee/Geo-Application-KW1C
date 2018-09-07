@@ -37,21 +37,33 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
  * - uses admin folder of views
  */
 
-Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
+Route::middleware(['auth', 'admin'])->namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
 
 	//Dashboard
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-	//users
-	Route::get('users', 'UserController@index')->name('users');
+	//Users
+	Route::get('user', 'UserController@index')->name('user');
+	Route::get('user/create', 'UserController@create')->name('user/create');
+	Route::post('user/create', 'UserController@store')->name('user/create');
+	Route::get('user/edit/{id}', 'UserController@edit')->name('user/edit');
+	Route::post('user/edit/{id}', 'UserController@update')->name('user/edit');
+	Route::get('user/visibility/{id}', 'UserController@show')->name('user/visibility');
+	Route::get('user/delete/{id}', 'UserController@destroy')->name('user/delete');
 
-	//department
-	Route::get('departments', 'DepartmentController@index')->name('departments');
-	Route::post('departments/create', 'DepartmentController@create')->name('departments/create');
+	//Department
+    Route::get('department', 'DepartmentController@index')->name('department');
+    Route::get('department/create', 'DepartmentController@create')->name('department/create');
+    Route::post('department/create', 'DepartmentController@store')->name('department/create');
+    Route::get('department/edit/{id}', 'DepartmentController@edit')->name('department/edit');
+	Route::post('department/edit/{id}', 'DepartmentController@update')->name('department/edit');
+	Route::get('department/visibility/{id}', 'DepartmentController@show')->name('department/visibility');
+	Route::get('department/delete/{id}', 'DepartmentController@destroy')->name('department/delete');
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
-
+	Route::post('settings', 'SettingsController@update')->name('settings');
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });
 
 /*
@@ -62,7 +74,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function () {
  * - uses teacher folder of views
  */
 
-Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
+Route::middleware(['auth', 'teacher'])->namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function () {
 
 	//Dashboard
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -84,6 +96,9 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	Route::post('poi/edit/{id}', 'PoiController@update')->name('poi/edit');
 	Route::get('poi/visibility/{id}', 'PoiController@show')->name('poi/visibility');
 	Route::get('poi/delete/{id}', 'PoiController@destroy')->name('poi/delete');
+	Route::post('poi/import', 'PoiController@massImport')->name('poi/import');
+	Route::get('poi/import/link', 'PoiController@link')->name('poi/import/link');
+	Route::post('poi/import/link', 'PoiController@processLink')->name('poi/import/link');
 
 	//Routes
 	Route::get('route', 'RouteController@index')->name('route');
@@ -102,6 +117,9 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 	Route::post('student/edit/{id}', 'StudentController@update')->name('student/edit');
 	Route::get('student/visibility/{id}', 'StudentController@show')->name('student/visibility');
 	Route::get('student/delete/{id}', 'StudentController@destroy')->name('student/delete');
+	Route::post('student/import', 'StudentController@massImport')->name('student/import');
+	Route::get('student/import/link', 'StudentController@link')->name('student/import/link');
+	Route::post('student/import/link', 'StudentController@processLink')->name('student/import/link');
 
 	//Groups
 	Route::get('group', 'GroupController@index')->name('group');
@@ -114,5 +132,6 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher/')->group(function
 
 	//Settings
 	Route::get('settings', 'SettingsController@index')->name('settings');
-
+	Route::post('settings', 'SettingsController@update')->name('settings');
+	Route::post('settings/change-password', 'SettingsController@changePassword')->name('settings/change-password');
 });

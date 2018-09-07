@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Route extends Model
 {
 	//Constructor
-    public function poi()
+    public function pois()
 	{
-		$this->hasMany(Poi::class);
+		return $this->belongsToMany(Poi::class);
 	}
 }

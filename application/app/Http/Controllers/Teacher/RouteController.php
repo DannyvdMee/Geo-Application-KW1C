@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Route;
+use App\Poi;
 
 class RouteController extends Controller
 {
@@ -28,7 +29,9 @@ class RouteController extends Controller
      */
     public function create()
     {
-        return view('teacher/route/create');
+    	$pois = Poi::where('active', '=', 1)->get();
+
+        return view('teacher/route/create', ['pois' => $pois]);
     }
 
     /**
@@ -43,14 +46,22 @@ class RouteController extends Controller
         $route = new Route;
 
         $route->url_id = bin2hex(random_bytes(4));
-        $route->title = $request->title;
+        $route->name = $request->name;
         $route->active = $request->active;
-        
-        // Remove this and below line if app has login
-        $route->user_id = 1;
-        // $route->user_id = Auth::user()->id;
+
+        $route->user_id = Auth::user()->id;
 
         $route->save();
+
+		$poi_id_array = [];
+
+		foreach ($request->pois as $poi) {
+			$poi_id_array[] = $poi;
+		}
+
+		$pois = Poi::find($poi_id_array);
+
+		$route->pois()->attach($pois);
 
         return redirect('teacher/route');
     }
@@ -105,7 +116,7 @@ class RouteController extends Controller
     {
         $route = Route::find($id);
 
-        $route->title = $request->title;
+        $route->name = $request->name;
         $route->active = $request->active;
         
         // Remove this and below line if app has login

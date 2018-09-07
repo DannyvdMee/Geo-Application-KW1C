@@ -13,17 +13,17 @@ use App\Department;
 class DepartmentFactory
 {
 	/**
-	 * @param $title
+	 * @param $name
 	 * @param $state
 	 *
 	 * @return Department
 	 */
-	public static function create($title, $state)
+	public static function create($name, $active)
 	{
 		$department = new Department();
 
-		$department->title = $title;
-		$department->state = $state;
+		$department->name = $name;
+		$department->active = $active;
 
 		return $department;
 	}
