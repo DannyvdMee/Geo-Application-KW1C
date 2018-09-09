@@ -26,7 +26,7 @@ Beschrijving:   Index Route Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $route->title }}</p>
+									<p class="display-inline-block">{{ $route->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($route->visibility == 1)
@@ -40,13 +40,13 @@ Beschrijving:   Index Route Pagina
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="{{ route('teacher/route/edit', ['id' => $route->id]) }}">
-											<i class="material-icons">edit</i>
-										</a>
+											<a href="{{ route('teacher/route/edit', ['id' => $route->id]) }}">
+												<i class="material-icons">edit</i>
+											</a>
 										<!-- Delete button -->
-										<a href="{{ route('teacher/route/delete', ['id' => $route->id]) }}">
-											<i class="material-icons">delete_forever</i>
-										</a>
+											<a href="{{ route('teacher/route/delete', ['id' => $route->id]) }}">
+												<i class="material-icons">delete_forever</i>
+											</a>
 									</div>
 								</div>
 							</div>

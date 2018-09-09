@@ -17,8 +17,8 @@ class CreateStudentGroupTable extends Migration
             $table->increments('id');
             $table->string('url_id')->unique();
             $table->string('name');
-			$table->boolean('visibility')->default(true);
-			$table->boolean('active')->default(false);
+            $table->boolean('visibility')->default(1);
+            $table->boolean('active')->default(0);
 			$table->timestamps();
         });
     }

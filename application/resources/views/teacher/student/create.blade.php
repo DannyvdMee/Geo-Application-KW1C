@@ -30,15 +30,20 @@ Beschrijving:   Create Route Pagina
 						<input type="text" name="name" placeholder="@lang('messages.student-name')" required>
 						<!-- Student info -->
 						<textarea name="information" placeholder="@lang('messages.student-info')"></textarea>
-						<!-- Student dropdown -->
-						<select name="active">
+						<!-- Student active? -->
+						<select name="active" required>
 							<option value="">@lang('messages.active')?</option>
 							<option value="1">@lang('messages.yes')</option>
 							<option value="0">@lang('messages.no')</option>
 						</select>
 
-						<!-- Submit button-->
+						<!-- Submit button -->
 						<input type="submit" value="@lang('messages.save')">
+					</form>
+					<form method="POST" action="{{ route('teacher/student/import') }}" enctype="multipart/form-data">
+						@csrf
+						<input type="file" name="csv" required>
+						<input type="submit" value="@lang('messages.Upload')">
 					</form>
 				</div>
 			</div>

@@ -46,6 +46,8 @@ class LoginController extends Controller
 		return 'username';
 	}
 
+//	TODO the below 2 functions are redundant-ish. Go fix!
+
 	public function loginRequest(Request $request)
 	{
 		$email    = $request->email;
@@ -55,7 +57,7 @@ class LoginController extends Controller
 
 			$id = Auth::user()->getAuthIdentifier();
 
-			$user = User::find($id);
+			$user = User::findOrFail($id);
 
 			if ($user->active == 0) {
 				$message = 'This account is not active or does not exist';
@@ -68,16 +70,47 @@ class LoginController extends Controller
 			}
 
 			if ($user->isAdmin) {
-				return redirect('admin/projects');
+				return redirect('admin/dashboard');
+			} else if ($user->isTeacher) {
+				return redirect('teacher/dashboard');
 			}
 
-			return redirect('teacher/dashboard');
+			$message = 'This account does not have a valid role. Please contact your system administrator';
 
-			//return response()->json(['message' => $user]);
+			Auth::logout($request);
+			Session::flash('error', $message);
 
+			return view('auth/login', ['error' => $message]);
 		}
 
-		return view('login', ['error' => $errorMessage]);
+		return view('auth/login');
+	}
+
+//
+//	Function which does stuff to make sure they're authenticated properly
+//
+
+	protected function authenticated(Request $request, $user)
+	{
+		if ($user->active == 0) {
+			$message = 'This account is not active or does not exist';
+
+			// Log the user out.
+			Auth::logout($request);
+			Session::flash('error', $message);
+
+			return view('auth/login');
+		}
+
+		if ($user->isTeacher) {
+			return redirect('teacher/dashboard');
+		}
+
+		if ($user->isAdmin) {
+			return redirect('admin/dashboard');
+		}
+
+		return redirect('user/dashboard');
 	}
 
 	public function logout()

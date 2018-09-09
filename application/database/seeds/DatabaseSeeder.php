@@ -31,6 +31,19 @@ class DatabaseSeeder extends Seeder
 
 		$user->save();
 
+		$user = UserFactory::create(
+			'onyilam@hot.com',
+			'onyilam',
+			'wachtwoord',
+			'Onyi',
+			'Lam',
+			'root',
+			'admin',
+			1
+		);
+
+		$user->save();
+
 		// Teacher Segment
 		$teacher = UserFactory::create(
 			'teacher@root.local',

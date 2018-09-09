@@ -17,10 +17,10 @@ class Teacher
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isTeacher) {
+        if (Auth::check() && (Auth::user()->isTeacher || Auth::user()->isAdmin)) {
             return $next($request);
         }
 
-        return redirect('/user/dashboard');
+        return redirect('/login');
     }
 }

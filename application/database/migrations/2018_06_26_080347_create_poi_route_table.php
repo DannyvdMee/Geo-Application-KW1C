@@ -16,8 +16,8 @@ class CreatePoiRouteTable extends Migration
 		Schema::create('poi_route',
 			function (Blueprint $table) {
 				$table->increments('id');
-				$table->integer('poi_id')->unsigned()->unique();
-				$table->integer('route_id')->unsigned()->unique();
+				$table->integer('poi_id')->unsigned();
+				$table->integer('route_id')->unsigned();
 				$table->foreign('poi_id')->references('id')->on('pois');
 				$table->foreign('route_id')->references('id')->on('routes');
 				$table->timestamps();

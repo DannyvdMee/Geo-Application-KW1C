@@ -26,7 +26,7 @@ Beschrijving:   Index POI Pagina
 							<div class="row">
 								<div class="col dataItem">
 									<!-- Title -->
-									<p class="display-inline-block">{{ $poi->title }}</p>
+									<p class="display-inline-block">{{ $poi->name }}</p>
 									<div class="float-right">
 										<!-- Visibility(eye) button toggle true -->
 										@if ($poi->visibility == 1)
@@ -40,13 +40,13 @@ Beschrijving:   Index POI Pagina
 											</a>
 										<!-- Edit button -->
 										@endif
-										<a href="{{ route('teacher/poi/edit', ['id' => $poi->id]) }}">
-											<i class="material-icons">edit</i>
-										</a>
+											<a href="{{ route('teacher/poi/edit', ['id' => $poi->id]) }}">
+												<i class="material-icons">edit</i>
+											</a>
 										<!-- Delete button -->
-										<a href="{{ route('teacher/poi/delete', ['id' => $poi->id]) }}">
-											<i class="material-icons">delete_forever</i>
-										</a>
+											<a href="{{ route('teacher/poi/delete', ['id' => $poi->id]) }}">
+												<i class="material-icons">delete_forever</i>
+											</a>
 									</div>
 								</div>
 							</div>
