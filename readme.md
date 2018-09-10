@@ -43,7 +43,7 @@ For more information about the project, and a manual for first time use go to: <
 
 ### Structure project
 - Documents: <br>
-This folder will hold all the required documents like: Design's, analytics, basic documents 
+This is moved by the latest push, If you want the files you can ask (Add a Issue)
 - Application: <br>
 This folder will hold all of the project's code.
 - Old project <br>
