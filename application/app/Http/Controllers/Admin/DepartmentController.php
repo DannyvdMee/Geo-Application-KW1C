@@ -8,12 +8,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Department;
+use App\Repositories\Department\DepartmentRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DepartmentController extends Controller
 {
+	private $department;
+
+	public function __construct(DepartmentRepository $department)
+	{
+		$this->department = $department;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -21,10 +28,7 @@ class DepartmentController extends Controller
 	 */
 	public function index()
 	{
-		//$departments = Department::all();
-		$departments = Department::where('active', '=', 1)->get();
-
-		return view('admin/department/index', ['departments' => $departments]);
+		return view('admin/department/index', ['departments' => $this->department->getAllActive()]);
 	}
 
 	public function create()
@@ -39,11 +43,9 @@ class DepartmentController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$department = new Department;
-		$department->name = $request->name;
-		$department->active = $request->active;
+//		TODO create DepartmentRequest
 
-		$department->save();
+		$this->department->create($request->all());
 
 		return redirect('admin/department');
 	}
@@ -56,7 +58,7 @@ class DepartmentController extends Controller
 	 */
 	public function show($id)
 	{
-		$department = Department::find($id);
+		$department = $this->department->getOne($id);
 
 		if ($department->visibility == 1) {
 			$visibility = 0;
@@ -80,9 +82,7 @@ class DepartmentController extends Controller
 	 */
 	public function edit($id)
 	{
-		$department = Department::find($id);
-
-		return view('admin/department/edit', ['department' => $department]);
+		return view('admin/department/edit', ['department' => $this->department->getOne($id)]);
 	}
 
     /**
@@ -95,11 +95,7 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-		$department = Department::find($id);
-
-		$department->name = $request->name;
-
-        $department->save();
+		$this->department->update($request->all(), $id);
         
         return redirect('admin/department');
 	}
@@ -112,7 +108,7 @@ class DepartmentController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$department = Department::find($id);
+		$department = $this->department->getOne($id);
 
 		$department->active = 0;
 

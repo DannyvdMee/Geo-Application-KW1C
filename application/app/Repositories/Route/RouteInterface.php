@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ibovangeffen
- * Date: 9/10/18
- * Time: 7:41 AM
- */
+
+namespace App\Repositories\Route;
+
+interface RouteInterface
+{
+	public function store($data);
+	public function update($data, $id);
+	public function softDelete($data);
+	public function forceDelete($data);
+
+}

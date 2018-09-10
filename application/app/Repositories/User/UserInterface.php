@@ -1,7 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ibovangeffen
- * Date: 9/10/18
- * Time: 7:45 AM
- */
+
+namespace App\Repositories\User;
+
+interface UserInterface
+{
+	public function getCurrentAuthenticated();
+	public function getOne($id);
+	public function getAllActiveByLastnameAsc();
+	public function store($data);
+	public function update($data, $id);
+	public function softDelete($data);
+	public function forceDelete($data);
+
+}

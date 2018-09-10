@@ -1,7 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ibovangeffen
- * Date: 9/10/18
- * Time: 7:43 AM
- */
+
+namespace App\Repositories\Student;
+
+use App\Student;
+
+class StudentRepository implements StudentInterface
+{
+	public function store($data)
+	{
+		return Student::create($data);
+	}
+
+	public function update($data, $id)
+	{
+		return Student::findOrFail($id)->update($data);
+	}
+
+	public function softDelete($id)
+	{
+		return Student::findOrFail($id)->delete();
+	}
+
+	public function forceDelete($data)
+	{
+		// TODO: Implement forceDelete() method.
+	}
+}
