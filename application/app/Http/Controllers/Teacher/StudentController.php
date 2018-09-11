@@ -3,21 +3,28 @@
 namespace App\Http\Controllers\Teacher;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StudentRequest;
 use App\Http\Controllers\Controller;
 use App\Student;
+use App\Repositories\Student\StudentRepository;
 
 class StudentController extends Controller
 {
-    /**
+	private $student;
+
+	public function __construct(StudentRepository $student)
+	{
+		$this->student = $student;
+	}
+
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $students = Student::where('active', '=', 1)->get();
-
-		return view('teacher/student/index', ['students' => $students]);
+		return view('teacher/student/index', ['students' => $this->student->getAllActive()]);
     }
 
     /**
@@ -37,18 +44,10 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        $student = new Student;
-        $student->number = $request->number;
-        $student->name = $request->name;
-        $student->active = $request->active;
-
-        if (!empty($request->information)) {
-        	$student->information = $request->information;
-		}
-
-        $student->save();
+//    	TODO create studentRequest
+        $this->student->store($request->all());
 
         return redirect('teacher/student');
     }
@@ -62,7 +61,7 @@ class StudentController extends Controller
 	 */
 	public function show($id)
 	{
-		$student = Student::find($id);
+		$student = $this->student->getOne($id);
 
 		if ($student->visibility == 1) {
 			$visibility = 0;
@@ -86,9 +85,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $student = Student::find($id);
-
-        return view('teacher/student/edit', ['student' => $student]);
+        return view('teacher/student/edit', ['student' => $this->student->getOne($id)]);
     }
 
     /**
@@ -99,15 +96,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentRequest $request, $id)
     {
-        $student = Student::find($id);
-
-		$student->number = $request->number;
-		$student->name = $request->name;
-		$student->active = $request->active;
-
-		$student->save();
+        $this->student->update($request->all(), $id);
 
 		return redirect('teacher/student');
 	}
@@ -128,15 +119,6 @@ class StudentController extends Controller
 		// Remove all empty values from array and sort the array alphabetically
 		$filtered_headers_array = $sorted_headers_array = array_filter($headers_array);
 		sort($sorted_headers_array);
-
-//		// Remove all empty values inside the data array
-//		foreach ($file_array as $data) {
-//			$exploded = explode(';', $data[0]);
-//			$data_array[] = array_filter($exploded);
-//		}
-//
-//		// Remove all empty array items of the data array itself
-//		$data_array = array_filter($data_array);
 
 		$columns_array = [
 			0 => 'number',
@@ -196,7 +178,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
+        $student = $this->student->getOne($id);
 
         $student->active = 0;
 

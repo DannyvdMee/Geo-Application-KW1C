@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\Http\Requests\PoiRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Poi;
+use App\Repositories\Poi\PoiRepository;
 
 class PoiController extends Controller
 {
-    /**
+	private $poi;
+
+	public function __construct(PoiRepository $poi)
+	{
+		$this->poi = $poi;
+	}
+
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $pois = Poi::where('active', '=', 1)->get();
-
-        return view('teacher/poi/index', ['pois' => $pois]);
+        return view('teacher/poi/index', ['pois' => $this->poi->getAllActive()]);
     }
 
     /**
@@ -37,21 +43,15 @@ class PoiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PoiRequest $request)
     {
-        $poi = new Poi();
+//    	TODO create PoiReqyest
 
-        $uid = bin2hex(random_bytes(40));
+		$request_collection = collect($request->all());
 
-        $poi->url_id = $uid;
-        $poi->name = $request->name;
-        $poi->latitude = $request->latitude;
-        $poi->longitude = $request->longitude;
-        $poi->description = $request->description;
-		$poi->active = $request->active;
-		$poi->hint = $request->hint;
-        
-		$poi->save();
+        $request_collection->put('url_id', bin2hex(random_bytes(40)));
+
+        $this->poi->store($request_collection->toArray());
 
         return redirect('teacher/exercise/create');
     }
@@ -65,7 +65,7 @@ class PoiController extends Controller
      */
     public function show($id)
     {
-		$poi = Poi::find($id);
+		$poi = $this->poi->getOne($id);
 
 		if ($poi->visibility == 1) {
 			$visibility = 0;
@@ -89,7 +89,7 @@ class PoiController extends Controller
      */
     public function edit($id)
     {
-        $poi = Poi::find($id);
+        $poi = $this->poi->getOne($id);
 
         return view('teacher/poi/edit', ['poi' => $poi]);
     }
@@ -102,19 +102,9 @@ class PoiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PoiRequest $request, $id)
     {
-        $poi = Poi::find($id);
-
-		$poi->name = $request->name;
-		$poi->latitude = $request->latitude;
-        $poi->longitude = $request->longitude;
-        $poi->active = $request->active;
-        $poi->description = $request->description;
-		$poi->hint = $request->hint;
-
-
-		$poi->save();
+        $this->poi->update($request->all(), $id);
 
 		return redirect('teacher/poi');
     }
@@ -135,15 +125,6 @@ class PoiController extends Controller
 		// Remove all empty values from array and sort the array alphabetically
 		$filtered_headers_array = $sorted_headers_array = array_filter($headers_array);
 		sort($sorted_headers_array);
-
-//		// Remove all empty values inside the data array
-//		foreach ($file_array as $data) {
-//			$exploded = explode(';', $data[0]);
-//			$data_array[] = array_filter($exploded);
-//		}
-//
-//		// Remove all empty array items of the data array itself
-//		$data_array = array_filter($data_array);
 
 		$columns_array = [
 			0 => 'type',
@@ -182,6 +163,8 @@ class PoiController extends Controller
 
 		$poi_attributes = $request->pois;
 
+//		TODO fix this shit
+
 		foreach ($data_array as $data) {
 			$poi = new Poi;
 			$poi->url_id = bin2hex(random_bytes(40));
@@ -205,7 +188,7 @@ class PoiController extends Controller
      */
     public function destroy($id)
     {
-		$poi = Poi::find($id);
+		$poi = $this->poi->getOne($id);
 
 		$poi->active = 0;
 

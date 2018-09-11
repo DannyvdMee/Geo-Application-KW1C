@@ -3,12 +3,21 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use App\Poi;
-use Illuminate\Http\Request;
-use App\Exercise;
+use App\Http\Requests\ExerciseRequest;
+use App\Repositories\Exercise\ExerciseRepository;
+use App\Repositories\Poi\PoiRepository;
 
 class ExerciseController extends Controller
 {
+	private $exercise;
+	private $poi;
+
+	public function __construct(ExerciseRepository $exercise, PoiRepository $poi)
+	{
+		$this->exercise = $exercise;
+		$this->poi = $poi;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,9 +25,7 @@ class ExerciseController extends Controller
 	 */
 	public function index()
 	{
-		$exercises = Exercise::where('active', '=', 1)->get();
-
-		return view('teacher/exercise/index', ['exercises' => $exercises]);
+		return view('teacher/exercise/index', ['exercises' => $this->exercise->getAllActive()]);
 	}
 
 	/**
@@ -28,9 +35,7 @@ class ExerciseController extends Controller
 	 */
 	public function create()
 	{
-		$poi = Poi::where('active', '=', 1)->orderBy('created_at', 'desc')->limit(1)->get();
-
-		return view('teacher/exercise/create', ['poi' => $poi]);
+		return view('teacher/exercise/create', ['poi' => $this->poi->getLatestPoi()]);
 	}
 
 	/**
@@ -40,18 +45,10 @@ class ExerciseController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(ExerciseRequest $request)
 	{
-		$exercise = new Exercise;
-		$exercise->poi_id = $request->poi_id;
-		$exercise->name = $request->name;
-		$exercise->content = $request->content;
-		$exercise->picture = $request->picture;
-		$exercise->answer = $request->answer;
-
-		$exercise->active = $request->active;
-
-		$exercise->save();
+//		TODO create ExerciseRequest
+		$this->exercise->store($request->all());
 
 		return redirect('teacher/exercise');
 	}
@@ -65,7 +62,7 @@ class ExerciseController extends Controller
 	 */
 	public function show($id)
 	{
-		$exercise = Exercise::find($id);
+		$exercise = $this->exercise->getOne($id);
 
 		if ($exercise->visibility == 1) {
 			$visibility = 0;
@@ -89,9 +86,7 @@ class ExerciseController extends Controller
 	 */
 	public function edit($id)
 	{
-		$exercise = Exercise::find($id);
-
-		return view('teacher/exercise/edit', ['exercise' => $exercise]);
+		return view('teacher/exercise/edit', ['exercise' => $this->exercise->getOne($id)]);
 	}
 
 	/**
@@ -102,19 +97,9 @@ class ExerciseController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(ExerciseRequest $request, $id)
 	{
-		$exercise = Exercise::find($id);
-		
-		$exercise->name = $request->name;
-		$exercise->content = $request->content;
-		$exercise->picture = $request->picture;
-		$exercise->answer = $request->answer;
-
-		$exercise->active = $request->active;
-        //$poi->active = $request->active;
-
-		$exercise->save();
+		$this->exercise->update($request->all(), $id);
 
 		return redirect('teacher/exercise');
 	}
@@ -128,7 +113,7 @@ class ExerciseController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$exercise = Exercise::find($id);
+		$exercise = $this->exercise->getOne($id);
 
 		$exercise->active = 0;
 

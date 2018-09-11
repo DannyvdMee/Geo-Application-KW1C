@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-
-use App\User;
-use App\Department;
+use App\Repositories\Department\DepartmentRepository;
+use App\Repositories\User\UserRepository;
 
 class UserController extends Controller
 {
+	private $department;
+	private $user;
+
+	public function __construct(DepartmentRepository $department, UserRepository $user)
+	{
+		$this->department = $department;
+		$this->user = $user;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -18,9 +25,9 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		$users = User::where('active', '=', 1)->orderBy('lastname', 'asc')->get();
+		$users = $this->user->getAllActiveByLastnameAsc();
 
-		$departments = Department::where('active', '=', 1)->get();
+		$departments = $this->department->getAllActive();
 
 		return view('admin/user/index',  ['users' => $users, 'departments' => $departments]);
 	}
@@ -32,9 +39,7 @@ class UserController extends Controller
 	 */
 	public function create()
 	{
-		$departments = Department::where('active', '=', 1)->get();
-
-		return view('admin/user/create', ['departments' => $departments]);
+		return view('admin/user/create', ['departments' => $this->department->getAllActive()]);
 	}
 
 	/**
@@ -44,23 +49,10 @@ class UserController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(UserRequest $request)
 	{
-		$user = new User;
-
-		$user->email = $request->email;
-		$user->username = $request->username;
-		$user->password = Hash::make($request->password);
-
-		$user->firstname = $request->firstname;
-		$user->lastname = $request->lastname;
-
-		$user->department = $request->department;
-		$user->active = $request->active;
-		
-		$user->account_type = $request->account_type;
-
-		$user->save();
+//		TODO create UserRequest
+		$this->user->store($request->all());
 
 		return redirect('admin/user');
 	}
@@ -74,7 +66,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-		$user = User::find($id);
+		$user = $this->user->getOne($id);
 
 		if ($user->visibility == 1) {
 			$visibility = 0;
@@ -98,9 +90,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-		$user = User::find($id);
-		
-		$departments = Department::where('active', '=', 1)->get();
+		$user = $this->user->getOne($id);
+		$departments = $this->department->getAllActive();
 
         return view('admin/user/edit', ['user' => $user, 'departments' => $departments]);
 	}
@@ -113,22 +104,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-		$user = User::find($id);
-
-		$user->email = $request->email;
-		$user->username = $request->username;
-
-		$user->firstname = $request->firstname;
-		$user->lastname = $request->lastname;
-		$user->department = $request->department;
-
-		$user->account_type = $request->account_type;
-
-		$user->active = $request->active;
-
-		$user->save();
+//    	TODO create UserRequest
+		$this->user->update($request->all(), $id);
 
 		return redirect('admin/user');
     }
@@ -142,7 +121,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-		$user = User::find($id);
+		$user = $this->user->getOne($id);
 
 		$user->active = 0;
 

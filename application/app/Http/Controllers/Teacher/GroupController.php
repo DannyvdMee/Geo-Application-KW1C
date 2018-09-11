@@ -2,23 +2,31 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StudentGroupRequest;
 use App\Http\Controllers\Controller;
+use App\Repositories\Student\StudentRepository;
+use App\Repositories\StudentGroup\StudentGroupRepository;
 use App\Student;
-use App\StudentGroup;
 
 class GroupController extends Controller
 {
-    /**
+	private $student;
+	private $studentgroup;
+
+	public function __construct(StudentRepository $student, StudentGroupRepository $studentgroup)
+	{
+		$this->student = $student;
+		$this->studentgroup = $studentgroup;
+	}
+
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $groups = StudentGroup::where('active', '=', 1)->get();
-
-        return view('teacher/group/index', ['groups' => $groups]);
+        return view('teacher/group/index', ['groups' => $this->studentgroup->getAllActive()]);
     }
 
     /**
@@ -28,9 +36,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-    	$students = Student::where('active', '=', 1)->get();
-
-        return view('teacher/group/create', ['students' => $students]);
+        return view('teacher/group/create', ['students' => $this->student->getAllActive()]);
     }
 
     /**
@@ -40,15 +46,16 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentGroupRequest $request)
     {
-        $group = new StudentGroup();
+//    	TODO create studentGroupRequest
 
-        $group->url_id = bin2hex(random_bytes(40));
-        $group->name = $request->name;
-        $group->active = 1;
+		$request_collection = collect($request->all());
 
-		$group->save();
+		$request_collection->put('url_id', bin2hex(random_bytes(40)));
+		$request_collection->put('active', 1);
+
+        $group = $this->studentgroup->store($request_collection->toArray());
 
 		$student_id_array = [];
 
@@ -56,7 +63,7 @@ class GroupController extends Controller
 			$student_id_array[] = $user;
 		}
 
-		$students = Student::find($student_id_array);
+		$students = $this->student->getOne($student_id_array);
 
 		$group->students()->attach($students);
 
@@ -73,7 +80,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-		$group = StudentGroup::find($id);
+		$group = $this->studentgroup->getOne($id);
 
 		if ($group->visibility == 1) {
 			$visibility = 0;
@@ -95,9 +102,7 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-		$group = StudentGroup::find($id);
-
-		return view('teacher/group/edit', ['group' => $group]);
+		return view('teacher/group/edit', ['group' => $this->studentgroup->getOne($id)]);
 	}
 
     /**
@@ -108,13 +113,9 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentGroupRequest $request, $id)
     {
-		$group = StudentGroup::find($id);
-
-		$group->groupname = $request->groupname;
-
-        $group->save();
+		$this->studentgroup->update($request->all(), $id);
         
         return redirect('teacher/group');
     }
@@ -128,7 +129,7 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-		$group = StudentGroup::find($id);
+		$group = $this->studentgroup->getOne($id);
 
 		$group->active = 0;
 
