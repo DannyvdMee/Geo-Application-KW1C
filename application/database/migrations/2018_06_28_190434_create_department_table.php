@@ -15,7 +15,7 @@ class CreateDepartmentTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('url_prefix')->nullable();
             $table->boolean('visibility')->default(1);
             $table->boolean('active')->default(0);
