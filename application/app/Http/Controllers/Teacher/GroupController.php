@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StudentGroupRequest;
 use App\Http\Controllers\Controller;
 use App\Repositories\Student\StudentRepository;
 use App\Repositories\StudentGroup\StudentGroupRepository;
+use App\Student;
 
 class GroupController extends Controller
 {
@@ -45,7 +46,7 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentGroupRequest $request)
     {
 //    	TODO create studentGroupRequest
 
@@ -112,7 +113,7 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentGroupRequest $request, $id)
     {
 		$this->studentgroup->update($request->all(), $id);
         

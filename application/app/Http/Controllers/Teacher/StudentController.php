@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Teacher;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StudentRequest;
 use App\Http\Controllers\Controller;
+use App\Student;
 use App\Repositories\Student\StudentRepository;
 
 class StudentController extends Controller
@@ -42,7 +44,7 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
 //    	TODO create studentRequest
         $this->student->store($request->all());
@@ -94,7 +96,7 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentRequest $request, $id)
     {
         $this->student->update($request->all(), $id);
 

@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Danny
- * Date: 20-Jun-18
- * Time: 12:16
- */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Repositories\Department\DepartmentRepository;
-use Illuminate\Http\Request;
+use App\Http\Requests\DepartmentRequest;
 use App\Http\Controllers\Controller;
 
 class DepartmentController extends Controller
@@ -41,7 +35,7 @@ class DepartmentController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(DepartmentRequest $request)
 	{
 //		TODO create DepartmentRequest
 
@@ -93,7 +87,7 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DepartmentRequest $request, $id)
     {
 		$this->department->update($request->all(), $id);
         

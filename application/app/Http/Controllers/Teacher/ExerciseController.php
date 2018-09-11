@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ExerciseRequest;
 use App\Repositories\Exercise\ExerciseRepository;
 use App\Repositories\Poi\PoiRepository;
 
@@ -45,7 +45,7 @@ class ExerciseController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(ExerciseRequest $request)
 	{
 //		TODO create ExerciseRequest
 		$this->exercise->store($request->all());
@@ -97,7 +97,7 @@ class ExerciseController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(ExerciseRequest $request, $id)
 	{
 		$this->exercise->update($request->all(), $id);
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\Department\DepartmentRepository;
@@ -40,9 +40,8 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UserRequest $request)
     {
-//    	TODO implement UserRequest
 
         $user = $this->user->getCurrentAuthenticated();
 
@@ -51,7 +50,7 @@ class SettingsController extends Controller
         return redirect('admin/settings');
     }
 
-    public function changePassword(Request $request) {
+    public function changePassword(UserRequest $request) {
 //    	TODO create changePassword method in repository
 
         $user = $this->user->getCurrentAuthenticated();

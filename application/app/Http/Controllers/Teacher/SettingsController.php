@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\Department\DepartmentRepository;
@@ -41,7 +42,7 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UserRequest $request)
     {
         $user = $this->user->getCurrentAuthenticated();
 
@@ -50,7 +51,7 @@ class SettingsController extends Controller
         return redirect('teacher/settings');
     }
 
-    public function changePassword(Request $request) {
+    public function changePassword(UserRequest $request) {
         $user = $this->user->getCurrentAuthenticated();
 
         if (Hash::check($request->oldpassword, $user->password)) {

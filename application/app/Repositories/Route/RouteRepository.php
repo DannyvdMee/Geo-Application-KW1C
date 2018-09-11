@@ -11,6 +11,11 @@ class RouteRepository implements RouteInterface
 		return Route::findOrFail($id);
 	}
 
+	public function getLatest()
+	{
+		return Route::all()->orderBy('created_at', 'desc')->first();
+	}
+
 	public function getAllActive()
 	{
 		return Route::where('active', '=', 1)->get();

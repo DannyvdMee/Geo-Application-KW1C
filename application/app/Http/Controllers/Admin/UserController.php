@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use App\Repositories\Department\DepartmentRepository;
 use App\Repositories\User\UserRepository;
 
@@ -50,7 +49,7 @@ class UserController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(UserRequest $request)
 	{
 //		TODO create UserRequest
 		$this->user->store($request->all());
@@ -105,7 +104,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
 //    	TODO create UserRequest
 		$this->user->update($request->all(), $id);

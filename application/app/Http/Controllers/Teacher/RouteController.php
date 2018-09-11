@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use Illuminate\Http\Request;
+use App\Repositories\User\UserRepository;
+use App\Http\Requests\RouteRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\Route\RouteRepository;
@@ -12,11 +13,13 @@ class RouteController extends Controller
 {
 	private $poi;
 	private $route;
+	private $user;
 
-	public function __construct(RouteRepository $route, PoiRepository $poi)
+	public function __construct(RouteRepository $route, PoiRepository $poi, UserRepository $user)
 	{
 		$this->poi = $poi;
 		$this->route = $route;
+		$this->user = $user;
 	}
 
     /**
@@ -46,23 +49,22 @@ class RouteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RouteRequest $request)
     {
-//    	TODO create RouteRequest
+		$request_collection = collect($request->all());
 
-		$request_c9llection = collect($request->all());
-        $route = new Route;
+        $request_collection->put('url_id', bin2hex(random_bytes(4)));
+        $request_collection->put('user_id', $this->user->getCurrentAuthenticated());
 
-        $request_c9llection->put('url_id', bin2hex(random_bytes(4)));
-        $request_c9llection->put('user_id', Auth::user()->id);
-
-        $this->route->store($request_c9llection->toArray());
+        $this->route->store($request_collection->toArray());
 
 		$poi_id_array = [];
 
 		foreach ($request->pois as $poi) {
 			$poi_id_array[] = $poi;
 		}
+
+		$route = $this->route->getLatest();
 
 		$route->pois()->attach($this->poi->getOne($poi_id_array));
 
@@ -113,11 +115,11 @@ class RouteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RouteRequest $request, $id)
     {
     	$request_collectiob = collect($request->all());
 
-		$request_collectiob->put('user_id', Auth::user()->id);
+		$request_collectiob->put('user_id', $this->user->getCurrentAuthenticated());
 
         $this->route->update($request_collectiob->toArray(), $id);
         

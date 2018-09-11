@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\Http\Requests\PoiRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Poi\PoiRepository;
@@ -42,7 +43,7 @@ class PoiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PoiRequest $request)
     {
 //    	TODO create PoiReqyest
 
@@ -101,7 +102,7 @@ class PoiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PoiRequest $request, $id)
     {
         $this->poi->update($request->all(), $id);
 
