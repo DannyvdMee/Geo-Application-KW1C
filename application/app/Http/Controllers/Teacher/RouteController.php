@@ -5,11 +5,20 @@ namespace App\Http\Controllers\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Route;
-use App\Poi;
+use App\Repositories\Route\RouteRepository;
+use App\Repositories\Poi\PoiRepository;
 
 class RouteController extends Controller
 {
+	private $poi;
+	private $route;
+
+	public function __construct(RouteRepository $route, PoiRepository $poi)
+	{
+		$this->poi = $poi;
+		$this->route = $route;
+	}
+
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +26,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-		$routes = Route::where('active', '=', 1)->get();
-
-        return view('teacher/route/index', ['routes' => $routes]);
+        return view('teacher/route/index', ['routes' => $this->route->getAllActive()]);
     }
 
     /**
@@ -29,9 +36,7 @@ class RouteController extends Controller
      */
     public function create()
     {
-    	$pois = Poi::where('active', '=', 1)->get();
-
-        return view('teacher/route/create', ['pois' => $pois]);
+        return view('teacher/route/create', ['pois' => $this->poi->getAllActive()]);
     }
 
     /**
@@ -43,15 +48,15 @@ class RouteController extends Controller
      */
     public function store(Request $request)
     {
+//    	TODO create RouteRequest
+
+		$request_c9llection = collect($request->all());
         $route = new Route;
 
-        $route->url_id = bin2hex(random_bytes(4));
-        $route->name = $request->name;
-        $route->active = $request->active;
+        $request_c9llection->put('url_id', bin2hex(random_bytes(4)));
+        $request_c9llection->put('user_id', Auth::user()->id);
 
-        $route->user_id = Auth::user()->id;
-
-        $route->save();
+        $this->route->store($request_c9llection->toArray());
 
 		$poi_id_array = [];
 
@@ -59,9 +64,7 @@ class RouteController extends Controller
 			$poi_id_array[] = $poi;
 		}
 
-		$pois = Poi::find($poi_id_array);
-
-		$route->pois()->attach($pois);
+		$route->pois()->attach($this->poi->getOne($poi_id_array));
 
         return redirect('teacher/route');
     }
@@ -75,7 +78,7 @@ class RouteController extends Controller
      */
     public function show($id)
     {
-		$route = Route::find($id);
+		$route = $this->route->getOne($id);
 
 		if ($route->visibility == 1) {
 			$visibility = 0;
@@ -99,9 +102,7 @@ class RouteController extends Controller
      */
     public function edit($id)
     {
-		$route = Route::find($id);
-
-        return view('teacher/route/edit', ['route' => $route]);
+        return view('teacher/route/edit', ['route' => $this->route->getOne($id)]);
     }
 
     /**
@@ -114,16 +115,11 @@ class RouteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $route = Route::find($id);
+    	$request_collectiob = collect($request->all());
 
-        $route->name = $request->name;
-        $route->active = $request->active;
-        
-        // Remove this and below line if app has login
-        $route->user_id = 1;
-		// $route->user_id = Auth::user()->id;
+		$request_collectiob->put('user_id', Auth::user()->id);
 
-        $route->save();
+        $this->route->update($request_collectiob->toArray(), $id);
         
         return redirect('teacher/route');
     }
@@ -137,7 +133,7 @@ class RouteController extends Controller
      */
     public function destroy($id)
     {
-        $route = Route::find($id);
+        $route = $this->route->getOne($id);
 
         $route->active = 0;
 

@@ -6,6 +6,16 @@ use App\Student;
 
 class StudentRepository implements StudentInterface
 {
+	public function getOne($id)
+	{
+		return Student::findOrFail($id);
+	}
+
+	public function getAllActive()
+	{
+		return Student::where('active', '=', 1)->get();
+	}
+
 	public function store($data)
 	{
 		return Student::create($data);

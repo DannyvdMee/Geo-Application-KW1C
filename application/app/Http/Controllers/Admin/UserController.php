@@ -53,7 +53,7 @@ class UserController extends Controller
 	public function store(Request $request)
 	{
 //		TODO create UserRequest
-		$this->user->create($request->all());
+		$this->user->store($request->all());
 
 		return redirect('admin/user');
 	}

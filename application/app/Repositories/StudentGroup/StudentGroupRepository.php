@@ -6,6 +6,16 @@ use App\StudentGroup;
 
 class StudentGroupRepository implements StudentGroupInterface
 {
+	public function getOne($id)
+	{
+		return StudentGroup::findOrFail($id);
+	}
+
+	public function getAllActive()
+	{
+		return StudentGroup::where('active', '=', 1)->get();
+	}
+
 	public function store($data)
 	{
 		return StudentGroup::create($data);

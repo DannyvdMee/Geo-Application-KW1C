@@ -45,7 +45,7 @@ class DepartmentController extends Controller
 	{
 //		TODO create DepartmentRequest
 
-		$this->department->create($request->all());
+		$this->department->store($request->all());
 
 		return redirect('admin/department');
 	}

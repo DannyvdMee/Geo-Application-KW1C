@@ -6,6 +6,16 @@ use App\Route;
 
 class RouteRepository implements RouteInterface
 {
+	public function getOne($id)
+	{
+		return Route::findOrFail($id);
+	}
+
+	public function getAllActive()
+	{
+		return Route::where('active', '=', 1)->get();
+	}
+
 	public function store($data)
 	{
 		return Route::create($data);

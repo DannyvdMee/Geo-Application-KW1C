@@ -25,7 +25,7 @@ Beschrijving:   Create Exercise Pagina
 						@csrf
 						
 						<!-- POI ID = hidden -->
-						<input type="hidden" name="poi_id" value="{{ $poi[0]->id }}" required readonly>
+						<input type="hidden" name="poi_id" value="{{ $poi->id }}" required readonly>
 
 						<!-- Exercise title -->
 						<input type="text" name="name" placeholder="@lang('messages.name')">

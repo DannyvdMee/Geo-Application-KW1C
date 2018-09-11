@@ -5,24 +5,30 @@ namespace App\Http\Controllers\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use Auth;   
-use App\Department;
-use App\User;
+use App\Repositories\Department\DepartmentRepository;
+use App\Repositories\User\UserRepository;
 
 class SettingsController extends Controller
 {
-    /**
+	private $department;
+	private $user;
+
+	public function __construct(DepartmentRepository $department, UserRepository $user)
+	{
+		$this->department = $department;
+		$this->user = $user;
+	}
+
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //actieve user
-        $user = Auth::user();
+        $user = $this->user->getCurrentAuthenticated();
 
-        //alle actieve departments 
-        $departments = Department::where('active', '=', 1)->get();
+        $departments = $this->department->getAllActive();
 
         return view('teacher/settings/index', ['user' => $user, 'departments' => $departments]);
     }
@@ -35,22 +41,17 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request/*, $id */)
+    public function update(Request $request)
     {
-        $user = Auth::user();
+        $user = $this->user->getCurrentAuthenticated();
 
-		$user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        
-        $user->department = $request->department;
-
-		$user->save();
+		$this->user->update($request->all(), $user);
 
         return redirect('teacher/settings');
     }
 
     public function changePassword(Request $request) {
-        $user = Auth::user();
+        $user = $this->user->getCurrentAuthenticated();
 
         if (Hash::check($request->oldpassword, $user->password)) {
             echo 'Passwords are the same';
