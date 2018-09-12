@@ -31,13 +31,12 @@ class DepartmentController extends Controller
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
+	 * @param DepartmentRequest $request
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 */
 	public function store(DepartmentRequest $request)
 	{
-//		TODO create DepartmentRequest
+		// TODO create DepartmentRequest
 
 		$this->department->store($request->all());
 
@@ -65,7 +64,6 @@ class DepartmentController extends Controller
 		$department->save();
 
 		return redirect('admin/department');
-
 	}
 
 	/**
