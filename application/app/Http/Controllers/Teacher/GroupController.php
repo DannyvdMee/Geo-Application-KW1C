@@ -20,34 +20,34 @@ class GroupController extends Controller
 	}
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('teacher/group/index', ['groups' => $this->studentgroup->getAllActive()]);
-    }
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		return view('teacher/group/index', ['groups' => $this->studentgroup->getAllActive()]);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('teacher/group/create', ['students' => $this->student->getAllActive()]);
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('teacher/group/create', ['students' => $this->student->getAllActive()]);
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StudentGroupRequest $request)
-    {
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(StudentGroupRequest $request)
+	{
 //    	TODO create studentGroupRequest
 
 		$request_collection = collect($request->all());
@@ -55,7 +55,7 @@ class GroupController extends Controller
 		$request_collection->put('url_id', bin2hex(random_bytes(40)));
 		$request_collection->put('active', 1);
 
-        $group = $this->studentgroup->store($request_collection->toArray());
+		$group = $this->studentgroup->store($request_collection->toArray());
 
 		$student_id_array = [];
 
@@ -67,19 +67,19 @@ class GroupController extends Controller
 
 		$group->students()->attach($students);
 
-        return redirect('teacher/group');
+		return redirect('teacher/group');
 
-    }
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
 		$group = $this->studentgroup->getOne($id);
 
 		if ($group->visibility == 1) {
@@ -91,44 +91,44 @@ class GroupController extends Controller
 		$group->visibility = $visibility;
 
 		$group->save();
-    }
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
 		return view('teacher/group/edit', ['group' => $this->studentgroup->getOne($id)]);
 	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(StudentGroupRequest $request, $id)
-    {
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(StudentGroupRequest $request, $id)
+	{
 		$this->studentgroup->update($request->all(), $id);
-        
-        return redirect('teacher/group');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
+		return redirect('teacher/group');
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
 		$group = $this->studentgroup->getOne($id);
 
 		$group->active = 0;
@@ -136,5 +136,5 @@ class GroupController extends Controller
 		$group->save();
 
 		return redirect('teacher/group');
-    }
+	}
 }

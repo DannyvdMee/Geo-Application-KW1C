@@ -79,21 +79,21 @@ class DepartmentController extends Controller
 		return view('admin/department/edit', ['department' => $this->department->getOne($id)]);
 	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(DepartmentRequest $request, $id)
-    {
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(DepartmentRequest $request, $id)
+	{
 		$this->department->update($request->all(), $id);
-        
-        return redirect('admin/department');
+
+		return redirect('admin/department');
 	}
-	
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
