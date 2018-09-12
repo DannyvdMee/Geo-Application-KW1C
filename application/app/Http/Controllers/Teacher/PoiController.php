@@ -17,99 +17,99 @@ class PoiController extends Controller
 	}
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('teacher/poi/index', ['pois' => $this->poi->getAllActive()]);
-    }
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		return view('teacher/poi/index', ['pois' => $this->poi->getAllActive()]);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('teacher/poi/create');
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('teacher/poi/create');
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(PoiRequest $request)
-    {
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(PoiRequest $request)
+	{
 //    	TODO create PoiReqyest
 
 		$request_collection = collect($request->all());
 
-        $request_collection->put('url_id', bin2hex(random_bytes(40)));
+		$request_collection->put('url_id', bin2hex(random_bytes(40)));
 
-        $this->poi->store($request_collection->toArray());
+		$this->poi->store($request_collection->toArray());
 
-        return redirect('teacher/exercise/create');
-    }
+		return redirect('teacher/exercise/create');
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
 		$poi = $this->poi->getOne($id);
 
 		if ($poi->visibility == 1) {
 			$visibility = 0;
 		} else if ($poi->visibility == 0) {
 			$visibility = 1;
-        }
+		}
 
 		$poi->visibility = $visibility;
 
-        $poi->save();
-        
-        return redirect('teacher/poi');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $poi = $this->poi->getOne($id);
-
-        return view('teacher/poi/edit', ['poi' => $poi]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(PoiRequest $request, $id)
-    {
-        $this->poi->update($request->all(), $id);
+		$poi->save();
 
 		return redirect('teacher/poi');
-    }
+	}
 
-    public function massImport(Request $request)
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		$poi = $this->poi->getOne($id);
+
+		return view('teacher/poi/edit', ['poi' => $poi]);
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(PoiRequest $request, $id)
+	{
+		$this->poi->update($request->all(), $id);
+
+		return redirect('teacher/poi');
+	}
+
+	public function massImport(Request $request)
 	{
 		$csv = $request->file('csv');
 
@@ -179,21 +179,21 @@ class PoiController extends Controller
 		return redirect('teacher/poi');
 	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
 		$poi = $this->poi->getOne($id);
 
 		$poi->active = 0;
 
 		$poi->save();
 
-        return redirect('teacher/poi');
-    }
+		return redirect('teacher/poi');
+	}
 }

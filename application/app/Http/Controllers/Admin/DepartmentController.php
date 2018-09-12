@@ -31,13 +31,12 @@ class DepartmentController extends Controller
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
+	 * @param DepartmentRequest $request
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 */
 	public function store(DepartmentRequest $request)
 	{
-//		TODO create DepartmentRequest
+		// TODO create DepartmentRequest
 
 		$this->department->store($request->all());
 
@@ -65,7 +64,6 @@ class DepartmentController extends Controller
 		$department->save();
 
 		return redirect('admin/department');
-
 	}
 
 	/**
@@ -79,21 +77,21 @@ class DepartmentController extends Controller
 		return view('admin/department/edit', ['department' => $this->department->getOne($id)]);
 	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(DepartmentRequest $request, $id)
-    {
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(DepartmentRequest $request, $id)
+	{
 		$this->department->update($request->all(), $id);
-        
-        return redirect('admin/department');
+
+		return redirect('admin/department');
 	}
-	
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
