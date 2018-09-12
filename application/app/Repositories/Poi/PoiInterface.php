@@ -12,10 +12,12 @@ interface PoiInterface
 
 	public function store($data);
 
+	public function updateVisibility($id);
+
 	public function update($data, $id);
 
-	public function softDelete($data);
+	public function softDelete($id);
 
-	public function forceDelete($data);
+	public function forceDelete($id);
 
 }

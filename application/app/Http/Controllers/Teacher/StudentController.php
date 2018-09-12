@@ -46,7 +46,6 @@ class StudentController extends Controller
 	 */
 	public function store(StudentRequest $request)
 	{
-//    	TODO create studentRequest
 		$this->student->store($request->all());
 
 		return redirect('teacher/student');
@@ -61,17 +60,7 @@ class StudentController extends Controller
 	 */
 	public function show($id)
 	{
-		$student = $this->student->getOne($id);
-
-		if ($student->visibility == 1) {
-			$visibility = 0;
-		} else if ($student->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$student->visibility = $visibility;
-
-		$student->save();
+		$this->student->updateVisibility($id);
 
 		return redirect('teacher/student');
 	}
@@ -178,11 +167,7 @@ class StudentController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$student = $this->student->getOne($id);
-
-		$student->active = 0;
-
-		$student->save();
+		$this->student->softDelete($id);
 
 		return redirect('teacher/student');
 	}

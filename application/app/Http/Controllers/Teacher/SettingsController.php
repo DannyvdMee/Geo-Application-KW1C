@@ -53,19 +53,9 @@ class SettingsController extends Controller
 
 	public function changePassword(UserRequest $request)
 	{
-		$user = $this->user->getCurrentAuthenticated();
+		$this->user->changePassword($request->all());
 
-		if (Hash::check($request->oldpassword, $user->password)) {
-			echo 'Passwords are the same';
-			if ($request->password == $request->password_confirmation) {
-				$user->password = Hash::make($request->password);
-				echo 'changed password';
-
-				$user->save();
-
-				return redirect('teacher/settings');
-			}
-		}
+		return redirect('teacher/settings');
 	}
 
 }

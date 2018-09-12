@@ -21,6 +21,21 @@ class ExerciseRepository implements ExerciseInterface
 		return Exercise::create($data);
 	}
 
+	public function updateVisibility($id)
+	{
+		$exercise = $this->getOne($id);
+
+		if ($exercise->visibility == 1) {
+			$visibility = 0;
+		} else if ($exercise->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$exercise->visibility = $visibility;
+
+		$exercise->save();
+	}
+
 	public function update($data, $id)
 	{
 		return Exercise::findOrFail($id)->update($data);
@@ -28,11 +43,15 @@ class ExerciseRepository implements ExerciseInterface
 
 	public function softDelete($id)
 	{
-		return Exercise::findOrFail($id)->delete();
+		$exercise = $this->getOne($id);
+
+		$exercise->active = 0;
+
+		$exercise->save();
 	}
 
-	public function forceDelete($data)
+	public function forceDelete($id)
 	{
-		// TODO: Implement forceDelete() method.
+		return Exercise::findOrFail($id)->destroy();
 	}
 }

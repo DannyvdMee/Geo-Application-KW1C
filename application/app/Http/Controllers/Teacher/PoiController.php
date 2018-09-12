@@ -45,8 +45,6 @@ class PoiController extends Controller
 	 */
 	public function store(PoiRequest $request)
 	{
-//    	TODO create PoiReqyest
-
 		$request_collection = collect($request->all());
 
 		$request_collection->put('url_id', bin2hex(random_bytes(40)));
@@ -65,17 +63,7 @@ class PoiController extends Controller
 	 */
 	public function show($id)
 	{
-		$poi = $this->poi->getOne($id);
-
-		if ($poi->visibility == 1) {
-			$visibility = 0;
-		} else if ($poi->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$poi->visibility = $visibility;
-
-		$poi->save();
+		$this->poi->updateVisibility($id);
 
 		return redirect('teacher/poi');
 	}
@@ -188,11 +176,7 @@ class PoiController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$poi = $this->poi->getOne($id);
-
-		$poi->active = 0;
-
-		$poi->save();
+		$this->poi->softDelete($id);
 
 		return redirect('teacher/poi');
 	}

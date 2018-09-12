@@ -21,6 +21,21 @@ class StudentRepository implements StudentInterface
 		return Student::create($data);
 	}
 
+	public function updateVisibility($id)
+	{
+		$student = $this->getOne($id);
+
+		if ($student->visibility == 1) {
+			$visibility = 0;
+		} else if ($student->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$student->visibility = $visibility;
+
+		$student->save();
+	}
+
 	public function update($data, $id)
 	{
 		return Student::findOrFail($id)->update($data);
@@ -28,11 +43,15 @@ class StudentRepository implements StudentInterface
 
 	public function softDelete($id)
 	{
-		return Student::findOrFail($id)->delete();
+		$student = $this->getOne($id);
+
+		$student->active = 0;
+
+		$student->save();
 	}
 
 	public function forceDelete($data)
 	{
-		// TODO: Implement forceDelete() method.
+		return Student::findOrFail($id)->destroy();
 	}
 }

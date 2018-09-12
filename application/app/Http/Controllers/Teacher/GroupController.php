@@ -48,8 +48,6 @@ class GroupController extends Controller
 	 */
 	public function store(StudentGroupRequest $request)
 	{
-//    	TODO create studentGroupRequest
-
 		$request_collection = collect($request->all());
 
 		$request_collection->put('url_id', bin2hex(random_bytes(40)));
@@ -80,17 +78,9 @@ class GroupController extends Controller
 	 */
 	public function show($id)
 	{
-		$group = $this->studentgroup->getOne($id);
+		$this->studentgroup->updateVisibility($id);
 
-		if ($group->visibility == 1) {
-			$visibility = 0;
-		} else if ($group->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$group->visibility = $visibility;
-
-		$group->save();
+		return redirect('teacher/group');
 	}
 
 	/**
@@ -129,11 +119,7 @@ class GroupController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$group = $this->studentgroup->getOne($id);
-
-		$group->active = 0;
-
-		$group->save();
+		$this->studentgroup->softDelete($id);
 
 		return redirect('teacher/group');
 	}

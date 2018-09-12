@@ -10,6 +10,8 @@ interface DepartmentInterface
 
 	public function store($data);
 
+	public function updateVisibility($id);
+
 	public function update($data, $id);
 
 	public function softDelete($id);

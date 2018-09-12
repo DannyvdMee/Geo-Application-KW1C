@@ -21,6 +21,21 @@ class StudentGroupRepository implements StudentGroupInterface
 		return StudentGroup::create($data);
 	}
 
+	public function updateVisibility($id)
+	{
+		$group = $this->getOne($id);
+
+		if ($group->visibility == 1) {
+			$visibility = 0;
+		} else if ($group->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$group->visibility = $visibility;
+
+		$group->save();
+	}
+
 	public function update($data, $id)
 	{
 		return StudentGroup::findOrFail($id)->update($data);
@@ -28,11 +43,15 @@ class StudentGroupRepository implements StudentGroupInterface
 
 	public function softDelete($id)
 	{
-		return StudentGroup::findOrFail($id)->delete();
+		$group = $this->getOne($id);
+
+		$group->active = 0;
+
+		$group->save();
 	}
 
 	public function forceDelete($data)
 	{
-		// TODO: Implement forceDelete() method.
+		return StudentGroup::findOrFail($id)->destroy();
 	}
 }

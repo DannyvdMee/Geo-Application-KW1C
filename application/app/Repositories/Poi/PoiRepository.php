@@ -26,6 +26,21 @@ class PoiRepository implements PoiInterface
 		return Poi::create($data);
 	}
 
+	public function updateVisibility($id)
+	{
+		$poi = $this->getOne($id);
+
+		if ($poi->visibility == 1) {
+			$visibility = 0;
+		} else if ($poi->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$poi->visibility = $visibility;
+
+		$poi->save();
+	}
+
 	public function update($data, $id)
 	{
 		return Poi::findOrFail($id)->update($data);
@@ -33,11 +48,15 @@ class PoiRepository implements PoiInterface
 
 	public function softDelete($id)
 	{
-		return Poi::findOrFail($id)->delete();
+		$poi = $this->getOne($id);
+
+		$poi->active = 0;
+
+		$poi->save();
 	}
 
-	public function forceDelete($data)
+	public function forceDelete($id)
 	{
-		// TODO: Implement forceDelete() method.
+		return Poi::findOrFail($id)->destroy();
 	}
 }

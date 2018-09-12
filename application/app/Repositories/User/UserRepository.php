@@ -4,6 +4,7 @@ namespace App\Repositories\User;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements UserInterface
 {
@@ -27,18 +28,50 @@ class UserRepository implements UserInterface
 		return User::create($data);
 	}
 
+	public function updateVisibility($id)
+	{
+		$user = $this->getOne($id);
+
+		if ($user->visibility == 1) {
+			$visibility = 0;
+		} else if ($user->visibility == 0) {
+			$visibility = 1;
+		}
+
+		$user->visibility = $visibility;
+
+		$user->save();
+	}
+
 	public function update($data, $id)
 	{
 		return User::findOrFail($id)->update($data);
 	}
 
-	public function softDelete($id)
+	public function changePassword($data)
 	{
-		return User::findOrFail($id)->delete();
+		$user = $this->getCurrentAuthenticated();
+
+		if (Hash::check($data->oldpassword, $user->password)) {
+			if ($data->password === $data->password_confirmation) {
+				$user->password = Hash::make($data->password);
+
+				$user->save();
+			}
+		}
 	}
 
-	public function forceDelete($data)
+	public function softDelete($id)
 	{
-		// TODO: Implement forceDelete() method.
+		$user = $this->getOne($id);
+
+		$user->active = 0;
+
+		$user->save();
+	}
+
+	public function forceDelete($id)
+	{
+		return User::findOrFail($id)->destroy();
 	}
 }

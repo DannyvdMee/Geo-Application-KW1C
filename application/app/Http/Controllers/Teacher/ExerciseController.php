@@ -62,17 +62,7 @@ class ExerciseController extends Controller
 	 */
 	public function show($id)
 	{
-		$exercise = $this->exercise->getOne($id);
-
-		if ($exercise->visibility == 1) {
-			$visibility = 0;
-		} else if ($exercise->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$exercise->visibility = $visibility;
-
-		$exercise->save();
+		$this->exercise->updateVisibility($id);
 
 		return redirect('teacher/exercise');
 	}
@@ -113,11 +103,7 @@ class ExerciseController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$exercise = $this->exercise->getOne($id);
-
-		$exercise->active = 0;
-
-		$exercise->save();
+		$this->exercise->softDelete($id);
 
 		return view('teacher/exercise');
 	}
