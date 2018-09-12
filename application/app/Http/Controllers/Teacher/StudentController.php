@@ -18,39 +18,39 @@ class StudentController extends Controller
 	}
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
 		return view('teacher/student/index', ['students' => $this->student->getAllActive()]);
-    }
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('teacher/student/create');
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('teacher/student/create');
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StudentRequest $request)
-    {
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(StudentRequest $request)
+	{
 //    	TODO create studentRequest
-        $this->student->store($request->all());
+		$this->student->store($request->all());
 
-        return redirect('teacher/student');
-    }
+		return redirect('teacher/student');
+	}
 
 	/**
 	 * Display the specified resource.
@@ -76,29 +76,29 @@ class StudentController extends Controller
 		return redirect('teacher/student');
 	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return view('teacher/student/edit', ['student' => $this->student->getOne($id)]);
-    }
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		return view('teacher/student/edit', ['student' => $this->student->getOne($id)]);
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(StudentRequest $request, $id)
-    {
-        $this->student->update($request->all(), $id);
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(StudentRequest $request, $id)
+	{
+		$this->student->update($request->all(), $id);
 
 		return redirect('teacher/student');
 	}
@@ -169,21 +169,21 @@ class StudentController extends Controller
 		return redirect('teacher/student');
 	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $student = $this->student->getOne($id);
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
+		$student = $this->student->getOne($id);
 
-        $student->active = 0;
+		$student->active = 0;
 
-        $student->save();
+		$student->save();
 
 		return redirect('teacher/student');
-    }
+	}
 }

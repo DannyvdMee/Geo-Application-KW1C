@@ -22,41 +22,41 @@ class RouteController extends Controller
 		$this->user = $user;
 	}
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('teacher/route/index', ['routes' => $this->route->getAllActive()]);
-    }
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		return view('teacher/route/index', ['routes' => $this->route->getAllActive()]);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('teacher/route/create', ['pois' => $this->poi->getAllActive()]);
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('teacher/route/create', ['pois' => $this->poi->getAllActive()]);
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(RouteRequest $request)
-    {
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(RouteRequest $request)
+	{
 		$request_collection = collect($request->all());
 
-        $request_collection->put('url_id', bin2hex(random_bytes(4)));
-        $request_collection->put('user_id', $this->user->getCurrentAuthenticated());
+		$request_collection->put('url_id', bin2hex(random_bytes(4)));
+		$request_collection->put('user_id', $this->user->getCurrentAuthenticated());
 
-        $this->route->store($request_collection->toArray());
+		$this->route->store($request_collection->toArray());
 
 		$poi_id_array = [];
 
@@ -68,18 +68,18 @@ class RouteController extends Controller
 
 		$route->pois()->attach($this->poi->getOne($poi_id_array));
 
-        return redirect('teacher/route');
-    }
+		return redirect('teacher/route');
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
 		$route = $this->route->getOne($id);
 
 		if ($route->visibility == 1) {
@@ -90,57 +90,57 @@ class RouteController extends Controller
 
 		$route->visibility = $visibility;
 
-        $route->save();
-        
-        return redirect('teacher/route');
-    }
+		$route->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return view('teacher/route/edit', ['route' => $this->route->getOne($id)]);
-    }
+		return redirect('teacher/route');
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(RouteRequest $request, $id)
-    {
-    	$request_collectiob = collect($request->all());
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		return view('teacher/route/edit', ['route' => $this->route->getOne($id)]);
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(RouteRequest $request, $id)
+	{
+		$request_collectiob = collect($request->all());
 
 		$request_collectiob->put('user_id', $this->user->getCurrentAuthenticated());
 
-        $this->route->update($request_collectiob->toArray(), $id);
-        
-        return redirect('teacher/route');
-    }
+		$this->route->update($request_collectiob->toArray(), $id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $route = $this->route->getOne($id);
+		return redirect('teacher/route');
+	}
 
-        $route->active = 0;
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
+		$route = $this->route->getOne($id);
 
-        $route->save();
+		$route->active = 0;
 
-        return redirect('teacher/route');
-    }
+		$route->save();
+
+		return redirect('teacher/route');
+	}
 }

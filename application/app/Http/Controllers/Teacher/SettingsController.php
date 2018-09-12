@@ -21,50 +21,51 @@ class SettingsController extends Controller
 	}
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $user = $this->user->getCurrentAuthenticated();
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		$user = $this->user->getCurrentAuthenticated();
 
-        $departments = $this->department->getAllActive();
+		$departments = $this->department->getAllActive();
 
-        return view('teacher/settings/index', ['user' => $user, 'departments' => $departments]);
-    }
+		return view('teacher/settings/index', ['user' => $user, 'departments' => $departments]);
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UserRequest $request)
-    {
-        $user = $this->user->getCurrentAuthenticated();
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(UserRequest $request)
+	{
+		$user = $this->user->getCurrentAuthenticated();
 
 		$this->user->update($request->all(), $user);
 
-        return redirect('teacher/settings');
-    }
+		return redirect('teacher/settings');
+	}
 
-    public function changePassword(UserRequest $request) {
-        $user = $this->user->getCurrentAuthenticated();
+	public function changePassword(UserRequest $request)
+	{
+		$user = $this->user->getCurrentAuthenticated();
 
-        if (Hash::check($request->oldpassword, $user->password)) {
-            echo 'Passwords are the same';
-            if ($request->password == $request->password_confirmation) {
-                $user->password = Hash::make($request->password);
-                echo 'changed password';
+		if (Hash::check($request->oldpassword, $user->password)) {
+			echo 'Passwords are the same';
+			if ($request->password == $request->password_confirmation) {
+				$user->password = Hash::make($request->password);
+				echo 'changed password';
 
-                $user->save();
+				$user->save();
 
-                return redirect('teacher/settings');
-            }
-        }
-    }
+				return redirect('teacher/settings');
+			}
+		}
+	}
 
 }

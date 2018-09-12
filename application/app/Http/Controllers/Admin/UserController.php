@@ -29,7 +29,7 @@ class UserController extends Controller
 
 		$departments = $this->department->getAllActive();
 
-		return view('admin/user/index',  ['users' => $users, 'departments' => $departments]);
+		return view('admin/user/index', ['users' => $users, 'departments' => $departments]);
 	}
 
 	/**
@@ -56,16 +56,16 @@ class UserController extends Controller
 
 		return redirect('admin/user');
 	}
-	
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
 		$user = $this->user->getOne($id);
 
 		if ($user->visibility == 1) {
@@ -76,58 +76,58 @@ class UserController extends Controller
 
 		$user->visibility = $visibility;
 
-        $user->save();
-        
-        return redirect('admin/user');
+		$user->save();
+
+		return redirect('admin/user');
 	}
-	
+
 	/**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
 		$user = $this->user->getOne($id);
 		$departments = $this->department->getAllActive();
 
-        return view('admin/user/edit', ['user' => $user, 'departments' => $departments]);
+		return view('admin/user/edit', ['user' => $user, 'departments' => $departments]);
 	}
-	
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UserRequest $request, $id)
-    {
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(UserRequest $request, $id)
+	{
 //    	TODO create UserRequest
 		$this->user->update($request->all(), $id);
 
 		return redirect('admin/user');
-    }
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
 		$user = $this->user->getOne($id);
 
 		$user->active = 0;
 
 		$user->save();
 
-        return redirect('admin/user');
+		return redirect('admin/user');
 	}
-	
+
 }
