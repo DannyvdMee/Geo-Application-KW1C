@@ -135,11 +135,7 @@ class RouteController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$route = $this->route->getOne($id);
-
-		$route->active = 0;
-
-		$route->save();
+		$this->route->softDelete($id);
 
 		return redirect('teacher/route');
 	}

@@ -51,17 +51,7 @@ class DepartmentController extends Controller
 	 */
 	public function show($id)
 	{
-		$department = $this->department->getOne($id);
-
-		if ($department->visibility == 1) {
-			$visibility = 0;
-		} else if ($department->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$department->visibility = $visibility;
-
-		$department->save();
+		$this->department->updateVisibility($id);
 
 		return redirect('admin/department');
 	}
@@ -100,11 +90,7 @@ class DepartmentController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$department = $this->department->getOne($id);
-
-		$department->active = 0;
-
-		$department->save();
+		$this->department->softDelete($id);
 
 		return redirect('admin/department');
 	}

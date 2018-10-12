@@ -33,11 +33,15 @@ class RouteRepository implements RouteInterface
 
 	public function softDelete($id)
 	{
-		return Route::findOrFail($id)->delete();
+		$route = $this->getOne($id);
+
+		$route->active = 0;
+
+		$route->save();
 	}
 
-	public function forceDelete($data)
+	public function forceDelete($id)
 	{
-		// TODO: Implement forceDelete() method.
+		return Route::destroy($id);
 	}
 }

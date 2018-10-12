@@ -12,10 +12,14 @@ interface UserInterface
 
 	public function store($data);
 
+	public function updateVisibility($id);
+
 	public function update($data, $id);
 
-	public function softDelete($data);
+	public function changePassword($data);
 
-	public function forceDelete($data);
+	public function softDelete($id);
+
+	public function forceDelete($id);
 
 }

@@ -42,7 +42,6 @@ class SettingsController extends Controller
 	 */
 	public function update(UserRequest $request)
 	{
-
 		$user = $this->user->getCurrentAuthenticated();
 
 		$this->user->update($request->all(), $user);
@@ -52,18 +51,8 @@ class SettingsController extends Controller
 
 	public function changePassword(UserRequest $request)
 	{
-//    	TODO create changePassword method in repository
+		$this->user->changePassword($request->all());
 
-		$user = $this->user->getCurrentAuthenticated();
-
-		if (Hash::check($request->oldpassword, $user->password)) {
-			if ($request->password == $request->password_confirmation) {
-				$user->password = Hash::make($request->password);
-
-				$user->save();
-
-				return redirect('admin/settings');
-			}
-		}
+		return redirect('admin/settings');
 	}
 }

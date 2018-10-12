@@ -26,7 +26,6 @@ class UserController extends Controller
 	public function index()
 	{
 		$users = $this->user->getAllActiveByLastnameAsc();
-
 		$departments = $this->department->getAllActive();
 
 		return view('admin/user/index', ['users' => $users, 'departments' => $departments]);
@@ -51,7 +50,6 @@ class UserController extends Controller
 	 */
 	public function store(UserRequest $request)
 	{
-//		TODO create UserRequest
 		$this->user->store($request->all());
 
 		return redirect('admin/user');
@@ -66,17 +64,7 @@ class UserController extends Controller
 	 */
 	public function show($id)
 	{
-		$user = $this->user->getOne($id);
-
-		if ($user->visibility == 1) {
-			$visibility = 0;
-		} else if ($user->visibility == 0) {
-			$visibility = 1;
-		}
-
-		$user->visibility = $visibility;
-
-		$user->save();
+		$this->user->updateVisibility($id);
 
 		return redirect('admin/user');
 	}
@@ -106,7 +94,6 @@ class UserController extends Controller
 	 */
 	public function update(UserRequest $request, $id)
 	{
-//    	TODO create UserRequest
 		$this->user->update($request->all(), $id);
 
 		return redirect('admin/user');
@@ -121,11 +108,7 @@ class UserController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$user = $this->user->getOne($id);
-
-		$user->active = 0;
-
-		$user->save();
+		$this->user->softDelete($id);
 
 		return redirect('admin/user');
 	}
