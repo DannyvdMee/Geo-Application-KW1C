@@ -83,6 +83,9 @@ class LoginController extends Controller
 			return view('auth/login', ['error' => $message]);
 		}
 
+		$message = 'Account could not be validated; try again';
+		Session::flash('error', $message);
+
 		return view('auth/login');
 	}
 

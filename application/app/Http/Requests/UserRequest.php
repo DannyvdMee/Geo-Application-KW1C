@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
 	{
 		return [
 			'email' => 'required|email|unique:users.email,' . $this->user,
-			'username' => 'required|string|unique:users,username.' . $this->user,
+			'username' => 'required|string|unique:users.username.' . $this->user,
 			'firstname' => 'required|max:20',
 			'lastname' => 'required|max:30',
 			'department' => 'required|max:40',
