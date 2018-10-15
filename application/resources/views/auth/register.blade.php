@@ -14,7 +14,7 @@
 						<!-- Username form -->
 						<div class="col-10 offset-1">
 							<input id="username" type="text" placeholder="@lang('messages.username')"
-								class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="name"
+								class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username"
 								value="{{ old('username') }}" required autofocus>
 
 							@if ($errors->has('username'))
