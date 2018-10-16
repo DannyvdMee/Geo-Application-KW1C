@@ -1,40 +1,25 @@
 @extends('layouts.admin')
 
-<!--
-Opdracht:       Multidisciplinair Project v.2
-Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
-Aanmaakdatum:   30-06-18
-Beschrijving:   Index Settings Pagina
--->
-
 @section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col">
-			<!-- Settings title -->
 			<div class="row">
 				<div class="col">
 					<h5 class="text-center font-bold">@lang('messages.settings')</h5>
 				</div>
 			</div>
-			<!-- End settings title -->
-			<!-- Name form -->
 			<div class="row">
 				<div class="col">					
 					<form method="POST" action="{{ route('admin/settings', ['id' => $user->id]) }}">
 						@csrf
 
-						<!-- Name -->
 						<h6 class="text-center font-bold">@lang('messages.name')</h6>
-						<!-- Firstname -->
-                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" required
-							value="{{ $user->firstname }}">
-						<!-- Lastname -->
-						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" required
-							value="{{ $user->lastname }}">	
+                        <input type="text" name="firstname" placeholder="@lang('messages.firstname')" required value="{{ $user->firstname }}">
+						<input type="text" name="lastname" placeholder="@lang('messages.lastname')" required value="{{ $user->lastname }}">
+
 						<div class="whitespace height-21"></div>
 
-						<!-- Department -->	
 						<h6 class="text-center font-bold">@lang('messages.department')</h6>
 						<select name="department">
 							<!-- <option value="">@lang('messages.selectDepartment')</option> -->

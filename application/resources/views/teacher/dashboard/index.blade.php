@@ -1,19 +1,11 @@
 @extends('layouts.teacher')
 
-<!--
-Opdracht:       Multidisciplinair Project v.2
-Auteur:         Onyi Lam, Ibo van Geffen, Rinaldo Boejé, Danny van der Mee
-Aanmaakdatum:   27-06-18
-Beschrijving:   Index Dashboard Pagina
--->
-
 @section('content')
 <div class="container-fluid" style="margin-top: -1.5rem; margin-bottom:-70px;">
 	<div class="row">
 		<div class="col">
 			<div id="dashboard-container" class="row">
 
-				<!-- De route marker -->
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 							<div class="float-center display-block">
@@ -25,7 +17,6 @@ Beschrijving:   Index Dashboard Pagina
 					</div>
 				</div>
 
-				<!-- De POI marker -->
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
@@ -37,7 +28,6 @@ Beschrijving:   Index Dashboard Pagina
 					</div>
 				</div>
 
-				<!-- De user marker -->
 				<div class="col-6 col-md-3">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block dashboard-item">
@@ -49,7 +39,6 @@ Beschrijving:   Index Dashboard Pagina
 					</div>
 				</div>
 
-				<!-- De groep marker -->
 				<div class="col-6 col-md-3">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block dashboard-item">
@@ -61,7 +50,6 @@ Beschrijving:   Index Dashboard Pagina
 					</div>
 				</div>
 
-				<!-- De map marker -->
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">
@@ -73,7 +61,6 @@ Beschrijving:   Index Dashboard Pagina
 					</div>
 				</div>
 
-				<!-- De settings marker -->
 				<div class="col-6 col-md-3 dashboard-item">
 					<div class="margin-10-0 dashboard-item-background">
 						<div class="float-center display-block">

@@ -57,7 +57,7 @@
 			<div class="float-left display-inline-block">
 				<a href="{{ route('teacher/dashboard') }}">
 					<i class="material-icons display-block text-center">home</i>
-					<span class="display-block text-center"> <!-- @lang('messages.dashboard') --> Dashboard</span>
+					<span class="display-block text-center">@lang('messages.dashboard')</span>
 				</a>
 			</div>
 		</div>

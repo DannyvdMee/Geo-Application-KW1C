@@ -3,30 +3,15 @@
 @section('injectable-js')
 	<script>
 
-		// Copied this from a hackathon project
-		 function getLocation() {
-
-		 	navigator.geolocation.getCurrentPosition(function (pos) {
-		 		console.log(pos);
-		 	});
-		 }
-
-		// function centerMap()
-		// {
-		// 	navigator.geolocation.getCurrentPosition(function (pos) {
-		// 		// console.log(pos);
-		// 		map = new google.maps.Map(document.getElementById('map'), {
-		// 			center: {
-		// 				lat: pos.coords.latitude,
-		// 				lng: pos.coords.longitude,
-		// 			}
-		// 		});
-		// 	});
-		// }
+		function getLocation() {
+			navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log(pos);
+			});
+		}
 
 		t = setInterval(getLocation, 10000);
 
-		// Initialize and add the map
+
 		function initMap() {
 			markers = <?php echo json_encode($pois) ?>;
 			// The location waypoints
@@ -107,6 +92,8 @@
 		function openDialogContext() {
 			marker_id = this.id;
 
+			// TODO axios-ify this code
+
 			$.ajax({
 				method: 'GET', // Type of response and matches what we said in the route
 				url: 'https://project.test/map/marker', // This is the url we gave in the route
@@ -126,12 +113,6 @@
 			// AJAX request to /map/marker/{id}
 		}
 	</script>
-	<!--
-	Load the API from the specified URL
-	* The async attribute allows the browser to render the page while the API loads
-	* The key parameter will contain your own API key (which is not needed for this tutorial)
-	* The callback parameter executes the initMap() function
-	-->
 @endsection
 
 @section('content')
@@ -148,10 +129,11 @@
 @endsection
 
 @section('js-eventlisteners')
-	<script async defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"
-			async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap" async defer></script>
 	<script type="application/javascript">
+		window.addEventListener('load', function() {
+
+		});
 		$(document).ready(function() {
 			$('.marker-open-dialog').on('click', openDialogContext);
 		});
