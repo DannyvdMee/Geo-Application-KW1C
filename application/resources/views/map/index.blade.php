@@ -149,7 +149,7 @@
 
 @section('js-eventlisteners')
 	<script async defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZMWgX0_LuX-Ozhc51bra0bo-PJU4lv0A&callback=initMap"
+			src=""
 			async defer></script>
 	<script type="application/javascript">
 		$(document).ready(function() {
